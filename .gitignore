@@ -1,4 +1,5 @@
-*.mp4
+# Large video files (keep only essential ones)
+# *.mp4
 *.mp3
 *.mov
 *.avi
@@ -16,14 +17,14 @@ size-report.csv
 broken_local_refs.csv
 *.avif
 *.svg
-Videos/
+# Videos/  # Commenting out to allow Videos folder
 Pictures/
 Logos/
 # Large image files
 **/*.avif
 **/*.svg
 # Media directories
-Videos/
+# Videos/  # Commenting out to allow Videos folder
 Pictures/
 Logos/
 # Large files over 1MB
