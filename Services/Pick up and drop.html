@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Cab Services | CityRide</title>
+  <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="Images/TT4.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="CSS/PD.css">
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="https://cdn-icons-png.flaticon.com/512/2721/2721593.png" alt="CityRide Logo">
+        City<span style="color: #ff6600;">Ride</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Fleet</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+        <div class="ms-lg-3 mt-3 mt-lg-0">
+          <a href="#" class="btn btn-primary">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-car-animation"></div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <div class="hero-content">
+            <span class="hero-badge animate__animated animate__fadeInDown">24/7 Available</span>
+            <h1 class="animate__animated animate__fadeInDown animate__delay-1s">Premium Cab Services in Your City</h1>
+            <p class="animate__animated animate__fadeInDown animate__delay-2s">Experience luxury, comfort, and reliability with our professional chauffeur services. Book your ride in seconds and travel in style.</p>
+            <div class="hero-buttons animate__animated animate__fadeInDown animate__delay-3s">
+              <a href="#" class="btn btn-primary me-3">Book Now</a>
+              <a href="#" class="btn btn-outline-light">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <div class="container">
+    <div class="booking-form-container animate-on-scroll">
+      <form>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="pickup" class="form-label">Pickup Location</label>
+              <input type="text" class="form-control" id="pickup" placeholder="Enter pickup address" required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="destination" class="form-label">Destination</label>
+              <input type="text" class="form-control" id="destination" placeholder="Enter destination address" required>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="mb-3">
+              <label for="date" class="form-label">Date</label>
+              <input type="date" class="form-control" id="date" required>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="mb-3">
+              <label for="time" class="form-label">Time</label>
+              <input type="time" class="form-control" id="time" required>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="mb-3">
+              <label for="vehicle" class="form-label">Vehicle Type</label>
+              <select class="form-select" id="vehicle" required>
+                <option value="" disabled selected>Select Vehicle</option>
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV</option>
+                <option value="luxury">Luxury</option>
+                <option value="minivan">Minivan</option>
+                <option value="executive">Executive</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 py-3">Get Quote & Book Now</button>
+        <div class="booking-features mt-4">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <span>Safe & Secure</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <span>On-time Service</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <span>5-Star Rated</span>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <span>24/7 Support</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <section class="service-section">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <h2>Our Premium Services</h2>
+        <p>We offer a wide range of transportation services to meet all your travel needs with comfort and reliability.</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-car"></i>
+            </div>
+            <h4>Airport Transfers</h4>
+            <p>Timely and comfortable airport transfers with flight tracking and meet & greet service.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <h4>Business Travel</h4>
+            <p>Professional chauffeurs for your business meetings and corporate events.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-glass-cheers"></i>
+            </div>
+            <h4>Special Events</h4>
+            <p>Luxury vehicles for weddings, proms, anniversaries and other special occasions.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-city"></i>
+            </div>
+            <h4>City Tours</h4>
+            <p>Explore the city with our knowledgeable chauffeurs and comfortable vehicles.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-hourglass-half"></i>
+            </div>
+            <h4>Hourly Service</h4>
+            <p>Flexible hourly rentals for your meetings, shopping trips or city exploration.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 animate-on-scroll">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-globe-americas"></i>
+            </div>
+            <h4>Long Distance</h4>
+            <p>Comfortable intercity travel with professional drivers and premium vehicles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fleet Section -->
+  <!-- Fleet Section -->
+<section class="fleet-section">
+  <div class="container">
+    <div class="section-title animate-on-scroll">
+      <h2>Our Luxury Fleet</h2>
+      <p>Choose from our wide selection of premium vehicles to match your style and needs, available in major Indian cities.</p>
+    </div>
+    <div class="row">
+      <!-- Premium Sedan -->
+      <div class="col-lg-4 col-md-6 animate-on-scroll">
+        <div class="fleet-card">
+          <div class="fleet-badge">Most Popular</div>
+          <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="fleet-img" alt="Premium Sedan">
+          <div class="fleet-body">
+            <h5 class="fleet-title">Premium Sedan</h5>
+            <div class="fleet-info">
+              <span class="fleet-price">₹3,750/hr</span>
+              <span class="fleet-capacity"><i class="fas fa-user"></i> 4 Passengers</span>
+              <span class="fleet-location"><i class="fas fa-map-marker-alt"></i> Delhi, Mumbai, Bengaluru</span>
+            </div>
+            <div class="fleet-features">
+              <span class="fleet-feature"><i class="fas fa-wifi"></i> WiFi</span>
+              <span class="fleet-feature"><i class="fas fa-snowflake"></i> AC</span>
+              <span class="fleet-feature"><i class="fas fa-suitcase"></i> 3 Bags</span>
+            </div>
+            <a href="#" class="btn btn-primary w-100 mt-2">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Luxury SUV -->
+      <div class="col-lg-4 col-md-6 animate-on-scroll">
+        <div class="fleet-card">
+          <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="fleet-img" alt="Luxury SUV">
+          <div class="fleet-body">
+            <h5 class="fleet-title">Luxury SUV</h5>
+            <div class="fleet-info">
+              <span class="fleet-price">₹5,400/hr</span>
+              <span class="fleet-capacity"><i class="fas fa-user"></i> 6 Passengers</span>
+              <span class="fleet-location"><i class="fas fa-map-marker-alt"></i> Delhi, Hyderabad, Chennai</span>
+            </div>
+            <div class="fleet-features">
+              <span class="fleet-feature"><i class="fas fa-wifi"></i> WiFi</span>
+              <span class="fleet-feature"><i class="fas fa-snowflake"></i> AC</span>
+              <span class="fleet-feature"><i class="fas fa-suitcase"></i> 6 Bags</span>
+            </div>
+            <a href="#" class="btn btn-primary w-100 mt-2">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Executive Limo -->
+      <div class="col-lg-4 col-md-6 animate-on-scroll">
+        <div class="fleet-card">
+          <div class="fleet-badge">Executive</div>
+          <img src="https://cdn0.weddingwire.in/vendor/9457/3_2/960/jpg/photo-shoot-limo-lounge-001_15_229457-161468365551737.jpeg" class="fleet-img" alt="Executive Limo">
+          <div class="fleet-body">
+            <h5 class="fleet-title">Executive Limo</h5>
+            <div class="fleet-info">
+              <span class="fleet-price">₹7,000/hr</span>
+              <span class="fleet-capacity"><i class="fas fa-user"></i> 8 Passengers</span>
+              <span class="fleet-location"><i class="fas fa-map-marker-alt"></i> Mumbai, Delhi, Goa</span>
+            </div>
+            <div class="fleet-features">
+              <span class="fleet-feature"><i class="fas fa-wifi"></i> WiFi</span>
+              <span class="fleet-feature"><i class="fas fa-glass-martini-alt"></i> Mini Bar</span>
+              <span class="fleet-feature"><i class="fas fa-suitcase"></i> 8 Bags</span>
+            </div>
+            <a href="#" class="btn btn-primary w-100 mt-2">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Mercedes-Benz S-Class -->
+      <div class="col-lg-4 col-md-6 animate-on-scroll">
+        <div class="fleet-card">
+          <div class="fleet-badge">Luxury</div>
+          <img src="https://www.financialexpress.com/wp-content/uploads/2016/03/Mercedes-Benz-S-Class-2021-india-launch-amg-line.jpg" class="fleet-img" alt="Mercedes-Benz S-Class">
+          <div class="fleet-body">
+            <h5 class="fleet-title">Mercedes-Benz S-Class</h5>
+            <div class="fleet-info">
+              <span class="fleet-price">₹8,500/hr</span>
+              <span class="fleet-capacity"><i class="fas fa-user"></i> 4 Passengers</span>
+              <span class="fleet-location"><i class="fas fa-map-marker-alt"></i> Delhi, Mumbai, Hyderabad</span>
+            </div>
+            <div class="fleet-features">
+              <span class="fleet-feature"><i class="fas fa-wifi"></i> WiFi</span>
+              <span class="fleet-feature"><i class="fas fa-snowflake"></i> AC</span>
+              <span class="fleet-feature"><i class="fas fa-suitcase"></i> 3 Bags</span>
+            </div>
+            <a href="#" class="btn btn-primary w-100 mt-2">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Toyota Innova Crysta -->
+      <div class="col-lg-4 col-md-6 animate-on-scroll">
+        <div class="fleet-card">
+          <img src="https://www.financialexpress.com/wp-content/uploads/2022/09/Toyota-innova-crysta-limited-edition.jpg" class="fleet-img" alt="Toyota Innova Crysta">
+          <div class="fleet-body">
+            <h5 class="fleet-title">Toyota Innova Crysta</h5>
+            <div class="fleet-info">
+              <span class="fleet-price">₹2,200/hr</span>
+              <span class="fleet-capacity"><i class="fas fa-user"></i> 7 Passengers</span>
+              <span class="fleet-location"><i class="fas fa-map-marker-alt"></i> All Major Cities</span>
+            </div>
+            <div class="fleet-features">
+              <span class="fleet-feature"><i class="fas fa-snowflake"></i> AC</span>
+              <span class="fleet-feature"><i class="fas fa-suitcase"></i> 5 Bags</span>
+            </div>
+            <a href="#" class="btn btn-primary w-100 mt-2">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Tempo Traveller -->
+      <div class="col-lg-4 col-md-6 animate-on-scroll">
+        <div class="fleet-card">
+          <div class="fleet-badge">Family</div>
+          <img src="https://sehgaltransport.com/wp-content/uploads/2024/11/urbania-luxury-van-rental-7.jpg" class="fleet-img" alt="Tempo Traveller">
+          <div class="fleet-body">
+            <h5 class="fleet-title">Tempo Traveller</h5>
+            <div class="fleet-info">
+              <span class="fleet-price">₹2,800/hr</span>
+              <span class="fleet-capacity"><i class="fas fa-user"></i> 12 Passengers</span>
+              <span class="fleet-location"><i class="fas fa-map-marker-alt"></i> Jaipur, Udaipur, Ahmedabad</span>
+            </div>
+            <div class="fleet-features">
+              <span class="fleet-feature"><i class="fas fa-snowflake"></i> AC</span>
+              <span class="fleet-feature"><i class="fas fa-suitcase"></i> 8 Bags</span>
+            </div>
+            <a href="#" class="btn btn-primary w-100 mt-2">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5 animate-on-scroll">
+      <a href="#" class="btn btn-secondary px-4 py-2">View All Vehicles</a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- App Section -->
+  <section class="app-section">
+    <div class="app-pattern"></div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="app-content animate-on-scroll">
+            <h2>Download Our Mobile App</h2>
+            <p>Book your ride in seconds, track your driver in real-time, and enjoy exclusive app-only benefits.</p>
+            <div class="app-buttons">
+              <a href="#" class="app-btn animate-on-scroll">
+                <i class="fab fa-apple"></i>
+                <div class="app-btn-text">
+                  <span>Download on the</span>
+                  <span>App Store</span>
+                </div>
+              </a>
+              <a href="#" class="app-btn animate-on-scroll">
+                <i class="fab fa-google-play"></i>
+                <div class="app-btn-text">
+                  <span>Get it on</span>
+                  <span>Google Play</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src="https://www.pngmart.com/files/15/iPhone-12-PNG-Transparent-Image.png" class="app-phone animate-on-scroll" alt="CityRide App">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <h2>What Our Clients Say</h2>
+        <p>Don't just take our word for it. Here's what our customers have to say about their experiences.</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 animate-on-scroll">
+          <div class="testimonial-card">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">"The driver was professional and arrived early. The car was spotless and comfortable. Will definitely use CityRide again for my airport transfers."</p>
+            <div class="testimonial-author">
+              <img src="https://randomuser.me/api/portraits/women/45.jpg" class="author-img" alt="Sarah Johnson">
+              <div class="author-info">
+                <h5>Sarah Johnson</h5>
+                <p>Business Executive</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 animate-on-scroll">
+          <div class="testimonial-card">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">"Excellent service! The app makes booking so easy and the drivers are always courteous. The luxury SUV was perfect for our family vacation."</p>
+            <div class="testimonial-author">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" class="author-img" alt="Michael Chen">
+              <div class="author-info">
+                <h5>Michael Chen</h5>
+                <p>Family Traveler</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 animate-on-scroll">
+          <div class="testimonial-card">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="testimonial-text">"I use CityRide for all my business trips. Reliable, professional, and the cars are always in perfect condition. Highly recommended!"</p>
+            <div class="testimonial-author">
+              <img src="https://randomuser.me/api/portraits/women/68.jpg" class="author-img" alt="Emily Rodriguez">
+              <div class="author-info">
+                <h5>Emily Rodriguez</h5>
+                <p>Marketing Director</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <h2>Frequently Asked Questions</h2>
+        <p>Find answers to common questions about our services and booking process.</p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="faq animate-on-scroll">
+            <div class="faq-header">
+              <span>How do I book a ride?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-content">
+              <p>You can book a ride through our website, mobile app, or by calling our customer service. Online bookings are available 24/7 and provide instant confirmation.</p>
+            </div>
+          </div>
+          <div class="faq animate-on-scroll">
+            <div class="faq-header">
+              <span>What payment methods do you accept?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-content">
+              <p>We accept all major credit cards (Visa, MasterCard, American Express), PayPal, Apple Pay, Google Pay, and cash payments to the driver.</p>
+            </div>
+          </div>
+          <div class="faq animate-on-scroll">
+            <div class="faq-header">
+              <span>Can I cancel or modify my booking?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-content">
+              <p>Yes, you can cancel or modify your booking through the app or website up to 1 hour before the scheduled pickup time. Cancellation fees may apply depending on timing.</p>
+            </div>
+          </div>
+          <div class="faq animate-on-scroll">
+            <div class="faq-header">
+              <span>Are your drivers licensed and insured?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-content">
+              <p>All our drivers are professionally licensed, fully insured, and undergo rigorous background checks and training to ensure your safety and comfort.</p>
+            </div>
+          </div>
+          <div class="faq animate-on-scroll">
+            <div class="faq-header">
+              <span>Do you provide child seats?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-content">
+              <p>Yes, we offer child seats upon request at an additional fee. Please specify your needs when booking to ensure availability.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-content animate-on-scroll">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Stay updated with our latest offers, promotions, and travel tips. Subscribe to our newsletter today!</p>
+        <form class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-5 mb-lg-0 animate-on-scroll">
+          <div class="footer-about">
+            <a href="../index.html" class="footer-logo">Travel<span>Tales</span></a>
+            <p>City Ride Cab Services is an associated brand of Travel Tales, delivering premium transportation services since 2010. As part of the Travel Tales family, we ensure safe, comfortable, and reliable rides with exceptional customer service.</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-5 mb-md-0 animate-on-scroll">
+          <div class="footer-links">
+            <h5>Quick Links</h5>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../Travel Tales/About Us.html">About Us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Fleet</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-5 mb-md-0 animate-on-scroll">
+          <div class="footer-links">
+            <h5>Services</h5>
+            <ul>
+              <li><a href="#">Airport Transfers</a></li>
+              <li><a href="#">Business Travel</a></li>
+              <li><a href="#">Wedding Cars</a></li>
+              <li><a href="#">City Tours</a></li>
+              <li><a href="#">Hourly Service</a></li>
+              <li><a href="#">Long Distance</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 animate-on-scroll">
+          <div class="footer-links">
+            <h5>Contact Us</h5>
+            <ul>
+              <li><i class="fas fa-map-marker-alt me-2"></i> 123 Yashoda Nagar, Nagpur, India</li>
+              <li><i class="fas fa-phone-alt me-2"></i> +91-9876543210</li>
+              <li><i class="fas fa-envelope me-2"></i> traveltalesngp@gmail.com</li>
+              <li><i class="fas fa-clock me-2"></i> 24/7 Customer Support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom animate-on-scroll">
+        <p>&copy; 2025 TravelTales. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    // Preloader
+    $(window).on('load', function() {
+      $('.preloader').fadeOut('medium');
+    });
+
+    // Navbar scroll effect
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 100) {
+        $('.navbar').addClass('scrolled');
+      } else {
+        $('.navbar').removeClass('scrolled');
+      }
+    });
+
+    // Back to top button
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 300) {
+        $('.back-to-top').addClass('active');
+      } else {
+        $('.back-to-top').removeClass('active');
+      }
+    });
+
+    $('.back-to-top').click(function(e) {
+      e.preventDefault();
+      $('html, body').animate({scrollTop: 0}, '300');
+    });
+
+    // FAQ accordion
+    $('.faq-header').click(function() {
+      $(this).parent().find('.faq-content').slideToggle();
+      $(this).parent().find('.faq-header').toggleClass('active');
+      $(this).parent().siblings().find('.faq-content').slideUp();
+      $(this).parent().siblings().find('.faq-header').removeClass('active');
+    });
+
+    // Animation on scroll
+    $(document).ready(function() {
+      $(window).scroll(function() {
+        $('.animate-on-scroll').each(function() {
+          var position = $(this).offset().top;
+          var scroll = $(window).scrollTop();
+          var windowHeight = $(window).height();
+          
+          if (scroll + windowHeight > position) {
+            $(this).addClass('animated');
+          }
+        });
+      });
+    });
+
+    // Initialize animations on page load for elements in viewport
+    $(window).on('load', function() {
+      $('.animate-on-scroll').each(function() {
+        var position = $(this).offset().top;
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        
+        if (scroll + windowHeight > position) {
+          $(this).addClass('animated');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,2790 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arunachal Pradesh: Land of the Rising Sun | Premium Himalayan Travel</title>
+    <meta name="description" content="Official travel guide to Arunachal Pradesh — Tawang, Ziro, Bomdila, Sela Pass. ILP permits, curated packages, tribal culture & Himalayan adventures.">
+    
+    <!-- Favicon (Embedded SVG) -->
+    <link rel="icon" href="Images/TT4.png">
+    
+    <!-- Add these BEFORE your closing </head> tag -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== VARIABLES ===== */
+        :root {
+            --primary: #1a237e;           /* Deep Indigo */
+            --primary-dark: #0d1b4e;
+            --primary-light: #5c6bc0;
+            --secondary: #ffca28;         /* Golden Yellow (Sunrise) */
+            --accent: #4db6ac;            /* Teal (Rivers) */
+            --complement: #7e57c2;        /* Purple (Mountains) */
+            --light: #ffffff;
+            --dark: #263238;
+            --text: #333;
+            --gray: #757575;
+            --shadow: 0 15px 40px rgba(0,0,0,0.15);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Dark mode variables */
+        .dark-mode {
+            --light: #1e293b;
+            --dark: #f1f5f9;
+            --text: #e2e8f0;
+            --gray: #94a3b8;
+            --primary-light: #7e90e7;
+        }
+
+        /* ===== BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .dark-mode body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: gold;
+            position: relative;
+            display: inline-block;
+        }
+ 
+        .dark-mode .section-title h2 {
+            color: white;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            color: var(--gray);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== PRELOADER ===== */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.6s, visibility 0.6s;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 5px solid rgba(26, 35, 126, 0.1);
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            padding: 5px 0;
+        }
+
+        .dark-mode header {
+            background: rgba(30, 41, 59, 0.95);
+        }
+
+        .header-scrolled {
+            padding: 2px 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .logo-scrolled{
+            height: 60px;
+            
+        }
+        .dark-mode .header-scrolled {
+            background: rgba(30, 41, 59, 0.98);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+
+        .dark-mode .logo-icon {
+            color: var(--light);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-left: 12px;
+        }
+
+        .logo-text span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .dark-mode .nav-links a::after {
+            background: var(--secondary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        .dark-mode .mobile-menu-btn {
+            color: var(--light);
+        }
+
+        .theme-toggle {
+            margin-left: 20px;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        .dark-mode .theme-toggle {
+            color: var(--light);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(26,35,126,0.85));
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.85);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: var(--transition);
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+        }
+
+        .btn-primary:hover {
+            background: #e6b100;
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-25px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+
+        /* ===== KEY INFO SECTION (NEW) ===== */
+        .key-info {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 80px 0;
+        }
+
+        .key-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .info-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.12);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        .info-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2.2rem;
+            color: var(--secondary);
+        }
+
+        .info-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* ===== DESTINATIONS ===== */
+        .destinations {
+            background: var(--light);
+        }
+
+        .dark-mode .destinations {
+            background: var(--light);
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+        }
+
+        .place-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .dark-mode .place-card {
+            background: #1e293b;
+        }
+
+        .place-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .place-img {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .place-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .place-card:hover .place-img img {
+            transform: scale(1.12);
+        }
+
+        .place-badge {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 5px 15px rgba(255,202,40,0.4);
+        }
+
+        .place-content {
+            padding: 30px;
+        }
+
+        .place-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .dark-mode .place-content h3 {
+            color: var(--light);
+        }
+
+        .place-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .meta-item i {
+            margin-right: 8px;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .place-content p {
+            margin-bottom: 25px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .dark-mode .place-content p {
+            color: #cbd5e1;
+        }
+
+        .place-btn {
+            display: inline-flex;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .dark-mode .place-btn {
+            color: var(--secondary);
+        }
+
+        .place-btn i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+
+        .place-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* ===== CULTURAL HERITAGE ===== */
+        .culture-section {
+            background: linear-gradient(to right, #f0f7ff, #e6f0ff);
+        }
+
+        .dark-mode .culture-section {
+            background: linear-gradient(to right, #0f172a, #1e293b);
+        }
+
+        .culture-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .culture-img {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 50px; /* Space between the two images */
+        }
+
+        .culture-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(26,35,126,0.3), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+        }
+
+        .culture-overlay h3 {
+            color: white;
+            font-size: 2rem;
+        }
+
+        .culture-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+
+        .dark-mode .culture-content h2 {
+            color: var(--light);
+        }
+
+        .tribe-spotlight {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .dark-mode .tribe-spotlight {
+            background: #1e293b;
+        }
+
+        .tribe-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .tribe-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--secondary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .tribe-icon i {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .tribe-title h3 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .dark-mode .tribe-title h3 {
+            color: var(--light);
+        }
+
+        .tribe-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .tribe-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(26, 35, 126, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .dark-mode .feature-icon {
+            background: rgba(148, 163, 184, 0.1);
+        }
+
+        .feature-icon i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .dark-mode .feature-icon i {
+            color: var(--light);
+        }
+
+        /* ===== TRAVEL ESSENTIALS ===== */
+        .essentials-section {
+            background: var(--light);
+        }
+
+        .dark-mode .essentials-section {
+            background: var(--light);
+        }
+
+        .essentials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .essentials-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+
+        .dark-mode .essentials-content h2 {
+            color: var(--light);
+        }
+
+        .accordion {
+            margin-top: 30px;
+        }
+
+        .accordion-item {
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .accordion-header {
+            background: white;
+            padding: 20px 25px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .dark-mode .accordion-header {
+            background: #1e293b;
+            color: var(--light);
+        }
+
+        .accordion-header:hover {
+            background: #f1f5f9;
+        }
+
+        .dark-mode .accordion-header:hover {
+            background: #334155;
+        }
+
+        .accordion-content {
+            background: #f8fafc;
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .dark-mode .accordion-content {
+            background: #1e293b;
+        }
+
+        .accordion-content p {
+            padding: 20px 0;
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .dark-mode .accordion-content p {
+            color: #cbd5e1;
+        }
+
+        .weather-widget {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .weather-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .dark-mode .weather-card {
+            background: #1e293b;
+        }
+
+        .weather-location {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .dark-mode .weather-location {
+            color: var(--light);
+        }
+
+        .weather-temp {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 15px 0;
+            color: var(--primary);
+        }
+
+        .dark-mode .weather-temp {
+            color: var(--light);
+        }
+
+        .weather-condition {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            font-size: 0.95rem;
+        }
+
+        /* ===== PACKAGES ===== */
+.packages-section {
+    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+    padding: 80px 0;
+}
+
+.packages-container {
+    position: relative;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.packages-carousel {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 15px 0 40px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.packages-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Reduced package card size */
+.package-card {
+    min-width: 10px;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: var(--transition);
+    flex-shrink: 0;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Staggered animation */
+.package-card:nth-child(1) { animation: fadeInUp 0.6s 0.1s both; }
+.package-card:nth-child(2) { animation: fadeInUp 0.6s 0.2s both; }
+.package-card:nth-child(3) { animation: fadeInUp 0.6s 0.3s both; }
+.package-card:nth-child(4) { animation: fadeInUp 0.6s 0.4s both; }
+.package-card:nth-child(5) { animation: fadeInUp 0.6s 0.5s both; }
+.package-card:nth-child(6) { animation: fadeInUp 0.6s 0.6s both; }
+.package-card:nth-child(7) { animation: fadeInUp 0.6s 0.7s both; }
+.package-card:nth-child(8) { animation: fadeInUp 0.6s 0.8s both; }
+.package-card:nth-child(9) { animation: fadeInUp 0.6s 0.9s both; }
+.package-card:nth-child(10) { animation: fadeInUp 0.6s 1.0s both; }
+
+.package-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(26, 35, 126, 0.15);
+}
+
+.package-img {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.package-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.package-card:hover .package-img img {
+    transform: scale(1.08);
+}
+
+.package-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(255,202,40,0.3);
+}
+
+.package-content {
+    padding: 22px;
+}
+
+.package-content h3 {
+    font-size: 1.45rem;
+    margin-bottom: 12px;
+    color: var(--primary);
+    height: 2.2em;
+    overflow: hidden;
+}
+
+.package-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: var(--gray);
+    font-size: 0.92rem;
+}
+
+.package-duration i,
+.package-rating i {
+    margin-right: 6px;
+    color: var(--primary);
+    font-size: 1.05rem;
+}
+
+.package-price {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 15px 0 18px;
+}
+
+.package-price span {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--gray);
+}
+
+.book-btn {
+    display: block;
+    width: 100%;
+    padding: 13px 5px;
+    background: var(--primary);
+    color: white;
+    border-radius: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-size: 0.98rem;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.book-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(26,35,126,0.2);
+}
+
+/* Navigation dots */
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.carousel-dot.active {
+    background: var(--secondary);
+    transform: scale(1.3);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+        /* ===== 360 VIEWER ===== */
+        .viewer-section {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 100px 0;
+        }
+
+        .viewer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .viewer-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .viewer-subtitle {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .panorama-container {
+            width: 100%;
+            max-width: 1000px;
+            height: 500px;
+            background: #2c3e50;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            position: relative;
+            box-shadow: var(--shadow);
+        }
+
+        .panorama-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #3498db, #2c3e50);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .panorama-placeholder i {
+            font-size: 5rem;
+            margin-bottom: 25px;
+            color: var(--secondary);
+        }
+
+        .panorama-placeholder h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .panorama-controls {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .control-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .control-btn:hover {
+            background: rgba(255,255,255,0.25);
+            transform: scale(1.1);
+        }
+
+        /* ===== MAP ===== */
+        .map-section {
+            background: var(--light);
+        }
+
+        .dark-mode .map-section {
+            background: var(--light);
+        }
+
+        .map-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 550px;
+            border: none;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery-section {
+            background: linear-gradient(to right, #f0f7ff, #e6f0ff);
+        }
+
+        .dark-mode .gallery-section {
+            background: linear-gradient(to right, #0f172a, #1e293b);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 220px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26,35,126,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: white;
+            font-size: 2.2rem;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-section {
+            background: linear-gradient(rgba(26,35,126,0.92), rgba(13,27,78,0.95)), url('https://images.unsplash.com/photo-1605115285284-7b2ed1f34d15?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            color: white;
+            padding: 100px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+        }
+
+        .testimonial-card {
+            background: rgba(0,0,0,0.35);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            font-family: Georgia, serif;
+            font-size: 5rem;
+            color: rgba(255,255,255,0.1);
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            font-size: 1.2rem;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            border: 4px solid var(--secondary);
+        }
+
+        .author-info h4 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            font-size: 1.05rem;
+            opacity: 0.85;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-section {
+            background: var(--light);
+        }
+
+        .dark-mode .contact-section {
+            background: var(--light);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            background: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .contact-details {
+            margin-bottom: 35px;
+        }
+
+        .contact-item {
+            display: flex;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            font-size: 1.4rem;
+        }
+
+        .contact-text h4 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-text p, .contact-text a {
+            font-size: 1.05rem;
+            opacity: 0.85;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+            color: var(--primary);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .dark-mode .contact-form {
+            background: #1e293b;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--primary);
+        }
+
+        .dark-mode .form-group label {
+            color: var(--light);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.05rem;
+            transition: var(--transition);
+        }
+
+        .dark-mode .form-control {
+            background: #334155;
+            border-color: #475569;
+            color: white;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(26,35,126,0.2);
+        }
+
+        textarea.form-control {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.15rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(26,35,126,0.3);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 0;
+        }
+
+        .dark-mode footer {
+            background: #0f172a;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 4px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 8px;
+        }
+
+        .footer-links a i {
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+
+        .copyright a {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .culture-container,
+            .essentials-grid,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn, .theme-toggle {
+                display: block;
+            }
+            .nav-links {
+                position: fixed;
+                top: 75px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 75px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+            }
+            .dark-mode .nav-links {
+                background: var(--light);
+            }
+            .nav-links.active {
+                left: 0;
+            }
+            .nav-links li {
+                margin: 20px 0;
+            }
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            .packages-carousel {
+                gap: 20px;
+            }
+            .package-card {
+                min-width: 320px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            .places-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .weather-widget {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .theme-toggle {
+                margin-left: 10px;
+            }
+            .btn {
+                padding: 14px 28px;
+                font-size: 1rem;
+            }
+        }
+        .logo img {
+            height: 100px;
+        }
+        /* VR Section Enhancements */
+.viewer-section {
+    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.viewer-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.viewer-container {
+    position: relative;
+    z-index: 2;
+}
+
+.viewer-title {
+    color: white;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.viewer-subtitle {
+    color: #bbdefb;
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* VR Button Styles */
+#panorama {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+#panorama:hover {
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+    transform: translateY(-5px);
+}
+
+/* VR Control Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+/* VR Hotspot Tooltip (Optional) */
+.pannellum .pnlm-hotspot.pnlm-info {
+    background: #1a237e;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    max-width: 200px;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <img src="Images/TT4.png" alt="Travel Tales Logo">
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#culture">Culture</a></li>
+                <li><a href="#essentials">Travel Guide</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#map">Map</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <img src="https://images.unsplash.com/photo-1668437824006-1be44600774b?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGFydW5hY2hhbCUyMHByYWRlc2h8ZW58MHx8MHx8fDA%3D" alt="Arunachal Pradesh Himalayas" class="hero-bg">
+        <div class="hero-content">
+            <h1>Land of the Rising Sun</h1>
+            <p class="hero-subtitle">Discover the untouched Himalayan paradise where ancient monasteries, snow-capped peaks, and vibrant tribal cultures converge</p>
+            <div class="hero-btns">
+                <a href="#packages" class="btn btn-primary">Explore Packages</a>
+                <a href="#essentials" class="btn btn-outline">Travel Guide</a>
+            </div>
+        </div>
+        <div class="scroll-down" onclick="document.getElementById('key-info').scrollIntoView({behavior: 'smooth'})">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Key Info Section (NEW - First after Hero) -->
+    <section class="section key-info" id="key-info">
+        <div class="container">
+            <div class="section-title">
+                <h2>Essential Arunachal Facts</h2>
+                <p>Everything you need to know before your Himalayan journey</p>
+            </div>
+            <div class="key-info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>First to Greet the Sun</h3>
+                    <p>Easternmost state of India — witnesses sunrise before any other state</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3>ILP Required</h3>
+                    <p>Inner Line Permit mandatory for all Indian & foreign visitors</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-people-roof"></i>
+                    </div>
+                    <h3>26+ Tribal Communities</h3>
+                    <p>Rich cultural tapestry of Monpa, Apatani, Nyishi, Adi, and more</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>7,000+ Meters</h3>
+                    <p>Kangto Peak — one of the highest in Eastern Himalayas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="section destinations" id="destinations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Must-Visit Destinations</h2>
+                <p>From sacred monasteries to emerald valleys — experience the soul of Arunachal</p>
+            </div>
+            <div class="places-grid">
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://media.istockphoto.com/id/1305097376/photo/colorful-gateway-with-buddhist-prayer-flags-in-himalayas-tawang-india.jpg?s=612x612&w=0&k=20&c=lYfhFTyDh0fRtByhDA1cpm0COKBze9Pni_GAWuVwZ-8=" alt="Tawang Monastery">
+                        <span class="place-badge">Spiritual Heart</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Tawang</h3>
+                        <div class="place-meta">
+                            <div class="meta-item"><i class="fas fa-calendar-alt"></i> Mar-Oct</div>
+                            <div class="meta-item"><i class="fas fa-map-marker-alt"></i> West Kameng</div>
+                        </div>
+                        <p>Home to India's largest Buddhist monastery (2nd largest in the world), Sela Pass (4,170m), and the majestic Nuranang Falls.</p>
+                        <a href="#" class="place-btn">Explore Tawang <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://travel-blog.happyeasygo.com/wp-content/uploads/2025/03/Ziro-Valley-Arunachal-Pradesh.png" alt="Ziro Valley">
+                        <span class="place-badge">UNESCO Site</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Ziro Valley</h3>
+                        <div class="place-meta">
+                            <div class="meta-item"><i class="fas fa-calendar-alt"></i> Mar-Oct</div>
+                            <div class="meta-item"><i class="fas fa-map-marker-alt"></i> Lower Subansiri</div>
+                        </div>
+                        <p>Picturesque rice terraces, Apatani tribe culture, Talley Valley Wildlife Sanctuary, and the rare Shirui Lily festival.</p>
+                        <a href="#" class="place-btn">Discover Ziro <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://thumbs.dreamstime.com/b/ancient-buddhist-colorful-monastery-blue-sky-different-angle-day-image-taken-bomdila-arunachal-pradesh-india-226687024.jpg" alt="Bomdila">
+                        <span class="place-badge">Hill Station Gem</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Bomdila</h3>
+                        <div class="place-meta">
+                            <div class="meta-item"><i class="fas fa-calendar-alt"></i> Apr-Nov</div>
+                            <div class="meta-item"><i class="fas fa-map-marker-alt"></i> West Kameng</div>
+                        </div>
+                        <p>Charming town with apple orchards, Buddhist monasteries, craft centers, and the biodiverse Eaglenest Wildlife Sanctuary.</p>
+                        <a href="#" class="place-btn">Visit Bomdila <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Heritage Section -->
+    <!-- Cultural Heritage Section -->
+<section class="section culture-section" id="culture">
+    <div class="container">
+        <div class="section-title">
+            <h2>Rich Cultural Heritage</h2>
+            <p>The land where ancient traditions thrive amidst Himalayan grandeur</p>
+        </div>
+
+        <div class="culture-container">
+            <div class="culture-imgs">
+                <!-- First Image -->
+                <div class="culture-img">
+                    <img src="https://thumbs.dreamstime.com/b/group-dance-apatani-people-dhree-festival-ziro-aruanchal-pradesh-india-march-apatani-people-dhree-festval-189354705.jpg" alt="Apatani Tribe Festival">
+                    <div class="culture-overlay">
+                        <h3>Apatani Tribe Festival</h3>
+                    </div>
+                </div>
+                <br>
+                <!-- Second Image (Added Below) -->
+                <div class="culture-img">
+                    <img src="https://www.hindustantimes.com/ht-img/img/2023/12/06/1600x900/hornbill_festival_1701866718116_1701866718314.jfif" alt="Hornbill Festival Nagaland">
+                    <div class="culture-overlay">
+                        <h3>Hornbill Festival Nagaland</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="culture-content">
+                <h2>Land of Living Traditions</h2>
+                <p>Arunachal Pradesh is home to 26 major tribes, each with distinct languages, festivals, textiles, and spiritual practices deeply connected to nature.</p>
+                <p>The state celebrates over 50 festivals annually — from the Buddhist <strong>Torgya Festival</strong> in Tawang to the animist <strong>Nyokum Festival</strong> of the Nyishi people.</p>
+
+                <!-- Tribe of the Month -->
+                <div class="tribe-spotlight">
+                    <div class="tribe-header">
+                        <div class="tribe-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="tribe-title">
+                            <h3>Tribe of the Month: Apatani</h3>
+                            <p>Ziro Valley, Lower Subansiri</p>
+                        </div>
+                    </div>
+
+                    <div class="tribe-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-female"></i></div>
+                            <div>
+                                <h4>Facial Tattoos</h4>
+                                <p>Traditional practice for women (now discontinued)</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-tractor"></i></div>
+                            <div>
+                                <h4>Rice-Fish Farming</h4>
+                                <p>Sustainable integrated agriculture system</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-home"></i></div>
+                            <div>
+                                <h4>Stilt Houses</h4>
+                                <p>Eco-friendly bamboo architecture</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fas fa-music"></i></div>
+                            <div>
+                                <h4>Myoko Festival</h4>
+                                <p>March-April: Renewal of friendships & nature</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Travel Essentials Section -->
+    <section class="section essentials-section" id="essentials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Traveler's Essential Guide</h2>
+                <p>Everything you need to plan your perfect Himalayan journey</p>
+            </div>
+            <div class="essentials-grid">
+                <div class="essentials-content">
+                    <h2>Plan Your Trip</h2>
+                    <p>From permits to packing — we've got you covered for a seamless Arunachal experience.</p>
+                    
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>ILP (Inner Line Permit)</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p><strong>Required for all visitors</strong> (Indian & foreign). Apply online at <a href="https://arunachalilp.com" target="_blank">arunachalilp.com</a> or through registered travel agents. Processing time: 3-7 days. Valid for 30 days.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Best Time to Visit</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p><strong>October-November</strong> (clear skies, festivals) and <strong>March-April</strong> (spring blooms, pleasant weather) are ideal. Avoid monsoon (June-Sept) due to landslides. Winter (Dec-Feb) offers snow in higher reaches.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Packing Checklist</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Layers (0°C to 25°C), waterproof jacket, sturdy shoes, sunscreen, hat, power bank, basic medicines, and modest clothing for monastery visits. Carry cash — ATMs are limited outside towns.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Cultural Etiquette</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Remove shoes before entering monasteries/homes, ask permission before photographing people, avoid public displays of affection, and respect sacred sites. Learn basic greetings in local languages.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2>Current Weather</h2>
+                    <p>Real-time conditions across key destinations:</p>
+                    <div class="weather-widget">
+                        <div class="weather-card">
+                            <div class="weather-location">Itanagar</div>
+                            <div class="weather-temp">22°C</div>
+                            <div class="weather-condition">Partly Cloudy</div>
+                        </div>
+                        <div class="weather-card">
+                            <div class="weather-location">Tawang</div>
+                            <div class="weather-temp">8°C</div>
+                            <div class="weather-condition">Clear Sky</div>
+                        </div>
+                        <div class="weather-card">
+                            <div class="weather-location">Ziro</div>
+                            <div class="weather-temp">18°C</div>
+                            <div class="weather-condition">Light Rain</div>
+                        </div>
+                    </div>
+                    
+                    <div class="soundscapes" style="margin-top: 40px;">
+                        <h3>Ambient Soundscapes</h3>
+                        <p>Immerse yourself in the sounds of Arunachal:</p>
+                        <div style="display: flex; gap: 15px; margin-top: 20px;">
+                            <button class="btn" style="flex:1; padding:12px; font-size:0.95rem;">
+                                <i class="fas fa-wind"></i> Himalayan Winds
+                            </button>
+                            <button class="btn" style="flex:1; padding:12px; font-size:0.95rem; background:#7e57c2; color:white;">
+                                <i class="fas fa-music"></i> Monastery Chants
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+<section class="packages-section" id="packages">
+    <div class="container">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title" style="margin:0; text-align:left; font-size:2.4rem;">Curated Tour Packages</h2>
+                <p style="color:var(--gray); margin-top:10px; max-width:600px;">Handcrafted journeys for culture seekers, adventurers, and spiritual travelers</p>
+            </div>
+            <a href="#" class="view-all" style="font-weight:600; color:var(--primary);">
+                View All <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+    
+    <!-- Packages Section (Enhanced Horizontal Scroll) -->
+    <section class="section packages-section" id="packages">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title" style="margin:0; text-align:left;">
+                    <h2>Curated Tour Packages</h2>
+                    <p>Expertly designed journeys for every traveler</p>
+                </div>
+                <a href="#" class="view-all">View All Packages <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="packages-carousel" id="packagesCarousel">
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1570107735144-3e1b99190c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tawang Monastery">
+                        <span class="package-badge">Top Rated</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Tawang Spiritual Journey</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 5 Days</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.9 (128)</div>
+                        </div>
+                        <div class="package-price">₹18,500 <span>per person</span></div>
+                        <p>Monastery stays, Sela Pass crossing, Nuranang Falls trek, and Buddhist philosophy sessions.</p>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1624753280151-3fe9b199a39f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ziro Valley">
+                        <span class="package-badge">Cultural</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Ziro Valley Adventure</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 4 Days</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.8 (92)</div>
+                        </div>
+                        <div class="package-price">₹15,000 <span>per person</span></div>
+                        <p>Homestay with Apatani families, rice-field trekking, tribal craft workshops, and Myoko Festival.</p>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1608177439580-b4e478d50e82?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bomdila">
+                        <span class="package-badge">Family Friendly</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Bomdila Nature Retreat</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 3 Days</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.7 (76)</div>
+                        </div>
+                        <div class="package-price">₹12,500 <span>per person</span></div>
+                        <p>Apple orchard tours, monastery visits, Eaglenest birdwatching, and hot spring relaxation.</p>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1542259348-0d39a8b67a3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nuranang Falls">
+                        <span class="package-badge">Adventure</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Himalayan Trekker</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 7 Days</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.9 (64)</div>
+                        </div>
+                        <div class="package-price">₹28,000 <span>per person</span></div>
+                        <p>Multi-day trek from Tawang to Ziro via Sela Pass, Dirang Dzong, and Talley Valley Wildlife Sanctuary.</p>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1601763299962-9e0c5c74b4a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dirang">
+                        <span class="package-badge">Photography</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Monastery & Landscapes</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 6 Days</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 5.0 (42)</div>
+                        </div>
+                        <div class="package-price">₹22,500 <span>per person</span></div>
+                        <p>Guided photography tour of Tawang, Bomdila, and Dirang with drone permits and golden hour sessions.</p>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                
+                <!-- Existing packages (size reduced) -->
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1570107735144-3e1b99190c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tawang Exploration">
+                        <span class="package-badge">Top Rated</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Tawang Spiritual Journey</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 5 Days</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.9</div>
+                        </div>
+                        <div class="package-price">₹18,500 <span>per person</span></div>
+                        <p>Monastery stays, Sela Pass crossing, and Buddhist philosophy sessions.</p>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1624753280151-3fe9b199a39f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ziro Valley Adventure">
+                        <span class="package-badge">Cultural</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Ziro Valley Adventure</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 4 Days</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.8</div>
+                        </div>
+                        <div class="package-price">₹15,000 <span>per person</span></div>
+                        <p>Homestay with Apatani families and tribal craft workshops.</p>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1608177439580-b4e478d50e82?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bomdila Nature Retreat">
+                        <span class="package-badge">Family Friendly</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Bomdila Nature Retreat</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 3 Days</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.7</div>
+                        </div>
+                        <div class="package-price">₹12,500 <span>per person</span></div>
+                        <p>Apple orchards, monastery visits, and hot spring relaxation.</p>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                
+                <!-- NEW PACKAGES -->
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1542259348-0d39a8b67a3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Nuranang Falls Trek">
+                        <span class="package-badge">Adventure</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Nuranang Falls Trek</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 2 Days</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.6</div>
+                        </div>
+                        <div class="package-price">₹8,800 <span>per person</span></div>
+                        <p>Jungle trek to Northeast's tallest waterfall with local guides.</p>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1601763299962-9e0c5c74b4a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dirang Heritage">
+                        <span class="package-badge">Photography</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Dirang Heritage Tour</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 4 Days</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.8</div>
+                        </div>
+                        <div class="package-price">₹14,200 <span>per person</span></div>
+                        <p>Dzong exploration, hot springs, and ancient monastery photography.</p>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1590523278191-995cbcda646b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Apatani Village">
+                        <span class="package-badge">Tribal</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Apatani Cultural Immersion</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 5 Days</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 5.0</div>
+                        </div>
+                        <div class="package-price">₹19,500 <span>per person</span></div>
+                        <p>Live with Apatani families, learn rice-fish farming, and tribal crafts.</p>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1606010062319-4ab399d90937?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sela Pass">
+                        <span class="package-badge">Winter Special</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Sela Pass Winter Expedition</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 3 Days</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.7</div>
+                        </div>
+                        <div class="package-price">₹16,800 <span>per person</span></div>
+                        <p>Snow trekking at 4,170m, frozen lakes, and monastery winter rituals.</p>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Himalayan Trek">
+                        <span class="package-badge">Expert</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Himalayan Trekker</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 7 Days</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.9</div>
+                        </div>
+                        <div class="package-price">₹28,000 <span>per person</span></div>
+                        <p>Multi-day trek from Tawang to Ziro via high-altitude passes.</p>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1505228500390-210d259c3b44?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Festival Tour">
+                        <span class="package-badge">Festival</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Torgya Festival Tour</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 4 Days</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 5.0</div>
+                        </div>
+                        <div class="package-price">₹22,000 <span>per person</span></div>
+                        <p>Experience Tawang's vibrant Buddhist festival with exclusive access.</p>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1596346459924-73872373c95d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Luxury Tour">
+                        <span class="package-badge">Premium</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Luxury Himalayan Escape</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 6 Days</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 5.0</div>
+                        </div>
+                        <div class="package-price">₹45,000 <span>per person</span></div>
+                        <p>Private transport, luxury stays, personal guide, and helicopter transfers.</p>
+                        <button class="book-btn">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- 360° Panorama Viewer (Creative Feature) -->
+    <!-- 360° Panorama Viewer (Real VR Experience) -->
+<section class="viewer-section" id="vr-experience">
+    <div class="container">
+        <div class="viewer-container">
+            <h2 class="viewer-title">Virtual Tour: Tawang Monastery</h2>
+            <p class="viewer-subtitle">Experience the serenity of India's largest Buddhist monastery in 360° VR</p>
+            
+            <!-- VR Container -->
+            <div id="panorama" style="width:100%; max-width:1000px; height:500px; border-radius:20px; overflow:hidden; margin:0 auto 30px;">
+                <!-- Panorama will load here -->
+            </div>
+            
+            <!-- VR Controls -->
+            <div style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap;">
+                <button id="enterVrBtn" class="btn" style="background:#e91e63; padding:12px 25px;">
+                    <i class="fas fa-vr-cardboard"></i> Enter VR Mode
+                </button>
+                <button id="fullscreenBtn" class="btn" style="background:#2196f3; padding:12px 25px;">
+                    <i class="fas fa-expand"></i> Fullscreen
+                </button>
+                <a href="https://images.unsplash.com/photo-1570107735144-3e1b99190c94" 
+                   class="btn" style="background:#4caf50; padding:12px 25px;" 
+                   target="_blank" download>
+                    <i class="fas fa-download"></i> Download 8K Image
+                </a>
+            </div>
+            
+            <!-- VR Instructions -->
+            <div style="max-width:700px; margin:30px auto 0; text-align:center; color:rgba(255,255,255,0.8);">
+                <p><strong>How to use:</strong> 
+                    <span style="display:inline-block; margin:0 5px;">• Drag to look around</span> 
+                    <span style="display:inline-block; margin:0 5px;">• Scroll to zoom</span> 
+                    <span style="display:inline-block; margin:0 5px;">• VR button for headset</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+    <!-- Interactive Map Section -->
+    <section class="section map-section" id="map">
+        <div class="container">
+            <div class="section-title">
+                <h2>Interactive Travel Map</h2>
+                <p>Click on destinations to explore routes, distances, and travel times</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/d/u/8/embed?mid=1mWZVYZgyAr0dpPL5oD55VfO4zj-uPwQ&ehbc=2E312F" width="640" height="480"></iframe>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="section gallery-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>In Pictures: Arunachal Unfiltered</h2>
+                <p>Real moments from the Land of the Dawn-Lit Mountains</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://media.istockphoto.com/id/1324678303/photo/huge-buddha-golden-statue-from-different-perspective-with-moody-sky-at-evening.jpg?s=612x612&w=0&k=20&c=WvTGfhKQTQ4t4EiYqKZUNxFEgOGFBDS43PRQ9wXxFvA=" alt="Tawang Monastery">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://oddessemania.in/wp-content/uploads/2024/07/Ziro-valley-tourist-places-of-Ziro-valley-1200x540.jpg" alt="Ziro Valley">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.mycozytrip.com/public/uploads/places_to_visit/1705911596_1f5fdcd7e54f9329f5ad.jpg" alt="Sela Pass">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.tourmyindia.com/states/arunachalpradesh/images/nuranang-waterfall1.jpg" alt="Nuranang Falls">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/21/adbea9ca4936a35b9cab6007e8a783c9_1000x1000.jpg" alt="Dirang Dzong">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.global-gallivanting.com/wp-content/uploads/2015/12/1020242-01-1024x768.jpeg" alt="Apatani Village">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://media.istockphoto.com/id/467015009/photo/dirang-town-kameng-river-western-arunachal-pradesh-india.jpg?s=612x612&w=0&k=20&c=FVb8_ZNlytIaB85T_10r1aDoJgE1vyTtHQcuuZG8opc=" alt="Kameng River">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://media.istockphoto.com/id/1371289822/photo/himalayan-village-town-of-kalpa-with-kailash-mountain-snow-peaks-at-himachal-pradesh-india.jpg?s=612x612&w=0&k=20&c=ibz1ktqV34YlHk0FeSyBcoykG2IVViXNUxU2NLCGsg8=" alt="Himalayan Peaks">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Traveler Stories</h2>
+                <p>Real experiences from our Himalayan journeys</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>The Tawang monastery at sunrise was pure magic. Our guide shared profound insights into Buddhist philosophy that transformed my perspective. A journey of the soul.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://i.pravatar.cc/150?img=45" alt="Anjali R.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Anjali R.</h4>
+                            <p>Photographer, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Trekking through Ziro Valley with the Apatani tribe was unforgettable. Their sustainable farming practices and warm hospitality made this more than a trip — it was a life lesson.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://i.pravatar.cc/150?img=32" alt="Rajiv M.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rajiv M.</h4>
+                            <p>Ecologist, Bengaluru</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Our family loved the Bomdila apple orchard tour and hot springs. The kids were fascinated by the monastery rituals. Perfect blend of adventure and culture!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://i.pravatar.cc/150?img=68" alt="Priya S.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya S.</h4>
+                            <p>Family Traveler, Delhi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Plan Your Himalayan Journey</h2>
+                <p>Let our local experts craft your perfect Arunachal experience</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>We're based in Itanagar, Arunachal Pradesh — ready to help you explore responsibly with local insights.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-text">
+                                <h4>Address</h4>
+                                <p>Arunachal Tourism Office, Vivek Vihar, Itanagar, Arunachal Pradesh 791111</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@arunachaltours.in">info@arunachaltours.in</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-col socials">
+                        <h3>Connect With Us</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="trip">Trip Interest</label>
+                            <select id="trip" class="form-control">
+                                <option value="">Select...</option>
+                                <option value="tawang">Tawang Spiritual Tour</option>
+                                <option value="ziro">Ziro Cultural Experience</option>
+                                <option value="trekking">Himalayan Trekking</option>
+                                <option value="photography">Photography Expedition</option>
+                                <option value="custom">Custom Itinerary</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tell Us Your Dream Journey</label>
+                            <textarea id="message" class="form-control" placeholder="E.g., 'Interested in monastery stays', 'Want to meet Apatani elders', 'Seeking adventure trek'..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>About Arunachal</h3>
+                    <p>"Land of the Dawn-Lit Mountains" — a Himalayan paradise with 26 major tribes, ancient monasteries, and untouched natural beauty.</p><br>
+                    <div class="footer-col socials">
+                        <h3>Connect With Us</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#destinations"><i class="fas fa-chevron-right"></i> Destinations</a></li>
+                        <li><a href="#culture"><i class="fas fa-chevron-right"></i> Cultural Heritage</a></li>
+                        <li><a href="#essentials"><i class="fas fa-chevron-right"></i> Travel Guide</a></li>
+                        <li><a href="#packages"><i class="fas fa-chevron-right"></i> Tour Packages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Travel Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> ILP Application Guide</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Best Time to Visit</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Packing Checklist</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Cultural Etiquette</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Safety Guidelines</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Subscribe</h3>
+                    <p>Get travel stories, offers, and Himalayan insights:</p>
+                    <form style="margin-top:15px;">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your email" required style="padding:12px;">
+                        </div>
+                        <button type="submit" class="btn" style="width:100%; padding:12px; font-size:0.95rem;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Arunachal Explorer. All Rights Reserved. | Made with <i class="fas fa-heart" style="color:#ff6b6b;"></i> in the Himalayas</p>
+                <p>Official partner of <a href="https://arunachaltourism.com" target="_blank">Arunachal Pradesh Tourism</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').style.opacity = '0';
+                document.getElementById('preloader').style.visibility = 'hidden';
+            }, 800);
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const icon = themeToggle.querySelector('i');
+        
+        // Check for saved theme preference or respect OS setting
+        const savedTheme = localStorage.getItem('arunachal-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            document.body.classList.add('dark-mode');
+            icon.className = 'fas fa-sun';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.className = 'fas fa-sun';
+                localStorage.setItem('arunachal-theme', 'dark');
+            } else {
+                icon.className = 'fas fa-moon';
+                localStorage.setItem('arunachal-theme', 'light');
+            }
+        });
+
+        // Packages Carousel Auto-scroll
+        const carousel = document.getElementById('packagesCarousel');
+        let scrollAmount = 0;
+        let autoScroll;
+
+        const startAutoScroll = () => {
+            autoScroll = setInterval(() => {
+                scrollAmount += 1;
+                if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+                    scrollAmount = 0;
+                }
+                carousel.scrollTo({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            }, 4000);
+        };
+
+        const stopAutoScroll = () => {
+            clearInterval(autoScroll);
+        };
+
+        carousel.addEventListener('mouseenter', stopAutoScroll);
+        carousel.addEventListener('mouseleave', startAutoScroll);
+        startAutoScroll();
+
+        // Accordion
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('i');
+                
+                // Close all other accordions
+                document.querySelectorAll('.accordion-content').forEach(el => {
+                    if (el !== content && el.style.maxHeight) {
+                        el.style.maxHeight = null;
+                        el.previousElementSibling.querySelector('i').className = 'fas fa-chevron-down';
+                    }
+                });
+                
+                // Toggle current
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.className = 'fas fa-chevron-down';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.className = 'fas fa-chevron-up';
+                }
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! We’ll get back to you within 24 hours.');
+            this.reset();
+        });
+    </script>
+    <script>
+// Initialize VR Viewer
+document.addEventListener('DOMContentLoaded', function() {
+    // Load 360° panorama
+    const viewer = pannellum.viewer('panorama', {
+        "type": "equirectangular",
+        "panorama": "https://maps.app.goo.gl/wJaFUme1prxcqpm8A", // REPLACE WITH YOUR 360° IMAGE
+        "autoLoad": true,
+        "showZoomCtrl": true,
+        "showFullscreenCtrl": false,
+        "compass": true,
+        "horizonPitch": 0,
+        "horizonRoll": 0,
+        "minHfov": 50,
+        "maxHfov": 120,
+        "hfov": 90,
+        "pitch": 0,
+        "yaw": 0,
+        
+        // Hotspots (optional - add points of interest)
+        "hotSpots": [
+            {
+                "pitch": -3.5,  // Vertical angle (-90 to 90)
+        "yaw": 25.0,    // Horizontal angle (-180 to 180)
+        "type": "info",
+        "text": "Main Prayer Hall<br><small>17th century architecture</small>",
+        "URL": "#prayer-hall"
+            },
+            {
+               "pitch": -1.2,
+        "yaw": -65.5,
+        "type": "scene",
+        "text": "Courtyard",
+        "sceneId": "courtyard"
+            }
+        ]
+    });
+
+    // VR Mode Button
+    document.getElementById('enterVrBtn').addEventListener('click', function() {
+        if (viewer.isVrCompatible()) {
+            viewer.startVrMode();
+            this.innerHTML = '<i class="fas fa-vr-cardboard"></i> Exit VR';
+            this.style.background = '#f44336';
+        } else {
+            alert('VR not supported in this browser. Try Chrome/Firefox on desktop or mobile.');
+        }
+    });
+
+    // Fullscreen Button
+    document.getElementById('fullscreenBtn').addEventListener('click', function() {
+        viewer.toggleFullscreen();
+    });
+
+    // Handle VR exit
+    viewer.on('vrleave', function() {
+        document.getElementById('enterVrBtn').innerHTML = '<i class="fas fa-vr-cardboard"></i> Enter VR Mode';
+        document.getElementById('enterVrBtn').style.background = '#e91e63';
+    });
+});
+const config = {
+    "default": {
+        "firstScene": "tawang",
+        "scenes": {
+            "tawang": {
+                "type": "equirectangular",
+                "panorama": "tawang-main.jpg",
+                "hotSpots": [ /* ... */ ]
+            },
+            "courtyard": {
+                "type": "equirectangular",
+                "panorama": "tawang-courtyard.jpg",
+                "hotSpots": [ /* ... */ ]
+            }
+        }
+    }
+};
+pannellum.viewer('panorama', config);
+</script>
+</body>
+</html>

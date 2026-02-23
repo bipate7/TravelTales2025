@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Tales Tours Packages</title>
+    <link rel="icon" href="Images/TT4.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/T.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <header>
+        <div class="top-bar">
+            <div>
+                <i class="fas fa-envelope"></i><a href="mailto:TravelTales@gmail.com">TravelTales@gmail.com</a>
+                <i class="fas fa-map-marker-alt"></i> Nagpur, Maharashtra
+            </div>
+            <div>
+                <a href="Sign Up.html">Login / Signup</a>
+                <a href="#">EN <i class="fas fa-chevron-down"></i></a>
+                <a href="https://www.facebook.com/login.php/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/login/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/account"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="logo">
+                <img src="Images/TT4.png" alt="Travel Tales Logo" width="100">
+            </div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="../Travel Tales/Tour.html" class="active">Tours</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../Travel Tales/Tours List.html">Tour List</a></li>
+                        <li><a href="../Travel Tales/Tours Packages.html" class="active">Tour Packages</a></li>
+                        <li><a href="../Travel Tales/Tour Details.html">Tour Details</a></li>
+                        <li><a href="../Travel Tales/Activities.html">Activities</a></li>
+                        <li><a href="../Travel Tales/Activity Details.html">Activity Details</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="../Destinations/Destinations.html">Destination</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../Destinations/All Destinations.html">All Destinations</a></li>
+                        <li><a href="./Destinations/Destination Single.html">Destination Single</a></li>
+                        <li><a href="../Services/Discover Hotel.html">Hotels</a></li>
+                        <li><a href="../Services/Hotel Services.html">Hotel Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Travel Tales/About Us.html">About</a></li>
+                <li class="dropdown">
+                    <a href="../Travel Tales/News.html">News</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../Blog/Ourblog.html">Our Blog</a></li>
+                        <li><a href="../Blog/BlogDetails.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Services/Contact.html">Contact</a></li>
+            </ul>
+            <div class="call-us">
+                <i class="fas fa-phone"></i> Call Us <br> +9999999999
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+        <div class="banner-text">
+            <h1>Tour Packages</h1>
+            <p><i class="fas fa-home"></i> Home <i class="fas fa-chevron-right"></i> Tour Packages</p>
+        </div>
+    </div>
+    
+    <!-- Tour Packages Header -->
+    <div class="tour-header">
+        <h1>Explore Our Tour Packages</h1>
+        <form class="container search-form mt-4">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-suitcase"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Where to go?" aria-label="Destination">
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <input type="date" class="form-control" placeholder="Check in">
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <input type="date" class="form-control" placeholder="Check out">
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <input type="number" class="form-control" placeholder="Guests">
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <button type="submit" class="btn btn-danger btn-block"><i class="fas fa-search"></i> Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <!-- Tour Packages Section -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Package 1 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="cultural">
+    <div class="card h-100" data-aos="fade-up" data-aos-duration="1000">
+        <img src="https://t4.ftcdn.net/jpg/04/08/25/05/360_F_408250543_MVaEVGeWxb4FiFy7mEGKj8nfYkwoAZON.jpg" class="card-img-top" alt="Varanasi">
+        <div class="card-body">
+            <h5 class="card-title">Varanasi - Spiritual Capital</h5>
+            <p class="card-text">Experience the divine Ganga Aarti and ancient spiritual traditions.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹8,500</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 2 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="beach">
+    <div class="card h-100" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+        <img src="https://plus.unsplash.com/premium_photo-1661962958462-9e52fda9954d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YW5kYW1hbnxlbnwwfHwwfHx8MA%3D%3D" class="card-img-top" alt="Andaman">
+        <div class="card-body">
+            <h5 class="card-title">Andaman - Tropical Paradise</h5>
+            <p class="card-text">Crystal clear waters and pristine beaches in this island paradise.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹28,000</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">6 Days, 5 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 3 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="mountain">
+    <div class="card h-100" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+        <img src="https://t4.ftcdn.net/jpg/02/57/91/21/360_F_257912197_ySuBhefKYPQIZNa3xeGiObLpgYBnH9U5.jpg" class="card-img-top" alt="Manali">
+        <div class="card-body">
+            <h5 class="card-title">Manali - Himalayan Retreat</h5>
+            <p class="card-text">Snow-capped peaks and adventure activities in the Himalayas.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹12,500</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">4 Days, 3 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 4 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="cultural">
+    <div class="card h-100" data-aos="fade-up" data-aos-duration="1000">
+        <img src="https://media.istockphoto.com/id/1195731546/photo/khajuraho-temple-madhya-pradesh-india.jpg?s=612x612&w=0&k=20&c=89x48HneRE__XcgEK7udhzXnP7WpqYdIAvW0LLM74PQ=" class="card-img-top" alt="Khajuraho">
+        <div class="card-body">
+            <h5 class="card-title">Khajuraho - Temple Art</h5>
+            <p class="card-text">Marvel at the exquisite temple architecture and ancient sculptures.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹9,800</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 5 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="wildlife">
+    <div class="card h-100" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+        <img src="https://t4.ftcdn.net/jpg/02/40/86/21/360_F_240862124_xuYe4djsNMsJ4PtvRHrUlfDTEbmU3Bxr.jpg" class="card-img-top" alt="Ranthambore">
+        <div class="card-body">
+            <h5 class="card-title">Ranthambore - Tiger Safari</h5>
+            <p class="card-text">Spot the majestic Bengal tigers in their natural habitat.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹15,000</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 6 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="hill-station">
+    <div class="card h-100" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+        <img src="https://images.unsplash.com/photo-1591089101324-2280d9260000?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bXVubmFyfGVufDB8fDB8fHww" class="card-img-top" alt="Munnar">
+        <div class="card-body">
+            <h5 class="card-title">Munnar - Tea Gardens</h5>
+            <p class="card-text">Lush green tea plantations and misty mountains of Kerala.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹11,200</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">4 Days, 3 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 7 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="cultural">
+    <div class="card h-100" data-aos="fade-up" data-aos-duration="1000">
+        <img src="https://images.unsplash.com/photo-1677211352662-30e7775c7ce8?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a29uYXJrJTIwc3VuJTIwdGVtcGxlfGVufDB8fDB8fHww" class="card-img-top" alt="Konark">
+        <div class="card-body">
+            <h5 class="card-title">Konark - Sun Temple</h5>
+            <p class="card-text">Ancient architectural marvel dedicated to the Sun God.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹7,500</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">2 Days, 1 Night</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 8 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="beach">
+    <div class="card h-100" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+        <img src="https://trawelmart.com/_next/image?url=https%3A%2F%2Ftrawel.blob.core.windows.net%2Ftrawel%2Fcontent_files%2FLakshadweep%2F9bf8249f-78b.jpg&w=3840&q=75" class="card-img-top" alt="Lakshadweep">
+        <div class="card-body">
+            <h5 class="card-title">Lakshadweep - Coral Islands</h5>
+            <p class="card-text">Pristine coral reefs and turquoise lagoons in this tropical paradise.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹32,000</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">5 Days, 4 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 9 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="pilgrimage">
+    <div class="card h-100" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+        <img src="https://images.pexels.com/photos/15017640/pexels-photo-15017640.jpeg?cs=srgb&dl=pexels-rajesh-s-balouria-1289088-15017640.jpg&fm=jpg" class="card-img-top" alt="Badrinath">
+        <div class="card-body">
+            <h5 class="card-title">Badrinath - Divine Himalayas</h5>
+            <p class="card-text">Sacred pilgrimage site nestled in the Garhwal Himalayas.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹14,500</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">5 Days, 4 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 10 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="desert">
+    <div class="card h-100" data-aos="fade-up" data-aos-duration="1000">
+        <img src="https://res.cloudinary.com/kmadmin/image/upload/v1723014813/kiomoi/Jaisalmer_Fort_%282%29_9552.jpg" class="card-img-top" alt="Jaisalmer">
+        <div class="card-body">
+            <h5 class="card-title">Jaisalmer - Golden City</h5>
+            <p class="card-text">Golden sand dunes and magnificent forts in the Thar Desert.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹12,800</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">4 Days, 3 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 11 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="backwaters">
+    <div class="card h-100" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+        <img src="https://media.istockphoto.com/id/888526036/photo/houseboat-on-kerala-backwaters-in-alleppey-kerala-india.jpg?s=612x612&w=0&k=20&c=V4yzz05FITU2jW4PKke8wAMjIkyNeq0pAMVZStkaKZo=" class="card-img-top" alt="Alleppey">
+        <div class="card-body">
+            <h5 class="card-title">Alleppey - Houseboat Experience</h5>
+            <p class="card-text">Tranquil backwaters and traditional houseboat stays in Kerala.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹13,500</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 12 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="hill-station">
+    <div class="card h-100" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+        <img src="https://t4.ftcdn.net/jpg/08/66/94/01/360_F_866940191_ud3TRZ47bmZQar43zlesyDNTDo5yNm81.jpg" class="card-img-top" alt="Coorg">
+        <div class="card-body">
+            <h5 class="card-title">Coorg - Scotland of India</h5>
+            <p class="card-text">Coffee plantations and misty hills in Karnataka's beautiful district.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹10,200</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 13 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="cultural">
+    <div class="card h-100" data-aos="fade-up" data-aos-duration="1000">
+        <img src="https://media.istockphoto.com/id/2149703338/photo/the-great-stupa-at-sanchi-india.jpg?s=612x612&w=0&k=20&c=jTq6BPsdEBCRDBD9f8vZuR5Alzt1lxUwamGksgvwON4=" class="card-img-top" alt="Sanchi">
+        <div class="card-body">
+            <h5 class="card-title">Sanchi - Buddhist Heritage</h5>
+            <p class="card-text">Ancient Buddhist stupas and monuments dating back to 3rd century BC.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹8,000</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">2 Days, 1 Night</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 14 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="wildlife">
+    <div class="card h-100" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+        <img src="https://t4.ftcdn.net/jpg/01/99/16/47/360_F_199164728_djFC9mgXZO9HJ1WMWrMYdiNx74etyCqS.jpg" class="card-img-top" alt="Kaziranga">
+        <div class="card-body">
+            <h5 class="card-title">Kaziranga - Rhino Sanctuary</h5>
+            <p class="card-text">Home to the endangered one-horned rhinoceros in Assam.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹16,500</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">4 Days, 3 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 15 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="beach">
+    <div class="card h-100" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+        <img src="https://images.pexels.com/photos/27023262/pexels-photo-27023262.jpeg?cs=srgb&dl=pexels-tanmoy-pal-3640736-27023262.jpg&fm=jpg" class="card-img-top" alt="Puri">
+        <div class="card-body">
+            <h5 class="card-title">Puri - Beach Temple</h5>
+            <p class="card-text">Famous Jagannath Temple and beautiful beaches of Odisha.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹9,500</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 16 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="mountain">
+    <div class="card h-100" data-aos="fade-up" data-aos-duration="1000">
+        <img src="https://images.pexels.com/photos/32935442/pexels-photo-32935442.jpeg?cs=srgb&dl=pexels-vikas-lone-825341464-32935442.jpg&fm=jpg" class="card-img-top" alt="Gulmarg">
+        <div class="card-body">
+            <h5 class="card-title">Gulmarg - Ski Paradise</h5>
+            <p class="card-text">World-class skiing and gondola rides in the Pir Panjal range.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹18,000</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">4 Days, 3 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 17 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="cultural">
+    <div class="card h-100" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+        <img src="https://images.unsplash.com/photo-1616606484004-5ef3cc46e39d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFtcGl8ZW58MHx8MHx8fDA%3D" class="card-img-top" alt="Hampi">
+        <div class="card-body">
+            <h5 class="card-title">Hampi - Ruins Empire</h5>
+            <p class="card-text">Ancient ruins of Vijayanagara Empire, a UNESCO World Heritage site.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹11,000</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 18 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="pilgrimage">
+    <div class="card h-100" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+        <img src="https://media.istockphoto.com/id/539105384/photo/kedarnath-in-india.jpg?s=612x612&w=0&k=20&c=0nK5I_7HUWn3VOuHyWxGc7_eJilZY1Wa975eA_FKdB8=" class="card-img-top" alt="Kedarnath">
+        <div class="card-body">
+            <h5 class="card-title">Kedarnath - Shiva's Abode</h5>
+            <p class="card-text">One of the twelve Jyotirlingas, nestled in the Garhwal Himalayas.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹15,800</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">5 Days, 4 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 19 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="backwaters">
+    <div class="card h-100" data-aos="fade-up" data-aos-duration="1000">
+        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/kumarakom-backwaters-kumarakom-kerala-attr-hero-1?qlt=82&ts=1727367710450" class="card-img-top" alt="Kumarakom">
+        <div class="card-body">
+            <h5 class="card-title">Kumarakom - Bird Sanctuary</h5>
+            <p class="card-text">Bird watching and backwater cruises in this Kerala paradise.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹12,500</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 20 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="desert">
+    <div class="card h-100" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+        <img src="https://t3.ftcdn.net/jpg/02/55/77/58/360_F_255775843_2rP3FtIOvSEzjzZIGNvHvwmvIuY3SjMK.jpg" class="card-img-top" alt="Bikaner">
+        <div class="card-body">
+            <h5 class="card-title">Bikaner - Camel Country</h5>
+            <p class="card-text">Desert forts and the famous camel breeding farm in Rajasthan.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹10,800</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 21 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="hill-station">
+    <div class="card h-100" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+        <img src="https://t3.ftcdn.net/jpg/08/66/94/08/360_F_866940859_vyTEYM5S4u6IPfIfPjNn6ZNwsRWgvIn6.jpg" class="card-img-top" alt="Shillong">
+        <div class="card-body">
+            <h5 class="card-title">Shillong - Scotland of East</h5>
+            <p class="card-text">Picturesque hills and waterfalls in Meghalaya's capital.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹13,200</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">4 Days, 3 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 22 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="wildlife">
+    <div class="card h-100" data-aos="fade-up" data-aos-duration="1000">
+        <img src="https://t4.ftcdn.net/jpg/01/63/62/57/360_F_163625753_8qYwMxQlVmyBIJRJHoUVf7OwsRiJG3dF.jpg" class="card-img-top" alt="Bandhavgarh">
+        <div class="card-body">
+            <h5 class="card-title">Bandhavgarh - Tiger Reserve</h5>
+            <p class="card-text">High density of royal Bengal tigers in Madhya Pradesh.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹17,500</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">4 Days, 3 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 23 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="beach">
+    <div class="card h-100" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+        <img src="https://t4.ftcdn.net/jpg/01/03/86/23/360_F_103862339_cOfXZoaAkgfcJ2l4LfVfshucKw09AIBd.jpg" class="card-img-top" alt="Kovalam">
+        <div class="card-body">
+            <h5 class="card-title">Kovalam - Lighthouse Beach</h5>
+            <p class="card-text">Famous crescent-shaped beaches and Ayurvedic treatments.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹11,800</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">4 Days, 3 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Package 24 -->
+<div class="col-lg-4 col-md-6 mb-4 package-card" data-category="mountain">
+    <div class="card h-100" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+        <img src="https://images.unsplash.com/photo-1623727705498-51a6a4154384?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXVsaXxlbnwwfHwwfHx8MA%3D%3D&fm=jpg&q=60&w=3000" class="card-img-top" alt="Auli">
+        <div class="card-body">
+            <h5 class="card-title">Auli - Ski Destination</h5>
+            <p class="card-text">Beautiful skiing slopes with panoramic views of Himalayan peaks.</p>
+            
+            <div class="price-container">
+                <div>
+                    <div class="price-label">PRICE</div>
+                    <div class="price-value">₹16,500</div>
+                    <small class="text-muted">per person</small>
+                </div>
+                <div>
+                    <div class="duration-label">DURATION</div>
+                    <div class="duration-value">4 Days, 3 Nights</div>
+                </div>
+            </div>
+            
+            <div class="rating">⭐⭐⭐⭐</div>
+            <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+    
+    <!-- Pagination -->
+    <div class="pagination-container">
+        <ul class="pagination">
+            <li><a href="Tours Packages.html" class="page-link">&laquo; Prev</a></li>
+            <li><a href="Tours Packages.html" class="page-link">1</a></li>
+            <li><a href="Tp.html" class="page-link ">2</a></li>
+            <li><a href="T1.html" class="page-link active">3</a></li>
+            <li><a href="T2.html" class="page-link">4</a></li>
+            <li><a href="T3.html" class="page-link">5</a></li>
+            <li><a href="T2.html" class="page-link">Next &raquo;</a></li>
+        </ul>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">Why Choose TravelTales</h2>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h4>Best Price Guarantee</h4>
+                        <p>We offer the best prices for all our tour packages with no hidden costs.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4>24/7 Customer Support</h4>
+                        <p>Our dedicated support team is available round the clock to assist you.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Safe & Secure</h4>
+                        <p>Your safety and security are our top priorities during your travels.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Special Offers Section -->
+    <section class="offers-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">Special Offers</h2>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="offer-card position-relative">
+                        <div class="offer-badge">25% OFF</div>
+                        <h4>Early Bird Discount</h4>
+                        <p>Book 60 days in advance and get 25% off on selected packages.</p>
+                        <a href="#" class="btn btn-danger mt-3">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="offer-card position-relative">
+                        <div class="offer-badge">Family Deal</div>
+                        <h4>Family Package</h4>
+                        <p>Special discounts for family bookings. Kids under 12 travel free.</p>
+                        <a href="#" class="btn btn-danger mt-3">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                    <div class="offer-card position-relative">
+                        <div class="offer-badge">Group Offer</div>
+                        <h4>Group Discount</h4>
+                        <p>Travel with 8+ people and get exclusive group discounts.</p>
+                        <a href="#" class="btn btn-danger mt-3">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="text-center mb-5">What Our Customers Say</h2>
+
+            <div class="row">
+                <!-- Testimonial 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <img src="https://media.istockphoto.com/id/1230749818/photo/portrait-of-smiling-male-owner-of-fashion-store-standing-in-front-of-clothing-display.jpg?s=612x612&w=0&k=20&c=xoWhF-hrQcbMEPDYncHiHF8HJX2YgmYt7T-KLCPZIpY=" alt="Customer 1" class="testimonial-image">
+                        <p class="testimonial-text">"Absolutely amazing experience! The trip was well-planned, and everything went smoothly. Can't wait to book another one!"</p>
+                        <h5 class="testimonial-author">John Doe</h5>
+                        <span class="testimonial-location">New York, USA</span>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <img src="https://d2v5dzhdg4zhx3.cloudfront.net/web-assets/images/storypages/short/linkedin-profile-picture-maker/dummy_image/thumb/004.webp" alt="Customer 2" class="testimonial-image">
+                        <p class="testimonial-text">"The attention to detail was impressive. Our guide was knowledgeable and made our trip memorable. Highly recommended!"</p>
+                        <h5 class="testimonial-author">Sarah Johnson</h5>
+                        <span class="testimonial-location">London, UK</span>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <img src="https://media.istockphoto.com/id/1311084168/photo/overjoyed-pretty-asian-woman-look-at-camera-with-sincere-laughter.jpg?s=612x612&w=0&k=20&c=akS4eKR3suhoP9cuk7_7ZVZrLuMMG0IgOQvQ5JiRmAg=" alt="Customer 3" class="testimonial-image">
+                        <p class="testimonial-text">"Value for money! We got to see so many places and the accommodations were excellent. Will definitely travel with Travel Tales again."</p>
+                        <h5 class="testimonial-author">Emma Wilson</h5>
+                        <span class="testimonial-location">Sydney, Australia</span>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="custom-footer">
+        <!-- Decorative Wave -->
+        <div class="wave-divider">
+            <svg viewBox="0 0 120 28">
+                <path d="M0,0 C30,25 90,0 120,25 L120 0 L0 0 Z" fill="#2c3e50"></path>
+            </svg>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="Images/TT7.png" alt="Travel Tales Logo" />
+                </div>
+                <p>Wander more, wonder always. Your perfect journey begins with us.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/login/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/account"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../Destinations/Destinations.html">Destinations</a></li>
+                    <li><a href="#">Packages</a></li>
+                    <li><a href="#">Offers</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Get in Touch</h4>
+                <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+                <p><i class="fas fa-envelope"></i> TravelTales@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Nagpur, India</p>
+            </div>
+
+            <div class="newsletter">
+                <h4>Subscribe to Our Newsletter</h4>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 <span>Travel Tales </span>| All Rights Reserved.<br> Crafted with ❤️ by <strong>Karan Bipate</strong>.</p>
+        </div>
+    </footer>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Mobile menu toggle functionality
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('active');
+            
+            // Animate hamburger icon
+            this.classList.toggle('active');
+        });
+        
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.matches('.dropdown a')) {
+                var dropdowns = document.getElementsByClassName('dropdown-menu');
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === 'block') {
+                        openDropdown.style.display = 'none';
+                    }
+                }
+            }
+        });
+        
+        // Add animation to cards on scroll
+        function animateOnScroll() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                if (cardPosition < screenPosition) {
+                    card.style.opacity = 1;
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Initialize card animation
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(50px)';
+                card.style.transition = 'all 0.5s ease';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            // Trigger once on load
+            animateOnScroll();
+        });
+    </script>
+</body>
+</html>
+

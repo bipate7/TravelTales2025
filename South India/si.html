@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dakṣiṇa | South India — where the soul finds its rhythm</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --spice-red: #b34b3a;        /* warm earth */
+            --saffron-gold: #e0b87b;      /* soft sunrise */
+            --temple-stone: #b5926e;       /* carved sandstone */
+            --palm-green: #2f6b4a;         /* deep foliage */
+            --night-sky: #1f3b4c;           /* dark blue‑black */
+            --cream: #f9efe5;               /* rice & coconut */
+            --paper: #fffaf4;
+            --ink: #2f2f2b;
+            --shadow-sm: 0 12px 28px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 24px 48px rgba(0, 0, 0, 0.12);
+            --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            --border-radius-card: 32px;
+        }
+
+        .dark-mode {
+            --spice-red: #c46b5a;
+            --saffron-gold: #d4a373;
+            --temple-stone: #9c7a5c;
+            --palm-green: #3b7554;
+            --night-sky: #2b3b4f;
+            --cream: #2a2a27;
+            --paper: #1e1e1c;
+            --ink: #ece8e0;
+            --shadow-sm: 0 12px 28px rgba(0,0,0,0.5);
+            --shadow-lg: 0 24px 48px rgba(0,0,0,0.6);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--paper);
+            color: var(--ink);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background-color 0.4s, color 0.4s;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ----- glassmorphic header ----- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+            background: rgba(255, 250, 244, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: var(--transition);
+        }
+
+        .dark-mode header {
+            background: rgba(31, 59, 76, 0.7);
+        }
+
+        header.scrolled {
+            padding: 0.75rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--palm-green);
+            text-decoration: none;
+        }
+
+        .dark-mode .logo {
+            color: var(--saffron-gold);
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--spice-red);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+            transform: rotate(0deg);
+            transition: transform 0.6s;
+        }
+
+        .logo:hover .logo-icon {
+            transform: rotate(90deg);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--ink);
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--saffron-gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--temple-stone);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .theme-toggle {
+            width: 52px;
+            height: 28px;
+            background: #d4c9bc;
+            border-radius: 30px;
+            position: relative;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .dark-mode .theme-toggle {
+            background: #4a5c6b;
+        }
+
+        .theme-toggle::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 22px;
+            height: 22px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        .dark-mode .theme-toggle::before {
+            transform: translateX(24px);
+            background: #f5e6d3;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--ink);
+            cursor: pointer;
+        }
+
+        /* ----- hero (cinematic video) ----- */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(44, 62, 80, 0.3), rgba(0,0,0,0.7));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 5.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            animation: fadeUp 1.2s ease;
+        }
+
+        .hero-content h1 span {
+            color: var(--saffron-gold);
+            font-style: italic;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 600px;
+            animation: fadeUp 1.2s 0.2s both;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            animation: fadeUp 1.2s 0.4s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 1rem 2.5rem;
+            background: var(--spice-red);
+            color: white;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 18px rgba(179, 63, 47, 0.3);
+        }
+
+        .btn:hover {
+            background: #9e3629;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(179, 63, 47, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--ink);
+        }
+
+        .stats {
+            display: flex;
+            gap: 4rem;
+            margin-top: 4rem;
+            animation: fadeUp 1.2s 0.6s both;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--saffron-gold);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            animation: bounce 2.5s infinite;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-20px) translateX(-50%); }
+            60% { transform: translateY(-10px) translateX(-50%); }
+        }
+
+        /* ----- sections ----- */
+        .section {
+            padding: 140px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title h2 {
+            font-size: 4rem;
+            color: var(--palm-green);
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .dark-mode .section-title h2 {
+            color: var(--saffron-gold);
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--spice-red), var(--saffron-gold), transparent);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 1.3rem;
+            color: var(--temple-stone);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ----- states grid (5 cards) ----- */
+        .states-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 25px;
+        }
+
+        .state-card {
+            background: var(--cream);
+            border-radius: var(--border-radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            position: relative;
+            height: 500px;
+            transform-origin: center;
+        }
+
+        .dark-mode .state-card {
+            background: #2b3b4f;
+        }
+
+        .state-card:hover {
+            transform: scale(1.02) translateY(-12px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .state-img {
+            height: 320px;
+            overflow: hidden;
+        }
+
+        .state-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s;
+        }
+
+        .state-card:hover .state-img img {
+            transform: scale(1.1);
+        }
+
+        .state-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(5px);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--spice-red);
+            z-index: 2;
+        }
+
+        .state-info {
+            padding: 24px;
+            text-align: center;
+        }
+
+        .state-info h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--palm-green);
+        }
+
+        .state-info p {
+            color: var(--temple-stone);
+            margin-bottom: 20px;
+        }
+
+        .btn-gold {
+            background: var(--saffron-gold);
+            color: var(--night-sky);
+            box-shadow: 0 8px 18px rgba(233, 181, 107, 0.3);
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .btn-gold:hover {
+            background: #d49a5c;
+            transform: translateY(-3px);
+        }
+
+        /* ----- experiences (3 columns) ----- */
+        .experiences {
+            background: linear-gradient(145deg, var(--palm-green), #1e4632);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experiences::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -10%;
+            width: 120%;
+            height: 120%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path fill="white" d="M10,50 Q30,30 50,30 T90,40 L80,70 Q60,90 30,80 Z"/></svg>');
+            background-size: cover;
+            opacity: 0.1;
+            animation: slowShift 30s linear infinite;
+        }
+
+        @keyframes slowShift {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .experiences-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .exp-card {
+            background: rgba(255,255,255,0.07);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            padding: 48px 32px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: var(--transition);
+        }
+
+        .exp-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-12px) scale(1.02);
+        }
+
+        .exp-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 28px;
+            background: var(--saffron-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            color: var(--night-sky);
+        }
+
+        .exp-card h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .exp-card p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        /* ----- packages (with filter) ----- */
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 2rem;
+            background: transparent;
+            border: 1.5px solid var(--temple-stone);
+            border-radius: 60px;
+            font-weight: 600;
+            color: var(--ink);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--palm-green);
+            border-color: var(--palm-green);
+            color: white;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .pkg-card {
+            background: var(--cream);
+            border-radius: var(--border-radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .dark-mode .pkg-card {
+            background: #253544;
+        }
+
+        .pkg-card:hover {
+            transform: translateY(-16px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pkg-img {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pkg-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s;
+        }
+
+        .pkg-card:hover .pkg-img img {
+            transform: scale(1.08);
+        }
+
+        .pkg-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--saffron-gold);
+            color: var(--night-sky);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .pkg-price {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .pkg-body {
+            padding: 28px;
+        }
+
+        .pkg-body h3 {
+            font-size: 2rem;
+            color: var(--palm-green);
+            margin-bottom: 10px;
+        }
+
+        .pkg-meta {
+            display: flex;
+            gap: 24px;
+            margin: 20px 0;
+            color: var(--temple-stone);
+            font-size: 0.95rem;
+        }
+
+        .pkg-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .dark-mode .pkg-footer {
+            border-color: #3a4a5a;
+        }
+
+        /* ----- gallery carousel (infinite) ----- */
+        .gallery {
+            overflow: hidden;
+            padding: 80px 0;
+        }
+
+        .gallery-track {
+            display: flex;
+            gap: 20px;
+            animation: scroll 40s linear infinite;
+        }
+
+        .gallery-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-100% - 20px)); }
+        }
+
+        .gallery-item {
+            flex: 0 0 360px;
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 40px 24px 24px;
+            transform: translateY(100px);
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .gallery-caption h3 {
+            font-size: 1.8rem;
+            margin-bottom: 6px;
+        }
+
+        /* ----- testimonials ----- */
+        .testimonials {
+            background: linear-gradient(to bottom, var(--paper), #f2e9dd);
+        }
+
+        .dark-mode .testimonials {
+            background: linear-gradient(to bottom, #1e2b36, #1e1e1c);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .testimonial-card {
+            background: var(--cream);
+            padding: 40px;
+            border-radius: 40px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .dark-mode .testimonial-card {
+            background: #2a3847;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .testimonial-card::before {
+            content: '“';
+            font-size: 6rem;
+            color: var(--saffron-gold);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-family: serif;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 2;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .author-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--saffron-gold);
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1.4rem;
+            margin-bottom: 4px;
+        }
+
+        .author-info p {
+            color: var(--temple-stone);
+            font-size: 0.95rem;
+        }
+
+        /* ----- hidden gems (new) ----- */
+        .gems {
+            background: var(--paper);
+        }
+
+        .gems-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .gem-card {
+            text-align: center;
+            padding: 32px 24px;
+            background: var(--cream);
+            border-radius: 30px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .dark-mode .gem-card {
+            background: #273644;
+        }
+
+        .gem-card:hover {
+            transform: scale(1.03);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gem-icon {
+            font-size: 3rem;
+            color: var(--spice-red);
+            margin-bottom: 20px;
+        }
+
+        .gem-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        /* ----- cuisine section (new) ----- */
+        .cuisine {
+            background: linear-gradient(145deg, #f2e5d5, #e9d9c4);
+        }
+
+        .dark-mode .cuisine {
+            background: #1d2c37;
+        }
+
+        .cuisine-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .cuisine-card {
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .dark-mode .cuisine-card {
+            background: #2d3e4f;
+        }
+
+        .cuisine-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cuisine-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .cuisine-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .cuisine-card:hover .cuisine-img img {
+            transform: scale(1.08);
+        }
+
+        .cuisine-info {
+            padding: 24px;
+            text-align: center;
+        }
+
+        .cuisine-info h3 {
+            font-size: 1.8rem;
+            color: var(--palm-green);
+            margin-bottom: 8px;
+        }
+
+        .cuisine-info p {
+            color: var(--temple-stone);
+        }
+
+        /* ----- festivals (new) ----- */
+        .festivals {
+            background: var(--cream);
+        }
+
+        .festivals-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .festival-card {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .festival-img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .festival-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s;
+        }
+
+        .festival-card:hover .festival-img img {
+            transform: scale(1.1);
+        }
+
+        .festival-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 40px;
+            color: white;
+        }
+
+        .festival-overlay h3 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+        }
+
+        .festival-overlay p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* ----- newsletter ----- */
+        .newsletter {
+            background: var(--palm-green);
+            color: white;
+            border-radius: 60px;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .dark-mode .newsletter {
+            background: #1a3728;
+        }
+
+        .newsletter h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .newsletter p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 18px 30px;
+            border: none;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            padding: 18px 40px;
+            border: none;
+            background: var(--saffron-gold);
+            color: var(--night-sky);
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background: #c4914f;
+            transform: scale(1.03);
+        }
+
+        /* ----- footer ----- */
+        footer {
+            background: var(--night-sky);
+            color: #e0e0e0;
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 28px;
+            color: white;
+            position: relative;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--saffron-gold);
+        }
+
+        .footer-col p {
+            color: #aab8c5;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 18px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background: var(--spice-red);
+            transform: translateY(-6px);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 14px;
+        }
+
+        .footer-links a {
+            color: #aab8c5;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(6px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid #3e5468;
+            color: #8f9fb0;
+            font-size: 0.95rem;
+        }
+
+        /* ----- responsive ----- */
+        @media (max-width: 1200px) {
+            .states-grid { grid-template-columns: repeat(3, 1fr); }
+            .gems-grid, .cuisine-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 992px) {
+            .experiences-grid,
+            .testimonials-grid,
+            .festivals-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                background: var(--cream);
+                flex-direction: column;
+                padding: 40px 0;
+                transition: left 0.5s;
+                box-shadow: 5px 0 30px rgba(0,0,0,0.1);
+            }
+            .dark-mode .nav-links { background: #243341; }
+            .nav-links.active { left: 0; }
+            .mobile-toggle { display: block; }
+            .hero-content h1 { font-size: 3.5rem; }
+            .stats { flex-direction: column; gap: 20px; }
+            .states-grid,
+            .experiences-grid,
+            .testimonials-grid,
+            .gems-grid,
+            .cuisine-grid,
+            .festivals-grid,
+            .packages-grid { grid-template-columns: 1fr; }
+            .newsletter-form { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <header id="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-pagoda"></i>
+                </div>
+                Dakṣiṇa
+            </a>
+            <ul class="nav-links">
+                <li><a href="#states">states</a></li>
+                <li><a href="#experiences">experiences</a></li>
+                <li><a href="#packages">journeys</a></li>
+                <li><a href="#gems">hidden gems</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+            <div class="header-actions">
+                <div class="theme-toggle" id="themeToggle"></div>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- hero -->
+    <section class="hero">
+        <div class="hero-bg">
+            <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?w=1200">
+                <source src="https://videos.pexels.com/video-files/3214519/3214519-uhd_3840_2160_30fps.mp4" type="video/mp4">
+                <!-- fallback -->
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>where the soul <span>finds its rhythm</span></h1>
+                <p>South India — a tapestry of sacred chants, emerald backwaters, and timeless craft. Walk with us, slowly.</p>
+                <div class="hero-cta">
+                    <a href="#packages" class="btn">Begin journey</a>
+                    <a href="#states" class="btn btn-outline">Discover states</a>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number" id="templesCount">2300+</div>
+                        <div class="stat-label">temples</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="coastlineCount">3600+</div>
+                        <div class="stat-label">km coastline</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="flavorsCount">550+</div>
+                        <div class="stat-label">traditional flavors</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('states').scrollIntoView({behavior:'smooth'})">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- states -->
+    <section id="states" class="section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>five kingdoms, one soul</h2>
+                <p>Each state a distinct universe — yet woven by the same thread of devotion, spice, and monsoon.</p>
+            </div>
+            <div class="states-grid">
+                <div class="state-card" data-aos="flip-up" data-aos-delay="100">
+                    <div class="state-img">
+                        <img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&w=600&q=70" alt="Tamil Nadu">
+                    </div>
+                    <div class="state-badge">dravidian grandeur</div>
+                    <div class="state-info">
+                        <h3>Tamil Nadu</h3>
+                        <p>Gopurams that pierce the sky, bronze artisans, and the living pulse of temple towns.</p>
+                        <a href="#" class="btn-gold">explore</a>
+                    </div>
+                </div>
+                <div class="state-card" data-aos="flip-up" data-aos-delay="200">
+                    <div class="state-img">
+                        <img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&w=600&q=70" alt="Kerala">
+                    </div>
+                    <div class="state-badge">god's own country</div>
+                    <div class="state-info">
+                        <h3>Kerala</h3>
+                        <p>Backwaters like liquid jade, Ayurvedic wisdom, and spice‑laden hills.</p>
+                        <a href="#" class="btn-gold">explore</a>
+                    </div>
+                </div>
+                <div class="state-card" data-aos="flip-up" data-aos-delay="300">
+                    <div class="state-img">
+                        <img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&w=600&q=70" alt="Karnataka">
+                    </div>
+                    <div class="state-badge">ruins & coffee</div>
+                    <div class="state-info">
+                        <h3>Karnataka</h3>
+                        <p>Hampi's fallen empire, the fragrance of filter coffee, and royal Mysore.</p>
+                        <a href="#" class="btn-gold">explore</a>
+                    </div>
+                </div>
+                <div class="state-card" data-aos="flip-up" data-aos-delay="400">
+                    <div class="state-img">
+                        <img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&w=600&q=70" alt="Andhra Pradesh">
+                    </div>
+                    <div class="state-badge">coastal splendor</div>
+                    <div class="state-info">
+                        <h3>Andhra Pradesh</h3>
+                        <p>Tirupati's sacred hills, fiery pickles, and the silence of Buddhist sites.</p>
+                        <a href="#" class="btn-gold">explore</a>
+                    </div>
+                </div>
+                <div class="state-card" data-aos="flip-up" data-aos-delay="500">
+                    <div class="state-img">
+                        <img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&w=600&q=70" alt="Telangana">
+                    </div>
+                    <div class="state-badge">pearl & spice</div>
+                    <div class="state-info">
+                        <h3>Telangana</h3>
+                        <p>Golconda's acoustics, Hyderabadi biryani, and Qutb Shahi elegance.</p>
+                        <a href="#" class="btn-gold">explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- experiences -->
+    <section id="experiences" class="section experiences">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>immersions, not itineraries</h2>
+                <p>We craft moments that stay with you — a dawn ritual, a fisherman's song, the weight of silk.</p>
+            </div>
+            <div class="experiences-grid">
+                <div class="exp-card" data-aos="zoom-in-up" data-aos-delay="100">
+                    <div class="exp-icon"><i class="fas fa-om"></i></div>
+                    <h3>temple chants at dawn</h3>
+                    <p>Wake to the sound of conches and Vedic hymns in thousand‑year‑old corridors, before the crowds arrive.</p>
+                </div>
+                <div class="exp-card" data-aos="zoom-in-up" data-aos-delay="200">
+                    <div class="exp-icon"><i class="fas fa-water"></i></div>
+                    <h3>backwaters at dusk</h3>
+                    <p>Drift in a kettuvallam as the sun sets over Vembanad — kingfishers, coconut groves, and absolute stillness.</p>
+                </div>
+                <div class="exp-card" data-aos="zoom-in-up" data-aos-delay="300">
+                    <div class="exp-icon"><i class="fas fa-mask"></i></div>
+                    <h3>Theyyam: living myth</h3>
+                    <p>Witness the fierce, trance‑like ritual where dancers become gods — an unbroken tradition of centuries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- packages -->
+    <section id="packages" class="section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>curated journeys</h2>
+                <p>Each path is designed with local keepers of knowledge — intimate, slow, and deeply respectful.</p>
+            </div>
+            <div class="filter-bar" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">all journeys</button>
+                <button class="filter-btn" data-filter="cultural">cultural</button>
+                <button class="filter-btn" data-filter="nature">nature & wellness</button>
+                <button class="filter-btn" data-filter="luxury">luxury</button>
+            </div>
+            <div class="packages-grid">
+                <div class="pkg-card" data-category="cultural" data-aos="fade-right">
+                    <div class="pkg-img">
+                        <img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&w=600&q=70" alt="Temple Trail">
+                        <div class="pkg-badge">cultural</div>
+                        <div class="pkg-price">₹29,500</div>
+                    </div>
+                    <div class="pkg-body">
+                        <h3>temple trail: Kanchi to Madurai</h3>
+                        <div class="pkg-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 7 days</span>
+                            <span><i class="fas fa-star"></i> 4.9 (108 reviews)</span>
+                        </div>
+                        <p>Explore 10 of the most potent Dravidian temples with an archaeologist. Private guided, with ritual participation.</p>
+                        <div class="pkg-footer">
+                            <span>from ₹4,214 /night</span>
+                            <a href="#" class="btn-gold">view journey</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pkg-card" data-category="nature" data-aos="fade-up">
+                    <div class="pkg-img">
+                        <img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&w=600&q=70" alt="Kerala Wellness">
+                        <div class="pkg-badge">wellness</div>
+                        <div class="pkg-price">₹58,000</div>
+                    </div>
+                    <div class="pkg-body">
+                        <h3>ayurveda & backwaters</h3>
+                        <div class="pkg-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 8 days</span>
+                            <span><i class="fas fa-star"></i> 5.0 (74 reviews)</span>
+                        </div>
+                        <p>Personalised Ayurvedic program, houseboat stay, and plantation walks. Complete mind‑body renewal.</p>
+                        <div class="pkg-footer">
+                            <span>from ₹7,250 /night</span>
+                            <a href="#" class="btn-gold">view journey</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pkg-card" data-category="luxury" data-aos="fade-left">
+                    <div class="pkg-img">
+                        <img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&w=600&q=70" alt="Hampi Luxury">
+                        <div class="pkg-badge">luxury</div>
+                        <div class="pkg-price">₹95,000</div>
+                    </div>
+                    <div class="pkg-body">
+                        <h3>royal hampi & heritage stays</h3>
+                        <div class="pkg-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 5 days</span>
+                            <span><i class="fas fa-star"></i> 4.9 (32 reviews)</span>
+                        </div>
+                        <p>Private heritage villa, guided sunrise at Virupaksha, curated dinners in restored palaces. Includes helicopter option.</p>
+                        <div class="pkg-footer">
+                            <span>from ₹19,000 /night</span>
+                            <a href="#" class="btn-gold">view journey</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- hidden gems -->
+    <section id="gems" class="section gems">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>off the map: hidden south</h2>
+                <p>Places you won't find in guidebooks — whispered about by locals, untouched by crowds.</p>
+            </div>
+            <div class="gems-grid">
+                <div class="gem-card" data-aos="zoom-in" data-aos-delay="50">
+                    <div class="gem-icon"><i class="fas fa-mountain"></i></div>
+                    <h3>Kolli Hills</h3>
+                    <p>Misty peaks, ancient medicinal plants, and a 70‑hairpin road. Minimal tourism, maximal soul.</p>
+                </div>
+                <div class="gem-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gem-icon"><i class="fas fa-water"></i></div>
+                    <h3>Chandragiri, Kerala</h3>
+                    <p>A backwater untouched by commercial houseboats — paddle through silent canals past toddy‑tappers.</p>
+                </div>
+                <div class="gem-card" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="gem-icon"><i class="fas fa-landmark"></i></div>
+                    <h3>Belavadi</h3>
+                    <p>Hoysala temple of rare beauty, always empty. The sculptures whisper stories of a forgotten empire.</p>
+                </div>
+                <div class="gem-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gem-icon"><i class="fas fa-feather-alt"></i></div>
+                    <h3>Ranganathittu</h3>
+                    <p>Migratory birds by the thousand — boat ride among painted storks, ibis, and cormorants.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- cuisine section -->
+    <section class="section cuisine">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>flavours of the coast & plains</h2>
+                <p>From the fiery Chettinad pepper to the subtle sweetness of Payasam — a culinary odyssey.</p>
+            </div>
+            <div class="cuisine-grid">
+                <div class="cuisine-card" data-aos="flip-left" data-aos-delay="50">
+                    <div class="cuisine-img"><img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&w=400&q=70" alt="Dosa"></div>
+                    <div class="cuisine-info"><h3>Dosa & Chutney</h3><p>Fermented crepes, served with coconut chutney and sambar.</p></div>
+                </div>
+                <div class="cuisine-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="cuisine-img"><img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&w=400&q=70" alt="Biryani"></div>
+                    <div class="cuisine-info"><h3>Hyderabadi Biryani</h3><p>Aromatic rice, tender meat, and Nizami heritage.</p></div>
+                </div>
+                <div class="cuisine-card" data-aos="flip-left" data-aos-delay="150">
+                    <div class="cuisine-img"><img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&w=400&q=70" alt="Fish Curry"></div>
+                    <div class="cuisine-info"><h3>Meen Moilee</h3><p>Kerala's coconut‑based fish curry, delicate and soothing.</p></div>
+                </div>
+                <div class="cuisine-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="cuisine-img"><img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=300&w=400&q=70" alt="Payasam"></div>
+                    <div class="cuisine-info"><h3>Payasam</h3><p>Vermicelli or lentil pudding, spiced with cardamom and ghee.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- festivals -->
+    <section class="section festivals">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>festivals of light & devotion</h2>
+                <p>When the land erupts in colour, music, and ancient ritual — you're welcome to join.</p>
+            </div>
+            <div class="festivals-grid">
+                <div class="festival-card" data-aos="fade-right">
+                    <div class="festival-img"><img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&w=600&q=70" alt="Pongal"></div>
+                    <div class="festival-overlay"><h3>Pongal</h3><p>Tamil harvest festival, celebrated with sugarcane and sweet rice.</p></div>
+                </div>
+                <div class="festival-card" data-aos="fade-up">
+                    <div class="festival-img"><img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&w=600&q=70" alt="Onam"></div>
+                    <div class="festival-overlay"><h3>Onam</h3><p>Kerala's snake boat races, flower carpets, and grand feast.</p></div>
+                </div>
+                <div class="festival-card" data-aos="fade-left">
+                    <div class="festival-img"><img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&w=600&q=70" alt="Hampi"></div>
+                    <div class="festival-overlay"><h3>Hampi Utsav</h3><p>Dance, music, and puppetry amidst the ruins of Vijayanagara.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- gallery -->
+    <section class="gallery">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>south in frames</h2>
+                <p>ephemeral moments captured in light and shadow.</p>
+            </div>
+        </div>
+        <div class="gallery-track">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=600&q=70" alt=""><div class="gallery-caption"><h3>Meenakshi, Madurai</h3><p>gopuram at dusk</p></div></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=600&q=70" alt=""><div class="gallery-caption"><h3>Kumarakom</h3><p>dawn on the lake</p></div></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=600&q=70" alt=""><div class="gallery-caption"><h3>Hampi</h3><p>stone chariot</p></div></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=600&q=70" alt=""><div class="gallery-caption"><h3>Theyyam</h3><p>ritual trance</p></div></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=600&q=70" alt=""><div class="gallery-caption"><h3>Chettinad</h3><p>heritage mansion</p></div></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1601646582622-a99d00e57e00?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=600&q=70" alt=""><div class="gallery-caption"><h3>Ooty</h3><p>tea gardens</p></div></div>
+        </div>
+    </section>
+
+    <!-- testimonials -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>what travelers carry home</h2>
+                <p>not souvenirs, but stories that reshape them.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-right">
+                    <p class="testimonial-text">Dakṣiṇa didn't just show me temples — they opened a door to living devotion. Our guide, a temple priest's son, explained iconography I'd never have grasped.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt=""></div>
+                        <div class="author-info"><h4>Maya Krishnan</h4><p>art historian, London</p></div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up">
+                    <p class="testimonial-text">The backwater cruise with my mother was pure poetry. We cooked with a local grandmother, watched kingfishers dive, and spoke of things we'd never discussed before.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt=""></div>
+                        <div class="author-info"><h4>Rajan Nair</h4><p>entrepreneur, Dubai</p></div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-left">
+                    <p class="testimonial-text">I thought I knew South India. Then they took me to a Theyyam performance in a remote village, and I wept. This is not tourism; it's pilgrimage.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt=""></div>
+                        <div class="author-info"><h4>Elena Rossi</h4><p>photographer, Italy</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- newsletter -->
+    <section class="section">
+        <div class="container newsletter" data-aos="flip-up">
+            <h2>let the journey find you</h2>
+            <p>Sign up for slow travel stories, offbeat destinations, and seasonal inspirations from South India.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="your email address" required>
+                <button type="submit">subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Dakṣiṇa</h3>
+                    <p>We design journeys that honor the depth of South India — its rituals, crafts, landscapes, and quiet moments.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>journeys</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">temple trails</a></li>
+                        <li><a href="#">backwater escapes</a></li>
+                        <li><a href="#">hill station sojourns</a></li>
+                        <li><a href="#">culinary immersions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>about</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">our philosophy</a></li>
+                        <li><a href="#">local partners</a></li>
+                        <li><a href="#">sustainability</a></li>
+                        <li><a href="#">blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> 1/18, Fort Kochi, Kerala</li>
+                        <li><i class="fas fa-phone-alt"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope"></i> hello@dakshina.in</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Dakṣiṇa Journeys. crafted with reverence for the gods and the monsoons.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: false, mirror: true, offset: 120 });
+
+        // mobile toggle
+        const mobileBtn = document.getElementById('mobileToggle');
+        const nav = document.querySelector('.nav-links');
+        mobileBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileBtn.innerHTML = nav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        });
+
+        // header scroll
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+                document.querySelectorAll('.pkg-card').forEach(card => {
+                    card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
+                });
+            });
+        });
+
+        // smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // stats observer
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            if (!obj) return;
+            let startTime = null;
+            const step = (timestamp) => {
+                if (!startTime) startTime = timestamp;
+                const progress = Math.min((timestamp - startTime) / duration, 1);
+                obj.textContent = Math.floor(progress * (end - start) + start) + '+';
+                if (progress < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateValue('templesCount', 0, 2300, 2000);
+                    animateValue('coastlineCount', 0, 3600, 2000);
+                    animateValue('flavorsCount', 0, 550, 2000);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(document.querySelector('.stats'));
+
+        // form prevent
+        document.querySelectorAll('form').forEach(f => f.addEventListener('submit', (e) => { e.preventDefault(); alert('Thank you! We will be in touch soon.'); }));
+    </script>
+</body>
+</html>

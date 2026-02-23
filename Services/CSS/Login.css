@@ -1,0 +1,252 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 6 Oct, 2025, 12:40:21 AM
+    Author     : VICTUS
+*/
+
+*{
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('../Images/Ladhak4.avif') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: #0E46A3;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 40px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(0.8px);
+            -webkit-backdrop-filter: blur(0..6px);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #fff;
+            font-family: 'Pacifico', cursive;
+        }
+
+        h5 {
+            margin-bottom: 20px;
+            color: #f5ebeb;
+            font-size: 1em;
+        }
+
+        h5 a {
+            color: #f5ebeb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        h5 a:hover {
+            color: #007BFF;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form img {
+            margin-bottom: 20px;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            transition: transform 0.3s;
+        }
+
+        form img:hover {
+            transform: scale(1.1);
+        }
+
+        form label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #fff;
+            width: 80%;
+            text-align: left;
+        }
+
+        form input[type="text"],
+        form input[type="password"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        form input:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+
+        form label input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        form .psw a {
+            color: #f5ebeb;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        form .psw a:hover {
+            color: #007BFF;
+        }
+
+        form button {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #007BFF;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 5px 10px rgba(0, 123, 255, 0.3);
+        }
+
+        form button:hover {
+            background: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-buttons a {
+            display: inline-block;
+            position: relative;
+        }
+
+        .social-buttons a::before {
+            content: attr(aria-label);
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px;
+            border-radius: 3px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            white-space: nowrap;
+        }
+
+        .social-buttons a:hover::before {
+            opacity: 1;
+        }
+
+        .social-buttons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+        }
+
+        .social-buttons img:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            width: 100%;
+            color: whitesmoke;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0);
+            padding: 10px 0;
+            font-size: 0.75em;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            form input,
+            form button {
+                width: 100%;
+            }
+
+            .social-buttons img {
+                width: 30px;
+                height: 30px;
+            }
+        }

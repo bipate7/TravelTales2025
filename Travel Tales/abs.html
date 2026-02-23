@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TravelTales | Discover Your Journey</title>
+    <link rel="icon" href="Images/TT4.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --secondary: #2EC4B6;
+            --dark: #1A1A2E;
+            --light: #F8F9FA;
+            --accent: #FF9F1C;
+            --text: #333333;
+            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            overflow-x: hidden;
+            background-color: var(--light);
+        }
+        
+        /* Enhanced Top Bar */
+        .top-bar {
+            background: linear-gradient(90deg, var(--dark), #2a2a4a);
+            color: white;
+            padding: 10px 0;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .top-bar a:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        .top-bar a i {
+            margin-right: 5px;
+        }
+        
+        .language-selector {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            background: white;
+            min-width: 120px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .language-dropdown a {
+            color: var(--dark);
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            margin: 0;
+            transition: all 0.3s;
+        }
+        
+        .language-dropdown a:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .language-selector:hover .language-dropdown {
+            display: block;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            transform: translateY(-3px) scale(1.1);
+        }
+        
+        /* Enhanced Navigation */
+        .navbar {
+            background-color: white;
+            padding: 5px 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            padding: 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .navbar-brand img {
+            height: 50px;
+            transition: all 0.3s;
+        }
+        
+        .nav-item {
+            margin: 0 8px;
+            position: relative;
+        }
+        
+        .nav-link {
+            color: var(--dark) !important;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            padding: 10px 15px !important;
+            border-radius: 5px;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--primary);
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover:after,
+        .nav-link.active:after {
+            width: 80%;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary) !important;
+            background-color: rgba(255, 107, 53, 0.05);
+        }
+        
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            animation: fadeIn 0.3s ease;
+            padding: 10px 0;
+            margin-top: 5px;
+        }
+        
+        .dropdown-item {
+            transition: all 0.3s;
+            padding: 10px 20px;
+            position: relative;
+        }
+        
+        .dropdown-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: var(--primary);
+            transform: scaleY(0);
+            transition: transform 0.3s;
+        }
+        
+        .dropdown-item:hover {
+            background-color: var(--primary);
+            color: white;
+            padding-left: 25px;
+        }
+        
+        .dropdown-item:hover:before {
+            transform: scaleY(1);
+        }
+        
+        .call-us {
+            background: var(--gradient);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        .call-us:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .call-us i {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, var(--light));
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        
+        .btn-explore {
+            background: var(--gradient);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-explore:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: all 0.5s;
+        }
+        
+        .btn-explore:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-explore:hover:before {
+            left: 100%;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounce 2s infinite;
+        }
+        
+        .scroll-indicator i {
+            font-size: 2rem;
+            color: white;
+            opacity: 0.7;
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTIwMCA4MDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0iI2Y4ZjlmYSI+PHBhdGggZD0iTTAgNDAwYzAgMCAxMDAgMCAyMDAgMHMxMDAgMCAyMDAgMCAxMDAgMCAyMDAgMCAxMDAgMCAyMDAgMCAxMDAgMCAyMDAgMFYwSDB6Ii8+PC9nPjwvc3ZnPg==');
+            background-size: cover;
+            opacity: 0.5;
+            z-index: 0;
+        }
+        
+        .about-section > .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+        
+        .section-title.center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s;
+        }
+        
+        .about-img:hover {
+            transform: scale(1.02);
+        }
+        
+        .years-badge {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: var(--gradient);
+            color: white;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            animation: pulse 2s infinite;
+        }
+        
+        .years-badge span:first-child {
+            font-size: 2rem;
+            line-height: 1;
+        }
+        
+        .feature-box {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .feature-box:hover {
+            background-color: rgba(255, 107, 53, 0.05);
+            transform: translateX(5px);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 107, 53, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 80px 0;
+            background: var(--gradient);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png');
+            opacity: 0.1;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .stat-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        /* Values Section */
+        .values-section {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .value-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-card:hover:before {
+            transform: scaleX(1);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(46, 196, 182, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--secondary);
+            font-size: 2rem;
+            transition: all 0.3s;
+        }
+        
+        .value-card:hover .value-icon {
+            background-color: var(--secondary);
+            color: white;
+            transform: rotateY(180deg);
+        }
+        
+        /* Timeline Section */
+        .timeline-section {
+            padding: 100px 0;
+            background-color: white;
+            position: relative;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline:after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(even):after {
+            left: -10px;
+        }
+        
+        /* Team Section */
+        .team-section {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        
+        .team-img-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .team-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: all 0.5s;
+        }
+        
+        .team-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        
+        .team-member:hover .team-overlay {
+            opacity: 1;
+        }
+        
+        .team-member:hover .team-img {
+            transform: scale(1.1);
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .team-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            transition: all 0.3s;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        
+        .team-member:hover .team-social a {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .team-social a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px) !important;
+        }
+        
+        .team-social a:nth-child(1) { transition-delay: 0.1s; }
+        .team-social a:nth-child(2) { transition-delay: 0.2s; }
+        .team-social a:nth-child(3) { transition-delay: 0.3s; }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin: 15px;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card:after {
+            content: '\201D';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 4rem;
+            color: rgba(0, 0, 0, 0.05);
+            font-family: sans-serif;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .testimonial-rating {
+            color: var(--accent);
+            margin-top: 5px;
+        }
+        
+        /* Partners Section */
+        .partners-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .partner-logo {
+            height: 80px;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s;
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-cta {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-cta:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 0;
+        }
+        
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-title {
+            position: relative;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-contact li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-contact i {
+            margin-right: 15px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 20px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-10px) translateX(-50%); }
+            60% { transform: translateY(-5px) translateX(-50%); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        
+        /* Logo Styles */
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .logo img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 8px;
+            object-fit: contain;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 991.98px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .years-badge {
+                top: -15px;
+                right: -15px;
+                width: 80px;
+                height: 80px;
+            }
+            
+            .years-badge span:first-child {
+                font-size: 1.5rem;
+            }
+            
+            .timeline:after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:after {
+                left: 21px;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .hero {
+                height: 70vh;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .about-section, .values-section, .timeline-section, .team-section, 
+            .testimonials-section, .partners-section, .cta-section {
+                padding: 60px 0;
+            }
+            
+            .feature-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .feature-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .footer {
+                padding: 60px 0 0;
+            }
+            
+            .top-bar .d-flex {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .top-bar a {
+                margin: 5px 0;
+            }
+        }
+        
+        @media (max-width: 575.98px) {
+            .top-bar {
+                text-align: center;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .btn-explore, .btn-cta {
+                padding: 10px 25px;
+            }
+            
+            .years-badge {
+                position: relative;
+                top: 0;
+                right: 0;
+                margin: 0 auto 30px;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Enhanced Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div class="d-flex flex-wrap">
+                    <a href="mailto:TravelTalesngp@gmail.com"><i class="fas fa-envelope"></i> TravelTalesngp@gmail.com</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> Nagpur, Maharashtra</a>
+                </div>
+                <div class="d-flex align-items-center flex-wrap">
+                    <a href="Services/Sign Up Page.html"><i class="fas fa-user"></i> Login / Signup</a>
+                    <div class="language-selector">
+                        <a href="#"><i class="fas fa-globe"></i> EN <i class="fas fa-chevron-down"></i></a>
+                        <div class="language-dropdown">
+                            <a href="#">English</a>
+                            <a href="#">Hindi</a>
+                            <a href="#">Spanish</a>
+                            <a href="#">French</a>
+                        </div>
+                    </div>
+                    <div class="social-icons ml-2">
+                        <a href="https://www.facebook.com/login.php/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/login/"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/account"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <div class="logo">
+                    <img src="Images/TT4.png" alt="TravelTales Logo" width="120" height="100">
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="../Travel Tales/Tour.html" id="toursDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Tours
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="toursDropdown">
+                            <a class="dropdown-item" href="../Travel Tales/Tours List.html">Tour List</a>
+                            <a class="dropdown-item" href="../Travel Tales/Tours Packages.html">Tour Packages</a>
+                            <a class="dropdown-item" href="#">Tour Details</a>
+                            <a class="dropdown-item" href="#">Activities</a>
+                            <a class="dropdown-item" href="#">Activity Details</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="../Destinations/Destinations.html" id="destinationsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Destination
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="destinationsDropdown">
+                            <a class="dropdown-item" href="../Destinations/Destinations.html">All Destinations</a>
+                            <a class="dropdown-item" href="../Destinations/Destinations2.html">Destination Single</a>
+                            <a class="dropdown-item" href="../Services/Hotel Services.html">Hotels</a>
+                            <a class="dropdown-item" href="../Services/Hotel Details.html">Hotel Details</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../Travel Tales/About Us.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="../Travel Tales/News.html" id="newsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            News
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="newsDropdown">
+                            <a class="dropdown-item" href="../Blog/Ourblog.html">Our Blog</a>
+                            <a class="dropdown-item" href="../Blog/BlogDetails.html">Blog Details</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Services/Contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="call-us" href="tel:+9999999999">
+                            <i class="fas fa-phone"></i> Call Us<br>+9999999999
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="hero-content">
+                        <h1 data-aos="fade-up" data-aos-duration="1000">Our Story</h1>
+                        <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">For over a decade, we've been crafting unforgettable journeys and creating memories that last a lifetime. Discover the passion behind TravelTales.</p>
+                        <a href="#about" class="btn btn-explore" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#about"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="position-relative" data-aos="fade-right" data-aos-duration="1000">
+                        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About TravelTales" class="img-fluid about-img">
+                        <div class="years-badge" data-aos="zoom-in" data-aos-delay="500">
+                            <span>12</span>
+                            <span>Years</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">We Make Your Travel More Enjoyable</h2>
+                    <p data-aos="fade-up" data-aos-delay="200">Founded in 2012, TravelTales began as a small team of passionate travelers with a simple mission: to share the world's wonders with others. What started as a modest operation has grown into a trusted travel partner for thousands of adventurers worldwide.</p>
+                    
+                    <div class="feature-box" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div>
+                            <h5>Award winning tour & travel arranger</h5>
+                            <p>Recognized for excellence in travel services with multiple industry awards</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-box" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div>
+                            <h5>Most popular booking solution provider</h5>
+                            <p>Trusted by thousands of travelers worldwide for seamless booking experiences</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4" data-aos="fade-up" data-aos-delay="500">
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-arrow-right text-primary me-2"></i> Inspiring travel experiences since 2012</li>
+                            <li class="mb-2"><i class="fas fa-arrow-right text-primary me-2"></i> Expertly curated itineraries for all tastes</li>
+                            <li class="mb-2"><i class="fas fa-arrow-right text-primary me-2"></i> Personalized guidance and 24/7 support</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">Read Our Full Story</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="stat-number" data-count="15000">0</div>
+                        <div class="stat-text">Happy Travelers</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                        <div class="stat-number" data-count="120">0</div>
+                        <div class="stat-text">Destinations</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                        <div class="stat-number" data-count="500">0</div>
+                        <div class="stat-text">Tours Organized</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+                        <div class="stat-number" data-count="98">0</div>
+                        <div class="stat-text">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title center" data-aos="fade-up" data-aos-duration="1000">Our Core Values</h2>
+                    <p data-aos="fade-up" data-aos-delay="200">These principles guide everything we do at TravelTales</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Passion for Travel</h4>
+                        <p>We're driven by our love for exploration and sharing incredible experiences with fellow travelers.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4>Trust & Reliability</h4>
+                        <p>We build lasting relationships based on trust, transparency, and delivering on our promises.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Innovation</h4>
+                        <p>We continuously evolve our services to provide cutting-edge travel experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title center" data-aos="fade-up" data-aos-duration="1000">Our Journey</h2>
+                    <p data-aos="fade-up" data-aos-delay="200">From humble beginnings to industry leader</p>
+                </div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="timeline-content">
+                        <h4>2012</h4>
+                        <h5>TravelTales Founded</h5>
+                        <p>Started with a small team of travel enthusiasts offering customized tours in India.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="timeline-content">
+                        <h4>2015</h4>
+                        <h5>Expansion to International Tours</h5>
+                        <p>Launched our first international tour packages to Southeast Asia and Europe.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
+                    <div class="timeline-content">
+                        <h4>2018</h4>
+                        <h5>Award Recognition</h5>
+                        <p>Received "Best Travel Agency" award at the National Tourism Awards.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600">
+                    <div class="timeline-content">
+                        <h4>2020</h4>
+                        <h5>Digital Transformation</h5>
+                        <p>Launched our comprehensive online booking platform and mobile app.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="800">
+                    <div class="timeline-content">
+                        <h4>2023</h4>
+                        <h5>Global Partnerships</h5>
+                        <p>Established partnerships with leading hotels and airlines worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title center" data-aos="fade-up" data-aos-duration="1000">Meet Our Travel Experts</h2>
+                    <p data-aos="fade-up" data-aos-delay="200">Our passionate team of travel professionals is dedicated to creating unforgettable experiences for you</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-duration="1000">
+                    <div class="team-member">
+                        <div class="team-img-container">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=634&q=80" alt="Team Member" class="team-img">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <h5>Paul Harrison</h5>
+                        <p>Travel Consultant</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="team-member">
+                        <div class="team-img-container">
+                            <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&auto=format&fit=crop&w=644&q=80" alt="Team Member" class="team-img">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <h5>Richard Parker</h5>
+                        <p>Tour Guide</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">
+                    <div class="team-member">
+                        <div class="team-img-container">
+                            <img src="https://file.aiquickdraw.com/tool-page/example-images/175085219864669h0cgig.webp" alt="Team Member" class="team-img">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <h5>Jennifer Lopez</h5>
+                        <p>Destination Expert</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="1000">
+                    <div class="team-member">
+                        <div class="team-img-container">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=634&q=80" alt="Team Member" class="team-img">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <h5>Michael Johnson</h5>
+                        <p>Customer Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title center" data-aos="fade-up" data-aos-duration="1000">What Our Travelers Say</h2>
+                    <p data-aos="fade-up" data-aos-delay="200">Hear from our satisfied customers about their experiences with TravelTales</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            <p>"Exploring the majestic beauty of Rajasthan was a mesmerizing experience. Travel Tales ensured everything was perfectly organized, from accommodations to local experiences. Their attention to detail made our trip unforgettable!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=634&q=80" alt="Client" class="testimonial-avatar">
+                            <div>
+                                <h6 class="mb-0">Priya K.</h6>
+                                <small>Software Engineer</small>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            <p>"The enchanting backwaters of Kerala were a dream come true. Travel Tales made the entire journey seamless and memorable! Their local guides were incredibly knowledgeable and made us feel like family."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=634&q=80" alt="Client" class="testimonial-avatar">
+                            <div>
+                                <h6 class="mb-0">Rajesh S.</h6>
+                                <small>Doctor</small>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            <p>"A trip to Leh-Ladakh was on my bucket list for years. Thanks to Travel Tales, I finally experienced the raw beauty of the Himalayas. Their expertise in adventure travel is unmatched - every detail was perfect!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=634&q=80" alt="Client" class="testimonial-avatar">
+                            <div>
+                                <h6 class="mb-0">Anjali M.</h6>
+                                <small>Marketing Manager</small>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="section-title center" data-aos="fade-up" data-aos-duration="1000">Our Trusted Partners</h2>
+                    <p data-aos="fade-up" data-aos-delay="200">We collaborate with the best in the industry to provide you exceptional experiences</p>
+                </div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col text-center" data-aos="zoom-in" data-aos-duration="1000">
+                    <img src="https://1000logos.net/wp-content/uploads/2021/07/IndiGo-Logo.png" alt="Partner" class="img-fluid partner-logo" style="height: 100px;">
+                </div>
+                <div class="col text-center" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+                    <img src="https://download.logo.wine/logo/Vistara/Vistara-Logo.wine.png" alt="Partner" class="img-fluid partner-logo" style="height: 120px;">
+                </div>
+                <div class="col text-center" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">
+                    <img src="https://1000logos.net/wp-content/uploads/2019/08/Tripadvisor-Logo.png" alt="Partner" class="img-fluid partner-logo" style="height: 130px;">
+                </div>
+                <div class="col text-center" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="1000">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/ITC_Hotels_logo.svg/1200px-ITC_Hotels_logo.svg.png" alt="Partner" class="img-fluid partner-logo" style="height: 120px;">
+                </div>
+                <div class="col text-center" data-aos="zoom-in" data-aos-delay="800" data-aos-duration="1000">
+                    <img src="https://play-lh.googleusercontent.com/itPz9_NOrJJtzPSMAYXeHEdQ6VZQknvuzu_lSovL96NvVfsnaxLq8Jw7F0asrGwEzg" alt="Partner" class="img-fluid partner-logo" style="height: 100px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="cta-content">
+                        <h2 data-aos="fade-up" data-aos-duration="1000">Ready to Start Your Journey?</h2>
+                        <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Let us help you create unforgettable memories. Contact our travel experts today to plan your next adventure.</p>
+                        <a href="../Services/Contact.html" class="btn btn-cta" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <div class="footer-about">
+                        <span style="font-size: 28px; font-weight: 700; color: var(--primary);">Travel</span>
+                        <span style="font-size: 28px; font-weight: 700; color: white;">Tales</span>
+                        <p class="mt-3">Wander more, wonder always. Your perfect journey begins with us.</p>
+                        
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../Travel Tales/Tour.html">Tours</a></li>
+                        <li><a href="../Destinations/Destinations.html">Destinations</a></li>
+                        <li><a href="../Travel Tales/About Us.html">About Us</a></li>
+                        <li><a href="../Travel Tales/News.html">News</a></li>
+                        <li><a href="../Services/Contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <h5 class="footer-title">Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="footer-title">Contact Info</h5>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Travel Street, Nagpur, Maharashtra, India</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+91 98765 43210</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>TravelTales@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Sat: 9:00 - 18:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-left">
+                        <p class="mb-2 mb-md-0">&copy; 2025 <span style="color: var(--primary);">Travel Tales</span>. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-right">
+                        <p class="mb-0">Crafted with ❤️ by <strong>Karan Bipate</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Add smooth scrolling to all links
+        $("a").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function(){
+                    window.location.hash = hash;
+                });
+            }
+        });
+        
+        // Navbar background change on scroll
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 50) {
+                $('.navbar').addClass('scrolled');
+            } else {
+                $('.navbar').removeClass('scrolled');
+            }
+            
+            // Back to top button visibility
+            if ($(window).scrollTop() > 300) {
+                $('.back-to-top').addClass('active');
+            } else {
+                $('.back-to-top').removeClass('active');
+            }
+        });
+        
+        // Counter animation for stats
+        $(document).ready(function() {
+            $('.stat-number').each(function() {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function(now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+        });
+        
+        // Interactive language selector
+        $('.language-selector').hover(function() {
+            $(this).find('.language-dropdown').stop(true, true).slideDown(200);
+        }, function() {
+            $(this).find('.language-dropdown').stop(true, true).slideUp(200);
+        });
+        
+        // Enhanced dropdown animations
+        $('.dropdown').on('show.bs.dropdown', function() {
+            $(this).find('.dropdown-menu').first().stop(true, true).slideDown(300);
+        });
+        
+        $('.dropdown').on('hide.bs.dropdown', function() {
+            $(this).find('.dropdown-menu').first().stop(true, true).slideUp(300);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+*.mp4
+*.mp3
+*.mov
+*.avi
+*.wmv
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+*.zip
+*.rar
+*.exe
+.vscode/
+size-report.csv
+broken_local_refs.csv
+*.avif
+*.svg
+Videos/
+Pictures/
+Logos/
+# Large image files
+**/*.avif
+**/*.svg
+# Media directories
+Videos/
+Pictures/
+Logos/
+# Large files over 1MB
+**/*.pdf
+**/*.docx
+**/*.xlsx

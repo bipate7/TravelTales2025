@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meghalaya: The Abode of Clouds | Premium Travel Guide</title>
+    <link rel="icon" href="images/meghalaya-favicon.png">
+    <link rel="icon" href="Images\TT4.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary: #0D4C3F;
+            --secondary: #E6B325;
+            --accent: #C92C2C;
+            --light: #F8F9FA;
+            --dark: #1A1A1A;
+            --text: #333333;
+            --text-light: #6C757D;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --border-radius: 12px;
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .header-scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://www.treksandtrails.org/blog/wp-content/uploads/2019/08/Meghalaya-6-1024x549.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            padding: 2rem 0;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--secondary);
+            color: var(--dark);
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .cta-btn:hover {
+            background: #d19e1f;
+            transform: translateY(-2px);
+        }
+        
+        /* NEW: Adventure Activities Section */
+        .adventure-section {
+            background: #f8f9fa;
+        }
+        
+        .adventure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .adventure-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .adventure-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .adventure-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .adventure-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .adventure-card:hover .adventure-img img {
+            transform: scale(1.1);
+        }
+        
+        .adventure-content {
+            padding: 1.5rem;
+        }
+        
+        .adventure-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .adventure-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .adventure-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* NEW: Festivals Section */
+        .festivals-section {
+            background: linear-gradient(rgba(13, 76, 63, 0.9), rgba(13, 76, 63, 0.9)), 
+                        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
+            color: white;
+        }
+        
+        .festivals-section .section-title h2 {
+            color: white;
+        }
+        
+        .festivals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .festival-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .festival-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .festival-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .festival-card:hover::before {
+            left: 100%;
+        }
+        
+        .festival-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .festival-date {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* NEW: Local Cuisine Section */
+        .cuisine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .cuisine-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .cuisine-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .cuisine-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .cuisine-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .cuisine-card:hover .cuisine-img img {
+            transform: scale(1.1);
+        }
+        
+        .cuisine-content {
+            padding: 1.5rem;
+        }
+        
+        .cuisine-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .cuisine-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cuisine-tag {
+            background: rgba(13, 76, 63, 0.1);
+            color: var(--primary);
+            padding: 0.2rem 0.6rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        /* NEW: Travel Tips Section */
+        .tips-section {
+            background: #f8f9fa;
+        }
+        
+        .tips-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .tip-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tip-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(13, 76, 63, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .tip-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        /* NEW: Photo Gallery Section */
+        .gallery-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #0a3a30 100%);
+            color: white;
+        }
+        
+        .gallery-section .section-title h2 {
+            color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .gallery-item {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            padding: 1rem;
+            color: white;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 3rem;
+                transition: var(--transition);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="Images/TT4.png" alt="Travel Tales Logo">
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#places">Destinations</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#adventure">Adventure</a></li>
+                <li><a href="#festivals">Festivals</a></li>
+                <li><a href="#cuisine">Cuisine</a></li>
+                <li><a href="#tips">Travel Tips</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#culture">Culture</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Discover Meghalaya: The Abode of Clouds</h1>
+                <p>Explore the mystical landscapes, living root bridges, and vibrant Khasi culture of Northeast India's most enchanting state</p>
+                <a href="#packages" class="cta-btn">Explore Packages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Adventure Activities Section -->
+    <section class="section adventure-section" id="adventure">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Adventure Activities</h2>
+                <p>Experience the thrill of Meghalaya's natural playground</p>
+            </div>
+            <div class="adventure-grid">
+                <div class="adventure-card fade-in">
+                    <div class="adventure-img">
+                        <img src="https://images.unsplash.com/photo-1595599512947-92c5714d5b6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Caving">
+                    </div>
+                    <div class="adventure-content">
+                        <h3>Caving Exploration</h3>
+                        <div class="adventure-meta">
+                            <span><i class="fas fa-clock"></i> 4-6 hours</span>
+                            <span><i class="fas fa-user-friends"></i> Small groups</span>
+                        </div>
+                        <p>Explore the mysterious caves of Meghalaya including Mawsmai Cave and Krem Liat Prah, one of the longest caves in India.</p>
+                    </div>
+                </div>
+                <div class="adventure-card fade-in">
+                    <div class="adventure-img">
+                        <img src="https://images.unsplash.com/photo-1595599512947-92c5714d5b6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Trekking">
+                    </div>
+                    <div class="adventure-content">
+                        <h3>Living Root Bridge Trek</h3>
+                        <div class="adventure-meta">
+                            <span><i class="fas fa-clock"></i> Full day</span>
+                            <span><i class="fas fa-hiking"></i> Moderate difficulty</span>
+                        </div>
+                        <p>Trek through lush rainforests to witness the incredible living root bridges, including the famous double-decker bridge in Nongriat.</p>
+                    </div>
+                </div>
+                <div class="adventure-card fade-in">
+                    <div class="adventure-img">
+                        <img src="https://images.unsplash.com/photo-1595599512947-92c5714d5b6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Water Sports">
+                    </div>
+                    <div class="adventure-content">
+                        <h3>River Activities</h3>
+                        <div class="adventure-meta">
+                            <span><i class="fas fa-clock"></i> 2-4 hours</span>
+                            <span><i class="fas fa-water"></i> All skill levels</span>
+                        </div>
+                        <p>Enjoy kayaking, boating, and swimming in the crystal-clear waters of Umngot River at Dawki and Shnongpdeng.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Festivals Section -->
+    <section class="section festivals-section" id="festivals">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Festivals & Events</h2>
+                <p>Celebrate the vibrant cultural heritage of Meghalaya</p>
+            </div>
+            <div class="festivals-grid">
+                <div class="festival-card fade-in">
+                    <span class="festival-date">November</span>
+                    <h3>Wangala Festival</h3>
+                    <p>Also known as the 100 Drums Festival, this Garo harvest celebration features vibrant dances, traditional music, and colorful costumes to thank the Sun God for a bountiful harvest.</p>
+                </div>
+                <div class="festival-card fade-in">
+                    <span class="festival-date">April</span>
+                    <h3>Shad Suk Mynsiem</h3>
+                    <p>A three-day Khasi festival celebrating the joy of life with traditional dances performed by men and women in colorful attire, symbolizing purity and thanksgiving.</p>
+                </div>
+                <div class="festival-card fade-in">
+                    <span class="festival-date">July</span>
+                    <h3>Behdeinkhlam Festival</h3>
+                    <p>Jaintia tribal festival featuring colorful processions, traditional sports, and the beating of roof tops to drive away evil spirits and diseases.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Local Cuisine Section -->
+    <section class="section" id="cuisine">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Local Cuisine</h2>
+                <p>Savor the authentic flavors of Meghalaya</p>
+            </div>
+            <div class="cuisine-grid">
+                <div class="cuisine-card fade-in">
+                    <div class="cuisine-img">
+                        <img src="https://images.unsplash.com/photo-1595599512947-92c5714d5b6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Jadoh">
+                    </div>
+                    <div class="cuisine-content">
+                        <h3>Jadoh</h3>
+                        <div class="cuisine-tags">
+                            <span class="cuisine-tag">Rice dish</span>
+                            <span class="cuisine-tag">Pork/Chicken</span>
+                        </div>
+                        <p>A flavorful rice dish cooked with meat (usually pork or chicken), spices, and turmeric, often served with potato chips and green chutney.</p>
+                    </div>
+                </div>
+                <div class="cuisine-card fade-in">
+                    <div class="cuisine-img">
+                        <img src="https://images.unsplash.com/photo-1595599512947-92c5714d5b6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Dohneiiong">
+                    </div>
+                    <div class="cuisine-content">
+                        <h3>Dohneiiong</h3>
+                        <div class="cuisine-tags">
+                            <span class="cuisine-tag">Pork curry</span>
+                            <span class="cuisine-tag">Black sesame</span>
+                        </div>
+                        <p>A rich pork curry cooked with black sesame seeds, giving it a distinctive nutty flavor and dark color, typically served with rice.</p>
+                    </div>
+                </div>
+                <div class="cuisine-card fade-in">
+                    <div class="cuisine-img">
+                        <img src="https://images.unsplash.com/photo-1595599512947-92c5714d5b6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Pumaloi">
+                    </div>
+                    <div class="cuisine-content">
+                        <h3>Pumaloi</h3>
+                        <div class="cuisine-tags">
+                            <span class="cuisine-tag">Rice cake</span>
+                            <span class="cuisine-tag">Steamed</span>
+                        </div>
+                        <p>A traditional steamed rice cake cooked in special pots, often served during festivals and special occasions with meat or vegetable curries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Travel Tips Section -->
+    <section class="section tips-section" id="tips">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Travel Tips</h2>
+                <p>Essential information for your Meghalaya journey</p>
+            </div>
+            <div class="tips-container">
+                <div class="tip-card fade-in">
+                    <div class="tip-icon">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <h3>Best Time to Visit</h3>
+                    <p>October to May offers pleasant weather for sightseeing. Monsoon (June-September) showcases waterfalls at their best but may limit outdoor activities.</p>
+                </div>
+                <div class="tip-card fade-in">
+                    <div class="tip-icon">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <h3>What to Pack</h3>
+                    <p>Comfortable walking shoes, rain gear, light woolens for evenings, insect repellent, and a good camera to capture the stunning landscapes.</p>
+                </div>
+                <div class="tip-card fade-in">
+                    <div class="tip-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Getting Around</h3>
+                    <p>Hire local taxis or use shared vehicles for inter-city travel. For remote villages, 4WD vehicles are recommended during monsoon season.</p>
+                </div>
+                <div class="tip-card fade-in">
+                    <div class="tip-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Accommodation</h3>
+                    <p>Options range from luxury hotels in Shillong to homestays in villages for authentic cultural experiences. Book in advance during peak season.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Photo Gallery Section -->
+    <section class="section gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Photo Gallery</h2>
+                <p>Visual journey through Meghalaya's breathtaking landscapes</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1595599512947-92c5714d5b6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Meghalaya Landscape">
+                    <div class="gallery-overlay">
+                        <h4>Living Root Bridge</h4>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1595599512947-92c5714d5b6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Waterfall">
+                    <div class="gallery-overlay">
+                        <h4>Nohkalikai Falls</h4>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1595599512947-92c5714d5b6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Village">
+                    <div class="gallery-overlay">
+                        <h4>Mawlynnong Village</h4>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1595599512947-92c5714d5b6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="River">
+                    <div class="gallery-overlay">
+                        <h4>Umngot River, Dawki</h4>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1595599512947-92c5714d5b6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Cave">
+                    <div class="gallery-overlay">
+                        <h4>Mawsmai Cave</h4>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1595599512947-92c5714d5b6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Culture">
+                    <div class="gallery-overlay">
+                        <h4>Traditional Dance</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your existing sections would continue here -->
+    <!-- Places Section, Packages Section, Culture Section, etc. -->
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const header = document.getElementById('header');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Set initial state for fade elements
+        document.querySelectorAll('.fade-in').forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | TravelTales - Crafting Unforgettable Journeys</title>
+    <link rel="icon" href="Images/TT4.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ====== BASE STYLES & VARIABLES ====== */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --accent: #f59e0b;
+            --light: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-700: #334155;
+            --gray-900: #0f172a;
+            --success: #10b981;
+            --shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            --shadow-lg: 0 25px 50px -12px rgba(0,0,0,0.25);
+            --radius: 16px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --font-sans: 'Montserrat', -apple-system, sans-serif;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--gray-900);
+            background-color: #f9fafb;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            background: var(--primary);
+            color: white;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn:hover::before {
+            transform: translateX(100%);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .section {
+            padding: 7rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.2rem;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray-700);
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-top: 1.5rem;
+        }
+
+        /* ====== TYPOGRAPHY SCALE ====== */
+        h1 { font-size: 3.5rem; }
+        h2 { font-size: 2.8rem; }
+        h3 { font-size: 2.2rem; }
+        h4 { font-size: 1.8rem; }
+        h5 { font-size: 1.5rem; }
+
+        @media (max-width: 992px) {
+            h1 { font-size: 3.0rem; }
+            h2 { font-size: 2.4rem; }
+            .section { padding: 5rem 0; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2.0rem; }
+            .section { padding: 4rem 0; }
+        }
+
+        /* ====== HEADER ====== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo-text {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--gray-900);
+            font-weight: 500;
+            font-size: 1.05rem;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .btn-login {
+            padding: 8px 20px;
+            font-size: 0.95rem;
+        }
+
+        .btn-call {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .btn-call i {
+            font-size: 1.2rem;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--gray-900);
+            cursor: pointer;
+        }
+
+        /* ====== HERO SECTION ====== */
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.15) 0%, transparent 40%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .floating {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(20px);
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        .floating-1 {
+            top: 15%; left: 10%; width: 120px; height: 120px; background: #2563eb;
+            animation: float 15s ease-in-out infinite;
+        }
+
+        .floating-2 {
+            top: 70%; right: 15%; width: 180px; height: 180px; background: #0f172a;
+            animation: float 20s ease-in-out infinite 2s;
+        }
+
+        .floating-3 {
+            bottom: 20%; left: 30%; width: 100px; height: 100px; background: #f59e0b;
+            animation: float 18s ease-in-out infinite 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, -20px) rotate(5deg); }
+            50% { transform: translate(-15px, -30px) rotate(-5deg); }
+            75% { transform: translate(15px, -10px) rotate(3deg); }
+        }
+
+        /* ====== STORY SECTION ====== */
+        .story-section {
+            background: white;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-content h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .story-content p {
+            color: var(--gray-700);
+            margin-bottom: 1.8rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .milestones {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .milestone {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--gray-100);
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        .milestone:hover {
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: var(--shadow);
+        }
+
+        .milestone-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .milestone-label {
+            color: var(--gray-700);
+            font-weight: 500;
+        }
+
+        .story-image {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .story-image::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, transparent 50%, rgba(37, 99, 235, 0.1) 100%);
+        }
+
+        /* ====== JOURNEY TIMELINE (NEW) ====== */
+        .journey-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary);
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+
+        .timeline-content {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+            max-width: 400px;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px -10px rgba(0,0,0,0.15);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border: 4px solid white;
+            border-radius: 50%;
+            top: 25px;
+            z-index: 1;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .timeline-item:nth-child(odd) {
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+            margin-right: calc(50% + 40px);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -52px;
+        }
+
+        .timeline-item:nth-child(even) {
+            text-align: left;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: auto;
+            margin-left: calc(50% + 40px);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -52px;
+        }
+
+        .timeline h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.4rem;
+        }
+
+        .timeline-year {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        /* ====== VALUES SECTION ====== */
+        .values-section {
+            background: white;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .value-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.8rem;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .value-card h3 {
+            margin-bottom: 1.2rem;
+            color: var(--secondary);
+        }
+
+        .value-card p {
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+
+        /* ====== TEAM SECTION ====== */
+        .team-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .member-image {
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-member:hover .member-image img {
+            transform: scale(1.1);
+        }
+
+        .member-content {
+            padding: 1.8rem;
+        }
+
+        .member-name {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .member-bio {
+            color: var(--gray-700);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gray-100);
+            color: var(--gray-700);
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ====== IMPACT SECTION (NEW) ====== */
+        .impact-section {
+            background: linear-gradient(135deg, var(--secondary) 0%, #0c1625 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 40%);
+        }
+
+        .impact-section .section-title h2,
+        .impact-section .section-title p {
+            color: white;
+        }
+
+        .impact-section .section-title h2::after {
+            background: var(--accent);
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .impact-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .impact-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(245, 158, 11, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .impact-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            font-size: 1.2rem;
+        }
+
+        /* ====== LEADERSHIP SECTION ====== */
+        .leadership-section {
+            background: white;
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .leader-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .leader-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .leader-header {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .leader-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .leader-card:hover .leader-header img {
+            transform: scale(1.05);
+        }
+
+        .leader-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .leader-content {
+            padding: 2rem;
+        }
+
+        .leader-name {
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .leader-title {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+        }
+
+        .leader-quote {
+            font-style: italic;
+            line-height: 1.8;
+            position: relative;
+            padding: 0 1.5rem;
+            color: var(--gray-700);
+        }
+
+        .leader-quote::before,
+        .leader-quote::after {
+            content: '"';
+            font-size: 2.5rem;
+            font-family: var(--font-serif);
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+        }
+
+        .leader-quote::before {
+            top: -15px;
+            left: 0;
+        }
+
+        .leader-quote::after {
+            bottom: -35px;
+            right: 0;
+        }
+
+        /* ====== AWARDS SECTION (NEW) ====== */
+        .awards-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .award-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .award-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .award-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--success);
+        }
+
+        .award-year {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .award-name {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ====== PARTNERS SECTION ====== */
+        .partners-section {
+            background: white;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .partner-logo {
+            height: 80px;
+            filter: grayscale(100%) opacity(0.6);
+            transition: var(--transition);
+        }
+
+        .partner-logo:hover {
+            filter: grayscale(0%) opacity(1);
+            transform: scale(1.1);
+        }
+
+        /* ====== CTA SECTION ====== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #1d4ed8 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-content p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* ====== FOOTER ====== */
+        footer {
+            background: var(--secondary);
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-content {
+            padding: 5rem 0 3rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+        }
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 1.8rem;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .footer-links a i {
+            font-size: 0.9rem;
+            opacity: 0.5;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 0;
+        }
+
+        .footer-links a:hover i {
+            opacity: 1;
+            transform: translateX(5px);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            background: rgba(0,0,0,0.3);
+            padding: 1.8rem 0;
+            text-align: center;
+            font-size: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* ====== NEWSLETTER IN FOOTER ====== */
+        .newsletter-form {
+            display: flex;
+            margin-top: 1.5rem;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 8px 0 0 8px;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .newsletter-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .newsletter-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ====== RESPONSIVE DESIGN ====== */
+        @media (max-width: 992px) {
+            .header-container {
+                padding: 1rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                flex-direction: column;
+                background: white;
+                width: 80%;
+                height: calc(100vh - 80px);
+                padding: 2rem;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: var(--transition);
+                gap: 1.5rem;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .story-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .timeline::before {
+                left: 40px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 100px;
+                margin-right: 0;
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -52px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .milestones {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .cta-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                border-radius: 8px;
+                margin-bottom: 0.5rem;
+            }
+            
+            .newsletter-btn {
+                border-radius: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .milestones {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-actions {
+                display: none;
+            }
+        }
+
+        /* ====== ANIMATIONS ====== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .counter {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Floating animation for header logo */
+        .logo-img {
+            transition: transform 0.5s ease;
+        }
+
+        .logo-img:hover {
+            transform: rotate(10deg) scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="Images/TT4.png" alt="TravelTales Logo" class="logo-img">
+                <div class="logo-text">Travel<span>Tales</span></div>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../Travel Tales/Tour.html" class="nav-link">Tours</a></li>
+                    <li><a href="../Destinations/Destinations.html" class="nav-link">Destinations</a></li>
+                    <li><a href="../Travel Tales/About Us.html" class="nav-link active">About</a></li>
+                    <li><a href="../Blog/Ourblog.html" class="nav-link">Blog</a></li>
+                    <li><a href="../Services/Contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="../Services/Sign Up Page.html" class="btn btn-login">Login</a>
+                <a href="tel:+919876543210" class="btn-call">
+                    <i class="fas fa-phone"></i> +91 98765 43210
+                </a>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Floating Decorative Elements -->
+    <div class="floating floating-1"></div>
+    <div class="floating floating-2"></div>
+    <div class="floating floating-3"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Our Story, Your Journey</h1>
+            <p>For over a decade, we've been crafting unforgettable travel experiences that connect people with the world's most extraordinary places.</p>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="section story-section">
+        <div class="container">
+            <div class="story-grid fade-in">
+                <div class="story-content">
+                    <h2>Where Passion Meets Purpose</h2>
+                    <p>TravelTales was born from a simple yet powerful idea: to transform how people experience the world. Founded in 2012 by a group of passionate travelers and industry veterans, we set out to create a travel company that prioritizes authentic experiences over mass tourism.</p>
+                    <p>What started as a small team in Nagpur has grown into a nationwide network of travel experts, local guides, and partners who share our vision of responsible, immersive travel. Today, we've helped over 50,000 travelers create memories that last a lifetime.</p>
+                    
+                    <div class="milestones">
+                        <div class="milestone">
+                            <div class="milestone-number counter">12</div>
+                            <div class="milestone-label">Years of Excellence</div>
+                        </div>
+                        <div class="milestone">
+                            <div class="milestone-number counter">50,000+</div>
+                            <div class="milestone-label">Happy Travelers</div>
+                        </div>
+                        <div class="milestone">
+                            <div class="milestone-number counter">200+</div>
+                            <div class="milestone-label">Destinations</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="TravelTales Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Timeline (NEW) -->
+    <section class="section journey-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Journey So Far</h2>
+                <p>Key milestones in our evolution as a trusted travel partner</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2012</span>
+                        <h3>Foundation</h3>
+                        <p>TravelTales founded in Nagpur by Karan Bipate with a vision to create meaningful travel experiences.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2014</span>
+                        <h3>First International Tour</h3>
+                        <p>Launched our first international tour package to Southeast Asia, receiving overwhelming response.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2016</span>
+                        <h3>Technology Platform</h3>
+                        <p>Developed our award-winning online booking platform, making travel planning seamless.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2018</span>
+                        <h3>National Expansion</h3>
+                        <p>Expanded operations to 10 major cities across India, serving 10,000+ travelers annually.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2020</span>
+                        <h3>Sustainability Initiative</h3>
+                        <p>Launched "Green Trails" program, offsetting carbon emissions and supporting local communities.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2023</span>
+                        <h3>50,000 Travelers</h3>
+                        <p>Celebrated our 50,000th traveler with special recognition and commitment to future growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section values-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide every decision we make and every journey we create</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Authentic Connection</h3>
+                    <p>We believe travel is about meaningful connections—with people, places, and cultures. We design experiences that foster genuine understanding and appreciation.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainable Travel</h3>
+                    <p>Our commitment to responsible tourism means supporting local communities, protecting natural environments, and preserving cultural heritage for future generations.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Exceptional Quality</h3>
+                    <p>From handpicked accommodations to expert local guides, we maintain the highest standards in every aspect of your journey. Your experience is our reputation.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Personalized Service</h3>
+                    <p>We understand that every traveler is unique. Our dedicated travel consultants work closely with you to create itineraries that match your interests, pace, and style.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Trust & Safety</h3>
+                    <p>Your peace of mind is our priority. We provide 24/7 support, comprehensive insurance options, and partnerships with trusted local operators worldwide.</p>
+                </div>
+                
+                <div class="value-card fade-in">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation & Curiosity</h3>
+                    <p>We constantly explore new destinations, unique experiences, and innovative technologies to make your journey more seamless, informative, and inspiring.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section (NEW) -->
+    <section class="section impact-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Positive Impact</h2>
+                <p>How TravelTales contributes to communities and the environment</p>
+            </div>
+            
+            <div class="impact-grid">
+                <div class="impact-card fade-in">
+                    <div class="impact-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="impact-number">1,200+</div>
+                    <div class="impact-label">Local guides employed</div>
+                </div>
+                
+                <div class="impact-card fade-in">
+                    <div class="impact-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <div class="impact-number">5,000+</div>
+                    <div class="impact-label">Trees planted</div>
+                </div>
+                
+                <div class="impact-card fade-in">
+                    <div class="impact-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="impact-number">24</div>
+                    <div class="impact-label">Schools supported</div>
+                </div>
+                
+                <div class="impact-card fade-in">
+                    <div class="impact-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <div class="impact-number">75%</div>
+                    <div class="impact-label">Plastic-free tours</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section team-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Meet Our Travel Experts</h2>
+                <p>The passionate professionals who make your travel dreams come true</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member fade-in">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=634&q=80" alt="Paul Harrison">
+                    </div>
+                    <div class="member-content">
+                        <h4 class="member-name">Paul Harrison</h4>
+                        <div class="member-role">Lead Travel Consultant</div>
+                        <p class="member-bio">With 15 years in the industry, Paul specializes in luxury European getaways and has visited over 60 countries.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member fade-in">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&auto=format&fit=crop&w=644&q=80" alt="Sarah Johnson">
+                    </div>
+                    <div class="member-content">
+                        <h4 class="member-name">Sarah Johnson</h4>
+                        <div class="member-role">Destination Specialist</div>
+                        <p class="member-bio">Sarah's expertise in Southeast Asia and the Himalayas comes from living in 7 countries and speaking 4 languages.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member fade-in">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=634&q=80" alt="Michael Chen">
+                    </div>
+                    <div class="member-content">
+                        <h4 class="member-name">Michael Chen</h4>
+                        <div class="member-role">Adventure Travel Expert</div>
+                        <p class="member-bio">A certified mountaineering guide, Michael designs adrenaline-pumping expeditions from the Andes to the Alps.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member fade-in">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=634&q=80" alt="Priya Sharma">
+                    </div>
+                    <div class="member-content">
+                        <h4 class="member-name">Priya Sharma</h4>
+                        <div class="member-role">Cultural Immersion Specialist</div>
+                        <p class="member-bio">Priya creates meaningful cultural exchanges, connecting travelers with local communities and traditions across India and Asia.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="section leadership-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Leadership</h2>
+                <p>Guided by visionaries who live and breathe the spirit of travel</p>
+            </div>
+            
+            <div class="leadership-grid">
+                <div class="leader-card fade-in">
+                    <div class="leader-header">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=634&q=80" alt="Karan Bipate">
+                        <div class="leader-badge">Founder & CEO</div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Karan Bipate</h3>
+                        <div class="leader-title">Founder & CEO</div>
+                        <p class="leader-quote">"Travel isn't just about seeing new places—it's about seeing the world through new eyes. Our mission is to create journeys that transform perspectives and foster global citizenship."</p>
+                    </div>
+                </div>
+                
+                <div class="leader-card fade-in">
+                    <div class="leader-header">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=634&q=80" alt="Anjali Patel">
+                        <div class="leader-badge">Chief Experience Officer</div>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Anjali Patel</h3>
+                        <div class="leader-title">Chief Experience Officer</div>
+                        <p class="leader-quote">"Every detail matters. From the moment you book to the last sunset of your journey, we obsess over creating seamless, magical experiences that exceed expectations."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section (NEW) -->
+    <section class="section awards-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Industry Recognition</h2>
+                <p>Awards and accolades that recognize our commitment to excellence</p>
+            </div>
+            
+            <div class="awards-grid">
+                <div class="award-card fade-in">
+                    <div class="award-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <span class="award-year">2023</span>
+                    <h4 class="award-name">Best Travel Startup</h4>
+                    <p>National Tourism Awards</p>
+                </div>
+                
+                <div class="award-card fade-in">
+                    <div class="award-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <span class="award-year">2022</span>
+                    <h4 class="award-name">Sustainable Tourism Award</h4>
+                    <p>Asia Pacific Travel Association</p>
+                </div>
+                
+                <div class="award-card fade-in">
+                    <div class="award-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="award-year">2021</span>
+                    <h4 class="award-name">Customer Excellence</h4>
+                    <p>Indian Travel & Tourism Awards</p>
+                </div>
+                
+                <div class="award-card fade-in">
+                    <div class="award-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <span class="award-year">2020</span>
+                    <h4 class="award-name">Innovation in Travel</h4>
+                    <p>Global Travel Tech Awards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="section partners-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Trusted Partners</h2>
+                <p>We collaborate with the world's leading travel brands to deliver exceptional experiences</p>
+            </div>
+            
+            <div class="partners-grid">
+                <div class="partner fade-in"><img src="https://1000logos.net/wp-content/uploads/2021/07/IndiGo-Logo.png" alt="IndiGo" class="partner-logo"></div>
+                <div class="partner fade-in"><img src="https://download.logo.wine/logo/Vistara/Vistara-Logo.wine.png" alt="Vistara" class="partner-logo"></div>
+                <div class="partner fade-in"><img src="https://1000logos.net/wp-content/uploads/2019/08/Tripadvisor-Logo.png" alt="TripAdvisor" class="partner-logo"></div>
+                <div class="partner fade-in"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/ITC_Hotels_logo.svg/1200px-ITC_Hotels_logo.svg.png" alt="ITC Hotels" class="partner-logo"></div>
+                <div class="partner fade-in"><img src="https://play-lh.googleusercontent.com/itPz9_NOrJJtzPSMAYXeHEdQ6VZQknvuzu_lSovL96NvVfsnaxLq8Jw7F0asrGwEzg" alt="Google" class="partner-logo"></div>
+                <div class="partner fade-in"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Booking.com_logo.svg/2560px-Booking.com_logo.svg.png" alt="Booking.com" class="partner-logo"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Ready to Begin Your Journey?</h2>
+                <p>Let our travel experts craft a personalized itinerary that matches your dreams and interests.</p>
+                <div class="cta-btns">
+                    <a href="#" class="btn">Plan Your Trip</a>
+                    <a href="#" class="btn btn-outline">Talk to an Expert</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h3>TravelTales</h3>
+                        <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 1.5rem;">Wander more, wonder always. Your perfect journey begins with us.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Tours</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Destinations</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> News</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Support Center</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> FAQs</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Travel Blog</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Careers</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Newsletter</h3>
+                        <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">Subscribe to receive travel tips and exclusive offers</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email address" class="newsletter-input" required>
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                        <h3 style="margin-top: 2rem;">Contact Info</h3>
+                        <ul class="footer-links">
+                            <li><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Nagpur, Maharashtra, India</li>
+                            <li><i class="fas fa-phone-alt"></i> +91 98765 43210</li>
+                            <li><i class="fas fa-envelope"></i> TravelTales@gmail.com</li>
+                            <li><i class="fas fa-clock"></i> Mon - Sat: 9:00 - 18:00</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 <span style="color: var(--primary);">Travel Tales</span>. All rights reserved. | Crafted with <i class="fas fa-heart" style="color: var(--accent);"></i> by Karan Bipate</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            mobileToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                const icon = this.querySelector('i');
+                if (navMenu.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            
+            // Close mobile menu when clicking a link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    const icon = mobileToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+            
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Fade-in Animation on Scroll
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('appear');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            fadeElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Counter animation
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText.replace(/,/g, '');
+                    
+                    const speed = 200;
+                    const increment = target / speed;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment).toLocaleString();
+                        setTimeout(updateCount, 30);
+                    } else {
+                        counter.innerText = target.toLocaleString();
+                    }
+                };
+                
+                // Initialize counters with data
+                if (counter.innerText === '12') {
+                    counter.setAttribute('data-target', '12');
+                } else if (counter.innerText === '50,000+') {
+                    counter.setAttribute('data-target', '50000');
+                    counter.innerText = '0';
+                } else if (counter.innerText === '200+') {
+                    counter.setAttribute('data-target', '200');
+                    counter.innerText = '0';
+                }
+                
+                // Start counter when element is visible
+                const counterObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateCount();
+                            counterObserver.unobserve(counter);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                counterObserver.observe(counter);
+            });
+            
+            // Newsletter form submission
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input').value;
+                    
+                    if (email && email.includes('@')) {
+                        alert('Thank you for subscribing! You\'ll receive our latest travel tips soon.');
+                        this.reset();
+                    } else {
+                        alert('Please enter a valid email address.');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+

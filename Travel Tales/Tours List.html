@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Tales Tour List</title>
+    <link rel="icon" href="Images/TT4.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/Tourlist.css">
+</head>
+    <body>
+        <!-- Top Bar -->
+    <header>
+        <div class="top-bar">
+            <div>
+                <i class="fas fa-envelope"></i><a href="mailto:TravelTales@gmail.com">TravelTales@gmail.com</a>
+                <i class="fas fa-map-marker-alt"></i> Nagpur, Maharashtra
+            </div>
+            <div>
+                <a href="../Services/Sign up Page.html">Login / Signup</a>
+                <a href="#">EN <i class="fas fa-chevron-down"></i></a>
+                <a href="https://www.facebook.com/login.php/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/login/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/account"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="logo">
+                <img src="Images/TT4.png" alt="Travilo Logo" width="100">
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="Tour.html">Tours</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Tours List.html">Tour List</a></li>
+                        <li><a href="Tours Packages.html">Tour Packages</a></li>
+                        <li><a href="Tour.html">Tour Details</a></li>
+                        <li><a href="Tour.html">Activities</a></li>
+                        <li><a href="Tour.html">Activity Details</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="../Destinations/Destinations.html">Destination</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../Destinations/Destinations.html">All Destinations</a></li>
+                        <li><a href="../Services/Destination Single.html">Destination Single</a></li>
+                        <li><a href="../Services/Discover Hotel.html">Hotels</a></li>
+                        <li><a href="../Services/Hotel Services.html">Hotel Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="About Us.html" class="active">About</a></li>
+                <li class="dropdown">
+                    <a href="News.html">News</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../Blog/Ourblog.html">Our Blog</a></li>
+                        <li><a href="../Blog/BlogDetails.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="../Services/Contact.html">Contact</a></li>
+            </ul>
+            <div class="call-us">
+                <i class="fas fa-phone"></i> Call Us <br> +9999999999
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+        <div class="banner-text">
+            <h1>Tour List</h1>
+            <p>Home &#11166; Tour List</p>
+        </div>
+    </div>
+
+<div class="container my-5">
+    <div class="row">
+        <!-- Search Sidebar -->
+        <!-- Sidebar Column (col-md-3) -->
+<div class="col-md-3">
+
+    <!-- Search Packages -->
+    <div class="sidebar-card mb-4">
+        <h4 class="sidebar-title"><i class="bi bi-search-heart"></i> Search Packages</h4>
+
+        <form>
+            <div class="mb-3">
+                <label class="form-label">Destination</label>
+                <input type="text" class="form-control" placeholder="Search destination...">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Check In</label>
+                <input type="date" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Check Out</label>
+                <input type="date" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Guests</label>
+                <input type="number" class="form-control" placeholder="Number of guests">
+            </div>
+
+            <button class="btn btn-warning w-100 mt-2">Search</button>
+        </form>
+    </div>
+
+    <!-- Travel News -->
+    <div class="sidebar-card mb-4">
+        <h4 class="sidebar-title text-primary"><i class="bi bi-newspaper"></i> Travel News</h4>
+        <ul class="list-unstyled small travel-news">
+            <li><i class="bi bi-pin-map-fill"></i> Goa – Beach festival coming 2025</li>
+            <li><i class="bi bi-snow"></i> Kashmir – Fresh snowfall</li>
+            <li><i class="bi bi-bicycle"></i> Ladakh – New bike route</li>
+            <li><i class="bi bi-water"></i> Assam – River cruises rising</li>
+        </ul>
+    </div>
+
+    <!-- Latest Blogs -->
+    <div class="sidebar-card mb-4">
+        <h4 class="sidebar-title text-success"><i class="bi bi-journal-text"></i> Latest Blogs</h4>
+
+        <ul class="list-unstyled small latest-blogs">
+            <li class="blog-item">
+                <img src="https://media.istockphoto.com/id/1371289822/photo/himalayan-village-town-of-kalpa-with-kailash-mountain-snow-peaks-at-himachal-pradesh-india.jpg?s=612x612&w=0&k=20&c=ibz1ktqV34YlHk0FeSyBcoykG2IVViXNUxU2NLCGsg8=" alt="himachal-pradesh">
+                <a href="#">Top 10 Places in Himachal</a>
+            </li>
+
+            <li class="blog-item">
+                <img src="https://www.theunexplored.in/blog/wp-content/uploads/2022/09/rafting-.jpg" alt="Adventure">
+                <a href="#">Adventure Activities in Northeast</a>
+            </li>
+
+            <li class="blog-item">
+                <img src="https://t3.ftcdn.net/jpg/04/37/91/72/360_F_437917209_fZPcDkpnEpZJ2oWFpNbqYATQ39UJFcZl.jpg" alt="Kashmir Winter">
+                <a href="#">Kashmir Winter Wonderland</a>
+            </li>
+
+            <li class="blog-item">
+                <img src="https://thedreamridersgroup.com/pages/og/2025-07-23-6880997e885b6.webp" alt="">
+                <a href="#">Best Tips for Budget Trips</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Top Rated -->
+    <div class="sidebar-card mb-4">
+        <h4 class="sidebar-title text-danger"><i class="bi bi-star-fill"></i> Top Rated</h4>
+
+        <div class="top-rated">
+            <div class="rated-item">
+                <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFsZGl2ZXN8ZW58MHx8MHx8fDA%3D" alt="">
+                <div>
+                    <p class="mb-0">Maldives Premium Tour</p>
+                    <small>⭐⭐⭐⭐⭐</small>
+                </div>
+            </div>
+
+            <div class="rated-item">
+                <img src="https://dashboard.somansleisuretours.com/uploads/Bali_tour_package_cb9c4e5279.webp" alt="">
+                <div>
+                    <p class="mb-0">Bali Holiday Package</p>
+                    <small>⭐⭐⭐⭐</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery -->
+    <div class="sidebar-card mb-4">
+        <h4 class="sidebar-title text-danger"><i class="bi bi-images"></i> Gallery</h4>
+        <div class="row g-2">
+            <div class="col-6"><img src="https://wallpapers.com/images/hd/himalaya-pictures-s0axxelmt3knoeie.jpg" class="img-fluid rounded gallery-img"></div>
+            <div class="col-6"><img src="https://media.istockphoto.com/id/535168027/photo/india-goa-palolem-beach.jpg?s=612x612&w=0&k=20&c=iGV1Ue0Efj87dQirWnUpZVG1dNobUjfVvMGdKHTJ7Qg=" class="img-fluid rounded gallery-img"></div>
+            <div class="col-6"><img src="https://media.istockphoto.com/id/1224021113/photo/indian-cameleers-camel-driver-with-camel-silhouettes-in-dunes-on-sunset-jaisalmer-rajasthan.jpg?s=612x612&w=0&k=20&c=MeF2Dl4ya1NVOWM_I_xo3EPd8E-iazBghYhjiyRaTcU=" class="img-fluid rounded gallery-img"></div>
+            <div class="col-6"><img src="https://media.istockphoto.com/id/1193125821/photo/beautiful-natural-scenery-of-himalayan-river-valley-during-monsoon-passing-through-lush-green.jpg?s=612x612&w=0&k=20&c=ZxraqCgNQ2psa6UPC_Voi3z3v1aGInkcofXNguC8W-s=" class="img-fluid rounded gallery-img"></div>
+        </div>
+    </div>
+
+    <!-- Upcoming Events -->
+    <div class="sidebar-card mb-4">
+        <h4 class="sidebar-title text-info"><i class="bi bi-calendar-event"></i> Upcoming Events</h4>
+        <ul class="list-unstyled small">
+            <li>🎉 Rann Utsav 2025 – Gujarat</li>
+            <li>🕯️ Ganga Aarti Festival – Varanasi</li>
+            <li>🎶 Sunburn Festival – Goa</li>
+            <li>🛕 Pongal Celebration – Tamil Nadu</li>
+        </ul>
+    </div>
+
+    <!-- Exclusive Deals -->
+<div class="sidebar-card mb-4 p-3">
+    <h4 class="sidebar-title text-warning mb-3">
+        <i class="bi bi-gift-fill"></i> Exclusive Deals
+    </h4>
+
+    <div class="deal-item mb-3">
+        <img src="https://t4.ftcdn.net/jpg/00/98/44/37/360_F_98443741_G8VlrLoRGWUSA3cGgw36RqEiBkfVR9pX.jpg" class="rounded mb-2">
+        <p class="mb-1"><strong>Thailand Mega Offer</strong></p>
+        <small>Save up to 40%</small>
+    </div>
+
+    <div class="deal-item">
+        <img src="https://m.media-amazon.com/images/I/71p3aB5wYAL.jpg" class="rounded mb-2">
+        <p class="mb-1"><strong>Dubai Luxury Deal</strong></p>
+        <small>Flat ₹15% OFF</small>
+    </div>
+</div>
+
+
+    <!-- Customer Reviews -->
+    <div class="sidebar-card mb-4">
+        <h4 class="sidebar-title text-success"><i class="bi bi-chat-quote"></i> Customer Reviews</h4>
+
+        <div class="review-item mb-3">
+            <p class="mb-0"><strong>Riya Sharma</strong></p>
+            <small>⭐⭐⭐⭐⭐ Amazing trip to Kashmir!</small>
+        </div>
+
+        <div class="review-item">
+            <p class="mb-0"><strong>Arjun Mehta</strong></p>
+            <small>⭐⭐⭐⭐ Great service and clean hotels.</small>
+        </div>
+    </div>
+</div>
+        
+        <!-- Packages Section -->
+        <div class="col-md-9">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h6>Showing results of 1 - 9 of 200 items</h6>
+                <div class="dropdown mb-3">
+  <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+    Sort By
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+    <li><a class="dropdown-item" href="#">Price: Low to High</a></li>
+    <li><a class="dropdown-item" href="#">Price: High to Low</a></li>
+    <li><a class="dropdown-item" href="#">Rating</a></li>
+    <li><a class="dropdown-item" href="#">Newest Packages</a></li>
+  </ul>
+</div>
+            </div>
+
+            <!-- Package Cards -->
+            <!-- Package Cards -->
+<div class="row gy-4">
+    <!-- Package Card 1 -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm">
+            <div class="position-relative">
+                <img src="https://cdn.pixabay.com/photo/2013/07/19/17/38/kerala-165347_1280.jpg" class="card-img-top" alt="Kerala Backwaters">
+                <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-3">FEATURED</span>
+                <button class="btn btn-light position-absolute top-0 end-0 m-3"><i class="bi bi-heart"></i></button>
+            </div>
+            <div class="card-body">
+                <h6 class="text-danger">Kerala</h6>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="text-warning me-2">&#9733; 4.8</span>
+                    <small class="text-muted">876 Reviews</small>
+                </div>
+                <h5 class="card-title"><a href="../South India/Kerala/Alleppey Backwater Cruise.html" class="text-dark text-decoration-none">Explore the Backwaters of Kerala</a></h5>
+                <p class="card-text">Discover the tranquil beauty of Kerala's backwaters...</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span><i class="bi bi-calendar-event"></i> 5 Days 4 Nights</span>
+                    <span>From <strong class="text-danger">₹18,999</strong></span>
+                </div>
+                <a href="book-now.html" class="btn btn-danger mt-3 w-100">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Package Card 2 - Rajasthan -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm">
+            <img src="https://cdn.pixabay.com/photo/2015/02/17/07/33/architecture-639103_1280.jpg" class="card-img-top" alt="Rajasthan Desert Safari">
+            <div class="card-body">
+                <h6 class="text-danger">Rajasthan</h6>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="text-warning me-2">&#9733; 4.7</span>
+                    <small class="text-muted">520 Reviews</small>
+                </div>
+                <h5 class="card-title"><a href="../North India/Rajasthan/Jaisalmer Desert Safari.html" class="text-dark text-decoration-none">Desert Safari Adventure</a></h5>
+                <p class="card-text">Experience the vibrant culture and vast deserts of Rajasthan...</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span><i class="bi bi-calendar-event"></i> 7 Days 6 Nights</span>
+                    <span>From <strong class="text-danger">₹24,999</strong></span>
+                </div>
+                <a href="book-now.html" class="btn btn-danger mt-3 w-100">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Package Card 3 - Goa -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm">
+            <img src="https://cdn.pixabay.com/photo/2019/03/31/11/00/india-4092844_1280.jpg" class="card-img-top" alt="Goa Beaches">
+            <div class="card-body">
+                <h6 class="text-danger">Goa</h6>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="text-warning me-2">&#9733; 4.9</span>
+                    <small class="text-muted">1200 Reviews</small>
+                </div>
+                <h5 class="card-title"><a href="../West India/Goa/Goa Beach Tour.html" class="text-dark text-decoration-none">Beach Paradise</a></h5>
+                <p class="card-text">Enjoy the sunny beaches and vibrant nightlife of Goa...</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span><i class="bi bi-calendar-event"></i> 4 Days 3 Nights</span>
+                    <span>From <strong class="text-danger">₹14,999</strong></span>
+                </div>
+                <a href="book-now.html" class="btn btn-danger mt-3 w-100">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Package Card 4 - Ladakh -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm">
+            <img src="https://cdn.pixabay.com/photo/2023/07/27/14/49/milky-way-8153503_1280.jpg" class="card-img-top" alt="Ladakh Mountains">
+            <div class="card-body">
+                <h6 class="text-danger">Ladakh</h6>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="text-warning me-2">&#9733; 4.9</span>
+                    <small class="text-muted">145 Reviews</small>
+                </div>
+                <h5 class="card-title"><a href="../North India/Ladakh/Leh Ladakh Adventure.html" class="text-dark text-decoration-none">Mountain Expeditions</a></h5>
+                <p class="card-text">Trek through the beautiful mountainous terrains of Ladakh...</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span><i class="bi bi-calendar-event"></i> 6 Days 5 Nights</span>
+                    <span>From <strong class="text-danger">₹32,499</strong></span>
+                </div>
+                <a href="book-now.html" class="btn btn-danger mt-3 w-100">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Package Card 5 - Himachal Pradesh -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm">
+            <img src="https://cdn.pixabay.com/photo/2022/06/23/05/02/monk-7279134_1280.jpg" class="card-img-top" alt="Himachal Pradesh Hills">
+            <div class="card-body">
+                <h6 class="text-danger">Himachal Pradesh</h6>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="text-warning me-2">&#9733; 4.6</span>
+                    <small class="text-muted">400 Reviews</small>
+                </div>
+                <h5 class="card-title">Himalayan Adventure</h5>
+                <p class="card-text">Escape to the picturesque hills and valleys of Himachal Pradesh...</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span><i class="bi bi-calendar-event"></i> 5 Days 4 Nights</span>
+                    <span>From <strong class="text-danger">₹17,499</strong></span>
+                </div>
+                <a href="book-now.html" class="btn btn-danger mt-3 w-100">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Package Card 6 - Andaman Islands -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm package-card animate__animated animate__fadeInUp">
+            <img src="https://blog.untravel.com/wp-content/uploads/2018/10/Neil-Island-Andaman-and-Nicobar-DC135.jpg" class="card-img-top" alt="Andaman Islands">
+            <div class="card-body">
+                <h6 class="text-danger">Andaman Islands</h6>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="text-warning me-2">&#9733; 4.8</span>
+                    <small class="text-muted">980 Reviews</small>
+                </div>
+                <h5 class="card-title">Island Paradise</h5>
+                <p class="card-text">Snorkel, dive, and explore the beautiful beaches of Andaman...</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span><i class="bi bi-calendar-event"></i> 6 Days 5 Nights</span>
+                    <span>From <strong class="text-danger">₹38,999</strong></span>
+                </div>
+                <a href="book-now.html" class="btn btn-danger mt-3 w-100">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Package Card 7 - Kashmir -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm package-card animate__animated animate__fadeInUp">
+            <img src="https://kashmirobserver.net/wp-content/uploads/2024/01/Anticipation-Peaks-In-Kashmir-Winter-Wonderland-Expected-By-Month-End-.jpeg" class="card-img-top" alt="Kashmir Valley">
+            <div class="card-body">
+                <h6 class="text-danger">Kashmir</h6>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="text-warning me-2">&#9733; 4.9</span>
+                    <small class="text-muted">780 Reviews</small>
+                </div>
+                <h5 class="card-title">Heaven on Earth</h5>
+                <p class="card-text">A journey through the tranquil beauty of Kashmir’s valleys...</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span><i class="bi bi-calendar-event"></i> 7 Days 6 Nights</span>
+                    <span>From <strong class="text-danger">₹28,999</strong></span>
+                </div>
+                <a href="book-now.html" class="btn btn-danger mt-3 w-100">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Package Card 8 - Sikkim -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm package-card animate__animated animate__fadeInUp">
+            <img src="https://www.tripsavvy.com/thmb/LV9cMvf0PkFRA1hO6-CfTyFBxgs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-606222988-5a823cff1d64040037dfd9a1.jpg" class="card-img-top" alt="Sikkim Mountains">
+            <div class="card-body">
+                <h6 class="text-danger">Sikkim</h6>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="text-warning me-2">&#9733; 4.7</span>
+                    <small class="text-muted">650 Reviews</small>
+                </div>
+                <h5 class="card-title"><a href="../North East India/Sikkim/Pelling Adventure Tour.html" class="text-dark text-decoration-none">Himalayan Bliss</a></h5>
+                <p class="card-text">Experience the serene monasteries and mountains of Sikkim...</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span><i class="bi bi-calendar-event"></i> 5 Days 4 Nights</span>
+                    <span>From <strong class="text-danger">₹21,499</strong></span>
+                </div>
+                <a href="book-now.html" class="btn btn-danger mt-3 w-100">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Package Card 9 - Manali -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm package-card animate__animated animate__fadeInUp">
+            <img src="https://www.naturetravelagency.com/uploads/1703234831best%20time%20to%20visit%20Manali%20for%20snowfall.jpg" class="card-img-top" alt="Manali Hills">
+            <div class="card-body">
+                <h6 class="text-danger">Manali</h6>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="text-warning me-2">&#9733; 4.6</span>
+                    <small class="text-muted">560 Reviews</small>
+                </div>
+                <h5 class="card-title">Snowy Retreat</h5>
+                <p class="card-text">Explore the snow-capped hills and adventure spots in Manali...</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span><i class="bi bi-calendar-event"></i> 5 Days 4 Nights</span>
+                    <span>From <strong class="text-danger">₹15,999</strong></span>
+                </div>
+                <a href="book-now.html" class="btn btn-danger mt-3 w-100">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Package Card 10 - Uttarakhand -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm package-card animate__animated animate__fadeInUp">
+            <img src="https://static.toiimg.com/thumb/msid-105173665,width-1070,height-580,resizemode-75/105173665,pt-32,y_pad-40/105173665.jpg" class="card-img-top" alt="Uttarakhand Trekking">
+            <div class="card-body">
+                <h6 class="text-danger">Uttarakhand</h6>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="text-warning me-2">&#9733; 4.7</span>
+                    <small class="text-muted">600 Reviews</small>
+                </div>
+                <h5 class="card-title">Trekking to the Himalayan Peaks</h5>
+                <p class="card-text">Explore the beautiful hill stations and trekking routes in Uttarakhand...</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span><i class="bi bi-calendar-event"></i> 6 Days 5 Nights</span>
+                    <span>From <strong class="text-danger">₹22,499</strong></span>
+                </div>
+                <a href="book-now.html" class="btn btn-danger mt-3 w-100">Book Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Add more package cards similarly... -->
+    
+    
+</div>
+</div>
+</div>
+</div>
+    
+    <!-- Testimonials Section -->
+<section class="testimonials-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">What Our Travelers Say</h2>
+    <div class="row justify-content-center">
+
+      <!-- Testimonial Card 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <img src="https://t4.ftcdn.net/jpg/06/08/55/73/360_F_608557356_ELcD2pwQO9pduTRL30umabzgJoQn5fnd.jpg" alt="User1">
+            <h5>Amit Sharma</h5>
+            <small>Delhi to Manali</small>
+            <p>"Amazing experience! The entire tour was very well organized. We had so much fun and made beautiful memories."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial Card 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <img src="https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?s=612x612&w=0&k=20&c=tyLvtzutRh22j9GqSGI33Z4HpIwv9vL_MZw_xOE19NQ=" alt="User2">
+            <h5>Neha Verma</h5>
+            <small>Goa Beach Tour</small>
+            <p>"Very professional service. Comfortable stay and smooth transportation. Highly recommended for travelers!"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial Card 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <img src="https://media.istockphoto.com/id/1406197730/photo/portrait-of-a-young-handsome-indian-man.jpg?s=612x612&w=0&k=20&c=CncNUTbw6mzGsbojks2Vt0kV85N_pQaI3zaSkBQJFTc=" alt="User3">
+            <h5>Rohit Mehra</h5>
+            <small>Kerala Backwaters</small>
+            <p>"I loved every bit of the journey. Beautiful places and friendly guides. I would definitely travel again!"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+    <!-- Submit Review Section -->
+<section class="submit-review-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Share Your Experience</h2>
+    <p class="text-center mb-5 text-muted">We'd love to hear how your trip went!</p>
+    
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form class="review-form">
+          <div class="mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Your Name">
+          </div>
+          <div class="mb-3">
+            <label for="place" class="form-label">Visited Place</label>
+            <input type="text" class="form-control" id="place" placeholder="e.g., Kerala, Goa...">
+          </div>
+          <div class="mb-3">
+            <label for="rating" class="form-label">Rating</label>
+            <select class="form-select" id="rating">
+              <option selected disabled>Select a rating</option>
+              <option>★ 1</option>
+              <option>★ 2</option>
+              <option>★ 3</option>
+              <option>★ 4</option>
+              <option>★ 5</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="review" class="form-label">Your Review</label>
+            <textarea class="form-control" id="review" rows="4" placeholder="Write about your experience..."></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-warning px-4">Submit Review</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+
+    <!-- Custom Footer End --><!-- Enhanced Footer Start -->
+<footer class="custom-footer">
+  <!-- Decorative Wave -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 120 28">
+      <path d="M0,0 C30,25 90,0 120,25 L120 0 L0 0 Z" fill="#2c3e50"></path>
+    </svg>
+  </div>
+
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="footer-logo">
+  <img src="Images/TT7.png" alt="Travel Tales Logo" />
+</div>
+
+      <p>Wander more, wonder always. Your perfect journey begins with us.</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/login/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/account"><i class="fab fa-youtube"></i></a>
+        <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="../Destinations/Destinations.html">Destinations</a></li>
+        <li><a href="Tours Packages.html">Packages</a></li>
+        <li><a href="#">Offers</a></li>
+        <li><a href="#">Gallery</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="../Services/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="../Services/terms-of-service.html">Terms & Conditions</a></li>
+        <li><a href="../Services/Contact.html">Support</a></li>
+        <li><a href="../Services/Contact.html">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Get in Touch</h4>
+      <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+      <p><i class="fas fa-envelope"></i> info@traveltales.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+    </div>
+
+    <div class="newsletter">
+      <h4>Subscribe to Our Newsletter</h4>
+      <form>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+  <p>&copy; 2025 Travel Tales | All Rights Reserved</p>Crafted with ❤️ by <strong>Karan Bipate</strong></p>
+</div>
+
+</footer>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 5 Oct, 2025, 8:22:26 PM
+    Author     : VICTUS
+*/
+
+* {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'DM Sans', 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('himachal_background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #ffeb3b;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out;
+        }
+        h2 {
+            font-size: 24px;
+            margin: 40px 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+        .places-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .place {
+            width: calc(33.33% - 20px);
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+            margin-bottom: 20px; /* Added margin for spacing */
+        }
+        .place:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+        }
+        .place img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ccc;
+        }
+        .place h2 {
+            margin: 15px 0;
+            font-size: 22px;
+            color: #333;
+            text-align: center; /* Centered heading */
+        }
+        .place p {
+            margin: 10px;
+            font-size: 16px;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .place {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .place {
+                width: 100%;
+            }
+        }
+        #map {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+        #map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .packages-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .packages-container::-webkit-scrollbar {
+            display: none;  /* Chrome, Safari, Opera */
+        }
+        .package {
+            flex: 0 0 auto;
+            width: 300px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+        .package:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+        }
+        .package img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ccc;
+        }
+        .package h2 {
+            margin: 15px 0;
+            font-size: 20px;
+            color: #333;
+        }
+        .package p {
+            margin: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        .package .highlight {
+            font-weight: bold;
+            color: #00b894;
+            margin: 10px;
+        }
+        .package .book-btn {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: #ffeb3b;
+            color: #333;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .package .book-btn:hover {
+            background-color: #ffc107;
+        }
+        @media (max-width: 768px) {
+            .place, .package {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .place, .package {
+                width: 100%;
+            }
+        }
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        

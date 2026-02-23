@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Travel Tales - Begin Your Journey</title>
+    <link rel="icon" type="image/png" href="Images/TT4.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap">
+    <link rel="stylesheet" href="CSS/Design.css">
+</head>
+<body>
+    <!-- Video Background -->
+    <div class="video-background">
+    <video id="bgVideo" autoplay muted loop playsinline>
+        <source src="India.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <audio id="bgAudio" loop>
+        <source src="India.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<script>
+    // Browser requires a user interaction for audio
+    document.addEventListener("click", function () {
+        const audio = document.getElementById("bgAudio");
+        audio.play();      // Start audio
+    });
+</script>
+
+
+    
+    <!-- Sign Up Container -->
+    <div class="signup-container">
+        <div class="passport-stamp">TRAVEL TALES<br>MEMBER</div>
+        
+        <div class="logo">
+            <img src="Images/TT5.png" alt="Travel Tales Logo" class="logo-icon">
+            <div class="logo-text">Travel Tales</div>
+        </div>
+        
+        <div class="signup-header">
+            <h1>Begin Your Adventure</h1>
+            <p>Join our community of explorers and unlock unforgettable journeys</p>
+        </div>
+        
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <div class="input-field">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                </div>
+                <div class="password-strength">
+                    <div class="strength-meter" id="strengthMeter"></div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                </div>
+            </div>
+            
+            <div class="terms">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+            </div>
+            
+            <button type="submit" class="signup-btn">Begin Your Journey</button>
+            
+            <div class="divider">
+                <span>OR CONTINUE WITH</span>
+            </div>
+            
+            <div class="social-login">
+
+                <!-- Facebook Login -->
+                <a href="https://www.facebook.com/" class="social-btn facebook" title="Sign up with Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <!-- Google Login -->
+                <a href="https://accounts.google.com/" class="social-btn google" title="Sign up with Google">
+                    <i class="fab fa-google"></i>
+                </a>
+
+                <!-- Twitter Login -->
+                <a href="https://twitter.com/login" class="social-btn twitter" title="Sign up with Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+            </div>
+
+<!-- Login Link -->
+<div class="login-link">
+    <p>Already have an account? <a href="../Services/Login.html">Login here</a></p>
+</div>
+            <div class="login-link">
+                Already part of our journey? <a href="../Services/Sign.html">Sign in here</a>
+            </div>
+            
+            <div class="benefits">
+                <h3>Member Benefits</h3>
+                <ul>
+                    <li>Exclusive travel deals</li>
+                    <li>Personalized recommendations</li>
+                    <li>Global community access</li>
+                    <li>Destination wishlists</li>
+                    <li>Early access to new features</li>
+                    <li>Travel achievement badges</li>
+                </ul>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create animated clouds
+            const travelScene = document.getElementById('travelScene');
+            for (let i = 0; i < 5; i++) {
+                const cloud = document.createElement('div');
+                cloud.className = 'cloud';
+                cloud.style.width = (100 + Math.random() * 100) + 'px';
+                cloud.style.height = (40 + Math.random() * 30) + 'px';
+                cloud.style.top = (Math.random() * 50) + '%';
+                cloud.style.left = (Math.random() * 100) + '%';
+                cloud.style.animationDuration = (60 + Math.random() * 120) + 's';
+                cloud.style.animationDelay = (Math.random() * -100) + 's';
+                travelScene.appendChild(cloud);
+            }
+            
+            // Create hot air balloons
+            for (let i = 0; i < 3; i++) {
+                const balloon = document.createElement('div');
+                balloon.className = 'hot-air-balloon';
+                balloon.innerHTML = '🎈';
+                balloon.style.left = Math.random() * 100 + '%';
+                balloon.style.bottom = '-50px';
+                balloon.style.animationDelay = Math.random() * 10 + 's';
+                balloon.style.animationDuration = 30 + Math.random() * 30 + 's';
+                balloon.style.fontSize = (2 + Math.random() * 2) + 'rem';
+                travelScene.appendChild(balloon);
+            }
+            
+            // Create floating travel icons
+            const travelIcons = document.getElementById('travelIcons');
+            const icons = ['✈️', '🌍', '🗺️', '🏝️', '🏔️', '⛵', '🏕️', '🌄', '🏖️', '🗼'];
+            
+            for (let i = 0; i < 12; i++) {
+                const icon = document.createElement('div');
+                icon.className = 'travel-icon';
+                icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+                icon.style.left = Math.random() * 100 + '%';
+                icon.style.bottom = '-50px';
+                icon.style.animationDelay = Math.random() * 10 + 's';
+                icon.style.animationDuration = 15 + Math.random() * 15 + 's';
+                icon.style.fontSize = (1 + Math.random() * 1.5) + 'rem';
+                travelIcons.appendChild(icon);
+            }
+            
+            // Password strength meter
+            const passwordInput = document.getElementById('password');
+            const strengthMeter = document.getElementById('strengthMeter');
+            
+            passwordInput.addEventListener('input', function() {
+                const password = passwordInput.value;
+                let strength = 0;
+                
+                // Length check
+                if (password.length >= 8) strength += 1;
+                if (password.length >= 12) strength += 1;
+                
+                // Character variety checks
+                if (/[A-Z]/.test(password)) strength += 1;
+                if (/[0-9]/.test(password)) strength += 1;
+                if (/[^A-Za-z0-9]/.test(password)) strength += 1;
+                
+                // Update meter
+                const width = strength * 20;
+                let color = '#ef4444'; // red
+                
+                if (strength >= 4) color = '#10b981'; // green
+                else if (strength >= 2) color = '#f59e0b'; // yellow
+                
+                strengthMeter.style.width = width + '%';
+                strengthMeter.style.background = color;
+            });
+            
+            // Form submission with enhanced animation
+            const form = document.getElementById('signupForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const submitBtn = form.querySelector('.signup-btn');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i class="fas fa-suitcase-rolling"></i> Packing Your Adventure...';
+                submitBtn.disabled = true;
+                
+                // Simulate API call with more engaging messages
+                const messages = [
+                    "Creating your traveler profile...",
+                    "Booking your first adventure...",
+                    "Preparing your travel map...",
+                    "Almost there..."
+                ];
+                
+                let counter = 0;
+                const interval = setInterval(() => {
+                    if (counter < messages.length) {
+                        submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${messages[counter]}`;
+                        counter++;
+                    } else {
+                        clearInterval(interval);
+                        submitBtn.innerHTML = '<i class="fas fa-check"></i> Adventure Ready!';
+                        submitBtn.style.background = 'linear-gradient(to right, var(--accent), #059669)';
+                        
+                        setTimeout(() => {
+                            window.location.href = 'welcome.html';
+                        }, 1000);
+                    }
+                }, 1000);
+            });
+            
+            // Add subtle hover effect to form inputs
+            const inputs = document.querySelectorAll('.input-field input');
+            inputs.forEach(input => {
+                input.addEventListener('mouseenter', function() {
+                    this.parentElement.querySelector('i').style.transform = 'translateY(-50%) scale(1.2)';
+                });
+                
+                input.addEventListener('mouseleave', function() {
+                    if (document.activeElement !== this) {
+                        this.parentElement.querySelector('i').style.transform = 'translateY(-50%)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

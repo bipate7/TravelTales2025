@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TalesAir | Book Flights Worldwide</title>
+  <link rel="icon" href="Images/TT4.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="CSS/FS.css">
+  <link rel="stylesheet" href="CSS/FlightS.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-plane"></i> TalesAir 
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#destinations">Destinations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#deals">Deals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+        <button class="btn btn-booking ms-lg-3">Book Now</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="plane-decoration plane-1">
+      <i class="fas fa-paper-plane"></i>
+    </div>
+    <div class="plane-decoration plane-2">
+      <i class="fas fa-paper-plane"></i>
+    </div>
+    <div class="plane-decoration plane-3">
+      <i class="fas fa-paper-plane"></i>
+    </div>
+    
+    <div class="container hero-content">
+      <div class="row">
+        <div class="col-lg-7">
+          <h1 class="hero-title animate__animated animate__fadeInDown">Discover the World with Us</h1>
+          <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Find the best flight deals to your dream destinations around the globe</p>
+          <button class="btn btn-booking btn-lg animate__animated animate__fadeInUp animate__delay-2s">Explore Destinations</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Form -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="search-container animate__animated animate__fadeInUp">
+          <form>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="from" class="form-label">From</label>
+                <input type="text" class="form-control" id="from" placeholder="City or Airport">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="to" class="form-label">To</label>
+                <input type="text" class="form-control" id="to" placeholder="City or Airport">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="departure" class="form-label">Departure</label>
+                <input type="date" class="form-control" id="departure">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="return" class="form-label">Return (Optional)</label>
+                <input type="date" class="form-control" id="return">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="passengers" class="form-label">Passengers</label>
+                <select class="form-select" id="passengers">
+                  <option>1 Adult</option>
+                  <option selected>2 Adults</option>
+                  <option>3 Adults</option>
+                  <option>4 Adults</option>
+                  <option>Family</option>
+                </select>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="class" class="form-label">Class</label>
+                <select class="form-select" id="class">
+                  <option>Economy</option>
+                  <option>Premium Economy</option>
+                  <option>Business</option>
+                  <option>First Class</option>
+                </select>
+              </div>
+              <div class="col-md-4 mb-3 d-flex align-items-end">
+                <button type="submit" class="btn btn-search">Search Flights</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <h2 class="section-title text-center animate-up">Why Choose SkyVoyage?</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="feature-card animate-up animate-delay-1">
+            <div class="feature-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3 class="feature-title">Worldwide Coverage</h3>
+            <p>Access to over 5,000 destinations across 200 countries with our extensive airline partnerships.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="feature-card animate-up animate-delay-2">
+            <div class="feature-icon">
+              <i class="fas fa-tag"></i>
+            </div>
+            <h3 class="feature-title">Best Price Guarantee</h3>
+            <p>We guarantee the lowest prices for your flights. Found a better deal? We'll match it!</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="feature-card animate-up animate-delay-3">
+            <div class="feature-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3 class="feature-title">24/7 Support</h3>
+            <p>Our dedicated support team is available round the clock to assist with your travel needs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinations Section -->
+<section class="destinations-section" id="destinations">
+  <div class="container">
+    <h2 class="section-title animate-up">Popular Destinations in India</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="destination-card animate-up">
+          <img src="https://cdn.pixabay.com/photo/2020/02/02/17/24/travel-4813658_1280.jpg" alt="Delhi">
+          <div class="destination-overlay">
+            <h3 class="destination-title">Delhi</h3>
+            <p class="destination-price">From ₹3,999</p>
+            <button class="btn btn-sm btn-primary">View Flights</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="destination-card animate-up animate-delay-1">
+          <img src="https://www.telegraph.co.uk/content/dam/Travel/Destinations/Asia/India/Mumbai/mumbai-attractions-lead.jpg?imwidth=640" alt="Mumbai">
+          <div class="destination-overlay">
+            <h3 class="destination-title">Mumbai</h3>
+            <p class="destination-price">From ₹4,499</p>
+            <button class="btn btn-sm btn-primary">View Flights</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="destination-card animate-up animate-delay-2">
+          <img src="https://s7ap1.scene7.com/is/image/incredibleindia/hawa-mahal-jaipur-rajasthan-city-1-hero?qlt=82&ts=1726660605161" alt="Jaipur">
+          <div class="destination-overlay">
+            <h3 class="destination-title">Jaipur, Rajasthan</h3>
+            <p class="destination-price">From ₹3,299</p>
+            <button class="btn btn-sm btn-primary">View Flights</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="destination-card animate-up">
+          <img src="https://static.toiimg.com/photo/105722939.cms" alt="Goa">
+          <div class="destination-overlay">
+            <h3 class="destination-title">Goa</h3>
+            <p class="destination-price">From ₹5,499</p>
+            <button class="btn btn-sm btn-primary">View Flights</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="destination-card animate-up animate-delay-1">
+          <img src="https://media.assettype.com/outlooktraveller/2024-04/4b6c5c58-610a-4294-82f2-7ed6b16fc1c0/kolkata7.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true" alt="Kolkata">
+          <div class="destination-overlay">
+            <h3 class="destination-title">Kolkata</h3>
+            <p class="destination-price">From ₹3,799</p>
+            <button class="btn btn-sm btn-primary">View Flights</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="destination-card animate-up animate-delay-2">
+          <img src="https://hotelpadmaling.com/wp-content/uploads/2024/04/explore-ladakh.jpg" alt="Leh-Ladakh">
+          <div class="destination-overlay">
+            <h3 class="destination-title">Leh-Ladakh</h3>
+            <p class="destination-price">From ₹7,999</p>
+            <button class="btn btn-sm btn-primary">View Flights</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <button class="btn btn-primary btn-lg">View All Destinations</button>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Special Offers -->
+  <section class="features-section" id="deals">
+    <div class="container">
+      <h2 class="section-title text-center animate-up">Special Flight Deals</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="feature-card animate-up" style="border-top-color: var(--success-color);">
+            <div class="feature-icon text-success">
+              <i class="fas fa-percentage"></i>
+            </div>
+            <h3 class="feature-title">Early Bird Discounts</h3>
+            <p>Book your flights 3 months in advance and save up to 40% on selected routes.</p>
+            <button class="btn btn-success mt-3">View Offers</button>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="feature-card animate-up animate-delay-1" style="border-top-color: var(--success-color);">
+            <div class="feature-icon text-success">
+              <i class="fas fa-suitcase-rolling"></i>
+            </div>
+            <h3 class="feature-title">Last Minute Deals</h3>
+            <p>Grab amazing discounts on last minute flights to various destinations worldwide.</p>
+            <button class="btn btn-success mt-3">View Offers</button>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="feature-card animate-up animate-delay-2" style="border-top-color: var(--success-color);">
+            <div class="feature-icon text-success">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="feature-title">Group Discounts</h3>
+            <p>Traveling with family or friends? Get special rates for groups of 4 or more.</p>
+            <button class="btn btn-success mt-3">View Offers</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+<section class="testimonials-section" style="background-color: #0d1b2a; padding: 60px 0;">
+  <div class="container">
+    <h2 class="section-title text-center text-white animate-up">What Our Travelers Say</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="testimonial-card animate-up">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Booked our trip from Delhi to Goa through SkyVoyage — smooth booking experience and unbeatable prices. Highly satisfied!"</p>
+          <p class="testimonial-author text-white">- Priya Mehta, New Delhi</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="testimonial-card animate-up animate-delay-1">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Needed urgent tickets from Mumbai to Bengaluru for a business trip. SkyVoyage got it done in minutes. Loved the quick support!"</p>
+          <p class="testimonial-author text-white">- Rohan Kulkarni, Mumbai</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="testimonial-card animate-up animate-delay-2">
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <p class="testimonial-text">"Our honeymoon trip to Kerala was perfectly arranged thanks to SkyVoyage. The flight and deals were simply amazing."</p>
+          <p class="testimonial-author text-white">- Aakash & Neha Sharma, Jaipur</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Newsletter -->
+  <section class="newsletter-section">
+    <div class="container text-center">
+      <h2 class="newsletter-title animate-up">Get the Best Deals in Your Inbox</h2>
+      <p class="mb-4 animate-up animate-delay-1">Subscribe to our newsletter and receive exclusive flight offers and travel tips.</p>
+      <form class="newsletter-form animate-up animate-delay-2">
+        <div class="input-group mb-3">
+          <input type="email" class="form-control newsletter-input" placeholder="Your email address">
+          <button class="btn btn-newsletter" type="submit">Subscribe</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="footer" style="background-color: #0d1b2a; color: #fff; padding-top: 60px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <a href="#" class="footer-logo"><i class="fas fa-plane"></i> TalesAir</a>
+        <p>Powered by TravelTales, TalesAir makes air travel across India and beyond more affordable, seamless, and culturally connected.</p>
+        <div class="social-icons mt-3">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 mb-4">
+        <div class="footer-links">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 mb-4">
+        <div class="footer-links">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Safety Center</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 mb-4">
+        <div class="footer-links">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">GDPR</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 mb-4">
+        <div class="footer-links">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="#"><i class="fas fa-map-marker-alt me-2"></i> Nagpur, Maharashtra</a></li>
+            <li><a href="#"><i class="fas fa-phone me-2"></i> +91 98765 43210</a></li>
+            <li><a href="#"><i class="fas fa-envelope me-2"></i> support@talesair.in</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom text-center mt-4">
+      <p>&copy; 2025 TalesAir by TravelTales. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- comment 
+  <script>
+    // Animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const animateElements = document.querySelectorAll('.animate-up');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      animateElements.forEach(el => {
+        observer.observe(el
+  -->
+</body>
+</html>

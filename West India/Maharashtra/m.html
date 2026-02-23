@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mumbai City Tour Package | Explore the City of Dreams</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3a86ff;
+            --primary-dark: #2667cc;
+            --secondary: #8338ec;
+            --accent: #ff006e;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --white: #ffffff;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 120vh;
+            overflow: hidden;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--white);
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-badge {
+            font-size: 1rem;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            background-color: var(--accent);
+            animation: fadeIn 1.5s ease;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            height: 100%;
+            border: none;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .booking-card {
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            border: none;
+            position: sticky;
+            top: 20px;
+        }
+
+        .price-display {
+            font-size: 2.5rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .per-person {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 1rem;
+            min-width: 30px;
+        }
+
+        .help-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 4px solid var(--primary);
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .review-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .reviewer-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 3px solid var(--primary);
+        }
+
+        .package-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            margin: 0 15px;
+            width: 300px;
+            flex: 0 0 auto;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .package-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .scrolling-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding: 20px 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .scrolling-wrapper::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .scrolling-wrapper::-webkit-scrollbar-track {
+            background: var(--light-gray);
+            border-radius: 10px;
+        }
+
+        .scrolling-wrapper::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
+        .star-rating {
+            display: flex;
+            align-items: center;
+        }
+
+        .star-rating span {
+            font-size: 1.5rem;
+            color: var(--light-gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .star-rating span:hover,
+        .star-rating span.active {
+            color: #ffc107;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 0.75rem 2rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .nav-pills .nav-link.active {
+            background-color: var(--primary);
+        }
+
+        .nav-pills .nav-link {
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .tab-content {
+            padding: 2rem 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="https://www.lot.com/content/dam/lot/lot-com/destination-photos/indie/mumbai/GettyImages-552552051_mumbai.jpg" alt="Mumbai Skyline" class="hero-image">
+        <div class="hero-content">
+            <h1 class="hero-title">Discover Mumbai</h1>
+            <p class="hero-subtitle">Experience the vibrant heart of India's financial capital</p>
+            <span class="hero-badge">2 Nights / 3 Days Tour Package</span>
+        </div>
+    </section>
+
+    <!-- Tour Details Section -->
+    <section class="container my-5 py-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2 class="section-title">Mumbai City Tour Package</h2>
+                <p class="lead text-center mb-5">An unforgettable journey through India's most dynamic metropolis</p>
+                
+                <div class="row mb-5">
+                    <div class="col-md-6 mb-4 fade-in delay-1">
+                        <div class="feature-card text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <h4>Iconic Landmarks</h4>
+                            <p>Visit Mumbai's most famous attractions including the Gateway of India, Marine Drive, and Elephanta Caves.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 fade-in delay-2">
+                        <div class="feature-card text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h4>Local Cuisine</h4>
+                            <p>Taste authentic Mumbai street food including vada pav, pav bhaji, and delicious seafood.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 fade-in delay-3">
+                        <div class="feature-card text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <h4>Shopping Experience</h4>
+                            <p>Explore vibrant markets like Colaba Causeway, Crawford Market, and Chor Bazaar.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 fade-in delay-4">
+                        <div class="feature-card text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-hotel"></i>
+                            </div>
+                            <h4>Comfortable Stay</h4>
+                            <p>Enjoy accommodation in well-appointed 3-star hotels with modern amenities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <h3 class="mb-4">About Mumbai</h3>
+                    <p>Mumbai, formerly known as Bombay, is India's financial, commercial, and entertainment capital. This bustling metropolis is a melting pot of cultures, offering a unique blend of historic landmarks, modern architecture, vibrant street life, and beautiful coastal scenery.</p>
+                    <p>Our carefully curated Mumbai City Tour Package is designed to showcase the best of this incredible city, from its colonial-era architecture to its thriving contemporary arts scene, from serene places of worship to lively nightlife spots.</p>
+                </div>
+
+                <div class="mb-5">
+                    <h3 class="mb-4">Why Choose Our Mumbai Tour?</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Expert Local Guides</h5>
+                                    <p class="mb-0">Knowledgeable guides who bring the city's history to life</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Small Group Experience</h5>
+                                    <p class="mb-0">Intimate tours with personalized attention</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Flexible Itinerary</h5>
+                                    <p class="mb-0">Options to customize your experience</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">24/7 Support</h5>
+                                    <p class="mb-0">Assistance available throughout your trip</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking Card -->
+            <div class="col-lg-4">
+                <div class="card booking-card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-4">Book Your Tour</h3>
+                        <div class="price-section text-center mb-4">
+                            <h2 class="price-display">₹6,000 <span class="per-person">per person</span></h2>
+                            <p class="text-muted">+ ₹1,500 for single occupancy</p>
+                        </div>
+                        
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label">Tour Date</label>
+                                <input type="date" class="form-control" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Number of Travelers</label>
+                                <div class="row">
+                                    <div class="col-6 mb-2">
+                                        <label class="small">Adults (12+ yrs)</label>
+                                        <input type="number" class="form-control" min="1" value="1">
+                                    </div>
+                                    <div class="col-6 mb-2">
+                                        <label class="small">Children (5-11 yrs)</label>
+                                        <input type="number" class="form-control" min="0" value="0">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="small">Infants (0-4 yrs)</label>
+                                        <input type="number" class="form-control" min="0" value="0">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Accommodation Type</label>
+                                <select class="form-select">
+                                    <option>Standard Double Room</option>
+                                    <option>Deluxe Double Room (+₹1,000)</option>
+                                    <option>Standard Single Room (+₹1,500)</option>
+                                    <option>Deluxe Single Room (+₹2,000)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Add-ons</label>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="guide">
+                                    <label class="form-check-label" for="guide">Private Guide (+₹1,000)</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="airport">
+                                    <label class="form-check-label" for="airport">Airport Transfers (+₹500)</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="insurance">
+                                    <label class="form-check-label" for="insurance">Travel Insurance (+₹300)</label>
+                                </div>
+                            </div>
+                            
+                            <div class="d-grid mt-4">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-calendar-check me-2"></i> Book Now
+                                </button>
+                            </div>
+                            
+                            <div class="text-center mt-3">
+                                <small class="text-muted">Free cancellation up to 7 days before tour</small>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="help-section mt-4">
+                    <h4>Need Help Booking?</h4>
+                    <p>Our travel specialists are available 24/7 to assist you with your booking and answer any questions.</p>
+                    <div class="mt-3">
+                        <a href="tel:+9199999000" class="btn btn-outline-light me-2">
+                            <i class="fas fa-phone-alt me-2"></i> Call Us
+                        </a>
+                        <a href="mailto:info@mumbaitours.com" class="btn btn-outline-light">
+                            <i class="fas fa-envelope me-2"></i> Email Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Itinerary -->
+    <section class="container my-5 py-5 bg-light">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <h2 class="section-title">Detailed Itinerary</h2>
+                <p class="text-center mb-5">Explore Mumbai's highlights with our carefully planned itinerary</p>
+                
+                <ul class="nav nav-pills mb-4 justify-content-center" id="itinerary-tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="day1-tab" data-bs-toggle="pill" data-bs-target="#day1" type="button" role="tab">Day 1: Arrival</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="day2-tab" data-bs-toggle="pill" data-bs-target="#day2" type="button" role="tab">Day 2: Exploration</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="day3-tab" data-bs-toggle="pill" data-bs-target="#day3" type="button" role="tab">Day 3: Departure</button>
+                    </li>
+                </ul>
+                
+                <div class="tab-content" id="itinerary-tab-content">
+                    <div class="tab-pane fade show active" id="day1" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 border-0">
+                                    <img src="https://t3.ftcdn.net/jpg/02/00/55/94/360_F_200559473_wEDZgxSDPPjQfgX3sQqXcjz4ph1a79Yt.jpg" class="card-img-top" alt="Gateway of India">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Morning: Arrival & Check-in</h5>
+                                        <p class="card-text">Arrive in Mumbai and transfer to your hotel. After check-in and freshening up, we'll begin our exploration of this magnificent city.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 border-0">
+                                    <img src="https://t3.ftcdn.net/jpg/05/30/30/38/360_F_530303888_cuC1fVY2OkSeNTjo7ZC15HL46P4sw8IB.jpg" class="card-img-top" alt="Gateway of India">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Afternoon: Colonial Mumbai</h5>
+                                        <p class="card-text">Visit the iconic Gateway of India, built to commemorate the visit of King George V. Explore the nearby Taj Mahal Palace Hotel and Colaba area.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 border-0">
+                                    <img src="https://cdn.wallpapersafari.com/4/79/zDN6WH.jpg" class="card-img-top" alt="Gateway of India">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Evening: Marine Drive</h5>
+                                        <p class="card-text">Stroll along Marine Drive, Mumbai's famous promenade shaped like a necklace. Enjoy sunset views over the Arabian Sea.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="day2" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 border-0">
+                                    <img src="https://s7ap1.scene7.com/is/image/incredibleindia/1-elephanta-caves-mumbai-maharashtra-attr-hero?qlt=82&ts=1742184509331" class="card-img-top" alt="Gateway of India">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Morning: Elephanta Caves</h5>
+                                        <p class="card-text">Take a ferry to Elephanta Island to explore the UNESCO-listed rock-cut cave temples dating back to the 5th-8th centuries.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 border-0">
+                                    <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/09/f5/60/f6.jpg" class="card-img-top" alt="Gateway of India">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Afternoon: Local Markets</h5>
+                                        <p class="card-text">Explore Mumbai's vibrant markets including Crawford Market for spices and Chor Bazaar for antiques and curios.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 border-0">
+                                    <img src="https://media.istockphoto.com/id/1248675157/photo/chaat.jpg?s=612x612&w=0&k=20&c=at3cwDdgoHh9PZgwbj9tITwN6dp-v0LE93PSKAZGK2I=" class="card-img-top" alt="Gateway of India">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Evening: Street Food Tour</h5>
+                                        <p class="card-text">Sample Mumbai's famous street food including vada pav, pav bhaji, and bhel puri with a local food expert.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="day3" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100 border-0">
+                                    <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0a/b1/6f/5c.jpg" class="card-img-top" alt="Gateway of India">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Morning: Dhobi Ghat & Dharavi</h5>
+                                        <p class="card-text">Visit the world's largest open-air laundry at Dhobi Ghat and take a guided tour of Dharavi, Asia's second largest slum.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100 border-0">
+                                    <img src="https://images.unsplash.com/photo-1582972236019-ea9dfa7a4b54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Gateway of India">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Afternoon: Departure</h5>
+                                        <p class="card-text">After lunch, transfer to the airport for your departure, taking with you unforgettable memories of Mumbai.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inclusions & Exclusions -->
+    <section class="container my-5 py-5">
+        <div class="row">
+            <div class="col-md-6 mb-5 mb-md-0">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4"><i class="fas fa-check-circle text-success me-2"></i> What's Included</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fas fa-hotel text-primary me-2"></i> 2 nights accommodation in 3-star hotel</li>
+                            <li class="mb-3"><i class="fas fa-utensils text-primary me-2"></i> Daily breakfast at the hotel</li>
+                            <li class="mb-3"><i class="fas fa-bus text-primary me-2"></i> All transfers and sightseeing in private AC vehicle</li>
+                            <li class="mb-3"><i class="fas fa-ticket-alt text-primary me-2"></i> Entry fees to monuments (Elephanta Caves, etc.)</li>
+                            <li class="mb-3"><i class="fas fa-user text-primary me-2"></i> Services of an English-speaking guide</li>
+                            <li class="mb-3"><i class="fas fa-ship text-primary me-2"></i> Ferry tickets to Elephanta Island</li>
+                            <li class="mb-3"><i class="fas fa-bottle-water text-primary me-2"></i> Mineral water during sightseeing</li>
+                            <li><i class="fas fa-taxi text-primary me-2"></i> All applicable taxes and service charges</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4"><i class="fas fa-times-circle text-danger me-2"></i> What's Not Included</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fas fa-plane text-primary me-2"></i> Airfare to/from Mumbai</li>
+                            <li class="mb-3"><i class="fas fa-hamburger text-primary me-2"></i> Lunch and dinner (unless specified)</li>
+                            <li class="mb-3"><i class="fas fa-camera text-primary me-2"></i> Camera fees at monuments</li>
+                            <li class="mb-3"><i class="fas fa-gifts text-primary me-2"></i> Personal expenses like shopping, laundry, etc.</li>
+                            <li class="mb-3"><i class="fas fa-wine-glass-alt text-primary me-2"></i> Alcoholic beverages</li>
+                            <li class="mb-3"><i class="fas fa-heartbeat text-primary me-2"></i> Travel insurance</li>
+                            <li class="mb-3"><i class="fas fa-hand-holding-usd text-primary me-2"></i> Tips for guides and drivers</li>
+                            <li><i class="fas fa-plus-circle text-primary me-2"></i> Anything not mentioned in inclusions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="container-fluid my-5 py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Photo Gallery</h2>
+            <p class="text-center mb-5">A glimpse of what awaits you in Mumbai</p>
+            
+            <div class="row">
+                <div class="col-md-4 col-6 mb-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1582972236019-ea9dfa7a4b54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Gateway of India" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-4 col-6 mb-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1582972236019-ea9dfa7a4b54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Marine Drive" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-4 col-6 mb-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1582972236019-ea9dfa7a4b54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Elephanta Caves" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-4 col-6 mb-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1582972236019-ea9dfa7a4b54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Chhatrapati Shivaji Terminus" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-4 col-6 mb-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1582972236019-ea9dfa7a4b54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Haji Ali Dargah" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-4 col-6 mb-4">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1582972236019-ea9dfa7a4b54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Colaba Causeway" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="container my-5 py-5">
+        <h2 class="section-title">Customer Reviews</h2>
+        <p class="text-center mb-5">What our travelers say about their Mumbai experience</p>
+        
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="review-card text-center">
+                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson" class="reviewer-photo">
+                    <h4>Sarah Johnson</h4>
+                    <div class="stars mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <p class="text-muted mb-2">Traveled: March 2023</p>
+                    <p>"The Mumbai tour exceeded all my expectations! Our guide was incredibly knowledgeable and showed us parts of the city we would never have discovered on our own."</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="review-card text-center">
+                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael Chen" class="reviewer-photo">
+                    <h4>Michael Chen</h4>
+                    <div class="stars mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star-half-alt text-warning"></i>
+                    </div>
+                    <p class="text-muted mb-2">Traveled: January 2023</p>
+                    <p>"The Elephanta Caves were breathtaking, and the street food tour was a highlight. The organization was flawless from start to finish."</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="review-card text-center">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Patel" class="reviewer-photo">
+                    <h4>Priya Patel</h4>
+                    <div class="stars mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                    </div>
+                    <p class="text-muted mb-2">Traveled: December 2022</p>
+                    <p>"As a solo female traveler, I felt completely safe and well taken care of throughout the tour. The hotels were comfortable and the itinerary was perfect."</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="#" class="btn btn-outline-primary">Read All Reviews</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container my-5 py-5 bg-light">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="text-center mb-5">Find answers to common questions about our Mumbai tour</p>
+                
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h3 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                What is the best time of year to visit Mumbai?
+                            </button>
+                        </h3>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>The best time to visit Mumbai is between November and February when the weather is pleasant with cooler temperatures (around 20-30°C) and lower humidity. The monsoon season (June to September) brings heavy rains, while summer months (March to May) can be quite hot and humid.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h3 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                Is this tour suitable for children and elderly travelers?
+                            </button>
+                        </h3>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Yes, our Mumbai tour is suitable for travelers of all ages. We can adjust the pace of the tour based on your group's needs. Please inform us in advance if you have elderly travelers or young children so we can make appropriate arrangements. Note that the Elephanta Caves involve some climbing of stairs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h3 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                What should I pack for this tour?
+                            </button>
+                        </h3>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>We recommend packing:</p>
+                                <ul>
+                                    <li>Light, breathable clothing (cotton is ideal)</li>
+                                    <li>Comfortable walking shoes</li>
+                                    <li>Sunscreen, sunglasses, and a hat</li>
+                                    <li>A light jacket or shawl for evenings</li>
+                                    <li>Rain gear if traveling during monsoon season</li>
+                                    <li>Modest clothing for visiting religious sites</li>
+                                    <li>Any necessary medications</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h3 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                What is the cancellation policy?
+                            </button>
+                        </h3>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Our cancellation policy is as follows:</p>
+                                <ul>
+                                    <li>Free cancellation up to 7 days before tour start date</li>
+                                    <li>50% refund for cancellations 3-6 days before tour</li>
+                                    <li>No refund for cancellations within 48 hours of tour</li>
+                                </ul>
+                                <p>We recommend purchasing travel insurance to cover unexpected cancellations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h3 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                                Are meals included in the tour package?
+                            </button>
+                        </h3>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Daily breakfast at your hotel is included in the package price. Lunches and dinners are not included unless specifically mentioned in the itinerary. This allows you the flexibility to explore Mumbai's diverse culinary scene on your own. Our guides will be happy to recommend restaurants based on your preferences.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Similar Tours -->
+    <section class="container my-5 py-5">
+        <h2 class="section-title">You May Also Like</h2>
+        <p class="text-center mb-5">Explore more of India with these popular tours</p>
+        
+        <div class="scrolling-wrapper">
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1582972236019-ea9dfa7a4b54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Goa Beaches">
+                <div class="card-body">
+                    <h5 class="card-title">Goa Beach Escape</h5>
+                    <p class="card-text text-muted"><i class="fas fa-clock me-2"></i> 4 Days / 3 Nights</p>
+                    <p class="card-text text-primary fw-bold">From ₹8,999 per person</p>
+                    <a href="#" class="btn btn-outline-primary w-100">View Tour</a>
+                </div>
+            </div>
+            
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1582972236019-ea9dfa7a4b54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Golden Triangle">
+                <div class="card-body">
+                    <h5 class="card-title">Golden Triangle</h5>
+                    <p class="card-text text-muted"><i class="fas fa-clock me-2"></i> 6 Days / 5 Nights</p>
+                    <p class="card-text text-primary fw-bold">From ₹15,999 per person</p>
+                    <a href="#" class="btn btn-outline-primary w-100">View Tour</a>
+                </div>
+            </div>
+            
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1582972236019-ea9dfa7a4b54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Kerala Backwaters">
+                <div class="card-body">
+                    <h5 class="card-title">Kerala Backwaters</h5>
+                    <p class="card-text text-muted"><i class="fas fa-clock me-2"></i> 5 Days / 4 Nights</p>
+                    <p class="card-text text-primary fw-bold">From ₹12,999 per person</p>
+                    <a href="#" class="btn btn-outline-primary w-100">View Tour</a>
+                </div>
+            </div>
+            
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1582972236019-ea9dfa7a4b54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Rajasthan Heritage">
+                <div class="card-body">
+                    <h5 class="card-title">Rajasthan Heritage</h5>
+                    <p class="card-text text-muted"><i class="fas fa-clock me-2"></i> 7 Days / 6 Nights</p>
+                    <p class="card-text text-primary fw-bold">From ₹18,999 per person</p>
+                    <a href="#" class="btn btn-outline-primary w-100">View Tour</a>
+                </div>
+            </div>
+            
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1582972236019-ea9dfa7a4b54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Himalayan Trek">
+                <div class="card-body">
+                    <h5 class="card-title">Himalayan Trek</h5>
+                    <p class="card-text text-muted"><i class="fas fa-clock me-2"></i> 8 Days / 7 Nights</p>
+                    <p class="card-text text-primary fw-bold">From ₹22,999 per person</p>
+                    <a href="#" class="btn btn-outline-primary w-100">View Tour</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="container-fluid py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready to Explore Mumbai?</h2>
+            <p class="lead mb-5">Book your Mumbai City Tour today and experience the magic of India's most vibrant city</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#" class="btn btn-light btn-lg px-4">
+                    <i class="fas fa-calendar-check me-2"></i> Book Now
+                </a>
+                <a href="#" class="btn btn-outline-light btn-lg px-4">
+                    <i class="fas fa-phone-alt me-2"></i> Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container-fluid bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h4 class="mb-4">About Mumbai Tours</h4>
+                    <p>We specialize in creating unforgettable travel experiences in Mumbai and beyond. Our expert guides and carefully crafted itineraries ensure you see the best of what this incredible city has to offer.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h4 class="mb-4">Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Tours</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Blog</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h4 class="mb-4">Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> 123 Travel Street, Mumbai 400001</p>
+                    <p><i class="fas fa-phone-alt me-2"></i> +91 99999 00000</p>
+                    <p><i class="fas fa-envelope me-2"></i> info@mumbaitours.com</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2023 Mumbai Tours. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-white text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize star rating functionality
+        document.querySelectorAll('.star-rating span').forEach(star => {
+            star.addEventListener('click', function() {
+                const ratingContainer = this.parentElement;
+                const stars = ratingContainer.querySelectorAll('span');
+                const clickedIndex = Array.from(stars).indexOf(this);
+                
+                stars.forEach((s, index) => {
+                    if(index <= clickedIndex) {
+                        s.classList.add('active');
+                    } else {
+                        s.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if(elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                }
+            });
+        };
+
+        // Initial check
+        animateOnScroll();
+
+        // Check on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>

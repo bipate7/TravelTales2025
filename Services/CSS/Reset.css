@@ -1,0 +1,365 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 6 Oct, 2025, 12:57:17 AM
+    Author     : VICTUS
+*/
+
+:root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #f59e0b;
+            --light: #ffffff;
+            --dark: #1e293b;
+            --gray: #94a3b8;
+            --light-bg: rgba(255, 255, 255, 0.98);
+            --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --border-radius: 20px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .video{
+             width: 100%;      /* or use specific values like 640px */
+    height: auto;     /* auto preserves aspect ratio */
+    object-fit: contain; /* ensures entire video is visible */
+    max-width: 100%;  /* prevents over-scaling on larger screens */
+    display: block;   /* removes inline spacing */
+        }
+        /* Video Background */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.4) 0%, rgba(245, 158, 11, 0.3) 100%);
+            z-index: -1;
+        }
+        
+        /* Floating Travel Icons */
+        .travel-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .travel-icon {
+            position: absolute;
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.4);
+            animation: floatIcon 20s linear infinite;
+        }
+        
+        @keyframes floatIcon {
+            0% { 
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { 
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Main Container */
+        .reset-container {
+            width: 50%;
+            max-width: 500px;
+            background: var(--light-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .reset-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        /* Logo */
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .logo img {
+            height: 100px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover img {
+            transform: rotate(15deg);
+        }
+        
+        /* Header */
+        .reset-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .reset-header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+        
+        .reset-header p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+            animation: fadeIn 0.6s forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        
+        .input-field {
+            position: relative;
+        }
+        
+        .input-field i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        
+        .input-field input,
+        .input-field select {
+            width: 100%;
+            padding: 14px 20px 14px 45px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            color: var(--dark);
+            background-color: #ffffff;
+            transition: var(--transition);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            appearance: none;
+        }
+        
+        .input-field select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 12px;
+        }
+        
+        .input-field input:focus,
+        .input-field select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .input-field input:focus + i {
+            color: var(--primary);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        /* Security Questions */
+        .security-questions {
+            margin-top: 25px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
+            animation: fadeIn 0.6s forwards;
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
+        
+        .security-question {
+            margin-bottom: 20px;
+        }
+        
+        /* Submit Button */
+        .reset-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 10px;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.6s forwards;
+            animation-delay: 0.5s;
+            opacity: 0;
+        }
+        
+        .reset-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.6s ease;
+        }
+        
+        .reset-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(37, 99, 235, 0.4);
+        }
+        
+        .reset-btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Back to Login */
+        .back-to-login {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: var(--gray);
+            animation: fadeIn 0.6s forwards;
+            animation-delay: 0.6s;
+            opacity: 0;
+        }
+        
+        .back-to-login a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .back-to-login a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .back-to-login a:hover::after {
+            width: 100%;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .reset-container {
+                width: 85%;
+                padding: 30px;
+            }
+            
+            .logo img {
+                height: 80px;
+            }
+            
+            .reset-header h1 {
+                font-size: 1.6rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .reset-container {
+                width: 95%;
+                padding: 25px 20px;
+            }
+            
+            .logo {
+                margin-bottom: 20px;
+            }
+            
+            .input-field input,
+            .input-field select {
+                padding: 12px 15px 12px 40px;
+            }
+        }

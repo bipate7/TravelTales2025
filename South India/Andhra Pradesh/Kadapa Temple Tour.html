@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/TT4.png">
+    <title>Kadapa Temple Tour Package</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"><!-- comment -->
+    <link rel="stylesheet" href="CSS/Style.css">
+    <style>
+        /* General Styles for Sections */
+
+/* Image Styles */
+.card-img-top {
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* List Styles for Travel Tips */
+ul.list-unstyled {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.list-unstyled li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+/* Animation for Cultural Experiences */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+    </style>
+</head>
+
+
+<!-- Hero Section -->
+<section class="hero-section position-relative">
+    <img src="Images/Kadapa Temple.jpg" alt="Kadapa Temple" class="img-fluid">
+    <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+        <h1 class="display-4 fw-bold">Kadapa Temple Tour</h1>
+        <p class="fs-5">Visit the famous temples of Kadapa</p>
+        <span class="badge bg-primary">Discover Andhra Pradesh's Spiritual Heritage</span>
+    </div>
+</section>
+
+<!-- Tour Details Section -->
+<section class="container my-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Kadapa Temple Tour: Explore the Sacred Temples</h1>
+            <h2 class="fw-bold">Tour Details</h2>
+            <p>
+                Experience the spiritual grandeur of Kadapa with the Kadapa Temple Tour, a meticulously crafted journey that offers a perfect blend of devotion, culture, and exploration. 
+                This tour covers the iconic temples, ancient architecture, and the rich heritage of Kadapa, showcasing the best of Andhra Pradesh's spiritual landscape.
+            </p>
+            <br><!-- comment -->
+            <h2>Tour Overview</h2>
+            <p>Embark on a 2-day, 1-night adventure that takes you through the historic temples and vibrant culture of Kadapa. 
+                From visiting ancient temples to exploring local traditions, this tour ensures a truly memorable experience. 
+                Whether you seek to immerse yourself in the local culture or wish to relax amidst the spiritual backdrop, the Kadapa Temple Tour promises to be a journey you’ll cherish forever.
+            </p>
+            <h2>Tour Highlights</h2>
+            <p><span style=" font-size: 25px;">&#128737;</span> <b>Gandi Maisamma Temple:</b> Explore the magnificent temple complex with stunning architecture.</p>
+            <p><span style=" font-size: 25px;">&#128737;</span> <b>Venkateswara Swamy Temple:</b> Discover the rich history and significance of this ancient temple.</p>
+            <p><span style=" font-size: 25px;">&#128737;</span> <b>Local Temples:</b> Visit other famous temples showcasing traditional architecture.</p>
+            <p><span style=" font-size: 25px;">&#128737;</span> <b>Food Tasting:</b> Experience the local cuisine with a food tasting session.</p>
+        </div>
+        
+        <!-- Booking Details Dialog Box -->
+        <div class="col-md-4">
+            <div class="card shadow-sm booking-card">
+                <div class="card-body">
+                    <!-- Title Section -->
+                    <div class="booking-title">
+                        <h4 class="fw-bold text-center text-primary">Booking Details</h4>
+                    </div>
+
+                    <hr>
+                    <!-- Price Section -->
+                    <div class="price-section text-center mb-4">
+                        <h2 class="price-display">₹6,500 <span class="per-person">per person</span></h2>
+                    </div>
+                    <form>
+                        <div class="mb-3">
+                            <label for="date" class="form-label">Select Date</label>
+                            <input type="date" class="form-control" id="date">
+                        </div>
+                        <div class="mb-3">
+                            <label for="time" class="form-label">Select Time</label>
+                            <select class="form-select" id="time">
+                                <option selected>Select a time</option>
+                                <option>Morning</option>
+                                <option>Afternoon</option>
+                                <option>Evening</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="adults" class="form-label">Adults</label>
+                            <input type="number" class="form-control" id="adults" placeholder="Number of Adults" min="1" max="10">
+                        </div>
+                        <div class="mb-3">
+                            <label for="kids" class="form-label">Kids</label>
+                            <input type="number" class="form-control" id="kids" placeholder="Number of Kids (5-12 years)" min="0" max="5">
+                        </div>
+                        <div class="mb-3">
+                            <label for="children" class="form-label">Children</label>
+                            <input type="number" class="form-control" id="children" placeholder="Number of Children (below 5 years)" min="0" max="5">
+                        </div>
+                        <div class="mb-3">
+                            <label for="services" class="form-label">Additional Services</label>
+                            <select class="form-select" id="services">
+                                <option selected>Select a Service</option>
+                                <option>Photography (₹500)</option>
+                                <option>Tour Guide (₹1,000)</option>
+                                <option>Both Photography & Tour Guide (₹1,200)</option>
+                            </select>
+                        </div>
+                        <hr>
+                        <!-- Total Section -->
+                        <div class="total-section d-flex justify-content-between align-items-center">
+                            <p class="fw-bold mb-0">Total:</p>
+                            <h3 class="text-danger mb-0">₹6,500</h3>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mt-4">Proceed To Book</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Highlights Section -->
+<div class="container my-5">
+    <div class="row">
+        <!-- Highlights Section (Left) -->
+        <div class="col-md-6">
+            <h3 class="fw-bold">Highlights</h3>
+            <ul class="list-unstyled">
+                <li><span style="font-size: 25px; color: dodgerblue;">&#128737;</span> Visit the magnificent Gandi Maisamma Temple and explore its rich history.</li>
+                <li><span style="font-size: 25px; color: dodgerblue;">&#128737;</span> Discover the historical significance of Venkateswara Swamy Temple.</li>
+                <li><span style="font-size: 25px; color: dodgerblue;">&#128737;</span> Visit other famous temples showcasing traditional architecture.</li>
+                <li><span style="font-size: 25px; color: dodgerblue;">&#128737;</span> Experience the local cuisine with a food tasting session.</li>
+            </ul>
+        </div>
+
+        <!-- Help Section (Right) -->
+        <div class="col-md-4 offset-md-2">
+            <div class="help-section shadow-sm p-4">
+                <h4 class="fw-semibold text-muted">Get Help</h4>
+                <h2 class="fw-bold mb-3 display-6">Need Help To Book?</h2>
+                <p class="text-muted">
+                    Our dedicated team of travel experts is here to assist you every step of the way, 
+                    ensuring a seamless and unforgettable journey.
+                </p>
+                <div class="d-flex align-items-center mt-4">
+                    <!-- Call Icon with Animation -->
+                    <div class="call-icon">
+                        <span class="call-emoji">📞</span>
+                    </div>
+                    <!-- Contact Info -->
+                    <div class="contact-info ms-3">
+                        <p class="fw-bold mb-1">Call Us</p>
+                        <p class="text-danger fs-5">+968 9999 9000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Basic Information -->
+<section class="container my-5">
+    <h3 class="fw-bold">Basic Information</h3>
+    <table class="table">
+        <tr>
+            <th>Destination</th>
+            <td>Kadapa</td>
+        </tr>
+        <tr>
+            <th>Departure</th>
+            <td>Kadapa Airport</td>
+        </tr>
+        <tr>
+            <th>Cost</th>
+            <td>₹6,500 per person</td>
+        </tr>
+        <tr>
+            <th>Accommodation</th>
+            <td>Comfortable Hotels</td>
+        </tr>
+    </table>
+</section>
+
+<!-- Included and Not Included -->
+<section class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="fw-bold">Included</h3>
+            <ul class="list-unstyled">
+                <li><span class="icon-green">&#10004;</span> Comfortable accommodation.</li>
+                <li><span class="icon-green">&#10004;</span> Daily breakfast and dinner.</li>
+                <li><span class="icon-green">&#10004;</span> Transportation for sightseeing.</li>
+                <li><span class="icon-green">&#10004;</span> Entry fees to local attractions.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h3 class="fw-bold">Not Included</h3>
+            <ul class="list-unstyled">
+                <li><span class="icon-red">&#10008;</span> Airfare to and from Kadapa.</li>
+                <li><span class="icon-red">&#10008;</span> Lunch and snacks.</li>
+                <li><span class="icon-red">&#10008;</span> Personal expenses like shopping or additional activities.</li>
+                <li><span class="icon-red">&#10008;</span> Travel insurance.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Local Attractions Section -->
+<section class="container my-5">
+    <h3 class="fw-bold">Local Attractions</h3>
+    <p>While visiting Chittoor, don't miss out on these nearby attractions that offer a glimpse into the rich culture and natural beauty of the region:</p>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Raaja_mahal_1.JPG" alt="Chandragiri Fort" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Chandragiri Fort</h5>
+                    <p class="card-text">Explore this historical fort that offers stunning views and insights into the region's history.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Tirumala_090615.jpg" alt="Sri Venkateswara Temple" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Sri Venkateswara Temple</h5>
+                    <p class="card-text">Visit this ancient temple dedicated to Lord Venkateswara, known for its intricate architecture and spiritual significance.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/02/66/b8/6a/kailasagiri-park.jpg?w=900&h=500&s=1" alt="Kailasagiri" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Kailasagiri</h5>
+                    <p class="card-text">Discover this hilltop park offering panoramic views of the city and the coastline, along with beautiful gardens and sculptures.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Travel Tips Section -->
+<section class="container my-5">
+    <h3 class="fw-bold">Travel Tips</h3>
+    <ul class="list-unstyled">
+        <li><span class="icon-green">&#10004;</span> <b>Dress Comfortably : </b> Wear light and comfortable clothing suitable for outdoor activities.</li>
+        <li><span class="icon-green">&#10004;</span> <b>Stay Hydrated :</b>  Carry water bottles, especially when spending time outdoors.</li>
+        <li><span class="icon-green">&#10004;</span> <b>Explore Local Cuisine : </b> Don't miss out on trying local dishes and sweets.</li>
+        <li><span class="icon-green">&#10004;</span> <b>Respect Local Customs :</b>  Be mindful of local customs and traditions, especially when visiting temples and participating in rituals.</li>
+        <li><span class="icon-green">&#10004;</span> <b>Plan Your Visit: </b> The sites can get crowded, especially during weekends and festivals. Try to visit on weekdays for a more peaceful experience.</li>
+    </ul>
+</section>
+
+<!-- Local Attractions Section -->
+<section class="container my-5">
+    <h3 class="fw-bold">Local Attractions</h3>
+    <p>While visiting Kadapa, don't miss out on these nearby attractions that offer a glimpse into the rich culture and natural beauty of the region:</p>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="https://i.pinimg.com/736x/f4/c9/de/f4c9def2316465a4d87cef90221df0ab.jpg" alt="Gandi Maisamma Temple" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Gandi Maisamma Temple</h5>
+                    <p class="card-text">Explore this ancient temple known for its stunning architecture and spiritual significance.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Madhavraya_temple%2C_Gandikota%2C_India.jpg" alt="Madhavaraya Temple" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Madhavaraya Temple</h5>
+                    <p class="card-text">Visit this historic temple dedicated to Lord Madhavaraya, showcasing intricate carvings and rich history.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="https://s7ap1.scene7.com/is/image/incredibleindia/kondapalli-fort-guntur-andhra-pradesh-2-attr-hero?qlt=82&ts=1726743696048" alt="Kondapalli Fort" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Kondapalli Fort</h5>
+                    <p class="card-text">Discover this ancient fort that offers stunning views and insights into the region's history.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tour Plans -->
+<div class="container">
+    <h1 class="fw-bold">Tour Plans</h1>
+    <details>
+        <summary>Day 1: Arrival in Kadapa & Hotel Check-in</summary>
+        <p>Your journey begins as you arrive in Kadapa. 
+            Upon arrival, you will be transferred to your hotel, where you'll check in and unwind. 
+            Enjoy the serene atmosphere as you take in the sights and sounds of the city. 
+            A leisurely evening awaits you, where you can savor local dishes while relaxing at the hotel.</p>
+    </details>
+    
+    <details>
+        <summary>Day 2: Explore Kadapa</summary>
+        <p>Start your day with a visit to <b>Gandi Maisamma Temple</b>, the magnificent temple complex. 
+            Afterward, explore the <b>Madhavaraya Temple</b> and the beautiful <b>Kondapalli Fort</b>. 
+            Enjoy some free time for shopping or exploring local markets before returning to the hotel.</p>
+    </details>
+    
+    <details>
+        <summary>Day 3: Local Attractions</summary>
+        <p>Visit the <b>Ranganathaswamy Temple</b> to explore its rich architecture. 
+            Spend the rest of the day at leisure, enjoying the local culture and cuisine.</p>
+    </details>
+
+    <details>
+        <summary>Day 4: Departure</summary>
+        <p>On your final day, enjoy a peaceful morning exploring any remaining attractions before being transferred to the airport for your departure. 
+            Carry with you unforgettable memories of Kadapa.</p>
+    </details>
+</div>
+<br><br>
+
+<!-- FAQs -->
+<section class="container my-5">
+    <h3 class="fw-bold">Frequently Asked Questions</h3><br><br>
+    <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faq1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqContent1">
+                    Is airfare included in the package?
+                </button>
+            </h2>
+            <div id="faqContent1" class="accordion-collapse collapse show">
+                <div class="accordion-body">No, airfare is not included.</div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faq2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqContent2">
+                    What is the cancellation policy?
+                </button>
+            </h2>
+            <div id="faqContent2" class="accordion-collapse collapse">
+                <div class="accordion-body">Cancellation is free up to 7 days before departure.</div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faq3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqContent3">
+                    Are meals included in the package?
+                </button>
+            </h2>
+            <div id="faqContent3" class="accordion-collapse collapse">
+                <div class="accordion-body">Yes, breakfast and dinner are included.</div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faq4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqContent4">
+                    Is travel insurance mandatory?
+                </button>
+            </h2>
+            <div id="faqContent4" class="accordion-collapse collapse">
+                <div class="accordion-body">Travel insurance is optional but recommended.</div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faq5">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqContent5">
+                    Can we customize the tour package?
+                </button>
+            </h2>
+            <div id="faqContent5" class="accordion-collapse collapse">
+                <div class="accordion-body">Yes, customization options are available.</div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faq6">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqContent6">
+                    What is the best time to visit?
+                </button>
+            </h2>
+            <div id="faqContent6" class="accordion-collapse collapse">
+                <div class="accordion-body">The best time to visit is from October to March.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Media Gallery -->
+<section class="container my-5">
+    <h3 class="fw-bold">Media Gallery</h3><br>
+    <div class="row g-3">
+        <div class="col-md-4">
+            <img src="https://divinecartravels.in/wp-content/uploads/2021/08/pushpagiri.jpg" alt="Kadapa 1" class="img-fluid rounded">
+        </div>
+        <div class="col-md-4">
+            <img src="https://tripxl.com/blog/wp-content/uploads/2024/09/Annapurna-Temple-2.jpg" alt="Kadapa 2" class="img-fluid rounded">
+        </div>
+        <div class="col-md-4">
+            <img src="https://ecom.holaciti.com/assets/place/1739500032_nz6VhfMscN.webp" alt="Kadapa 3" class="img-fluid rounded">
+        </div>
+        <div class="col-md-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Pushpagiri_Temple_in_Kadapa_District.jpg" alt="Kadapa 4" class="img-fluid rounded">
+        </div>
+        <div class="col-md-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/The_Temple_of_Sri_Soumyanatha_Swamy_Nandalur_Kadapa_AP_INDIA.jpg" alt="Kadapa 5" class="img-fluid rounded">
+        </div>
+        <div class="col-md-4">
+            <img src="https://xploringdestinations.com/wp-content/uploads/2023/02/Devuni-Kadapa-Temple-1.jpg" alt="Kadapa 6" class="img-fluid rounded">
+        </div>
+    </div>
+</section>
+
+<!-- Reviews -->
+<section class="container my-5">
+    <h3 class="fw-bold text-center">Reviews</h3>
+    <div class="container my-5">
+        <!-- Rating Summary -->
+        <div class="row mb-4 rating-summary p-4 shadow-sm">
+            <div class="col-md-6 text-center">
+                <h1 class="rating-value display-3 fw-bold text-warning">4.0 </h1>
+                <p class="text-success fw-bold fs-4"> ⭐⭐⭐⭐ Very Good</p>
+                <p>Based on 30 Reviews</p>
+            </div>
+            <div class="col-md-6">
+                <div class="progress-bars">
+                    <div class="mb-2">
+                        <p class="d-flex justify-content-between mb-1"><span>Service</span><span>90%</span></p>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <p class="d-flex justify-content-between mb-1"><span>Accommodation</span><span>85%</span></p>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <p class="d-flex justify-content-between mb-1"><span>Location</span><span>88%</span></p>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 88%;" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="d-flex justify-content-between mb-1"><span>Price</span><span>80%</span></p>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="review-card shadow-sm p-4">
+                    <div class="d-flex justify-content-between mb-3">
+                        <div class="d-flex flex-row align-items-center">
+                            <img src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png" alt="User  Avatar" class="rounded-circle me-2" width="50">
+                            <div>
+                                <p class="fw-bold mb-0">Alice Johnson</p>
+                                <p class="text-muted">2023-06-20</p>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center">
+                            <i class="fas fa-star text-warning me-1"></i>
+                            <i class="fas fa-star text-warning me-1"></i>
+                            <i class="fas fa-star text-warning me-1"></i>
+                            <i class="fas fa-star text-warning me-1"></i>
+                            <i class="fas fa-star-half-alt text-warning me-1"></i>
+                        </div>
+                    </div>
+                    <p class="mb-0">
+                        The Kadapa Temple Tour was a fantastic experience! The temples are beautiful, and the local culture is rich. 
+                        I highly recommend this tour for anyone interested in exploring Andhra Pradesh's spiritual heritage.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="review-card shadow-sm p-4">
+                    <div class="d-flex justify-content-between mb-3">
+                        <div class="d-flex flex-row align-items-center">
+                            <img src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png" alt="User  Avatar" class="rounded-circle me-2" width="50">
+                            <div>
+                                <p class="fw-bold mb-0">Michael Brown</p>
+                                <p class="text-muted">2023-06-15</p>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center">
+                            <i class="fas fa-star text-warning me-1"></i>
+                            <i class="fas fa-star text-warning me-1"></i>
+                            <i class="fas fa-star text-warning me-1"></i>
+                            <i class="fas fa-star text-warning me-1"></i>
+                            <i class="fas fa-star-half-alt text-warning me-1"></i>
+                        </div>
+                    </div>
+                    <p class="mb-0">
+                        I had a great time on this tour! The itinerary was well-planned, and the accommodations were comfortable. 
+                        I would definitely recommend it to anyone looking to explore Kadapa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add a Review Section -->
+<section class="container my-5">
+    <h3 class="fw-bold">Add a Review</h3>
+</section>
+<section class="review-section container my-5 p-4 border rounded">
+    <form>
+        <div class="row">
+            <!-- Service -->
+            <div class="col-md-6 mb-3">
+                <label for="service-rating" class="fw-bold">Service</label>
+                <div class="star-rating" id="service-rating">
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                </div>
+            </div>
+
+            <!-- Accommodation -->
+            <div class="col-md-6 mb-3">
+                <label for="accommodation-rating" class="fw-bold">Accommodation</label>
+                <div class="star-rating" id="accommodation-rating">
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Location -->
+            <div class="col-md-6 mb-3">
+                <label for="location-rating" class="fw-bold">Location</label>
+                <div class="star-rating" id="location-rating">
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                </div>
+            </div>
+
+            <!-- Price -->
+            <div class="col-md-6 mb-3">
+                <label for="price-rating" class="fw-bold">Price</label>
+                <div class="star-rating" id="price-rating">
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Name -->
+            <div class="col-md-6 mb-3">
+                <label for="name" class="fw-bold">Your Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="col-md-6 mb-3">
+                <label for="email" class="fw-bold">Your Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Review Title -->
+            <div class="col-md-12 mb-3">
+                <label for="review-title" class="fw-bold">Review Title</label>
+                <input type="text" class="form-control" id="review-title" placeholder="Enter your review title" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Review Writing -->
+            <div class="col-md-12 mb-4">
+                <label for="review-text" class="fw-bold">Your Review</label>
+                <textarea class="form-control" id="review-text" rows="4" placeholder="Write your review here..." required></textarea>
+            </div>
+        </div>
+
+        <div class="text-start">
+            <button type="submit" class="btn btn-primary px-4">Submit Review</button>
+        </div>
+    </form>
+</section>
+
+<!-- Similar Tours Section -->
+<section class="container my-5">
+    <h3 class="fw-bold">Similar Tours</h3>
+    <div class="scrolling-wrapper">
+        <!-- Package Card 1 -->
+        <div class="package-card">
+            <img src="Images\Tour1.jpg" alt="Tour 1" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Beautiful Kashmir</h5>
+                <p class="card-text">6 Days 5 Nights <br> ₹22,000 per person</p>
+                <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 2 -->
+        <div class="package-card">
+            <img src="Images\Tour2.jpg" alt="Tour 2" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Splendid Himachal</h5>
+                <p class="card-text">5 Days 4 Nights <br> ₹18,999 per person</p>
+                <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 3 -->
+        <div class="package-card">
+            <img src="Images\Tour3.jpg" alt="Tour 3" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Rajasthan Heritage</h5>
+                <p class="card-text">6 Days 5 Nights <br> ₹20,999 per person</p>
+                <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 4 -->
+        <div class="package-card">
+            <img src="Images\Tour4.jpg" alt="Tour 4" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Magical Leh Ladakh</h5>
+                <p class="card-text">7 Days 6 Nights <br> ₹22,999 per person</p>
+                <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 5 -->
+        <div class="package-card">
+            <img src="Images\Tour5.jpg" alt="Tour 5" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Mystic Northeast India</h5>
+                <p class="card-text">5 Days 4 Nights <br> ₹19,999 per person</p>
+                <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 6 -->
+        <div class="package-card">
+            <img src="Images\Tour6.jpg" alt="Tour 6" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Exotic Andaman</h5>
+                <p class="card-text">4 Days 3 Nights <br> ₹17,999 per person</p>
+                <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 7 -->
+        <div class="package-card">
+            <img src="Images\Tour7.jpg" alt="Tour 7" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Goa Beach Getaway</h5>
+                <p class="card-text">3 Days 2 Nights <br> ₹10,999 per person</p>
+                <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 8 -->
+        <div class="package-card">
+            <img src="Images\Tour8.jpg" alt="Tour 8" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Charming Kerala</h5>
+                <p class="card-text">6 Days 5 Nights <br> ₹21,999 per person</p>
+                <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 9 -->
+        <div class="package-card">
+            <img src="Images\Tour9.jpg" alt="Tour 9" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Cultural Punjab</h5>
+                <p class="card-text">4 Days 3 Nights <br> ₹16,999 per person</p>
+                <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+        </div>
+
+        <!-- Package Card 10 -->
+        <div class="package-card">
+            <img src="Images\Tour10.jpg" alt="Tour 10" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Adventurous Uttarakhand</h5>
+                <p class="card-text">5 Days 4 Nights <br> ₹18,499 per person</p>
+                <a href="#" class="btn btn-outline-primary">View Details</a>
+            </div>
+        </div>
+    </div>
+    <!-- Add more package cards as needed -->
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

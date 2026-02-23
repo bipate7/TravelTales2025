@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Tales Tours Packages</title>
+    <link rel="icon" href="Images/TT4.png" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/T.css" />
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <header>
+      <div class="top-bar">
+        <div>
+          <i class="fas fa-envelope"></i
+          ><a href="mailto:TravelTales@gmail.com">TravelTales@gmail.com</a
+          >&nbsp;&nbsp;&nbsp;&nbsp;
+          <i class="fas fa-map-marker-alt"></i> Nagpur, Maharashtra
+        </div>
+        <div>
+          <a href="../Services/Sign up Page.html">Login / Signup</a>
+          <a href="#">EN <i class="fas fa-chevron-down"></i></a>
+          <a href="https://www.facebook.com/login.php/"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/login/"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="https://www.youtube.com/account"
+            ><i class="fab fa-youtube"></i
+          ></a>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="logo">
+          <img src="Images/TT4.png" alt="Travel Tales Logo" width="100" />
+        </div>
+
+        <div class="menu-toggle" id="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="Tour.html">Tours</a>
+            <ul class="dropdown-menu">
+              <li><a href="Tours List.html">Tour List</a></li>
+              <li>
+                <a href="Tours Packages.html" class="active">Tour Packages</a>
+              </li>
+              <li><a href="Tour.html">Tour Details</a></li>
+              <li><a href="Tour.html">Activities</a></li>
+              <li><a href="Tour.html">Activity Details</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="../Destinations/Destinations.html">Destination</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="../Destinations/Destinations.html">All Destinations</a>
+              </li>
+              <li>
+                <a href="../Services/Destination Single.html"
+                  >Destination Single</a
+                >
+              </li>
+              <li><a href="../Services/Discover Hotel.html">Hotels</a></li>
+              <li>
+                <a href="../Services/Hotel Services.html">Hotel Details</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="About Us.html">About</a></li>
+          <li class="dropdown">
+            <a href="News.html">News</a>
+            <ul class="dropdown-menu">
+              <li><a href="../Blog/Ourblog.html">Our Blog</a></li>
+              <li><a href="../Blog/BlogDetails.html">Blog Details</a></li>
+            </ul>
+          </li>
+          <li><a href="../Services/Contact.html">Contact</a></li>
+        </ul>
+        <div class="call-us">
+          <i class="fas fa-phone"></i> Call Us <br />
+          +9999999999
+        </div>
+      </nav>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+      <div class="banner-text">
+        <h1>Tour Packages</h1>
+        <p>
+          <i class="fas fa-home"></i> Home
+          <i class="fas fa-chevron-right"></i> Tour Packages
+        </p>
+      </div>
+    </div>
+
+    <!-- Tour Packages Header -->
+    <div class="tour-header">
+      <h1>Explore Our Tour Packages</h1>
+
+      <form class="container search-form mt-4">
+        <div class="row">
+          <!-- WHERE TO GO DROPDOWN -->
+          <div class="col-md-3 col-sm-6">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i class="fas fa-suitcase"></i
+                ></span>
+              </div>
+              <select class="form-control">
+                <option selected disabled>Where to go?</option>
+                <option>Delhi</option>
+                <option>Mumbai</option>
+                <option>Kolkata</option>
+                <option>Chennai</option>
+                <option>Bengaluru</option>
+                <option>Goa</option>
+                <option>Kashmir</option>
+                <option>Himachal Pradesh</option>
+                <option>Uttarakhand</option>
+                <option>Punjab</option>
+                <option>Rajasthan</option>
+                <option>Gujarat</option>
+                <option>Assam</option>
+                <option>Meghalaya</option>
+                <option>Arunachal Pradesh</option>
+                <option>Sikkim</option>
+                <option>Ladakh</option>
+                <option>Andaman & Nicobar</option>
+                <option>Kerala</option>
+                <option>Karnataka</option>
+                <option>Tamil Nadu</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- CHECK IN -->
+          <div class="col-md-2 col-sm-6">
+            <input type="date" class="form-control" placeholder="Check in" />
+          </div>
+
+          <!-- CHECK OUT -->
+          <div class="col-md-2 col-sm-6">
+            <input type="date" class="form-control" placeholder="Check out" />
+          </div>
+
+          <!-- GUESTS DROPDOWN -->
+          <div class="col-md-2 col-sm-6">
+            <select class="form-control">
+              <option selected disabled>Guests</option>
+              <option>1 Adult</option>
+              <option>2 Adults</option>
+              <option>3 Adults</option>
+              <option>4 Adults</option>
+              <option>Family (2 Adults + 1 Child)</option>
+              <option>Family (2 Adults + 2 Children)</option>
+              <option>Group (5+ Members)</option>
+            </select>
+          </div>
+
+          <!-- BUTTON -->
+          <div class="col-md-3 col-sm-12">
+            <button type="submit" class="btn btn-danger btn-block">
+              <i class="fas fa-search"></i> Search
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Tour Packages Section -->
+    <div class="container my-5">
+      <div class="row">
+        <!-- Package 1 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://t3.ftcdn.net/jpg/03/04/85/26/360_F_304852693_nSOn9KvUgafgvZ6wM0CNaULYUa7xXBkA.jpg"
+              class="card-img-top"
+              alt="Agra"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Agra - Taj Mahal</h5>
+              <p class="card-text">
+                Witness the beauty of the Taj Mahal in this unforgettable trip.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹8,000</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">2 Days, 1 Night</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://media.istockphoto.com/id/535168027/photo/india-goa-palolem-beach.jpg?s=612x612&w=0&k=20&c=iGV1Ue0Efj87dQirWnUpZVG1dNobUjfVvMGdKHTJ7Qg="
+              class="card-img-top"
+              alt="Goa"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Goa - Beach Getaway</h5>
+              <p class="card-text">
+                Relax on the golden beaches of Goa and soak up the sun.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹12,000</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">4 Days, 3 Nights</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://media.istockphoto.com/id/1398087835/photo/pink-palace-hawa-mahal-jaipur-india-beautiful-sunset-view.jpg?s=612x612&w=0&k=20&c=S8X6bk4Mdp0xu624dFZCHfobotdwdIp7K1FEQJV6hkI="
+              class="card-img-top"
+              alt="Jaipur"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Jaipur - Pink City</h5>
+              <p class="card-text">
+                Explore the majestic palaces and forts of Jaipur.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹10,000</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 4 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1697729438401-fcb4ff66d9a8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8S2VyYWxhJTIwJTIwJTIwQmFja3dhd Vehiclec3xlbnwwfHwwfHx8MA%3D%3D"
+              class="card-img-top"
+              alt="Kerala"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kerala - Backwaters</h5>
+              <p class="card-text">
+                Cruise through the tranquil backwaters of Kerala.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹15,000</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">5 Days, 4 Nights</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 5 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://images.unsplash.com/photo-1593118845043-359e5f628214?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8TGVoJTIwTGFkYWtofGVufDB8fDB8fHww"
+              class="card-img-top"
+              alt="Leh Ladakh"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><a href="../North India/Ladakh/Leh Ladakh Adventure.html" class="text-dark text-decoration-none">Leh Ladakh - Adventure</a></h5>
+              <p class="card-text">
+                Experience the rugged beauty of Leh and Ladakh.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹25,000</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">6 Days, 5 Nights</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 6 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://indiatravelfactory.com/wp-content/uploads/2023/07/Kashmir-The-Heaven-On-Earth.webp"
+              class="card-img-top"
+              alt="Kashmir"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kashmir - Heaven on Earth</h5>
+              <p class="card-text">
+                Explore the picturesque valleys and lakes of Kashmir.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹18,000</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">4 Days, 3 Nights</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 7 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://i.natgeofe.com/n/a3ab98d9-e181-4ab3-a888-742c65acaf26/gateway-of-india-mumbai-india.jpg"
+              class="card-img-top"
+              alt="Mumbai"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Mumbai - City of Dreams</h5>
+              <p class="card-text">
+                Discover the vibrant life of Mumbai, India's financial hub.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹9,000</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">2 Days, 1 Night</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 8 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://www.onthegotours.com/repository/Udaipur--New-Web-Image--On-the-Go-Tours-289941458234120.jpg"
+              class="card-img-top"
+              alt="Udaipur"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><a href="../North India/Rajasthan/Udaipur Lake Retreat.html" class="text-dark text-decoration-none">Udaipur - City of Lakes</a></h5>
+              <p class="card-text">
+                Enjoy the serene lakes and palaces of Udaipur.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹11,000</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 9 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://s3.india.com/wp-content/uploads/2024/05/Feature-Image_-Shimla-2.jpg##image/jpg"
+              class="card-img-top"
+              alt="Shimla"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><a href="../North India/Himachal Pradesh/Shimla Delight.html" class="text-dark text-decoration-none">Shimla - Hill Station</a></h5>
+              <p class="card-text">
+                Enjoy the cool climate and scenic views of Shimla.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹8,500</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 10 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1697730324062-c012bc98eb13?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QW1yaXRzYXJ8ZW58MHx8MHx8fDA%3D"
+              class="card-img-top"
+              alt="Amritsar"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><a href="../North India/Punjab/Golden Temple Tour.html" class="text-dark text-decoration-none">Amritsar - Golden Temple</a></h5>
+              <p class="card-text">
+                Visit the Golden Temple and immerse in Sikh culture.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹7,000</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">2 Days, 1 Night</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 11 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1661940254003-c3f37e5d32ad?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8QW5kYW1hbnxlbnwwfHwwfHx8MA%3D%3D"
+              class="card-img-top"
+              alt="Andaman"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><a href="../East India/Andaman and Nicobar Islands/Andaman Beach Escape.html" class="text-dark text-decoration-none">Andaman - Tropical Paradise</a></h5>
+              <p class="card-text">
+                Experience the crystal-clear beaches of Andaman.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹30,000</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">6 Days, 5 Nights</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 12 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1697730303782-6679b6bec202?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8RGFyamVlbGluZ3xlbnwwfHwwfHx8MA%3D%3D"
+              class="card-img-top"
+              alt="Darjeeling"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Darjeeling - Tea Gardens</h5>
+              <p class="card-text">
+                Walk through lush tea gardens and enjoy mountain views.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹10,000</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 13 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://www.stayvista.com/blog/wp-content/uploads/2024/09/Hampi_karnataka.jpg"
+              class="card-img-top"
+              alt="Hampi"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Hampi - Heritage Delight</h5>
+              <p class="card-text">
+                Walk through the ruins of Vijayanagara Empire in Hampi.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹9,500</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 14 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://media.assettype.com/outlooktraveller/2024-04/4b6c5c58-610a-4294-82f2-7ed6b16fc1c0/kolkata7.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true"
+              class="card-img-top"
+              alt="Kolkata"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kolkata - Cultural Capital</h5>
+              <p class="card-text">
+                Dive into the colonial charm and vibrant art scene of Kolkata.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹7,500</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">2 Days, 1 Night</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 15 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://s7ap1.scene7.com/is/image/incredibleindia/vidhana-soudha-bangalore-karnataka-hero?qlt=82&ts=1726719027301"
+              class="card-img-top"
+              alt="Bangalore"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Bangalore - Garden City</h5>
+              <p class="card-text">
+                Enjoy the tech life and green parks of Bangalore.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹6,000</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">2 Days, 1 Night</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 16 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://i.pinimg.com/736x/16/73/78/167378cd9499a85e212b222995be4d47.jpg"
+              class="card-img-top"
+              alt="Sundarbans"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Sundarbans - Mangrove Safari</h5>
+              <p class="card-text">
+                Explore the unique ecosystem of Sundarbans Tiger Reserve.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹13,000</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">4 Days, 3 Nights</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 17 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://imagecache.tourhub.co/xdU62QSHQhG7TTsoAO6w_Ha2VDmEtRGS6PJqm6BRn_janardhana-balaji-84Y6NcoYOMU-unsplash.webp"
+              class="card-img-top"
+              alt="Madurai"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Madurai - Temple Trail</h5>
+              <p class="card-text">
+                Visit the Meenakshi Temple and explore ancient Tamil
+                architecture.
+              </p>
+              <br />
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹8,200</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 18 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://www.vikipandit.com/wp-content/uploads/Monuments-of-Mahabalipuram.jpg"
+              class="card-img-top"
+              alt="Mahabalipuram"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Mahabalipuram - Rock Carvings</h5>
+              <p class="card-text">
+                Marvel at the UNESCO-listed rock temples by the sea.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹6,500</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">2 Days, 1 Night</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 19 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://www.oyorooms.com/travel-guide/wp-content/uploads/2020/01/Train-on-Nilgiri-Railway-Track.jpg"
+              class="card-img-top"
+              alt="Ooty"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Ooty - Nilgiri Escape</h5>
+              <p class="card-text">
+                Ride the toy train and breathe the fresh air of Ooty hills.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹9,000</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 20 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://s7ap1.scene7.com/is/image/incredibleindia/1-marina-beach-city-hero?qlt=82&ts=1726654999969"
+              class="card-img-top"
+              alt="Chennai"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Chennai - Coastal Culture</h5>
+              <p class="card-text">
+                Enjoy Marina Beach and the rich culture of South India.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹6,800</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">2 Days, 1 Night</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 21 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://i.natgeofe.com/n/3f6f64c6-27cf-47e5-b682-0edc939b95e7/ganga-aarti-varansai-india.jpg"
+              class="card-img-top"
+              alt="Varanasi"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Varanasi - Spiritual Sojourn</h5>
+              <p class="card-text">
+                Experience the divine Ganga Aarti in the spiritual capital of
+                India.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹7,800</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 22 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://www.india.com/wp-content/uploads/2024/04/hahaha.jpg"
+              class="card-img-top"
+              alt="Pondicherry"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Pondicherry - French Vibes</h5>
+              <p class="card-text">
+                Wander through colonial streets and seaside cafés in
+                Pondicherry.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹8,700</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 23 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://www.tourmyholiday.com/upload/blogimage/banner1920-b5f41c0f4c89259.webp"
+              class="card-img-top"
+              alt="Rishikesh"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Rishikesh - Yoga & Rafting</h5>
+              <p class="card-text">
+                Rejuvenate with yoga and thrill yourself with river rafting.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹9,200</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">3 Days, 2 Nights</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 24 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://www.ghumindiaghum.com/blog/wp-content/uploads/2024/06/Queen-of-Hills-%E2%80%98Darjeeling-1.jpg"
+              class="card-img-top"
+              alt="Darjeeling"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Darjeeling - Queen of Hills</h5>
+              <p class="card-text">
+                Sip the finest tea and enjoy views of Kanchenjunga.
+              </p>
+
+              <div class="price-container">
+                <div>
+                  <div class="price-label">PRICE</div>
+                  <div class="price-value">₹10,500</div>
+                  <small class="text-muted">per person</small>
+                </div>
+                <div>
+                  <div class="duration-label">DURATION</div>
+                  <div class="duration-value">4 Days, 3 Nights</div>
+                </div>
+              </div>
+
+              <div class="rating">⭐⭐⭐⭐</div>
+              <a href="book-now.html" class="btn btn-danger mt-3">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination-container">
+      <ul class="pagination">
+        <li><a href="T3.html" class="page-link">&laquo; Prev</a></li>
+        <li><a href="Tours Packages.html" class="page-link active">1</a></li>
+        <li><a href="Tp.html" class="page-link">2</a></li>
+        <li><a href="T1.html" class="page-link">3</a></li>
+        <li><a href="T2.html" class="page-link">4</a></li>
+        <li><a href="T3.html" class="page-link">5</a></li>
+        <li><a href="Tp.html" class="page-link">Next &raquo;</a></li>
+      </ul>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">
+          Why Choose TravelTales
+        </h2>
+
+        <div class="row">
+          <div
+            class="col-md-4 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="fas fa-award"></i>
+              </div>
+              <h4>Best Price Guarantee</h4>
+              <p>
+                We offer the best prices for all our tour packages with no
+                hidden costs.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-4 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-duration="1000"
+          >
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <h4>24/7 Customer Support</h4>
+              <p>
+                Our dedicated support team is available round the clock to
+                assist you.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-md-4 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="400"
+            data-aos-duration="1000"
+          >
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h4>Safe & Secure</h4>
+              <p>
+                Your safety and security are our top priorities during your
+                travels.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section class="offers-section">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">
+          Special Offers
+        </h2>
+
+        <div class="row">
+          <div
+            class="col-md-4 mb-4"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <div class="offer-card position-relative">
+              <div class="offer-badge">25% OFF</div>
+              <h4>Early Bird Discount</h4>
+              <p>
+                Book 60 days in advance and get 25% off on selected packages.
+              </p>
+              <a href="#" class="btn btn-danger mt-3">View Details</a>
+            </div>
+          </div>
+
+          <div
+            class="col-md-4 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-duration="1000"
+          >
+            <div class="offer-card position-relative">
+              <div class="offer-badge">Family Deal</div>
+              <h4>Family Package</h4>
+              <p>
+                Special discounts for family bookings. Kids under 12 travel
+                free.
+              </p>
+              <a href="#" class="btn btn-danger mt-3">View Details</a>
+            </div>
+          </div>
+
+          <div
+            class="col-md-4 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="400"
+            data-aos-duration="1000"
+          >
+            <div class="offer-card position-relative">
+              <div class="offer-badge">Group Offer</div>
+              <h4>Group Discount</h4>
+              <p>Travel with 8+ people and get exclusive group discounts.</p>
+              <a href="#" class="btn btn-danger mt-3">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+      <div class="container">
+        <h2 class="text-center mb-5">What Our Customers Say</h2>
+
+        <div class="row">
+          <!-- Testimonial 1 -->
+          <div class="col-md-4 mb-4">
+            <div class="testimonial-card">
+              <img
+                src="https://media.istockphoto.com/id/1230749818/photo/portrait-of-smiling-male-owner-of-fashion-store-standing-in-front-of-clothing-display.jpg?s=612x612&w=0&k=20&c=xoWhF-hrQcbMEPDYncHiHF8HJX2YgmYt7T-KLCPZIpY="
+                alt="Customer 1"
+                class="testimonial-image"
+              />
+              <p class="testimonial-text">
+                "Absolutely amazing experience! The trip was well-planned, and
+                everything went smoothly. Can't wait to book another one!"
+              </p>
+              <h5 class="testimonial-author">John Doe</h5>
+              <span class="testimonial-location">New York, USA</span>
+              <div class="testimonial-rating">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star-half-alt text-warning"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="col-md-4 mb-4">
+            <div class="testimonial-card">
+              <img
+                src="https://d2v5dzhdg4zhx3.cloudfront.net/web-assets/images/storypages/short/linkedin-profile-picture-maker/dummy_image/thumb/004.webp"
+                alt="Customer 2"
+                class="testimonial-image"
+              />
+              <p class="testimonial-text">
+                "The attention to detail was impressive. Our guide was
+                knowledgeable and made our trip memorable. Highly recommended!"
+              </p>
+              <h5 class="testimonial-author">Sarah Johnson</h5>
+              <span class="testimonial-location">London, UK</span>
+              <div class="testimonial-rating">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="col-md-4 mb-4">
+            <div class="testimonial-card">
+              <img
+                src="https://media.istockphoto.com/id/1398385367/photo/happy-millennial-business-woman-in-glasses-posing-with-hands-folded.jpg?s=612x612&w=0&k=20&c=Wd2vTDd6tJ5SeEY-aw0WL0bew8TAkyUGVvNQRj3oJFw="
+                alt="Customer 3"
+                class="testimonial-image"
+              />
+              <p class="testimonial-text">
+                "Value for money! We got to see so many places and the
+                accommodations were excellent. Will definitely travel with
+                Travel Tales again."
+              </p>
+              <h5 class="testimonial-author">Emma Wilson</h5>
+              <span class="testimonial-location">Sydney, Australia</span>
+              <div class="testimonial-rating">
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+                <i class="fas fa-star text-warning"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="custom-footer">
+      <!-- Decorative Wave -->
+      <div class="wave-divider">
+        <svg viewBox="0 0 120 28">
+          <path d="M0,0 C30,25 90,0 120,25 L120 0 L0 0 Z" fill="#2c3e50"></path>
+        </svg>
+      </div>
+
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="Images/TT7.png" alt="Travel Tales Logo" />
+          </div>
+          <p>
+            Wander more, wonder always. Your perfect journey begins with us.
+          </p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/login.php/"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="http://www.instagram.com/login"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.youtube.com/account"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li>
+              <a href="../Destinations/Destinations.html">Destinations</a>
+            </li>
+            <li><a href="#">Packages</a></li>
+            <li><a href="#">Offers</a></li>
+            <li><a href="#">Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Get in Touch</h4>
+          <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+          <p><i class="fas fa-envelope"></i> TravelTales@gmail.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Nagpur, India</p>
+        </div>
+
+        <div class="newsletter">
+          <h4>Subscribe to Our Newsletter</h4>
+          <form>
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 <span>Travel Tales </span>| All Rights Reserved.<br />
+          Crafted with ❤️ by <strong>Karan Bipate</strong>.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Mobile menu toggle functionality
+      document
+        .getElementById("mobile-menu")
+        .addEventListener("click", function () {
+          document.getElementById("nav-links").classList.toggle("active");
+
+          // Animate hamburger icon
+          this.classList.toggle("active");
+        });
+
+      // Close dropdowns when clicking outside
+      document.addEventListener("click", function (event) {
+        if (!event.target.matches(".dropdown a")) {
+          var dropdowns = document.getElementsByClassName("dropdown-menu");
+          for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.style.display === "block") {
+              openDropdown.style.display = "none";
+            }
+          }
+        }
+      });
+
+      // Add animation to cards on scroll
+      function animateOnScroll() {
+        const cards = document.querySelectorAll(".card");
+        cards.forEach((card) => {
+          const cardPosition = card.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.3;
+          if (cardPosition < screenPosition) {
+            card.style.opacity = 1;
+            card.style.transform = "translateY(0)";
+          }
+        });
+      }
+
+      // Initialize card animation
+      window.addEventListener("load", function () {
+        const cards = document.querySelectorAll(".card");
+        cards.forEach((card) => {
+          card.style.opacity = 0;
+          card.style.transform = "translateY(50px)";
+          card.style.transition = "all 0.5s ease";
+        });
+
+        window.addEventListener("scroll", animateOnScroll);
+        // Trigger once on load
+        animateOnScroll();
+      });
+    </script>
+  </body>
+</html>

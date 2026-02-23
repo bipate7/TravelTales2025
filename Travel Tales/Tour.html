@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Tales Tours</title>
+    <link rel="icon" href="Images/TT4.png" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="CSS/Tour.css" />
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <header>
+      <div class="top-bar">
+        <div>
+          <i class="fas fa-envelope"></i
+          ><a href="mailto:TravelTales@gmail.com">TravelTales@gmail.com</a
+          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <i class="fas fa-map-marker-alt"></i>Nagpur, Maharashtra
+        </div>
+        <div>
+          <a href="../Services/Sign up Page.html">Login / Signup</a
+          >&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="#">EN<i class="fas fa-chevron-down"></i></a>&nbsp;
+          <a href="https://www.facebook.com/"
+            ><i class="fab fa-facebook-f"></i></a
+          >&nbsp;
+          <a href="https://x.com/login"><i class="fab fa-twitter"></i></a>&nbsp;
+          <a
+            href="https://www.google.com/aclk?sa=L&ai=DChsSEwjYrOXeq-mQAxUio0sFHWagEUAYACICCAEQABoCc2Y&ae=2&co=1&ase=2&gclid=CjwKCAiAt8bIBhBpEiwAzH1w6Zobyf4S9LwGOy0ALzwFvAgXT4SQUKx6t1U-qHj7y5HhPr6HFp-GrxoC5A0QAvD_BwE&cid=CAASmAHkaNLf00Ues0qiXkjPGsy-LnbXuOfhzl5JJZSEWaL9yqovhLvrIBkCwerCE0w6dq_sCM3Ry-NtsyxYp8EZDy5TWOZM1C8i-jrOrCM85GAlYmB5xNqtFOcaeH29U7O8RYfEnpyqGyUtxFBv7o1Lir31bYs_eXPqUMzJEIzFBqx0-l4j8sMHdEg6p_9tkwu_tVXjOMvtQelgoA&cce=2&category=acrcp_v1_71&sig=AOD64_1GEMMrMtCV7A5hX2hYAn_s-J6a4A&q&nis=4&adurl&ved=2ahUKEwjyht_eq-mQAxWZxjgGHf3XAS0Q0Qx6BAgMEAE"
+            ><i class="fab fa-linkedin-in"></i></a
+          >&nbsp;
+          <a href="https://www.youtube.com/account"
+            ><i class="fab fa-youtube"></i
+          ></a>
+        </div>
+      </div>
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="logo">
+          <img src="Images/TT4.png" alt="TravelTales Logo" width="100" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="Tour.html" class="active">Tours</a>
+            <ul class="dropdown-menu">
+              <li><a href="Tours List.html">Tour List</a></li>
+              <li><a href="Tours Packages.html">Tour Packages</a></li>
+              <li><a href="Tour.html">Tour Details</a></li>
+              <li><a href="Tour.html">Activities</a></li>
+              <li><a href="Tour.html">Activity Details</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="../Destinations/Destinations.html">Destination</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="../Destinations/Destinations.html">All Destinations</a>
+              </li>
+              <li>
+                <a href="../Services/Destination Single.html"
+                  >Destination Single</a
+                >
+              </li>
+              <li><a href="../Services/Discover Hotel.html">Hotels</a></li>
+              <li>
+                <a href="../Services/Hotel Services.html">Hotel Details</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="About Us.html">About</a></li>
+          <li class="dropdown">
+            <a href="News.html">News</a>
+            <ul class="dropdown-menu">
+              <li><a href="../Blog/Ourblog.html">Our Blog</a></li>
+              <li><a href="../Blog/BlogDetails.html">Blog Details</a></li>
+            </ul>
+          </li>
+          <li><a href="../Services/Contact.html">Contact</a></li>
+        </ul>
+        <div class="call-us">
+          <i class="fas fa-phone"></i> Call Us <br />
+          +9999999999
+        </div>
+      </nav>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+      <div class="banner-text">
+        <h1>Tours</h1>
+        <p>Home &#11166; Tours</p>
+      </div>
+    </div>
+
+    <!-- Coming Soon Banner -->
+    <div class="container">
+      <div
+        class="coming-soon-banner animate__animated animate__pulse animate__infinite"
+      >
+        <h3>
+          <i class="fas fa-globe-americas me-2"></i> International Tours Coming
+          Soon!
+        </h3>
+        <p class="mb-0">
+          We're expanding our destinations worldwide. Stay tuned for exciting
+          global tours!
+        </p>
+      </div>
+    </div>
+
+    <!-- Tour Highlights -->
+    <div class="container">
+      <div class="section-title">Why Choose Travel Tales?</div>
+      <p class="section-subtitle">
+        We're committed to providing unforgettable travel experiences across
+        India with our exceptional services
+      </p>
+
+      <div class="highlights-list">
+        <div class="highlight-card">
+          <i class="fas fa-map-marked-alt"></i>
+          <div class="highlight-title">Curated Indian Experiences</div>
+          <div class="highlight-desc">
+            Handpicked tours showcasing the best of India's diverse cultures,
+            landscapes, and heritage sites.
+          </div>
+        </div>
+        <div class="highlight-card">
+          <i class="fas fa-rupee-sign"></i>
+          <div class="highlight-title">Best Price Guarantee</div>
+          <div class="highlight-desc">
+            We promise the best prices for all our tours. Found a better deal?
+            We'll match it!
+          </div>
+        </div>
+        <div class="highlight-card">
+          <i class="fas fa-user-tie"></i>
+          <div class="highlight-title">Expert Local Guides</div>
+          <div class="highlight-desc">
+            Our knowledgeable guides provide deep insights into India's rich
+            history and culture.
+          </div>
+        </div>
+        <div class="highlight-card">
+          <i class="fas fa-shield-alt"></i>
+          <div class="highlight-title">Safe & Secure Travel</div>
+          <div class="highlight-desc">
+            Your safety is our priority with verified accommodations and
+            reliable transportation.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Popular Indian Destinations -->
+    <div class="container" id="destinations">
+      <div class="section-title">Explore Indian Destinations</div>
+      <p class="section-subtitle">
+        Discover our most popular tours across India's diverse landscapes and
+        cultural hotspots
+      </p>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="destination-card">
+            <div class="destination-img-container">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Houseboats_at_Kerala_Backwaters.jpg/640px-Houseboats_at_Kerala_Backwaters.jpg"
+                alt="Kerala Backwaters"
+                class="destination-img"
+              />
+              <div class="destination-badge">Bestseller</div>
+            </div>
+            <div class="destination-content">
+              <h4 class="destination-title">Kerala Backwaters</h4>
+              <div class="destination-location">
+                <i class="fas fa-map-marker-alt"></i> Kerala, South India
+              </div>
+              <p class="destination-desc">
+                Experience the serene backwaters, lush greenery, and rich
+                culture of God's Own Country on this 7-day journey.
+              </p>
+              <div class="destination-meta">
+                <div class="destination-days">
+                  <i class="fas fa-clock"></i> 7 Days
+                </div>
+                <div class="destination-price">₹25,999</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="destination-card">
+            <div class="destination-img-container">
+              <img
+                src="https://indiatrekkingtours.com/wp-content/uploads/2022/02/rajasthan.jpg"
+                alt="Rajasthan Heritage"
+                class="destination-img"
+              />
+              <div class="destination-badge">Popular</div>
+            </div>
+            <div class="destination-content">
+              <h4 class="destination-title">Rajasthan Heritage</h4>
+              <div class="destination-location">
+                <i class="fas fa-map-marker-alt"></i> Rajasthan, North India
+              </div>
+              <p class="destination-desc">
+                Explore the majestic forts, palaces, and desert landscapes of
+                royal Rajasthan on this 10-day cultural tour.
+              </p>
+              <div class="destination-meta">
+                <div class="destination-days">
+                  <i class="fas fa-clock"></i> 10 Days
+                </div>
+                <div class="destination-price">₹35,999</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="destination-card">
+            <div class="destination-img-container">
+              <img
+                src="https://images.unsplash.com/photo-1699972551268-05491ecac3fc?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cm95YWwlMjBlbmZpZWxkJTIwaGltYWxheWFufGVufDB8fDB8fHww"
+                alt="Himalayan Adventure"
+                class="destination-img"
+              />
+              <div class="destination-badge">Adventure</div>
+            </div>
+            <div class="destination-content">
+              <h4 class="destination-title">Himalayan Adventure</h4>
+              <div class="destination-location">
+                <i class="fas fa-map-marker-alt"></i> Himachal Pradesh, North
+                India
+              </div>
+              <p class="destination-desc">
+                Trek through breathtaking Himalayan landscapes and experience
+                mountain culture on this 12-day adventure.
+              </p>
+              <div class="destination-meta">
+                <div class="destination-days">
+                  <i class="fas fa-clock"></i> 12 Days
+                </div>
+                <div class="destination-price">₹42,999</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="destination-card">
+            <div class="destination-img-container">
+              <img
+                src="https://images.news18.com/ibnlive/uploads/2025/08/image-2025-08-07ce084c7f3814f07b7544a2fb27db64.jpg"
+                alt="Goa Beaches"
+                class="destination-img"
+              />
+              <div class="destination-badge">Beach</div>
+            </div>
+            <div class="destination-content">
+              <h4 class="destination-title">Goa Beach Escape</h4>
+              <div class="destination-location">
+                <i class="fas fa-map-marker-alt"></i> Goa, West India
+              </div>
+              <p class="destination-desc">
+                Relax on golden beaches, explore Portuguese heritage, and enjoy
+                vibrant nightlife on this 5-day coastal retreat.
+              </p>
+              <div class="destination-meta">
+                <div class="destination-days">
+                  <i class="fas fa-clock"></i> 5 Days
+                </div>
+                <div class="destination-price">₹18,999</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="destination-card">
+            <div class="destination-img-container">
+              <img
+                src="https://www.nativeplanet.com/img/2023/09/illuminated-city-of-varanasi-during-the-divine-festival-of-dev-diwali_1695797197486-1200x675-20230927122601.jpg"
+                alt="Varanasi Spiritual"
+                class="destination-img"
+              />
+              <div class="destination-badge">Spiritual</div>
+            </div>
+            <div class="destination-content">
+              <h4 class="destination-title">Varanasi Spiritual</h4>
+              <div class="destination-location">
+                <i class="fas fa-map-marker-alt"></i> Uttar Pradesh, North India
+              </div>
+              <p class="destination-desc">
+                Experience the spiritual essence of India in the ancient city of
+                Varanasi with this 4-day soulful journey.
+              </p>
+              <div class="destination-meta">
+                <div class="destination-days">
+                  <i class="fas fa-clock"></i> 4 Days
+                </div>
+                <div class="destination-price">₹15,999</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="destination-card">
+            <div class="destination-img-container">
+              <img
+                src="https://media-cdn.tripadvisor.com/media/photo-s/17/85/bf/a2/ladakh-bike-expedition.jpg"
+                alt="Ladakh Expedition"
+                class="destination-img"
+              />
+              <div class="destination-badge">Premium</div>
+            </div>
+            <div class="destination-content">
+              <h4 class="destination-title">Ladakh Expedition</h4>
+              <div class="destination-location">
+                <i class="fas fa-map-marker-alt"></i> Ladakh, North India
+              </div>
+              <p class="destination-desc">
+                Discover the breathtaking landscapes and Buddhist culture of the
+                Himalayas on this 14-day premium expedition.
+              </p>
+              <div class="destination-meta">
+                <div class="destination-days">
+                  <i class="fas fa-clock"></i> 14 Days
+                </div>
+                <div class="destination-price">₹49,999</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <a href="#" class="btn btn-primary btn-lg"
+          >View All Indian Destinations</a
+        >
+      </div>
+    </div>
+    <br /><br />
+    <!-- Tour Gallery -->
+    <div class="gallery-section">
+      <div class="container gallery-container">
+        <div class="section-title">Travel Moments</div>
+        <p class="section-subtitle">
+          A glimpse into the unforgettable experiences our travelers have
+          enjoyed across India
+        </p>
+
+        <div class="gallery-row">
+          <div class="gallery-item">
+            <img
+              src="https://media.istockphoto.com/id/1266651692/photo/houseboat-in-alappuzha-backwaters-kerala.jpg?s=612x612&w=0&k=20&c=G432lmdUz9qrW6D4sZYxLe6K-Km85OEmZg0qpcGyRCI="
+              alt="Kerala Houseboat"
+              class="gallery-img"
+            />
+            <div class="gallery-overlay">
+              <a href="Images/tour1.jpg" class="gallery-link">
+                <i class="fas fa-search-plus"></i>
+              </a>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://media.istockphoto.com/id/154894958/photo/amber-fort-jaipur-india.jpg?s=612x612&w=0&k=20&c=gCNirw30cmkl7clV30l8mcbmxOk-IAoT5ACxHRBQsdA="
+              alt="Rajasthan Fort"
+              class="gallery-img"
+            />
+            <div class="gallery-overlay">
+              <a href="Images/tour2.jpg" class="gallery-link">
+                <i class="fas fa-search-plus"></i>
+              </a>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://www.himalayanst.com/uploads/media/Blogs/cost-to-trek-himalayas/cost-of-a-himalayan-trek.jpg"
+              alt="Himalayan Trek"
+              class="gallery-img"
+            />
+            <div class="gallery-overlay">
+              <a href="Images/tour3.jpg" class="gallery-link">
+                <i class="fas fa-search-plus"></i>
+              </a>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://media.istockphoto.com/id/535168027/photo/india-goa-palolem-beach.jpg?s=612x612&w=0&k=20&c=iGV1Ue0Efj87dQirWnUpZVG1dNobUjfVvMGdKHTJ7Qg="
+              alt="Goa Beach"
+              class="gallery-img"
+            />
+            <div class="gallery-overlay">
+              <a href="Images/tour4.jpg" class="gallery-link">
+                <i class="fas fa-search-plus"></i>
+              </a>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://t4.ftcdn.net/jpg/02/64/56/29/360_F_264562951_MQRFSoIUDhNi3RVJByRKGtD2sVtRJb4W.jpg"
+              alt="Varanasi Ghats"
+              class="gallery-img"
+            />
+            <div class="gallery-overlay">
+              <a href="Images/tour5.jpg" class="gallery-link">
+                <i class="fas fa-search-plus"></i>
+              </a>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://media.istockphoto.com/id/1297500238/photo/spituk-gompa-indus-valley-near-leh-ladakh-india.jpg?s=612x612&w=0&k=20&c=IhawDKQhl-WIrYxJprcUGLg3YS84s7VMMOFzt443vzs="
+              alt="Ladakh Monastery"
+              class="gallery-img"
+            />
+            <div class="gallery-overlay">
+              <a href="Images/tour6.jpg" class="gallery-link">
+                <i class="fas fa-search-plus"></i>
+              </a>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://t3.ftcdn.net/jpg/03/04/85/26/360_F_304852693_nSOn9KvUgafgvZ6wM0CNaULYUa7xXBkA.jpg"
+              alt="Taj Mahal"
+              class="gallery-img"
+            />
+            <div class="gallery-overlay">
+              <a href="Images/tour7.jpg" class="gallery-link">
+                <i class="fas fa-search-plus"></i>
+              </a>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1691075209051-00bf980a8a05?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8a2F0aGFrYWxpfGVufDB8fDB8fHww"
+              alt="Kerala Kathakali"
+              class="gallery-img"
+            />
+            <div class="gallery-overlay">
+              <a href="Images/tour8.jpg" class="gallery-link">
+                <i class="fas fa-search-plus"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a href="#" class="btn btn-primary btn-lg">View Full Gallery</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking Panel + YouTube Videos -->
+    <div
+      class="container"
+      style="
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-top: 60px;
+        align-items: flex-start;
+      "
+    >
+      <!-- Booking Panel -->
+      <div class="booking-panel">
+        <h3>Book Your Indian Adventure</h3>
+        <form>
+          <div class="form-group">
+            <label for="destination">Destination</label>
+            <select class="form-select" id="destination">
+              <option selected>Select Destination</option>
+              <option>Kerala Backwaters</option>
+              <option>Rajasthan Heritage</option>
+              <option>Himalayan Adventure</option>
+              <option>Goa Beach Escape</option>
+              <option>Varanasi Spiritual</option>
+              <option>Ladakh Expedition</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="tour-date">Travel Date</label>
+            <input type="date" class="form-control" id="tour-date" required />
+          </div>
+
+          <div class="form-group">
+            <label for="guests">Number of Guests</label>
+            <select class="form-select" id="guests">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5+</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="tour-type">Tour Type</label>
+            <select class="form-select" id="tour-type">
+              <option>Standard</option>
+              <option>Deluxe</option>
+              <option>Luxury</option>
+              <option>Private</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn">Check Availability</button>
+        </form>
+      </div>
+
+      <!-- YouTube Videos Section -->
+      <div class="video-container">
+        <div class="video-section">
+          <iframe
+            src="https://www.youtube.com/embed/ancv4uwNNoA?si=KpUjPOq5uiF_zqYc"
+            title="Indian Adventure Video 1"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="video-section">
+          <iframe
+            src="https://www.youtube.com/embed/qCcLus0yNSg?si=5E8arjiepPOKfSfx"
+            title="Indian Adventure Video 2"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="container"
+      style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 60px"
+    >
+      <div class="itinerary-section" style="flex: 2">
+        <div
+          class="section-title"
+          style="text-align: left; margin-top: 0; margin-bottom: 24px"
+        >
+          Sample Itinerary: Rajasthan Heritage
+        </div>
+        <div class="itinerary-day">
+          <h5>Day 1: Arrival in Jaipur - The Pink City</h5>
+          <p>
+            Arrive at Jaipur International Airport where our representative will
+            greet you. Transfer to your heritage hotel. Afternoon visit to Hawa
+            Mahal and City Palace. Evening free to explore the vibrant local
+            markets of Johari Bazaar and Bapu Bazaar.
+          </p>
+        </div>
+        <div class="itinerary-day">
+          <h5>Day 2: Jaipur Sightseeing</h5>
+          <p>
+            Morning excursion to Amber Fort with an elephant ride (subject to
+            availability). Visit Jal Mahal en route. Afternoon explore Jantar
+            Mantar (astronomical observatory) and Albert Hall Museum. Evening
+            enjoy a traditional Rajasthani cultural show with dinner at Chokhi
+            Dhani village resort.
+          </p>
+        </div>
+        <div class="itinerary-day">
+          <h5>Day 3: Jaipur to Jodhpur - The Blue City</h5>
+          <p>
+            After breakfast, drive to Jodhpur (approximately 5 hours). Check-in
+            at hotel. Afternoon visit to Mehrangarh Fort, one of India's largest
+            forts, and Jaswant Thada. Evening at leisure to explore the
+            blue-painted houses of the old city.
+          </p>
+        </div>
+        <div class="itinerary-day">
+          <h5>Day 4: Jodhpur to Udaipur - The City of Lakes</h5>
+          <p>
+            Morning drive to Udaipur (approximately 6 hours) with a stop at
+            Ranakpur to visit the stunning Jain Temple complex. Arrive in
+            Udaipur and check-in at your lakeside hotel. Evening boat ride on
+            Lake Pichola with views of the Lake Palace.
+          </p>
+        </div>
+        <div class="itinerary-day">
+          <h5>Day 5: Udaipur Exploration</h5>
+          <p>
+            Full day exploring Udaipur including City Palace complex, Jagdish
+            Temple, Saheliyon-ki-Bari gardens, and the local markets. Farewell
+            dinner with a view of the illuminated Lake Pichola.
+          </p>
+        </div>
+        <div class="text-center mt-4">
+          <a href="#" class="btn btn-primary">View Full Itinerary</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="reviews-section">
+      <div class="container reviews-container">
+        <div class="section-title">Traveler Stories</div>
+        <p class="section-subtitle">
+          What our guests say about their experiences traveling with us across
+          India
+        </p>
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="review-card">
+              <div class="review-content">
+                <div class="reviewer">Priya Sharma</div>
+                <div class="review-location">Mumbai, India</div>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">
+                  "The Rajasthan Heritage tour was beyond amazing! Every detail
+                  was perfectly arranged, and our guide was incredibly
+                  knowledgeable about the history and culture. The hotels were
+                  beautiful heritage properties that added to the royal
+                  experience. Will definitely travel with them again!"
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="review-card">
+              <div class="review-content">
+                <div class="reviewer">Rohit Verma</div>
+                <div class="review-location">Delhi, India</div>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="review-text">
+                  "Loved every moment of the Kerala tour. The houseboat
+                  experience was magical and the backwaters were so peaceful.
+                  The itinerary was well-planned with just the right mix of
+                  activities and relaxation. The local food experiences were a
+                  highlight!"
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="review-card">
+              <div class="review-content">
+                <div class="reviewer">Ananya Patel</div>
+                <div class="review-location">Bangalore, India</div>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">
+                  "Our Ladakh expedition was the trip of a lifetime! The
+                  landscapes were breathtaking and our guide ensured we
+                  experienced the local culture authentically. The support team
+                  was always available when we had questions. Can't wait to book
+                  our next adventure with Travel Tales!"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+      <div class="container">
+        <div class="section-title">Frequently Asked Questions</div>
+        <p class="section-subtitle">
+          Find answers to common questions about traveling with us in India
+        </p>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            What is included in your Indian tour packages?
+          </div>
+          <div class="faq-answer">
+            <p>Our Indian tour packages typically include:</p>
+            <ul>
+              <li>
+                Accommodation in carefully selected hotels/heritage properties
+              </li>
+              <li>
+                Daily breakfast and some meals as specified in the itinerary
+              </li>
+              <li>All transportation during the tour (private AC vehicles)</li>
+              <li>Services of an experienced English-speaking guide</li>
+              <li>Entrance fees to monuments and cultural shows</li>
+              <li>All applicable taxes and service charges</li>
+            </ul>
+            <p>
+              International flights, visa fees, travel insurance, and personal
+              expenses are not included unless specified.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            When will international tours be available?
+          </div>
+          <div class="faq-answer">
+            <p>
+              We're excited to announce that our international tours will be
+              launching in early 2024! Currently, we're focusing on providing
+              the best Indian travel experiences while carefully preparing our
+              global offerings to meet the same high standards.
+            </p>
+            <p>
+              Sign up for our newsletter to be the first to know when we launch
+              international destinations. We'll be starting with popular
+              locations in Southeast Asia and Europe before expanding further.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            What is your cancellation policy for Indian tours?
+          </div>
+          <div class="faq-answer">
+            <p>
+              Our cancellation policy is designed to be fair while accounting
+              for commitments we make to hotels and service providers:
+            </p>
+            <ul>
+              <li>
+                <strong>30+ days before departure:</strong> Full refund (minus
+                any non-refundable fees)
+              </li>
+              <li>
+                <strong>15-29 days before departure:</strong> 50% of tour cost
+                refunded
+              </li>
+              <li>
+                <strong>8-14 days before departure:</strong> 25% of tour cost
+                refunded
+              </li>
+              <li><strong>0-7 days before departure:</strong> No refund</li>
+            </ul>
+            <p>
+              We strongly recommend purchasing travel insurance to protect
+              against unexpected cancellations.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            What safety measures do you have in place for Indian tours?
+          </div>
+          <div class="faq-answer">
+            <p>
+              Your safety is our top priority. We implement several measures:
+            </p>
+            <ul>
+              <li>
+                All hotels and transportation partners are vetted for safety
+                standards
+              </li>
+              <li>24/7 local support during your tour</li>
+              <li>
+                Experienced guides trained in first aid and emergency procedures
+              </li>
+              <li>Regular vehicle maintenance checks</li>
+              <li>Verified restaurants and food providers</li>
+              <li>Emergency contact numbers provided pre-tour</li>
+            </ul>
+            <p>
+              We also monitor local conditions and adjust itineraries if needed
+              for safety reasons.
+            </p>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a href="#" class="btn btn-primary">View All FAQs</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="newsletter-section">
+      <div class="container">
+        <h3 class="newsletter-title">Stay Updated on Our Tours</h3>
+        <p class="newsletter-desc">
+          Subscribe to our newsletter for the latest travel deals, destination
+          highlights, and updates on our upcoming international tours!
+        </p>
+        <form class="newsletter-form">
+          <input
+            type="email"
+            class="newsletter-input"
+            placeholder="Your email address"
+          />
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="footer-logo">
+              <img src="Images/TT5.png" alt="Travel Tales" width="100" />
+            </div>
+            <p class="footer-about">
+              Travel Tales Tours is a premier Indian travel company specializing
+              in curated experiences across India's most beautiful destinations.
+              We're committed to creating unforgettable journeys that showcase
+              India's rich culture and breathtaking landscapes.
+            </p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.youtube.com/"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.linkedin.com/login"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-links">
+              <h5>Quick Links</h5>
+              <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+                <li><a href="#">Indian Tours</a></li>
+                <li>
+                  <a href="../Destinations/Destinations.html">Destinations</a>
+                </li>
+                <li><a href="../Blog/BlogDetails.html">Blog</a></li>
+                <li><a href="../Services/Contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <div class="footer-links">
+              <h5>Indian Tours</h5>
+              <ul>
+                <li><a href="#">Kerala</a></li>
+                <li><a href="#">Rajasthan</a></li>
+                <li><a href="#">Himalayas</a></li>
+                <li><a href="#">Goa</a></li>
+                <li><a href="#">Varanasi</a></li>
+                <li><a href="#">Ladakh</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="footer-links">
+              <h5>Contact Us</h5>
+              <div class="footer-contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="footer-contact-text">
+                  123 Travel Street, Nagpur, Maharashtra 440001
+                </div>
+              </div>
+              <div class="footer-contact-item">
+                <i class="fas fa-phone"></i>
+                <div class="footer-contact-text">
+                  +91 9999999999<br />
+                  +91 8888888888
+                </div>
+              </div>
+              <div class="footer-contact-item">
+                <i class="fas fa-envelope"></i>
+                <div class="footer-contact-text">
+                  TravelTalesngp@gmail.com<br />
+                </div>
+              </div>
+              <div class="footer-contact-item">
+                <i class="fas fa-clock"></i>
+                <div class="footer-contact-text">
+                  Monday - Saturday: 9:00 AM - 7:00 PM<br />
+                  Sunday: 10:00 AM - 2:00 PM
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="copyright">
+            &copy; 2025 Travel Tales Tours. All rights reserved.
+          </div>
+          <div class="footer-links-bottom">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Cancellation Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // Navbar scroll effect
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+          $("#navbar").addClass("scrolled");
+        } else {
+          $("#navbar").removeClass("scrolled");
+        }
+
+        // Back to top button
+        if ($(this).scrollTop() > 300) {
+          $(".back-to-top").addClass("active");
+        } else {
+          $(".back-to-top").removeClass("active");
+        }
+      });
+
+      // Back to top
+      $(".back-to-top").click(function (e) {
+        e.preventDefault();
+        $("html, body").animate({ scrollTop: 0 }, "300");
+      });
+
+      // FAQ toggle
+      $(".faq-question").click(function () {
+        $(this).parent().toggleClass("active");
+        $(this).parent().siblings().removeClass("active");
+      });
+
+      // Coming soon links
+      $(".coming-soon-link").click(function (e) {
+        e.preventDefault();
+        alert(
+          "International tours and destinations are coming soon in 2024! Currently we offer amazing travel experiences across India."
+        );
+      });
+
+      // Gallery lightbox (would need lightbox plugin for full functionality)
+      $(".gallery-link").click(function (e) {
+        e.preventDefault();
+        // This would be replaced with actual lightbox implementation
+        alert("Image gallery lightbox would open here with full image view");
+      });
+
+      // Smooth scrolling for anchor links
+      $('a[href*="#"]').on("click", function (e) {
+        e.preventDefault();
+
+        $("html, body").animate(
+          {
+            scrollTop: $($(this).attr("href")).offset().top,
+          },
+          500,
+          "linear"
+        );
+      });
+    </script>
+  </body>
+</html>

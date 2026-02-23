@@ -1,0 +1,13 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    { "type": "Feature", "properties": { "name": "Arunachal Pradesh", "href": "../North East India/Arunachal Pradesh/ArunachalPradesh.html" }, "geometry": { "type": "Point", "coordinates": [93.4, 27.1] } },
+    { "type": "Feature", "properties": { "name": "Assam", "href": "../North East India/Assam/Assam.html" }, "geometry": { "type": "Point", "coordinates": [92.8, 26.2] } },
+    { "type": "Feature", "properties": { "name": "Manipur", "href": "../North East India/Manipur/Manipur.html" }, "geometry": { "type": "Point", "coordinates": [93.9, 24.8] } },
+    { "type": "Feature", "properties": { "name": "Meghalaya", "href": "../North East India/Meghalaya/Meghalaya.html" }, "geometry": { "type": "Point", "coordinates": [91.3, 25.5] } },
+    { "type": "Feature", "properties": { "name": "Mizoram", "href": "../North East India/Mizoram/Mizoram.html" }, "geometry": { "type": "Point", "coordinates": [92.8, 23.5] } },
+    { "type": "Feature", "properties": { "name": "Nagaland", "href": "../North East India/Nagaland/Nagaland.html" }, "geometry": { "type": "Point", "coordinates": [94.2, 26.1] } },
+    { "type": "Feature", "properties": { "name": "Tripura", "href": "../North East India/Tripura/Tripura.html" }, "geometry": { "type": "Point", "coordinates": [91.5, 23.9] } },
+    { "type": "Feature", "properties": { "name": "Sikkim", "href": "../North East India/Sikkim/Sikkim.html" }, "geometry": { "type": "Point", "coordinates": [88.5, 27.6] } }
+  ]
+}

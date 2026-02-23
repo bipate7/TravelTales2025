@@ -1,0 +1,792 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 6 Oct, 2025, 4:34:37 PM
+    Author     : VICTUS
+*/
+ /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: #f0f4f7;
+            padding: 10px 50px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        .top-bar a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            padding: 15px 50px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items:  end;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            position: relative;
+            margin-right: 30px;
+        }
+        .nav-links li a {
+            color: #333;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav-links li a:hover {
+            color: #ff6600;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: linear-gradient(to bottom, #ffffff, #f9f9f9); /* Gradient background */
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            list-style: none;
+            padding: 10px 0;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-10px); /* Slight upward position */
+            transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1; 
+            transform: translateY(0); /* Bring into view */
+        }
+        .dropdown-menu li {
+            position: relative;
+        }
+        .dropdown-menu li a {
+            color: #333;
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s; /* Added transform for animation */
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #ff6600; /* Full hover color */
+            color: white; /* Change text color on hover */
+            transform: scale(1.05); /* Slightly scale up on hover */
+        }
+
+        .dropdown-menu li::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%; 
+            margin-top: -5px; 
+            border-width: 5px; 
+            border-style: solid;
+            border-color: transparent transparent transparent #ff6600; /* Triangle pointing right */
+        }
+        /* Banner */
+        .banner {
+            background-image: url('https://cdn.pixabay.com/photo/2021/11/15/02/06/mountains-6796162_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 650px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .banner-text {
+            text-align: center;
+            color: white;
+        }
+        .banner-text h1 {
+            font-size: 72px;
+            font-weight: 600;
+        }
+        .banner-text p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        body {
+    background-color: #f7f7f7;
+}
+
+h4, h5, h6 {
+    font-weight: 600;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.badge {
+    font-size: 0.9rem;
+}
+
+.btn-light {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+.text-danger {
+    color: #f45b69 !important;
+}
+
+/* Footer */
+        .custom-footer {
+  background: linear-gradient(135deg, #1b1f24, #2c3e50);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  padding-top: 0;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+  margin-bottom: -5px;
+}
+.footer-logo img {
+  height: 100px; /* Adjust height as needed */
+  margin-bottom: 0px;
+  object-fit: contain;
+  top: -50px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 60px 10% 20px;
+  gap: 40px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.footer-brand {
+  flex: 1 1 250px;
+}
+
+.footer-brand h2 {
+  color: #ff8243;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  color: #ff8243;
+  margin-right: 10px;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+.footer-links,
+.footer-contact,
+.newsletter {
+  flex: 1 1 200px;
+}
+
+.footer-links h4,
+.footer-contact h4,
+.newsletter h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #ff8243;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+.footer-links ul li a:hover {
+  color: #fff;
+}
+
+.footer-contact p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+.footer-contact i {
+  margin-right: 8px;
+  color: #ff8243;
+}
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter input {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.newsletter button {
+  padding: 10px 15px;
+  background-color: #ff8243;
+  border: none;
+  color: white;
+  font-size: 0.95rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter button:hover {
+  background-color: #fff;
+  color: #ff8243;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 25px 10%;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+.footer-bottom span {
+  color: #ff8243;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .newsletter form {
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .packages-scroll {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .package-card {
+    min-width: 260px;
+    max-width: 260px;
+  }
+
+  .package-info h5 {
+    font-size: 1rem;
+  }
+
+  .package-info p {
+    font-size: 0.9rem;
+  }
+
+  .btn-warning {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
+.testimonials-section {
+  background: #f8f9fa;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  padding: 30px;
+  text-align: center;
+  animation: fadeInUp 1s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-content img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #ffc107;
+}
+
+.testimonial-content h5 {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.testimonial-content small {
+  color: #888;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.testimonial-content p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.submit-review-section {
+  background: linear-gradient(to right, #ffe3a3, #ffd6d6);
+  padding: 60px 0;
+  animation: fadeInUp 1s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-review-section::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: pulse 6s infinite ease-in-out;
+  z-index: 0;
+}
+
+.submit-review-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #8b0000;
+  position: relative;
+  z-index: 1;
+}
+
+.submit-review-section p {
+  color: #4d4d4d;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.review-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  animation: slideIn 1.2s ease;
+}
+
+.review-form .form-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.review-form .form-control,
+.review-form .form-select {
+  border-radius: 10px;
+  padding: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid #ccc;
+}
+
+.review-form .form-control:focus,
+.review-form .form-select:focus {
+  border-color: #ffa500;
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.4);
+}
+
+.review-form .btn {
+  background: linear-gradient(to right, #ffa500, #ff6a00);
+  color: white;
+  padding: 12px 30px;
+  font-weight: bold;
+  border-radius: 30px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.review-form .btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #ffffff40, #ffffff00);
+  transform: scale(0);
+  transition: transform 0.5s ease;
+  z-index: -1;
+}
+
+.review-form .btn:hover::before {
+  transform: scale(1);
+}
+
+.review-form .btn:hover {
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.6);
+  transform: scale(1.02);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {opacity: 0; transform: translateY(50px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideIn {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes pulse {
+  0%, 100% {transform: scale(1);}
+  50% {transform: scale(1.2);}
+}
+
+/*Sidebars*/
+
+/* Entire Sidebar Container */
+.sidebar {
+    width: 380px; /* Increased from 320px */
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+/* Common Box Style in Sidebar */
+.sidebar .p-3 {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+/* Headings */
+.sidebar h4 {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* Travel News */
+.sidebar .text-primary {
+    color: #007bff !important;
+}
+
+/* Blog Section with Thumbnails */
+.sidebar .latest-blogs li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.sidebar .latest-blogs img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    margin-right: 12px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.sidebar .latest-blogs img:hover {
+    transform: scale(1.1);
+}
+
+.sidebar .latest-blogs a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+}
+
+.sidebar .latest-blogs a:hover {
+    text-decoration: underline;
+    color: #007bff;
+}
+
+/* Gallery Styling */
+.sidebar .gallery img {
+    transition: transform 0.3s;
+    border-radius: 8px;
+}
+
+.sidebar .gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Search Button */
+.sidebar .btn-warning {
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .btn-warning:hover {
+    background-color: #ffbb33;
+}
+
+
+/* Responsive Sidebar Tweaks */
+@media (max-width: 768px) {
+  .col-md-3 {
+    margin-top: 20px;
+  }
+
+  .col-md-3 > div {
+    padding: 15px;
+  }
+}
+
+/*Sort Option*/
+.dropdown-toggle {
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-toggle:hover {
+    background-color: #ffc107;
+    color: #000;
+    border-color: #ffc107;
+}
+
+.dropdown-menu {
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.sidebar-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.sidebar-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.latest-blogs .blog-item,
+.top-rated .rated-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.latest-blogs img,
+.top-rated img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.travel-news li,
+.choose-us li {
+    margin-bottom: 10px;
+}
+
+.gallery-img {
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+.sidebar-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.sidebar-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.latest-blogs .blog-item,
+.top-rated .rated-item,
+.deal-item,
+.review-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.latest-blogs img,
+.top-rated img,
+.deal-item img {
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.gallery-img {
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+
+.deal-item small {
+    color: #FF9800;
+}
+
+.review-item small {
+    color: #666;
+}
+/* Sidebar Card Fix */
+.sidebar-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    padding: 20px;
+}
+
+/* Title spacing fix */
+.sidebar-title {
+    font-size: 1.2rem;
+    font-weight: 650;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Deal Item Styling */
+.sidebar-card .deal-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 12px;
+}
+
+.sidebar-card .deal-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Image Styling */
+.sidebar-card .deal-item img {
+    width: 100%;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar-card .deal-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+

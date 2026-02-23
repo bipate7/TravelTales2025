@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <title>Login | Travel Tales</title>
+    <link rel="icon" type="image/png" href="Images/TT4.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap">
+    <link rel="stylesheet" href="CSS/Loginnew.css">
+</head>
+<body>
+    <!-- Hero Section with Travel Image -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Discover Your Next Adventure</h1>
+            <p>Join thousands of travelers sharing their stories and experiences around the globe.</p>
+        </div>
+    </section>
+    
+    <!-- Login Container -->
+    <main class="login-container">
+        <div class="logo">
+            <img src="Images/TravelTales3.png" alt="Travel Tales Logo">
+        </div>
+        <div class="login-header">
+            <h2>Welcome Back</h2>
+            <p>Don't have an account? <a href="Sign up Page.html">Sign up</a></p>
+        </div>
+        
+        <form action="/action_page.php" method="post">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+            </div>
+            
+            <div class="options">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember" name="remember" checked>
+                    <label for="remember">Remember me</label>
+                </div>
+                <div class="forgot-password">
+                    <a href="Reset Password.html">Forgot password?</a>
+                </div>
+            </div>
+            
+            <button type="submit" class="login-btn">Sign In</button>
+            
+            <div class="divider">
+                <span>OR CONTINUE WITH</span>
+            </div>
+            
+            <div class="social-login">
+                <button type="button" class="social-btn facebook" title="Sign in with Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </button>
+                <button type="button" class="social-btn google" title="Sign in with Google">
+                    <i class="fab fa-google"></i>
+                </button>
+                <button type="button" class="social-btn twitter" title="Sign in with Twitter">
+                    <i class="fab fa-twitter"></i>
+                </button>
+            </div>
+            
+            <div class="footer">
+                <p>By signing in, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+                <p>&copy; 2025 Travel Tales. All rights reserved.</p>
+            </div>
+        </form>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Social login button functionality
+            document.querySelector('.facebook').addEventListener('click', function() {
+                window.location.href = 'https://www.facebook.com/login.php/';
+            });
+            
+            document.querySelector('.google').addEventListener('click', function() {
+                window.location.href = 'https://accounts.google.com/v3/signin/identifier?dsh=S1812573153%3A1655944654029516&flowEntry=ServiceLogin&flowName=WebLiteSignIn&ifkv=AX3vH39E0iYVTmn-NoMNM_C35EPrno8LWsRx2Qhr0HApkVLZ-Zc_Vql8ouaSQOiXzEmthrpOPAV5';
+            });
+            
+            document.querySelector('.twitter').addEventListener('click', function() {
+                window.location.href = 'https://x.com/i/flow/login?lang=en';
+            });
+            
+            // Form submission animation
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const loginBtn = document.querySelector('.login-btn');
+                loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing In...';
+                loginBtn.disabled = true;
+                
+                // Simulate API call
+                setTimeout(() => {
+                    // Redirect or show success message
+                    window.location.href = 'dashboard.html';
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>

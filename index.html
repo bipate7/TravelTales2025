@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelTales Travel</title>
+    <link rel="icon" href="Logos/TT4.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="CSS Page/Style.css">
+</head>
+<body>
+
+    
+<!-- Background Video & Header -->
+
+    <div class="banner">
+    <video src="Videos/V3.mp4" type="video/mp4" autoplay muted loop></video>
+    <div class="content" id="home">
+        <nav>
+            <img src="Logos/TravelTales3.png" class="logo" alt="Logo" title="TravelTales Travels">
+            <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+            <ul class="navbar" id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Travel Tales/Tour.html">Tours</a></li>
+                <li><a href="Destinations/Destinations.html">Destinations</a></li>
+                <li><a href="Travel Tales/Tours Packages.html">Packages</a></li>
+                <li><a href="Travel Tales/About Us.html">About Us</a></li>
+                <li><a href="Services/Contact.html">Contact Us</a></li>
+                <li><a href="Services/Login up Page.html">Login/Signup</a></li>
+            </ul>
+        </nav>
+        <div class="title">
+            <h1>TRAVELTales</h1>
+            <p>"Discover the World, One Tale at a Time"</p>
+            <a href="Services/Sign.html" class="button">Register Now!</a>
+        </div>
+    </div>
+</div>
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navbar = document.getElementById('navbar');
+    menuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('open');
+    });
+    // Optional: Close menu when clicking a link (for better UX)
+    document.querySelectorAll('.navbar a').forEach(link => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove('open');
+        });
+    });
+</script>
+
+
+<!-- WHERE TO GO SECTION (BOOK TRIP) -->
+<section class="banner">
+  <div class="banner-text-item">
+    <div class="banner-heading">
+      <h1>Find Your Next Tour!</h1>
+      <p class="subtitle">Explore new destinations, create memories, and start your next adventure!</p>
+    </div>
+      
+      <form class="form" autocomplete="off" onsubmit="return bookTrip(event)">
+      
+      <!-- Destination -->
+  <div class="input-group">
+    <span class="input-icon"><i class="fa fa-map-marker-alt"></i></span>
+    <select required>
+      <option value="" disabled selected>Where would you like to go?</option>
+    <option>Delhi</option>
+          <option>Mumbai</option>
+          <option>Bangalore</option>
+          <option>Kolkata</option>
+          <option>Chennai</option>
+          <option>Hyderabad</option>
+          <option>Pune</option>
+          <option>Jaipur</option>
+          <option>Goa</option>
+          <option>Agra</option>
+          <option>Varanasi</option>
+          <option>Udaipur</option>
+          <option>Shimla</option>
+          <option>Manali</option>
+          <option>Leh</option>
+          <option>Ladakh</option>
+          <option>Kashmir</option>
+          <option>Amritsar</option>
+          <option>Rishikesh</option>
+          <option>Haridwar</option>
+          <option>Darjeeling</option>
+          <option>Mysore</option>
+          <option>Coorg</option>
+          <option>Ooty</option>
+          <option>Kodaikanal</option>
+          <option>Gokarna</option>
+          <option>Hampi</option>
+          <option>Rann of Kutch</option>
+          <option>Jaisalmer</option>
+          <option>Pushkar</option>
+          <option>Andaman & Nicobar</option>
+          <option>Pondicherry</option>
+          <option>Mahabalipuram</option>
+          <option>Shillong</option>
+          <option>Guwahati</option>
+          <option>Gangtok</option>
+          <option>Sikkim</option>
+          <option>Cherrapunji</option>
+          <option>Munnar</option>
+          <option>Alleppey</option>
+          <option>Kochi</option>
+          <option>Trivandrum</option>
+          <option>Madurai</option>
+          <option>Ranthambore</option>
+          <option>Jim Corbett</option>
+          <option>Kaziranga</option>
+          <option>Khajuraho</option>
+          <option>Ajanta & Ellora</option>
+          <option>Konark</option>
+          <option>Puri</option>
+    </select>
+  </div>
+      
+<!-- Date Selection -->
+<div class="input-group">
+  <span class="input-icon"><i class="fa fa-calendar"></i></span>
+  <input type="date" required onfocus="this.showPicker()" placeholder="dd-mm-yyyy" class="date-input">
+</div>
+    <!-- Date Selection -->
+    <div class="input-group">
+        <span class="input-icon"><i class="fa fa-calendar"></i></span>
+        <input type="date" required placeholder="Pick Your Perfect Day" onfocus="this.showPicker()">
+    </div>
+    
+      <!-- No. of Guests -->
+      <!-- Guests -->
+  <div class="input-group">
+    <span class="input-icon"><i class="fa fa-users"></i></span>
+    <select required>
+      <option value="" disabled selected>No. of Guests</option>
+      <option>1 Adult</option>
+      <option>2 Adults</option>
+      <option>3 Adults</option>
+      <option>Family</option>
+    </select>
+  </div>
+
+      <button type="submit" class="book">Book Now</button>
+    </form>
+
+    <div id="confirmation">
+      🎉 Your trip has been booked! We wish you a wonderful journey.
+    </div>
+  </div>
+</section>
+ 
+<script>
+  // Simple confirmation animation
+  function bookTrip(e) {
+    e.preventDefault();
+    const form = document.querySelector('.form');
+    const confirmation = document.getElementById('confirmation');
+    form.style.pointerEvents = "none";
+    form.style.opacity = 0.6;
+    confirmation.style.display = "block";
+    confirmation.animate([
+      { opacity: 0, transform: 'scale(0.9)' },
+      { opacity: 1, transform: 'scale(1.05)' },
+      { opacity: 1, transform: 'scale(1)' }
+    ], { duration: 700, easing: 'cubic-bezier(.23,1.08,.74,1.01)' });
+    setTimeout(() => {
+      form.reset();
+      form.style.pointerEvents = "";
+      form.style.opacity = 1;
+      confirmation.style.display = "none";
+    }, 2800);
+    return false;
+  }
+</script>
+
+
+<!-- Services -->
+<main class="container">
+    <header class="text">
+        <h2>We have the best services available for you!</h2>
+    </header>
+    <section class="rowitems">
+        <article class="container-box">
+            <a href="Services/FlightServices.html" target="_blank" rel="noopener noreferrer" class="container-link">
+                <figure class="container-image">
+                    <img src="Services/Images/AirIndia.jpg" alt="Air India Flight Services">
+                </figure>
+                <h4>Flight Services</h4>
+                <p>Arrival and Departure</p>
+            </a>
+        </article>
+        <article class="container-box">
+            <a href="Services/Train Services.html" target="_blank" rel="noopener noreferrer" class="container-link">
+                <figure class="container-image">
+                    <img src="Services/Images/Railway.webp" alt="Indian Railway Train Services">
+                </figure>
+                <h4>Train Services</h4>
+                <p>Ticket Booking</p>
+            </a>
+        </article>
+        <article class="container-box">
+            <a href="Services/Pick up and drop.html" target="_blank" rel="noopener noreferrer" class="container-link">
+                <figure class="container-image">
+                    <img src="Services/Images/Booking.jpeg" alt="Travel Pick-up and Drop Services">
+                </figure>
+                <h4>Travel Services</h4>
+                <p>Pick-up and Drop</p>
+            </a>
+        </article>
+        <article class="container-box">
+            <a href="Services/Hotel Services.html" target="_blank" rel="noopener noreferrer" class="container-link">
+                <figure class="container-image">
+                    <img src="Services/Images/Hotel.jpeg" alt="Hotel Check-in and Check-out Services">
+                </figure>
+                <h4>Hotel Services</h4>
+                <p>Check-in and Check-out</p>
+            </a>
+        </article>
+    </section>
+</main>
+<br><br><br><br>
+<!-- Advertisement Banner -->
+<div class="offer-banner" id="offerBanner" role="region" aria-label="Special Offers">
+    <!-- comment <button class="offer-close" aria-label="Close Offer Banner" onclick="closeBanner()">×</button>-->
+  <div class="offer-track" id="offerTrack">
+    <span>
+      ✈️ <b>TravelTales Special:</b> 20% OFF on all bookings! &nbsp;|&nbsp;
+      🚆 <b>Train Tickets:</b> Win Vouchers! &nbsp;|&nbsp;
+      🚗 <b>Free Pick-up & Drop</b> for First-Time Users! &nbsp;|&nbsp;
+      🏨 <b>Exclusive Hotel Deals</b> – Limited Time! &nbsp;|&nbsp;
+      🌏 <b>Summer Vacation:</b> Plan & Save Big!
+    </span>
+  </div>
+</div>
+<script>
+    // Pause animation on hover/touch
+const banner = document.getElementById('offerBanner');
+const track = document.getElementById('offerTrack');
+
+function pauseBanner() {
+  banner.classList.add('paused');
+}
+function resumeBanner() {
+  banner.classList.remove('paused');
+}
+
+track.addEventListener('mouseenter', pauseBanner);
+track.addEventListener('mouseleave', resumeBanner);
+track.addEventListener('touchstart', pauseBanner);
+track.addEventListener('touchend', resumeBanner);
+
+// Close banner
+function closeBanner() {
+  banner.style.display = 'none';
+}
+
+</script>
+
+<!-- Destinations -->
+<section class="destinations" id="destination">
+  <div class="india-regions">
+    <img src="Main Page/I1.png" alt="Map of Indian Regions" />
+    <p>
+      <i>
+        "From the snow-capped Himalayas to the sun-kissed beaches of the south, India's diverse regions await your discovery."
+      </i>
+    </p>
+  </div>
+  <div class="destination-content">
+    <a href="North India/North India Travel.html" target="_blank" class="d-content" tabindex="0">
+      <figure>
+        <img src="Main Page/NorthIndia.png" alt="North India" />
+        <figcaption>
+          <h5>North India</h5>
+          <p>Himalayas, culture & heritage</p>
+        </figcaption>
+      </figure>
+    </a>
+    <a href="North East India/NorthEastTravel.html" target="_blank" class="d-content" tabindex="0">
+      <figure>
+        <img src="Main Page/NorthEastIndia.png" alt="North East India" />
+        <figcaption>
+          <h5>North East India</h5>
+          <p>Scenic beauty & tribes</p>
+        </figcaption>
+      </figure>
+    </a>
+    <a href="East India/EastIndia.html" target="_blank" class="d-content" tabindex="0">
+      <figure>
+        <img src="Main Page/EastIndia.png" alt="East India" />
+        <figcaption>
+          <h5>East India</h5>
+          <p>Temples & tea gardens</p>
+        </figcaption>
+      </figure>
+    </a>
+    <a href="South India/SouthIndia.html" target="_blank" class="d-content" tabindex="0">
+      <figure>
+        <img src="Main Page/SouthIndia.png" alt="South India" />
+        <figcaption>
+          <h5>South India</h5>
+          <p>Beaches & traditions</p>
+        </figcaption>
+      </figure>
+    </a>
+    <a href="West India/West India.html" target="_blank" class="d-content" tabindex="0">
+      <figure>
+        <img src="Main Page/WestIndia.png" alt="West India" />
+        <figcaption>
+          <h5>West India</h5>
+          <p>Deserts & vibrant cities</p>
+        </figcaption>
+      </figure>
+    </a>
+  </div>
+</section>
+
+
+    <!-- Features Section -->
+<section class="features">
+  <div class="features-title">
+    <h2>Your Perfect Travel Experience Awaits!</h2>
+  </div>
+  <div class="features-icons">
+    <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">
+            <img src="https://ouch-prod-var-cdn.icons8.com/cs/illustrations/thumbs/O083W3MrsTFmy07X.webp" >
+        </div>
+      <h4>Exclusive Destinations</h4>
+      <p>Explore the best travel spots in India with unique itineraries tailored for you.</p>
+    </div>
+    <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">
+            <img src="https://ouch-prod-var-cdn.icons8.com/od/illustrations/thumbs/7I6o33MVBeycl_a1.webp">
+        </div>
+      <h4>Luxury Accommodations</h4>
+      <p>Stay at premium hotels and resorts for a comfortable and memorable experience.</p>
+    </div>
+    <div class="feature-card">
+        <div class="feature-icon" aria-hidden="true">
+            <img src="https://ouch-prod-var-cdn.icons8.com/vz/illustrations/thumbs/nIQGP-gsRvZgSGEQ.webp">
+        </div>
+      <h4>Affordable Prices</h4>
+      <p>Get the best deals starting at ₹18,000 for two people, inclusive of everything.</p>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Travel Packages Section -->
+    <section class="travel-packages">
+  <div class="container position-relative">
+    <div class="package-title">
+      <div class="text">
+        <h2>India Travel Packages</h2>
+      </div>
+    </div>
+
+    <!-- Scroll Buttons -->
+    <button class="scroll-btn left" aria-label="Scroll left" onclick="scrollLeft()">&lt;</button>
+    <button class="scroll-btn right" aria-label="Scroll right" onclick="scrollRight()">&gt;</button>
+
+        <div class="packages-container" id="packages">
+            <!-- Repeat this block for each package -->
+
+                    <a href="#"><div class="package-card">
+                    <img src="Main Page/Shimla.jpeg" alt="Shimla">
+                    <div class="card-body">
+                        <a href="#"><h5>Shimla & Manali</h5></a>
+                        <div class="stars">★★★★☆</div>
+                        <p class="details">5 Days 4 Nights | For 2 People</p>
+                        <p class="price">₹25,000 <span>Start From</span></p>
+                        <a href="North India/Himachal Pradesh/Himachal.html" class="view-details-btn">View Details</a>
+                    </div></a>
+                </div>
+                        
+                <a href="#"><div class="package-card">
+                    <img src="Main Page\Goa.jpeg" alt="Goa">
+                    <div class="card-body">
+                        <a href="#"><h5>Goa Beach Tour</h5></a>
+                        <div class="stars">★★★★☆</div>
+                        <p class="details">4 Days 3 Nights | For 2 People</p>
+                        <p class="price">₹18,000 <span>Start From</span></p>
+                        <a href="West India/Goa/Goa.html" class="view-details-btn">View Details</a>
+                    </div></a>
+                </div>
+
+                <a href="#"><div class="package-card">
+                    <img src="Main Page\Kerala.jpeg" alt="Kerala">
+                    <div class="card-body">
+                        <h5>Kerala Backwaters</h5>
+                        <div class="stars">★★★★★</div>
+                        <p class="details">6 Days 5 Nights | For 2 People</p>
+                        <p class="price">₹35,000 <span>Start From</span></p>
+                        <a href="South India/Kerala/Kerala.html" class="view-details-btn">View Details</a>
+                    </div></a>
+                </div>
+
+                <a href="#"><div class="package-card">
+                    <img src="Main Page\Jaipur.jpeg" alt="Jaipur">
+                    <div class="card-body">
+                        <h5>Jaipur & Udaipur</h5>
+                        <div class="stars">★★★★☆</div>
+                        <p class="details">5 Days 4 Nights | For 2 People</p>
+                        <p class="price">₹22,000 <span>Start From</span></p>
+                        <a href="West India/Rajasthan/Rajasthan.html" class="view-details-btn">View Details</a>
+                    </div></a>
+                </div>
+
+                <a href="#"><div class="package-card">
+                    <img src="Main Page\Kashmir.jpeg" alt="Kashmir">
+                    <div class="card-body">
+                        <h5>Kashmir Paradise</h5>
+                        <div class="stars">★★★★★</div>
+                        <p class="details">7 Days 6 Nights | For 2 People</p>
+                        <p class="price">₹40,000 <span>Start From</span></p>
+                        <a href="North India/Jammu and Kashmir/Jammu and Kashmir.html" class="view-details-btn">View Details</a>
+                    </div></a>
+                </div>
+
+                <a href="#"><div class="package-card">
+                    <img src="Main Page\Rajasthan.jpeg" alt="Rajasthan">
+                    <div class="card-body">
+                        <h5>Rajasthan Heritage</h5>
+                        <div class="stars">★★★★★</div>
+                        <p class="details">8 Days 7 Nights | For 2 People</p>
+                        <p class="price">₹50,000 <span>Start From</span></p>
+                        <a href="West India/Rajasthan/Rajasthan.html" class="view-details-btn">View Details</a>
+                    </div></a>
+                </div>
+
+                <a href="#"><div class="package-card">
+                    <img src="Main Page\Leh Ladakh.jpeg" alt="Leh Ladakh"></a>
+                    <div class="card-body">
+                        <h5>Leh Ladakh Adventure</h5>
+                        <div class="stars">★★★★☆</div>
+                        <p class="details">6 Days 5 Nights | For 2 People</p>
+                        <p class="price">₹45,000 <span>Start From</span></p>
+                        <a href="North India/Ladakh/Ladakh.html" class="view-details-btn">View Details</a>
+                    </div></a>
+                </div>
+                <div class="package-card">
+                    <img src="https://cdn.pixabay.com/photo/2020/05/12/09/35/phi-phi-island-5162095_1280.jpg" alt="Andaman and Nicobar">
+                    <div class="card-body">
+                        <h5>Andaman Escapade</h5>
+                        <div class="stars">★★★★★</div>
+                        <p class="details">5 Days 4 Nights | For 2 People</p>
+                        <p class="price">₹30,000 <span>Start From</span></p>
+                        <a href="East India/Andaman and Nicobar Islands/Island Hopping Tour.html" class="view-details-btn">View Details</a>
+                    </div></a>
+                </div>
+                <a href="#"><div class="package-card">
+                        <img src="Main Page\Darjeeling.webp" alt="Darjeeling">
+                        <div class="card-body">
+                            <h5>Darjeeling Delight</h5>
+                            <div class="stars">★★★★☆</div>
+                            <p class="details">4 Days 3 Nights | For 2 People</p>
+                            <p class="price">₹20,000 <span>Start From</span></p>
+                            <a href="East India/West Bengal/WestBengal.html" class="view-details-btn">View Details</a>
+                        </div></a>
+                    </div>
+                    
+                <a href="#"><div class="package-card">
+                        <img src="Main Page\Varanasi.jpeg" alt="Varanasi">
+                        <div class="card-body">
+                            <h5>Varanasi Spiritual Retreat</h5>
+                            <div class="stars">★★★★☆</div>
+                            <p class="details">3 Days 2 Nights | For 2 People</p>
+                            <p class="price">₹15,000 <span>Start From</span></p>
+                            <a href="North India/Uttar Pradesh/UttarPradesh.html" class="view-details-btn">View Details</a>
+                        </div></a>
+                    </div>
+
+                <a href="#"><div class="package-card">
+                        <img src="Main Page\Rishikesh.jpeg" alt="Rishikesh">
+                        <div class="card-body">
+                            <h5>Rishikesh Adventure</h5>
+                            <div class="stars">★★★★★</div>
+
+                            <p class="details">3 Days 2 Nights | For 2 People</p>
+                            <p class="price">₹12,000 <span>Start From</span></p>
+                            <a href="North India/Uttarakhand/Uttarakhand.html" class="view-details-btn">View Details</a>
+                        </div></a>
+                    </div>
+
+                <a href="#"><div class="package-card">
+                        <img src="Main Page\Coffee Trail.jpg" alt="Coorg">
+                        <div class="card-body">
+                            <h5>Coorg Coffee Trail</h5>
+                            <div class="stars">★★★★☆</div>
+                            <p class="details">4 Days 3 Nights | For 2 People</p>
+                            <p class="price">₹18,000 <span>Start From</span></p>
+                            <a href="South India/Karnataka/Karnataka.html" class="view-details-btn">View Details</a>
+                        </div></a>
+                    </div>
+
+                <a href="#"><div class="package-card">
+                        <img src="Main Page\Mysore.jpeg" alt="Mysore">
+                        <div class="card-body">
+                            <h5>Mysore Royal Tour</h5>
+                            <div class="stars">★★★★★</div>
+                            <p class="details">3 Days 2 Nights | For 2 People</p>
+                            <p class="price">₹14,000 <span>Start From</span></p>
+                            <a href="South India/Karnataka/Karnataka.html" class="view-details-btn">View Details</a>
+                        </div></a>
+                    </div>
+
+                <a href="#"><div class="package-card">
+                        <img src="Main Page\Shillong.jpeg" alt="Shillong">
+                        <div class="card-body">
+                            <h5>Shillong & Cherrapunji</h5>
+                            <div class="stars">★★★★★</div>
+                            <p class="details">5 Days 4 Nights | For 2 People</p>
+                            <p class="price">₹25,000 <span>Start From</span></p>
+                            <a href="North East India/Meghalaya/Meghalaya.html" class="view-details-btn">View Details</a>
+                        </div></a>
+                    </div>
+
+                <a href="#"><div class="package-card">
+                        <img src="Main Page\Agra.jpeg" alt="Agra">
+                        <div class="card-body">
+                            <h5>Agra & Fatehpur Sikri</h5>
+                            <div class="stars">★★★★☆</div>
+                            <p class="details">2 Days 1 Night | For 2 People</p>
+                            <p class="price">₹10,000 <span>Start From</span></p>
+                            <a href="North India/Uttar Pradesh/UttarPradesh.html" class="view-details-btn">View Details</a>
+                        </div></a>
+                    </div>
+
+                <a href="#"><div class="package-card">
+                        <img src="Main Page\Khajuraho.webp" alt="Khajuraho">
+                        <div class="card-body">
+                            <h5>Khajuraho Heritage</h5>
+                            <div class="stars">★★★★★</div>
+                            <p class="details">4 Days 3 Nights | For 2 People</p>
+                            <p class="price">₹28,000 <span>Start From</span></p>
+                            <a href="West India/Madhya Pradesh/MadhyaPradesh.html" class="view-details-btn">View Details</a>
+                        </div></a>
+                    </div>
+
+                <a href="#"><div class="package-card">
+                        <img src="Main Page\Kutch.jpeg" alt="Kutch">
+                        <div class="card-body">
+                            <h5>Rann of Kutch Festival</h5>
+                            <div class="stars">★★★★★</div>
+                            <p class="details">5 Days 4 Nights | For 2 People</p>
+                            <p class="price">₹32,000 <span>Start From</span></p>
+                            <a href="West India/Gujarat/Gujarat.html" class="view-details-btn">View Details</a>
+                        </div></a>
+                </div>    
+            </div>
+        </div>
+    </section>
+    <script>
+        function scrollLeft() {
+  document.getElementById('packages').scrollBy({ left: -320, behavior: 'smooth' });
+}
+function scrollRight() {
+  document.getElementById('packages').scrollBy({ left: 320, behavior: 'smooth' });
+}
+
+    </script>
+    <script>
+        const packages = document.getElementById('packages');
+
+        function scrollLeft() {
+            packages.scrollBy({ left: -300, behavior: 'smooth' });
+        }
+
+        function scrollRight() {
+            packages.scrollBy({ left: 300, behavior: 'smooth' });
+        }
+    </script>
+    
+    
+<!-- Locations -->
+<section class="locations" id="locations">
+  <div class="locations-heading">
+    <h2>🌍 Explore Stunning Locations</h2>
+    <p>Unveil India's diverse beauty—from mountains to beaches, deserts to rainforests</p>
+  </div>
+
+  <div class="location-wrapper">
+    <div class="location-card" style="background-image: url('Main Page/JK1.jpg')">
+      <div class="overlay">
+        <h3>Kashmir</h3>
+        <p>Paradise on Earth</p>
+      </div>
+    </div>
+
+    <div class="location-card" style="background-image: url('Main Page/Raj6.jpg')">
+      <div class="overlay">
+        <h3>Jaipur</h3>
+        <p>The Pink City</p>
+      </div>
+    </div>
+
+    <div class="location-card" style="background-image: url('Main Page/L4.jpg')">
+      <div class="overlay">
+        <h3>Ladakh</h3>
+        <p>Adventure Capital</p>
+      </div>
+    </div>
+
+    <div class="location-card" style="background-image: url('Main Page/A1.jpg')">
+      <div class="overlay">
+        <h3>Tawang Monastery</h3>
+        <p>Arunachal Pradesh</p>
+      </div>
+    </div>
+
+    <div class="location-card" style="background-image: url('Main Page/G1.jpg')">
+      <div class="overlay">
+        <h3>Palolem Beach</h3>
+        <p>Goa</p>
+      </div>
+    </div>
+
+    <div class="location-card" style="background-image: url('Main Page/K1.avif')">
+      <div class="overlay">
+        <h3>Kannan Devan Hills</h3>
+        <p>Kerala</p>
+      </div>
+    </div>
+
+    <div class="location-card" style="background-image: url('Main Page/LA1.jpg')">
+      <div class="overlay">
+        <h3>Lakshadweep</h3>
+        <p>Island Heaven</p>
+      </div>
+    </div>
+
+    <div class="location-card" style="background-image: url('Main Page/ALLP1.jpg')">
+      <div class="overlay">
+        <h3>Alleppey</h3>
+        <p>Backwater Magic</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Pick A Tour Type -->
+<section class="tour-type-section">
+  <div class="package-title">
+    <div class="text">
+      <h2>Pick A Tour Type</h2>
+    </div>
+  </div>
+  <div class="tour-cards-container">
+    <div class="tour-card">
+      <div class="tour-illustration">
+        <img src="https://ouch-prod-var-cdn.icons8.com/vz/illustrations/thumbs/nIQGP-gsRvZgSGEQ.webp" alt="Adventure Tour Illustration" />
+      </div>
+      <h5>Adventure</h5>
+      <p>Thrilling experiences for adrenaline seekers: rafting, paragliding, and more.</p>
+    </div>
+    <div class="tour-card">
+      <div class="tour-illustration">
+        <img src="https://ouch-prod-var-cdn.icons8.com/rq/illustrations/thumbs/mdaxIjGdw-w3u-q-.webp" alt="Hiking Tour Illustration" />
+      </div>
+      <h5>Hiking</h5>
+      <p>Explore scenic trails and majestic landscapes with guided hiking tours.</p>
+    </div>
+    <div class="tour-card">
+      <div class="tour-illustration">
+        <img src="https://ouch-prod-var-cdn.icons8.com/wc/illustrations/thumbs/TLxIErDeDJwZ6UGb.webp" alt="Romance Tour Illustration" />
+      </div>
+      <h5>Romance</h5>
+      <p>Perfect getaways for couples: candlelit dinners, beach walks, and more.</p>
+    </div>
+    <div class="tour-card">
+      <div class="tour-illustration">
+        <img src="https://ouch-prod-var-cdn.icons8.com/az/illustrations/thumbs/DGjAhI-iL9DZvGe1.webp" alt="Culture Tour Illustration" />
+      </div>
+      <h5>Culture</h5>
+      <p>Immerse yourself in local traditions, festivals, and heritage tours.</p>
+    </div>
+    <div class="tour-card">
+      <div class="tour-illustration">
+        <img src="https://ouch-prod-var-cdn.icons8.com/gc/illustrations/thumbs/9w1trdXhvS4CPQ4W.webp" alt="Wildlife Tour Illustration" />
+      </div>
+      <h5>Wildlife</h5>
+      <p>Discover India's rich biodiversity with safaris and nature expeditions.</p>
+    </div>
+    <div class="tour-card">
+      <div class="tour-illustration">
+        <img src="https://ouch-prod-var-cdn.icons8.com/ey/illustrations/thumbs/7e5KiKwdZvFTjL9h.webp" alt="Family Tour Illustration" />
+      </div>
+      <h5>Family</h5>
+      <p>Fun-filled packages designed for families, ensuring joy for all ages.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials-single-row" id="testimonials">
+  <h2 class="testimonial-title">What Our Clients Say</h2>
+
+      <div class="testimonial-row">
+        <div class="testimonial-track">
+          <!-- Testimonials -->
+          <article class="testimonial">
+            <div class="quote-icon">❝</div>
+            <img src="Pictures/couple.png" alt="John & Emma - Happy Couple" />
+            <p>TravelTales made our vacation unforgettable! The service was excellent and everything was well-organized. We can't wait to book our next trip!</p>
+            <h4>- John & Emma</h4>
+          </article>
+          <article class="testimonial">
+            <div class="quote-icon">❝</div>
+            <img src="Pictures/woman.png" alt="Sarah M. - Solo Traveler" />
+            <p>Amazing experience from start to finish. The team at TravelTales was professional and very helpful. Highly recommended!</p>
+            <h4>- Sarah M.</h4>
+          </article>
+          <article class="testimonial">
+            <div class="quote-icon">❝</div>
+            <img src="Pictures/woman.png" alt="Mike & Linda - Couple" />
+            <p>The best travel agency we've ever used. The tour packages are well thought out and affordable. We had a fantastic time in Kashmir.</p>
+            <h4>- Mike & Linda</h4>
+          </article>
+          <article class="testimonial">
+            <div class="quote-icon">❝</div>
+            <img src="Pictures/man.png" alt="The Smith Family" />
+            <p>Our family trip was seamless and fun. The kids loved every moment. Thank you, TravelTales, for the memories!</p>
+            <h4>- The Smith Family</h4>
+          </article>
+          <article class="testimonial">
+            <div class="quote-icon">❝</div>
+            <img src="Pictures/woman.png" alt="Priya S. - Solo Explorer" />
+            <p>As a solo traveler, I felt safe and cared for. The personalized itinerary was perfect. Will travel again with you!</p>
+            <h4>- Priya S.</h4>
+          </article>
+
+          <!-- Duplicate testimonials for seamless scroll -->
+          <article class="testimonial">
+            <div class="quote-icon">❝</div>
+            <img src="Pictures/couple.png" alt="John & Emma - Happy Couple" />
+            <p>TravelTales made our vacation unforgettable! The service was excellent and everything was well-organized. We can't wait to book our next trip!</p>
+            <h4>- John & Emma</h4>
+          </article>
+          <article class="testimonial">
+            <div class="quote-icon">❝</div>
+            <img src="Pictures/man.png" alt="Sarah M. - Solo Traveler" />
+            <p>Amazing experience from start to finish. The team at TravelTales was professional and very helpful. Highly recommended!</p>
+            <h4>- Sarah M.</h4>
+          </article>
+          <article class="testimonial">
+            <div class="quote-icon">❝</div>
+            <img src="Pictures/woman.png" alt="Mike & Linda - Couple" />
+            <p>The best travel agency we've ever used. The tour packages are well thought out and affordable. We had a fantastic time in Kashmir.</p>
+            <h4>- Mike & Linda</h4>
+          </article>
+          <article class="testimonial">
+            <div class="quote-icon">❝</div>
+            <img src="Pictures/man.png" alt="The Smith Family" />
+            <p>Our family trip was seamless and fun. The kids loved every moment. Thank you, TravelTales, for the memories!</p>
+            <h4>- The Smith Family</h4>
+          </article>
+          <article class="testimonial">
+            <div class="quote-icon">❝</div>
+            <img src="Pictures/man.png" alt="Priya S. - Solo Explorer" />
+            <p>As a solo traveler, I felt safe and cared for. The personalized itinerary was perfect. Will travel again with you!</p>
+            <h4>- Priya S.</h4>
+          </article>
+        </div>
+      </div>
+    </section>
+<br>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+    <div class="blog-title">
+        <h2>Latest from Our Blog</h2>
+    </div>
+    <div class="blog-content">
+        <div class="blog-post">
+            <div class="blog-img-wrapper">
+                <img src="Blog Page/BLOG1.jpg" alt="Exploring the Hidden Gems of Goa">
+            </div>
+            <h3>Exploring the Hidden Gems of Goa</h3>
+            <p>Discover the lesser-known attractions of Goa that will leave you mesmerized. From secluded beaches to ancient forts, find out what makes Goa a top travel destination.</p>
+            <a href="Blog Page/GoaBlog.html" class="read-more">Read More</a>
+        </div>
+        <div class="blog-post">
+            <div class="blog-img-wrapper">
+                <img src="Blog Page/blog2.jpg" alt="A Journey Through the Valleys of Kashmir">
+            </div>
+            <h3>A Journey Through the Valleys of Kashmir</h3>
+            <p>Experience the breathtaking beauty of Kashmir. Our blog takes you through the must-visit places and experiences in this paradise on earth.</p>
+            <a href="Blog Page/KashmirBlog.html" class="read-more">Read More</a>
+        </div>
+        <div class="blog-post">
+            <div class="blog-img-wrapper">
+                <img src="Blog Page/blog3.jpg" alt="Top 10 Things to Do in Jaipur">
+            </div>
+            <h3>Top 10 Things to Do in Jaipur</h3>
+            <p>From visiting historic palaces to enjoying traditional Rajasthani cuisine, find out the top 10 things you must do when in Jaipur.</p>
+            <a href="Blog Page/Jaipur Blog.html" class="read-more">Read More</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Newsletter -->
+
+<section class="newsletter">
+    <div class="newstext">
+        <h2>Newsletter</h2>
+        <p>Subscribe to get offers and latest<br>updates every week!</p>
+    </div>
+
+    <div class="send">
+        <form action="">
+            <input type="email" name="emailid" placeholder="E-mail" required>
+            <input type="submit" value="Subscribe">
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+
+  <section class="footer">
+    <div class="foot">
+      <div class="footer-content">
+        <div class="footlinks">
+          <div class="logo-container">
+            <img src="Logos/TT6.png" alt="Travel Tales Logo">
+          </div>
+          <p>08, Nagpur, Maharashtra</p>
+          <p>+96899999000</p>
+          <p>TravelTales@gmail.com</p>
+        </div>
+            
+            <div class="footlinks">
+                <h4>Top Destinations</h4>
+                <ul>
+                    <li><a href="North India/Ladakh/Ladakh.html">Ladhak</a></li>
+                    <li><a href="North India/Himachal Pradesh/Himachal.html">Manali</a></li>
+                    <li><a href="West India/Rajasthan/Rajasthan.html">Jaipur</a></li>
+                    <li><a href="South India/Tamil Nadu/TamilNadu.html">Coimbatore</a></li>
+                    <li><a href="South India/Kerala/Kerala.html">Kerala</a></li>
+                    <li><a href="West India/Goa/Goa.html">Goa</a></li>
+                </ul>
+            </div>
+            <div class="footlinks">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="Services/Sign up Page.html">Register</a></li>
+                    <li><a href="Travel Tales/About Us.html">About Us</a></li>
+                    <li><a href="Services/Contact.html">Contact Us</a></li>
+                    <li><a href="Travel Tales/About Us.html">Team Members</a></li>
+                    <li><a href="Services/Contact.html">Support</a></li>
+                    <li><a href="Services/Contact.html">Career</a></li>
+                </ul>
+            </div>
+            <div class="footlinks">
+                <h4>Connect</h4>
+                <div class="social">
+                    <a href="https://www.facebook.com/" target="_blank"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://www.instagram.com/accounts/signup/phone/" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                    <a href="https://x.com/" target="_blank"><i class='bx bxl-twitter' ></i></a>
+                    <a href="https://www.linkedin.com/login" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="https://www.youtube.com/account" target="_blank"><i class='bx bxl-youtube' ></i></a>
+                    <a href="https://github.com/login" target="_blank"><i class='bx bxl-github'></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="end">
+        <!-- comment<p>Copyright © 2025 TravelTales All Rights Reserved.<br>Website by: Karan Bipate</p> 
+        <p>Copyright © 2025 TravelTales All Rights Reserved.<br>Website by: Karan Bipate</p>-->
+        <p>© 2025 TravelTales — Your story begins here.<br>Crafted with ✈️ and ❤️ by Karan Bipate.</p>
+
+    </div>
+</section>
+</body>
+</html>

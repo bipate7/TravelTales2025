@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Reset Password | Travel Tales</title>
+    <link rel="icon" type="image/png" href="Images/TT4.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap">
+    <link rel="stylesheet" href="CSS/Reset.css">
+</head>
+<body>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+    <source src="" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+    </div>
+    
+    <!-- Reset Password Container -->
+    <div class="reset-container">
+        <div class="logo">
+            <img src="Images/TravelTales3.png" alt="Travel Tales Logo">
+        </div>
+        
+        <div class="reset-header">
+            <h1>Reset Your Password</h1>
+            <p>Enter your email and answer your security question to reset your password</p>
+        </div>
+        
+        <form action="/reset_password_action.php" method="post">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="explorer@traveltales.com" required>
+                </div>
+            </div>
+            
+            <div class="security-questions">
+                <div class="security-question">
+                    <label for="security-question">Security Question</label>
+                    <div class="input-field">
+                        <i class="fas fa-shield-alt"></i>
+                        <select id="security-question" name="security-question" required>
+                            <option value="" disabled selected>Select your security question</option>
+                            <option value="first_pet">What was the name of your first pet?</option>
+                            <option value="mother_maiden">What is your mother's maiden name?</option>
+                            <option value="birth_city">In what city were you born?</option>
+                            <option value="favorite_destination">What is your favorite travel destination?</option>
+                            <option value="childhood_nickname">What was your childhood nickname?</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="security-question">
+                    <label for="security-answer">Your Answer</label>
+                    <div class="input-field">
+                        <i class="fas fa-key"></i>
+                        <input type="text" id="security-answer" name="security-answer" placeholder="Enter your answer" required>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit" class="reset-btn">Reset Password</button>
+        </form>
+        
+        <div class="back-to-login">
+            Remembered your password? <a href="login.html">Sign in here</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create floating travel icons
+            const travelIcons = document.getElementById('travelIcons');
+            const icons = ['✈️', '🌍', '🗺️', '🏝️', '🏔️', '⛵', '🏕️', '🌄', '🏖️', '🗼'];
+            
+            for (let i = 0; i < 10; i++) {
+                const icon = document.createElement('div');
+                icon.className = 'travel-icon';
+                icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+                icon.style.left = Math.random() * 100 + '%';
+                icon.style.bottom = '-50px';
+                icon.style.animationDelay = Math.random() * 10 + 's';
+                icon.style.animationDuration = 15 + Math.random() * 15 + 's';
+                icon.style.fontSize = (1 + Math.random() * 1.5) + 'rem';
+                travelIcons.appendChild(icon);
+            }
+            
+            // Form submission animation
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const resetBtn = document.querySelector('.reset-btn');
+                resetBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Verifying...';
+                resetBtn.disabled = true;
+                
+                // Simulate API call
+                setTimeout(() => {
+                    resetBtn.innerHTML = '<i class="fas fa-check"></i> Password Reset Email Sent';
+                    resetBtn.style.background = 'linear-gradient(to right, #10b981, #059669)';
+                    
+                    setTimeout(() => {
+                        window.location.href = 'reset-confirmation.html';
+                    }, 1500);
+                }, 2000);
+            });
+            
+            // Handle video background
+            const video = document.querySelector('.video-background video');
+            video.addEventListener('loadedmetadata', function() {
+                // Ensure video covers the entire screen
+                const containerRatio = window.innerWidth / window.innerHeight;
+                const videoRatio = video.videoWidth / video.videoHeight;
+                
+                if (containerRatio > videoRatio) {
+                    video.style.width = '100%';
+                    video.style.height = 'auto';
+                } else {
+                    video.style.width = 'auto';
+                    video.style.height = '100%';
+                }
+            });
+            
+            // Fallback if video doesn't load
+            setTimeout(() => {
+                if (video.readyState < 3) { // If video hasn't loaded enough data
+                    video.style.display = 'none';
+                    document.querySelector('.overlay').style.background = 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)';
+                }
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

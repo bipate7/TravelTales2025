@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mizoram: The Land of the Blue Mountains — Discover untouched landscapes, vibrant Mizo culture, festivals, and curated travel experiences in Northeast India." />
+    <title>Mizoram Explorer | The Land of the Blue Mountains</title>
+    <link rel="icon" href="Images/TT4.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        /* ====================== CUSTOM PROPERTIES ====================== */
+        :root {
+            /* Primary Colors */
+            --azure-blue: #2563eb;    /* Phawngpui skies */
+            --forest-green: #0d9488; /* Murlen forests */
+            --sunset-orange: #ea580c; /* Chapchar Kut fire */
+            --clay-red: #dc2626;     /* Mizo pottery */
+            --mist-gray: #f1f5f9;    /* Morning fog in hills */
+            --deep-gray: #1e293b;
+
+            /* Semantic Layers */
+            --surface-0: #ffffff;
+            --surface-1: #f8fafc;
+            --surface-2: #e2e8f0;
+            --text-dark: #1e293b;
+            --text-light: #f8fafc;
+            --text-muted: #64748b;
+
+            /* Effects */
+            --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.06);
+            --shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            --shadow-lg: 0 25px 50px -12px rgba(0,0,0,0.15);
+            --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            --radius: 14px;
+            --radius-lg: 18px;
+        }
+
+        /* Dark Theme (optional — toggle in JS) */
+        [data-theme="dark"] {
+            --surface-0: #0f172a;
+            --surface-1: #1e293b;
+            --surface-2: #334155;
+            --text-dark: #f1f5f9;
+            --text-light: #f1f5f9;
+            --text-muted: #94a3b8;
+            --mist-gray: #0f172a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--surface-0);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* ========== Scroll Progress ========== */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--sunset-orange);
+            z-index: 9999;
+            width: 0%;
+            transition: width 0.2s ease;
+        }
+
+        /* ========== Header ========== */
+        header {
+            background: rgba(255, 255, 255, 0.92);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2000;
+            padding: 1rem 0;
+            box-shadow: var(--shadow-sm);
+            backdrop-filter: blur(12px);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 0.6rem 0;
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .navbar {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 60px;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--deep-gray);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            position: relative;
+            padding: 0.4rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--sunset-orange);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--azure-blue);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            background: var(--surface-1);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ========== Hero ========== */
+        .hero {
+            height: 100vh;
+            min-height: 650px;
+            background: linear-gradient(rgba(5, 20, 40, 0.6), rgba(10, 30, 60, 0.7)),
+                        url('https://images.unsplash.com/photo-1626917284058-4e1391e2b1f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            padding: 0 2rem;
+        }
+
+        .floating {
+            position: absolute;
+            animation: float 8s ease-in-out infinite;
+            opacity: 0.85;
+            font-size: 2.5rem;
+            z-index: 1;
+        }
+
+        .floating-1 { top: 15%; left: 10%; animation-delay: 0s; }
+        .floating-2 { bottom: 20%; right: 15%; animation-delay: -2s; font-size: 2rem; }
+        .floating-3 { top: 50%; right: 8%; animation-delay: -4s; }
+        .floating-4 { bottom: 30%; left: 12%; animation-delay: -6s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(-10px) rotate(-5deg); }
+            75% { transform: translateY(-25px) rotate(3deg); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroFadeIn 1s ease-out forwards;
+        }
+
+        @keyframes heroFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.2rem);
+            margin-bottom: 1rem;
+            line-height: 1.15;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            cursor: pointer;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary {
+            background: var(--sunset-orange);
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(234, 88, 12, 0.4);
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--deep-gray);
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.8rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-15px) translateX(-50%); }
+            60% { transform: translateY(-8px) translateX(-50%); }
+        }
+
+        /* ========== Sections ========== */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--deep-gray);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: var(--forest-green);
+            margin: 0.75rem auto 0;
+            border-radius: 2px;
+        }
+
+        .section-intro {
+            max-width: 750px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* USP Grid */
+        .usp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+
+        .usp-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .usp-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .usp-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.2rem;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--azure-blue);
+        }
+
+        .usp-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* ========== Places ========== */
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 2rem;
+        }
+
+        .place-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .place-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .place-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .place-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .place-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .place-card:hover .place-img img {
+            transform: scale(1.08);
+        }
+
+        .place-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--sunset-orange);
+            color: white;
+            padding: 0.3rem 0.9rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .place-content {
+            padding: 1.5rem;
+        }
+
+        .place-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--deep-gray);
+        }
+
+        .place-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0.7rem 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .place-meta .fas {
+            color: var(--forest-green);
+        }
+
+        .read-more {
+            color: var(--azure-blue);
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            color: var(--sunset-orange);
+            gap: 0.7rem;
+        }
+
+        /* ========== Packages ========== */
+        .packages-section {
+            background: linear-gradient(135deg, var(--mist-gray) 0%, #e6f4ff 100%);
+        }
+
+        .package-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .package-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .package-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--forest-green);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .package-content {
+            padding: 1.5rem;
+        }
+
+        .package-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .package-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .package-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--sunset-orange);
+        }
+
+        .package-rating i {
+            color: #fbbf24;
+        }
+
+        .package-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .book-btn {
+            background: var(--azure-blue);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.4rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .book-btn:hover {
+            background: var(--forest-green);
+            transform: translateY(-2px);
+        }
+
+        /* ========== Culture & Food ========== */
+        .culture-section {
+            background: linear-gradient(to bottom, var(--forest-green), #065f46);
+            color: white;
+        }
+
+        .culture-section .section-title h2,
+        .culture-section .section-intro {
+            color: white;
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .highlight-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .highlight-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .food-section {
+            background: var(--surface-0);
+        }
+
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .food-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .food-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .food-content {
+            padding: 1.4rem;
+            position: relative;
+        }
+
+        .food-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--sunset-orange);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* ========== Festival Calendar ========== */
+        .festival-calendar {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .festival-card {
+            background: var(--mist-gray);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .festival-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--sunset-orange);
+        }
+
+        .festival-date {
+            display: inline-block;
+            background: var(--sunset-orange);
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+
+        /* ========== Contact ========== */
+        .contact-section {
+            background: linear-gradient(135deg, var(--azure-blue), var(--forest-green));
+            color: white;
+        }
+
+        .contact-section .section-title h2,
+        .contact-section .section-intro {
+            color: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h2 { font-size: 1.8rem; margin-bottom: 1.2rem; }
+        .contact-info p { margin-bottom: 1.5rem; }
+
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-text h4 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+        .contact-text a { color: white; text-decoration: underline; }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .submit-btn {
+            background: var(--sunset-orange);
+            color: white;
+            border: none;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ========== Footer ========== */
+        footer {
+            background: var(--deep-gray);
+            color: #cbd5e1;
+            padding: 5rem 0 3rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--sunset-orange);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--sunset-orange);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2.5rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* ========== Responsive ========== */
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-links {
+                position: fixed;
+                top: 74px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 74px);
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                transition: var(--transition);
+                z-index: 1999;
+            }
+            .nav-links.active {
+                left: 0;
+            }
+            .hero h1 { font-size: 2.8rem; }
+            .section { padding: 4rem 0; }
+        }
+
+        @media (max-width: 576px) {
+            .btn { padding: 0.8rem 1.8rem; font-size: 1rem; }
+            .places-grid,
+            .packages-grid,
+            .culture-grid,
+            .food-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="navbar">
+            <a href="#home" class="logo">
+                <img src="Images/TT4.png" alt="Mizoram Explorer Logo" />
+                <span class="logo-text">Mizoram Explorer</span>
+            </a>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#places">Places</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#culture">Culture</a></li>
+                <li><a href="#food">Cuisine</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="floating floating-1">☁️</div>
+        <div class="floating floating-2">🥁</div>
+        <div class="floating floating-3">🎋</div>
+        <div class="floating floating-4">🌄</div>
+
+        <div class="hero-content">
+            <h1>The Land of the Blue Mountains</h1>
+            <p>Discover Mizoram — where mist-kissed peaks, cascading waterfalls, and vibrant Mizo culture create an unforgettable Northeast India experience.</p>
+            <div>
+                <a href="#packages" class="btn btn-primary">Explore Tour Packages</a>
+                <a href="#places" class="btn btn-outline">View Destinations</a>
+            </div>
+        </div>
+
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Why Mizoram -->
+    <section class="section" id="why">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Visit Mizoram?</h2>
+                <p>More than just hills — it’s harmony, heritage, and hidden gems.</p>
+            </div>
+            <div class="usp-grid">
+                <div class="usp-card">
+                    <div class="usp-icon"><i class="fas fa-mountain"></i></div>
+                    <h3>India’s Safest State</h3>
+                    <p>Low crime, warm hospitality, and peaceful villages make it ideal for solo & family travel.</p>
+                </div>
+                <div class="usp-card">
+                    <div class="usp-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>90% Forest Cover</h3>
+                    <p>Lush green valleys, rare orchids, and biodiversity hotspots — a paradise for nature lovers.</p>
+                </div>
+                <div class="usp-card">
+                    <div class="usp-icon"><i class="fas fa-music"></i></div>
+                    <h3>Living Culture</h3>
+                    <p>Cheraw dance, Khuang drums, handwoven textiles — traditions passed down for centuries.</p>
+                </div>
+                <div class="usp-card">
+                    <div class="usp-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Unique Cuisine</h3>
+                    <p>Bamboo shoot stews, smoked pork, and sticky rice cakes — bold, earthy, unforgettable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Places -->
+    <section class="section" id="places">
+        <div class="container">
+            <div class="section-title">
+                <h2>Must-Visit Destinations</h2>
+                <p>From sacred peaks to serene lakes — each place tells a story.</p>
+            </div>
+            <div class="places-grid">
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://images.unsplash.com/photo-1626917284058-4e1391e2b1f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Phawngpui Blue Mountain">
+                        <span class="place-badge">Sacred Peak</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Phawngpui (Blue Mountain)</h3>
+                        <div class="place-meta">
+                            <span>Lunglei District</span>
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                        <p>Mizoram’s highest peak (2,157m). Home to rare orchids, Thlazuang Kham (sacred cliff), and panoramic views of Myanmar hills.</p>
+                        <a href="#" class="read-more">Trekking Guide <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vantawng Falls">
+                        <span class="place-badge">Tallest Waterfall</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Vantawng Falls</h3>
+                        <div class="place-meta">
+                            <span>Serchhip District</span>
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                        <p>India’s 2nd tallest plunge waterfall (228m). Accessible via scenic drive + 1km forest trail. Best after monsoon (Aug–Oct).</p>
+                        <a href="#" class="read-more">Visit Tips <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Murlen National Park">
+                        <span class="place-badge">Wildlife Haven</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Murlen National Park</h3>
+                        <div class="place-meta">
+                            <span>Champhai District</span>
+                            <span><i class="fas fa-star"></i> 4.6</span>
+                        </div>
+                        <p>Remote sanctuary near Myanmar border. Spot barking deer, serow, and migratory birds. Requires forest permit (arranged by us).</p>
+                        <a href="#" class="read-more">Permit Info <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Reiek Hill">
+                        <span class="place-badge">Sunset View</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Reiek Hill</h3>
+                        <div class="place-meta">
+                            <span>Aizawl</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        <p>Iconic hilltop with traditional Mizo huts, handicraft stalls, and 360° views of Aizawl’s amphitheater cityscape.</p>
+                        <a href="#" class="read-more">Photo Spots <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://images.unsplash.com/photo-1605296866220-85a3e10a5c1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tamdil Lake">
+                        <span class="place-badge">Sacred Lake</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Tamdil Lake</h3>
+                        <div class="place-meta">
+                            <span>Kolasib District</span>
+                            <span><i class="fas fa-star"></i> 4.5</span>
+                        </div>
+                        <p>Mythical lake said to be connected to the sea. Boat rides, birdwatching (kingfishers, egrets), and picnic groves.</p>
+                        <a href="#" class="read-more">Local Legend <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://images.unsplash.com/photo-1631088902833-06e4fe5c0b23?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rih Dil Lake">
+                        <span class="place-badge">Border Gem</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Rih Dil Lake</h3>
+                        <div class="place-meta">
+                            <span>Champhai (Myanmar border)</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        <p>Sacred to Mizo folklore — souls rest here before entering *Pialral* (heaven). Accessible with Inner Line Permit (ILP).</p>
+                        <a href="#" class="read-more">ILP Process <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages -->
+    <section class="section packages-section" id="packages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Curated Tour Experiences</h2>
+                <p>Authentic, sustainable, and led by local Mizo guides.</p>
+            </div>
+            <div class="places-grid">
+                <div class="package-card">
+                    <div class="place-img">
+                        <img src="https://images.unsplash.com/photo-1626917284058-4e1391e2b1f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Blue Mountain Trek">
+                        <span class="package-badge">Adventure</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Phawngpui Summit Trek</h3>
+                        <div class="package-meta">
+                            <span class="package-price">₹18,500</span>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.9</div>
+                        </div>
+                        <p>3D/2N guided trek with overnight at Thlazuang camp. Includes permits, meals, and cultural storytelling.</p>
+                        <div class="package-footer">
+                            <span><i class="far fa-calendar-alt"></i> 3 Days</span>
+                            <button class="book-btn">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <div class="place-img">
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Waterfall Trail">
+                        <span class="package-badge">Photography</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Waterfall Trail</h3>
+                        <div class="package-meta">
+                            <span class="package-price">₹14,200</span>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.7</div>
+                        </div>
+                        <p>Vantawng, Tuirini, and Tuirihiau Falls in 4 days. Best during monsoon for dramatic flows.</p>
+                        <div class="package-footer">
+                            <span><i class="far fa-calendar-alt"></i> 4 Days</span>
+                            <button class="book-btn">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <div class="place-img">
+                        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Wildlife Safari">
+                    </div>
+                    <div class="package-content">
+                        <h3>Murlen Wildlife Safari</h3>
+                        <div class="package-meta">
+                            <span class="package-price">₹22,000</span>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.6</div>
+                        </div>
+                        <p>Exclusive access with forest department. Spot barking deer, serow, and rare birds. Camping inside the park.</p>
+                        <div class="package-footer">
+                            <span><i class="far fa-calendar-alt"></i> 5 Days</span>
+                            <button class="book-btn">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture -->
+    <section class="section culture-section" id="culture">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mizo Cultural Tapestry</h2>
+                <p class="section-intro">Where every dance, song, and craft carries ancestral wisdom.</p>
+            </div>
+            <div class="culture-grid">
+                <div class="highlight-item">
+                    <div class="highlight-icon"><i class="fas fa-drum"></i></div>
+                    <h4>Khuang (Drum)</h4>
+                    <p>Hollowed log drum used in festivals and church ceremonies. Rhythms tell stories of war, harvest, and love.</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon"><i class="fas fa-tshirt"></i></div>
+                    <h4>Puan (Handwoven Cloth)</h4>
+                    <p>Vibrant patterns like *Puanchei* (wedding shawl) and *Ngotekherh* (funeral cloth) — each with symbolic meaning.</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon"><i class="fas fa-dance"></i></div>
+                    <h4>Cheraw Dance</h4>
+                    <p>UNESCO-recognized bamboo dance. Dancers step in/out of clapping bamboo sticks — grace, precision, and rhythm.</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon"><i class="fas fa-church"></i></div>
+                    <h4>Harmonized Choirs</h4>
+                    <p>Mizos are famed for 4/6/8-part harmonies in church. Sunday service is a musical pilgrimage for visitors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food -->
+    <section class="section food-section" id="food">
+        <div class="container">
+            <div class="section-title">
+                <h2>Flavors of Mizoram</h2>
+                <p>Bold, smoky, and deeply connected to the land.</p>
+            </div>
+            <div class="food-grid">
+                <div class="food-card">
+                    <div class="food-img">
+                        <img src="https://images.slurrp.com/prod/rich_article/kwxhjwjlwoe.webp?impolicy=slurrp-20210601&width=600&height=400" alt="Bai">
+                    </div>
+                    <div class="food-content">
+                        <h3>Bai</h3>
+                        <p>Vegetable stew with *tawtche* (local greens), bamboo shoot, and pork/fish. Slow-cooked in clay pots.</p>
+                        <span class="food-tag">Signature Dish</span>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <div class="food-img">
+                        <img src="https://blog.swiggy.com/wp-content/uploads/2024/08/Image-No-4-Vawksa-Rep-1024x538.png?w=600" alt="Vawksa Rep">
+                    </div>
+                    <div class="food-content">
+                        <h3>Vawksa Rep</h3>
+                        <p>Smoked pork (*vawksa*) with *rep* (minced pork fat) and *bekang* (fermented soybean). Rich and umami.</p>
+                        <span class="food-tag">Festival Special</span>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <div class="food-img">
+                        <img src="https://www.archanaskitchen.com/images/archanaskitchen/1-Author/Dhara/Manipuri_Veg_Sawchiar_Recipe_Basmati_rice_pulao.jpg?tr=w-600,h-400" alt="Sawhchiar">
+                    </div>
+                    <div class="food-content">
+                        <h3>Sawhchiar</h3>
+                        <p>Savory rice porridge with chicken/pork, ginger, and local herbs. Traditionally eaten for breakfast.</p>
+                        <span class="food-tag">Comfort Food</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Festivals -->
+    <section class="section" id="festivals">
+        <div class="container">
+            <div class="section-title">
+                <h2>Experience Mizo Festivals</h2>
+                <p>Celebrate with the community — no spectator seats, only participation.</p>
+            </div>
+            <div class="festival-calendar">
+                <div class="calendar-header">
+                    <h3>2025 Festival Calendar</h3>
+                    <a href="#" class="btn btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.95rem;">Book Festival Tour</a>
+                </div>
+                <div class="calendar-grid">
+                    <div class="festival-card">
+                        <div class="festival-date">March 5–7, 2025</div>
+                        <h3>Chapchar Kut</h3>
+                        <p>Spring festival after *jhum* clearing. Features Cheraw dance, bamboo pole climbing, and community feasts.</p>
+                    </div>
+                    <div class="festival-card">
+                        <div class="festival-date">Aug 29–30, 2025</div>
+                        <h3>Mim Kut</h3>
+                        <p>Maize harvest festival honoring ancestors. Families prepare *zu* (rice beer) and *sawhchiar* for rituals.</p>
+                    </div>
+                    <div class="festival-card">
+                        <div class="festival-date">Dec 22–24, 2025</div>
+                        <h3>Pawl Kut</h3>
+                        <p>Thanksgiving after rice harvest. Villages host *khuang* drum circles and *puan* weaving competitions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Plan Your Journey</h2>
+                <p class="section-intro">Let our Mizo travel experts craft your perfect itinerary.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Contact Us</h2>
+                    <p>We’re based in Aizawl and passionate about sharing our homeland with respectful travelers.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-text">
+                                <h4>Office</h4>
+                                <p>Zarkawt, Aizawl, Mizoram 796007</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="contact-text">
+                                <h4>Call/WhatsApp</h4>
+                                <a href="tel:+913892345678">+91 3892 345678</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <a href="mailto:hello@mizoramexplorer.com">hello@mizoramexplorer.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="trip">Trip Interest</label>
+                            <select id="trip" class="form-control" required>
+                                <option value="">Select...</option>
+                                <option>Trekking & Adventure</option>
+                                <option>Cultural Immersion</option>
+                                <option>Festival Tour</option>
+                                <option>Wildlife & Nature</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message (Dates, Group Size, Special Requests)</label>
+                            <textarea id="message" class="form-control" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Mizoram Explorer</h3>
+                <p>We’re a Mizo-owned initiative promoting sustainable, community-based tourism. Every trip supports local guides, homestays, and artisans.</p>
+                <p>✅ Registered with Mizoram Tourism<br>✅ GSTIN: 18AABCM1234A1Z5</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#places">Destinations</a></li>
+                    <li><a href="#packages">Tour Packages</a></li>
+                    <li><a href="#culture">Mizo Culture</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Travel Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">ILP Guide for Mizoram</a></li>
+                    <li><a href="#">Best Time to Visit</a></li>
+                    <li><a href="#">What to Pack</a></li>
+                    <li><a href="#">Mizo Phrases for Travelers</a></li>
+                    <li><a href="#">Sustainable Travel Pledge</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Subscribe</h3>
+                <p>Get festival updates, travel tips, and special offers.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="your@email.com" required>
+                    </div>
+                    <button type="submit" class="submit-btn" style="width: 100%;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mizoram Explorer. Crafted with <i class="fas fa-heart" style="color: #ea580c;"></i> in Aizawl.</p>
+        </div>
+    </footer>
+
+    <!-- ================ JavaScript ================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // ===== Scroll Progress =====
+            const progress = document.getElementById('scroll-progress');
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.body.scrollHeight - window.innerHeight;
+                const scrolled = (scrollTop / docHeight) * 100;
+                progress.style.width = `${scrolled}%`;
+            });
+
+            // ===== Header Scroll =====
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                header.classList.toggle('scrolled', window.scrollY > 100);
+            });
+
+            // ===== Mobile Menu =====
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('nav-links');
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuToggle.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+
+            // Close on link click
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+
+            // ===== Theme Toggle =====
+            const themeToggle = document.getElementById('theme-toggle');
+            const isDark = localStorage.getItem('theme') === 'dark' || 
+                          window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (isDark) {
+                document.body.setAttribute('data-theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+
+            themeToggle.addEventListener('click', () => {
+                const isDark = document.body.getAttribute('data-theme') === 'dark';
+                document.body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+                localStorage.setItem('theme', isDark ? 'light' : 'dark');
+                themeToggle.innerHTML = isDark 
+                    ? '<i class="fas fa-sun"></i>' 
+                    : '<i class="fas fa-moon"></i>';
+            });
+
+            // ===== Scroll Animations =====
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.place-card, .package-card, .highlight-item, .food-card, .festival-card')
+                .forEach(el => observer.observe(el));
+
+            // ===== Form Submission =====
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const name = this.name.value;
+                    alert(`Thank you, ${name}! 🙏\nWe’ll contact you within 24 hours with a custom itinerary.`);
+                    this.reset();
+                });
+            }
+
+            // ===== Smooth Scroll to Anchor =====
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if (this.getAttribute('href') === '#') return;
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

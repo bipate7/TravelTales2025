@@ -1,0 +1,2325 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/TT4.png">
+    <title>Kohima - The Hills of Nagaland</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #d4af37;
+            --primary-dark: #b8941f;
+            --secondary: #1a2f1a;
+            --secondary-dark: #0c1a0c;
+            --text-light: #f5f5f5;
+            --text-gray: #ccc;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Header with Parallax Effect */
+        .parallax-header {
+            height: 100vh;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            animation: fadeInUp 1.5s ease-out;
+            z-index: 2;
+        }
+
+        .welcome-text {
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        .main-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(to right, var(--primary), var(--text-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s infinite alternate;
+        }
+
+        .subtitle {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        .rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            animation: fadeIn 2s ease-out 1s both;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        .rating-text {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .description {
+            max-width: 800px;
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            animation: fadeIn 2s ease-out 1.5s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary), #ffd700);
+            color: var(--secondary);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            animation: pulse 2s infinite;
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.6);
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        /* Logo Styles */
+        .logo-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: rotate 20s linear infinite;
+        }
+
+        .logo i {
+            color: var(--secondary);
+            font-size: 24px;
+        }
+
+        .logo-text {
+            color: var(--text-light);
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            left: 80%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .floating-element:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 40%;
+            left: 70%;
+            animation-delay: 6s;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(12, 26, 12, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo .logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-logo .logo-text {
+            font-size: 1.3rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        /* Interactive Features */
+        .interactive-features {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .feature-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .feature-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Virtual Tour Modal */
+        .virtual-tour-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .virtual-tour-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .tour-content {
+            width: 90%;
+            max-width: 1000px;
+            height: 80%;
+            background: var(--secondary);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .tour-header {
+            padding: 20px;
+            background: var(--secondary-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .tour-header h2 {
+            color: var(--primary);
+        }
+
+        .close-tour {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-tour:hover {
+            color: var(--primary);
+        }
+
+        .tour-body {
+            height: calc(100% - 70px);
+            display: flex;
+        }
+
+        .tour-view {
+            flex: 3;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tour-view img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tour-controls {
+            flex: 1;
+            padding: 20px;
+            background: var(--secondary-dark);
+            overflow-y: auto;
+        }
+
+        .tour-locations {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .tour-location {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tour-location:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .tour-location.active {
+            background: rgba(212, 175, 55, 0.2);
+            border-left: 3px solid var(--primary);
+        }
+
+        /* Trip Planner */
+        .trip-planner-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .trip-planner-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .planner-content {
+            width: 90%;
+            max-width: 800px;
+            height: 80%;
+            background: var(--secondary);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .planner-header {
+            padding: 20px;
+            background: var(--secondary-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .planner-header h2 {
+            color: var(--primary);
+        }
+
+        .close-planner {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-planner:hover {
+            color: var(--primary);
+        }
+
+        .planner-body {
+            padding: 20px;
+            height: calc(100% - 70px);
+            overflow-y: auto;
+        }
+
+        .planner-step {
+            margin-bottom: 30px;
+        }
+
+        .planner-step h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .planner-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .planner-option {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .planner-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .planner-option.active {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid var(--primary);
+        }
+
+        .planner-summary {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .planner-summary h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background: var(--primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Highlights Section */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .highlight-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .highlight-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+
+        .highlight-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .highlight-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .highlight-card p {
+            color: var(--text-gray);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.5s ease;
+        }
+
+        .gallery-item.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 20px;
+            transform: translateY(100%);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Cultural Section */
+        .cultural-section {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .cultural-content {
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+
+        .cultural-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cultural-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+        }
+
+        .cultural-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* Attractions Section */
+        .attractions-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .attraction-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .attraction-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .attraction-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .attraction-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .attraction-content {
+            padding: 25px;
+        }
+
+        .attraction-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .attraction-content p {
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+
+        .attraction-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Travel Tips Section */
+        .travel-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .tip-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .tip-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .tip-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .tip-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .tip-card p {
+            color: var(--text-gray);
+        }
+
+        /* Festivals Section */
+        .festivals-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .festival-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .festival-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .festival-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .festival-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .festival-content {
+            padding: 25px;
+        }
+
+        .festival-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .festival-content p {
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+
+        .festival-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Accommodation Section */
+        .accommodation-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .accommodation-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .accommodation-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .accommodation-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .accommodation-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .accommodation-content {
+            padding: 25px;
+        }
+
+        .accommodation-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .accommodation-content p {
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+
+        .accommodation-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .price {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Itinerary Section */
+        .itinerary-container {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        .itinerary-day {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.4s ease;
+        }
+
+        .itinerary-day.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .itinerary-day:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 15px;
+        }
+
+        .day-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .day-activities {
+            list-style: none;
+        }
+
+        .day-activities li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .day-activities li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Testimonials Section */
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .testimonial-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-gray);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        .author-info h4 {
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .faq-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .faq-question h3 {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .faq-icon {
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--text-gray);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .contact-details h3 {
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+
+        .contact-details p {
+            color: var(--text-gray);
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-dark);
+            padding: 60px 20px 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .footer-column h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            margin: 30px 0;
+        }
+
+        .social-links a {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ffd700;
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            color: #777;
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(212, 175, 55, 0.8), 0 0 30px rgba(212, 175, 55, 0.6);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 10px 25px rgba(212, 175, 55, 0.6);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .description {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 60px 20px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .tour-body {
+                flex-direction: column;
+            }
+            
+            .tour-view {
+                height: 50%;
+            }
+            
+            .tour-controls {
+                height: 50%;
+            }
+            
+            .interactive-features {
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            .feature-btn {
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo in Header -->
+    <div class="logo-container">
+        <div class="logo">
+            <i class="fas fa-mountain"></i>
+        </div>
+        <div class="logo-text">Kohima</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo">
+                    <i class="fas fa-mountain"></i>
+                </div>
+                <div class="logo-text">Kohima Explorer</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#highlights">Highlights</a></li>
+                <li><a href="#attractions">Attractions</a></li>
+                <li><a href="#festivals">Festivals</a></li>
+                <li><a href="#itinerary">Itinerary</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Interactive Features -->
+    <div class="interactive-features">
+        <div class="feature-btn" id="virtualTourBtn" title="Virtual Tour">
+            <i class="fas fa-vr-cardboard"></i>
+        </div>
+        <div class="feature-btn" id="tripPlannerBtn" title="Trip Planner">
+            <i class="fas fa-map-marked-alt"></i>
+        </div>
+        <div class="feature-btn" id="languageBtn" title="Change Language">
+            <i class="fas fa-language"></i>
+        </div>
+        <div class="feature-btn" id="themeBtn" title="Toggle Theme">
+            <i class="fas fa-palette"></i>
+        </div>
+    </div>
+
+    <!-- Virtual Tour Modal -->
+    <div class="virtual-tour-modal" id="virtualTourModal">
+        <div class="tour-content">
+            <div class="tour-header">
+                <h2>Virtual Tour of Kohima</h2>
+                <button class="close-tour" id="closeTour">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="tour-body">
+                <div class="tour-view">
+                    <img src="https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Kohima Virtual Tour" id="tourImage">
+                </div>
+                <div class="tour-controls">
+                    <h3>Explore Locations</h3>
+                    <div class="tour-locations">
+                        <div class="tour-location active" data-image="https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">
+                            <h4>Kohima City View</h4>
+                            <p>Panoramic view of Kohima city nestled in the hills</p>
+                        </div>
+                        <div class="tour-location" data-image="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">
+                            <h4>War Cemetery</h4>
+                            <p>Historic World War II memorial with beautifully maintained gardens</p>
+                        </div>
+                        <div class="tour-location" data-image="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">
+                            <h4>Dzükou Valley</h4>
+                            <p>Breathtaking valley known as the "Valley of Flowers"</p>
+                        </div>
+                        <div class="tour-location" data-image="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">
+                            <h4>Hornbill Festival</h4>
+                            <p>Vibrant cultural festival showcasing Naga traditions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trip Planner Modal -->
+    <div class="trip-planner-modal" id="tripPlannerModal">
+        <div class="planner-content">
+            <div class="planner-header">
+                <h2>Plan Your Kohima Trip</h2>
+                <button class="close-planner" id="closePlanner">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="planner-body">
+                <div class="planner-step">
+                    <h3>1. Select Travel Dates</h3>
+                    <div class="planner-options">
+                        <div class="planner-option" data-duration="3">3 Days</div>
+                        <div class="planner-option active" data-duration="5">5 Days</div>
+                        <div class="planner-option" data-duration="7">7 Days</div>
+                        <div class="planner-option" data-duration="10">10+ Days</div>
+                    </div>
+                </div>
+                
+                <div class="planner-step">
+                    <h3>2. Select Interests</h3>
+                    <div class="planner-options">
+                        <div class="planner-option" data-interest="culture">Culture</div>
+                        <div class="planner-option active" data-interest="nature">Nature</div>
+                        <div class="planner-option" data-interest="history">History</div>
+                        <div class="planner-option" data-interest="adventure">Adventure</div>
+                        <div class="planner-option" data-interest="food">Local Food</div>
+                        <div class="planner-option" data-interest="shopping">Shopping</div>
+                    </div>
+                </div>
+                
+                <div class="planner-step">
+                    <h3>3. Travel Companions</h3>
+                    <div class="planner-options">
+                        <div class="planner-option" data-companion="solo">Solo</div>
+                        <div class="planner-option active" data-companion="couple">Couple</div>
+                        <div class="planner-option" data-companion="family">Family</div>
+                        <div class="planner-option" data-companion="friends">Friends</div>
+                    </div>
+                </div>
+                
+                <div class="planner-step">
+                    <h3>4. Budget Range</h3>
+                    <div class="planner-options">
+                        <div class="planner-option" data-budget="budget">Budget (₹10-15k)</div>
+                        <div class="planner-option active" data-budget="mid">Mid-range (₹15-25k)</div>
+                        <div class="planner-option" data-budget="luxury">Luxury (₹25k+)</div>
+                    </div>
+                </div>
+                
+                <div class="planner-summary">
+                    <h3>Your Trip Summary</h3>
+                    <div class="summary-item">
+                        <span>Duration:</span>
+                        <span id="summary-duration">5 Days</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Interests:</span>
+                        <span id="summary-interests">Nature</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Companions:</span>
+                        <span id="summary-companions">Couple</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Budget:</span>
+                        <span id="summary-budget">Mid-range (₹15-25k)</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Estimated Cost:</span>
+                        <span id="summary-cost">₹18,500</span>
+                    </div>
+                    <button class="cta-button" style="width: 100%; margin-top: 15px;">Save This Plan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header with Parallax -->
+    <header class="parallax-header" id="home">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        
+        <div class="header-content"><br><br>
+            <div class="welcome-text">Welcome to the</div>
+            <h1 class="main-title">HILLS OF NAGALAND</h1>
+            <h2 class="subtitle">Kohima - Capital City</h2>
+            
+            <div class="rating">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="rating-text">4.8 Must Visit Location</div>
+            </div>
+            
+            <p class="description">
+                Known for its scenic beauty, cultural heritage, and historical significance 
+                including the Kohima War Cemetery and State Museum. Kohima offers a unique blend 
+                of natural wonders, vibrant tribal culture, and historical landmarks that make 
+                it an unforgettable destination.
+            </p>
+            
+            <div class="button-group">
+                <a href="#attractions" class="cta-button">Explore Kohima</a>
+                <a href="#itinerary" class="cta-button secondary">Plan Your Trip</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Highlights Section -->
+    <section class="section" id="highlights">
+        <div class="section-title">
+            <h2>Why Visit Kohima?</h2>
+        </div>
+        
+        <div class="highlights">
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <i class="fas fa-mountain"></i>
+                </div>
+                <h3>Scenic Beauty</h3>
+                <p>Breathtaking landscapes with lush green hills, vibrant flora, and picturesque valleys that change with the seasons.</p>
+            </div>
+            
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <i class="fas fa-history"></i>
+                </div>
+                <h3>Historical Significance</h3>
+                <p>Home to the famous Kohima War Cemetery, a memorial of World War II's Battle of Kohima, known as the "Stalingrad of the East".</p>
+            </div>
+            
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Cultural Heritage</h3>
+                <p>Rich Naga culture with 16 major tribes, traditional festivals, music, dance, and unique handicrafts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attractions Section -->
+    <section class="section" id="attractions">
+        <div class="section-title">
+            <h2>Top Attractions</h2>
+        </div>
+        
+        <div class="attractions-container">
+            <div class="attraction-card">
+                <div class="attraction-image" style="background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="attraction-content">
+                    <h3>Kohima War Cemetery</h3>
+                    <p>A beautifully maintained memorial with 1,420 Commonwealth burials from WWII. The famous epitaph "When you go home, tell them of us and say, for your tomorrow, we gave our today" is inscribed here.</p>
+                    <div class="attraction-meta">
+                        <span><i class="far fa-clock"></i> 2-3 hours</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Central Kohima</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="attraction-card">
+                <div class="attraction-image" style="background-image: url('https://images.unsplash.com/photo-1464822759849-e30adf4325b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="attraction-content">
+                    <h3>Kohima State Museum</h3>
+                    <p>Showcases Naga tribal artifacts, traditional costumes, jewelry, weapons, and musical instruments. A perfect place to understand the diverse cultural heritage of Nagaland's tribes.</p>
+                    <div class="attraction-meta">
+                        <span><i class="far fa-clock"></i> 1-2 hours</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Bayavu Hill</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="attraction-card">
+                <div class="attraction-image" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="attraction-content">
+                    <h3>Dzükou Valley</h3>
+                    <p>Known as the "Valley of Flowers", this breathtaking valley is located at 2,452 meters altitude. Famous for its seasonal flowers, rare lilies, and pristine landscape.</p>
+                    <div class="attraction-meta">
+                        <span><i class="far fa-clock"></i> Full day</span>
+                        <span><i class="fas fa-map-marker-alt"></i> 25km from Kohima</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section">
+        <div class="section-title">
+            <h2>Explore Kohima</h2>
+        </div>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1588666309990-d68f08e3d4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Kohima Landscape">
+                <div class="gallery-overlay">
+                    <h3>Kohima Landscape</h3>
+                    <p>Stunning views of the hills surrounding Kohima</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cultural Festival">
+                <div class="gallery-overlay">
+                    <h3>Cultural Festival</h3>
+                    <p>Vibrant Hornbill Festival celebrations</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="War Cemetery">
+                <div class="gallery-overlay">
+                    <h3>Kohima War Cemetery</h3>
+                    <p>Memorial of the brave soldiers of World War II</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Tips Section -->
+    <section class="section">
+        <div class="section-title">
+            <h2>Travel Tips</h2>
+        </div>
+        
+        <div class="travel-tips">
+            <div class="tip-card">
+                <div class="tip-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3>Best Time to Visit</h3>
+                <p>October to May offers pleasant weather. December is ideal for experiencing the famous Hornbill Festival.</p>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3>Local Cuisine</h3>
+                <p>Try smoked pork with bamboo shoots, axone (fermented soybean), and galho (a rice and vegetable dish).</p>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <h3>Souvenirs</h3>
+                <p>Look for traditional Naga shawls, bamboo crafts, wood carvings, and tribal jewelry as memorable souvenirs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Festivals Section -->
+    <section class="section" id="festivals">
+        <div class="section-title">
+            <h2>Cultural Festivals</h2>
+        </div>
+        
+        <div class="festivals-container">
+            <div class="festival-card">
+                <div class="festival-image" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="festival-content">
+                    <h3>Hornbill Festival</h3>
+                    <p>Nagaland's most famous festival held from December 1-10. A vibrant celebration of Naga culture with traditional dances, music, food, and crafts from all tribes.</p>
+                    <div class="festival-meta">
+                        <span><i class="far fa-calendar"></i> Dec 1-10</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Kisama Heritage Village</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="festival-card">
+                <div class="festival-image" style="background-image: url('https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="festival-content">
+                    <h3>Sekrenyi Festival</h3>
+                    <p>Celebrated by the Angami tribe in February. A purification festival marked by rituals, feasting, and traditional games that lasts for 10 days.</p>
+                    <div class="festival-meta">
+                        <span><i class="far fa-calendar"></i> February</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Angami Regions</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="festival-card">
+                <div class="festival-image" style="background-image: url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="festival-content">
+                    <h3>Moatsu Festival</h3>
+                    <p>Celebrated by the Ao tribe in May after sowing crops. Features singing, dancing, feasting, and traditional sports over several days.</p>
+                    <div class="festival-meta">
+                        <span><i class="far fa-calendar"></i> May</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Ao Regions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodation Section -->
+    <section class="section">
+        <div class="section-title">
+            <h2>Where to Stay</h2>
+        </div>
+        
+        <div class="accommodation-container">
+            <div class="accommodation-card">
+                <div class="accommodation-image" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="accommodation-content">
+                    <h3>Hotel Vivor</h3>
+                    <p>Luxury hotel in the heart of Kohima with modern amenities, restaurant, and panoramic views of the city.</p>
+                    <div class="accommodation-meta">
+                        <span><i class="fas fa-star"></i> 4.5/5</span>
+                        <span class="price">₹4,500/night</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accommodation-card">
+                <div class="accommodation-image" style="background-image: url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="accommodation-content">
+                    <h3>Kohima Camp</h3>
+                    <p>Eco-friendly campsite near Dzükou Valley with comfortable tents and authentic Naga hospitality.</p>
+                    <div class="accommodation-meta">
+                        <span><i class="fas fa-star"></i> 4.2/5</span>
+                        <span class="price">₹1,800/night</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accommodation-card">
+                <div class="accommodation-image" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="accommodation-content">
+                    <h3>Heritage Homestay</h3>
+                    <p>Authentic Naga homestay experience with traditional meals and cultural immersion.</p>
+                    <div class="accommodation-meta">
+                        <span><i class="fas fa-star"></i> 4.7/5</span>
+                        <span class="price">₹2,500/night</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerary Section -->
+    <section class="section" id="itinerary">
+        <div class="section-title">
+            <h2>Sample Itinerary</h2>
+        </div>
+        
+        <div class="itinerary-container">
+            <div class="itinerary-day">
+                <div class="day-header">
+                    <h3 class="day-title">Day 1: Arrival & Cultural Immersion</h3>
+                    <span class="day-duration">Full Day</span>
+                </div>
+                <ul class="day-activities">
+                    <li>Arrive at Dimapur Airport and transfer to Kohima (3-4 hours)</li>
+                    <li>Check into your accommodation and freshen up</li>
+                    <li>Visit Kohima Village, the second largest village in Asia</li>
+                    <li>Explore the local market for traditional Naga crafts</li>
+                    <li>Evening cultural performance and traditional Naga dinner</li>
+                </ul>
+            </div>
+            
+            <div class="itinerary-day">
+                <div class="day-header">
+                    <h3 class="day-title">Day 2: Historical Exploration</h3>
+                    <span class="day-duration">Full Day</span>
+                </div>
+                <ul class="day-activities">
+                    <li>Morning visit to Kohima War Cemetery</li>
+                    <li>Explore the World War II Museum</li>
+                    <li>Visit the Catholic Cathedral on Aradura Hill</li>
+                    <li>Lunch at a local restaurant featuring Naga cuisine</li>
+                    <li>Afternoon at Kohima State Museum</li>
+                    <li>Evening stroll through Kohima's colonial area</li>
+                </ul>
+            </div>
+            
+            <div class="itinerary-day">
+                <div class="day-header">
+                    <h3 class="day-title">Day 3: Natural Wonders</h3>
+                    <span class="day-duration">Full Day</span>
+                </div>
+                <ul class="day-activities">
+                    <li>Early morning departure for Dzükou Valley trek</li>
+                    <li>Explore the valley's unique flora and panoramic views</li>
+                    <li>Picnic lunch amidst the natural beauty</li>
+                    <li>Return to Kohima in the evening</li>
+                    <li>Relaxing evening with optional spa treatments</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section">
+        <div class="section-title">
+            <h2>Traveler Experiences</h2>
+        </div>
+        
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Kohima exceeded all my expectations. The natural beauty is breathtaking, and the warmth of the Naga people made our trip unforgettable. The Hornbill Festival was a cultural extravaganza!"
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">PS</div>
+                    <div class="author-info">
+                        <h4>Priya Sharma</h4>
+                        <p>Travel Blogger</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "As a history enthusiast, the Kohima War Cemetery was a profoundly moving experience. The guides were knowledgeable, and the preservation of history here is remarkable."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RM</div>
+                    <div class="author-info">
+                        <h4>Robert Miller</h4>
+                        <p>History Teacher</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "The trek to Dzükou Valley was challenging but absolutely worth it. The 'Valley of Flowers' lives up to its name with stunning landscapes that change with every season."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AK</div>
+                    <div class="author-info">
+                        <h4>Anika Kumar</h4>
+                        <p>Adventure Traveler</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What is the best time to visit Kohima?</h3>
+                    <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>The best time to visit Kohima is from October to May when the weather is pleasant. December is particularly popular due to the Hornbill Festival, but it's also the busiest time. For trekking, the post-monsoon months of October and November offer the best conditions.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do I need a permit to visit Nagaland?</h3>
+                    <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, domestic tourists need an Inner Line Permit (ILP) to visit Nagaland, which can be obtained online or from government offices in Delhi, Kolkata, Guwahati, or Shillong. Foreign tourists need a Restricted Area Permit (RAP), which is typically arranged through tour operators.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What should I pack for a trip to Kohima?</h3>
+                    <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>Pack layered clothing as temperatures can vary. Include warm clothes for evenings, comfortable walking shoes, rain gear (especially during monsoon), sunscreen, insect repellent, a hat, and any personal medications. If planning to trek, proper hiking gear is essential.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Is Kohima safe for tourists?</h3>
+                    <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, Kohima is generally safe for tourists. The local people are friendly and welcoming. However, as with any travel destination, it's advisable to take standard precautions, respect local customs, and avoid remote areas after dark without a guide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Section -->
+    <section class="cultural-section">
+        <div class="cultural-content">
+            <h2>Experience Naga Culture</h2>
+            <p>
+                Kohima is the cultural heart of Nagaland, home to diverse Naga tribes 
+                each with their unique traditions, festivals, and crafts. The annual 
+                Hornbill Festival showcases this rich cultural tapestry with traditional 
+                music, dance, food, and handicrafts.
+            </p>
+            <p>
+                Visit the Kohima Museum to explore the history and heritage of the Naga people, 
+                or wander through the local markets to experience the vibrant daily life of this 
+                fascinating hill station. Don't miss the opportunity to witness traditional 
+                Naga warrior dances and sample local cuisine.
+            </p>
+            <a href="#contact" class="cta-button">Plan Your Visit</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Address</h3>
+                        <p>Kohima Tourism Office<br>Midland Colony, Kohima<br>Nagaland 797001, India</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Phone</h3>
+                        <p>+91 1234 567890<br>+91 9876 543210</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p>info@kohimatourism.com<br>bookings@kohimatourism.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Office Hours</h3>
+                        <p>Monday - Saturday: 9:00 AM - 6:00 PM<br>Sunday: 10:00 AM - 4:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Send us a Message</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject">
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="booking">Tour Booking</option>
+                            <option value="custom">Custom Itinerary</option>
+                            <option value="feedback">Feedback</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h2>Kohima - The Jewel of Nagaland</h2>
+            
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="#attractions">Attractions</a></li>
+                        <li><a href="#festivals">Cultural Events</a></li>
+                        <li><a href="#itinerary">Adventure Activities</a></li>
+                        <li><a href="#">Local Cuisine</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Plan Your Trip</h3>
+                    <ul>
+                        <li><a href="#">Best Time to Visit</a></li>
+                        <li><a href="#">Accommodation</a></li>
+                        <li><a href="#">Travel Guidelines</a></li>
+                        <li><a href="#">Tour Packages</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="#contact">Tourism Office</a></li>
+                        <li><a href="#">Emergency Numbers</a></li>
+                        <li><a href="#">Tour Guides</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright">© 2023 Kohima Tourism. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive Features
+        const virtualTourBtn = document.getElementById('virtualTourBtn');
+        const tripPlannerBtn = document.getElementById('tripPlannerBtn');
+        const languageBtn = document.getElementById('languageBtn');
+        const themeBtn = document.getElementById('themeBtn');
+        
+        const virtualTourModal = document.getElementById('virtualTourModal');
+        const tripPlannerModal = document.getElementById('tripPlannerModal');
+        
+        const closeTour = document.getElementById('closeTour');
+        const closePlanner = document.getElementById('closePlanner');
+        
+        // Virtual Tour Functionality
+        virtualTourBtn.addEventListener('click', () => {
+            virtualTourModal.classList.add('active');
+        });
+        
+        closeTour.addEventListener('click', () => {
+            virtualTourModal.classList.remove('active');
+        });
+        
+        // Trip Planner Functionality
+        tripPlannerBtn.addEventListener('click', () => {
+            tripPlannerModal.classList.add('active');
+        });
+        
+        closePlanner.addEventListener('click', () => {
+            tripPlannerModal.classList.remove('active');
+        });
+        
+        // Language Toggle (simplified)
+        languageBtn.addEventListener('click', () => {
+            alert('Language options would appear here in a full implementation.');
+        });
+        
+        // Theme Toggle
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            if (document.body.classList.contains('light-theme')) {
+                themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+                document.body.style.setProperty('--secondary', '#f5f5f5');
+                document.body.style.setProperty('--secondary-dark', '#e0e0e0');
+                document.body.style.setProperty('--text-light', '#333');
+                document.body.style.setProperty('--text-gray', '#666');
+            } else {
+                themeBtn.innerHTML = '<i class="fas fa-palette"></i>';
+                document.body.style.setProperty('--secondary', '#1a2f1a');
+                document.body.style.setProperty('--secondary-dark', '#0c1a0c');
+                document.body.style.setProperty('--text-light', '#f5f5f5');
+                document.body.style.setProperty('--text-gray', '#ccc');
+            }
+        });
+        
+        // Virtual Tour Location Selection
+        const tourLocations = document.querySelectorAll('.tour-location');
+        const tourImage = document.getElementById('tourImage');
+        
+        tourLocations.forEach(location => {
+            location.addEventListener('click', () => {
+                // Remove active class from all locations
+                tourLocations.forEach(loc => loc.classList.remove('active'));
+                // Add active class to clicked location
+                location.classList.add('active');
+                // Change image
+                const newImage = location.getAttribute('data-image');
+                tourImage.src = newImage;
+            });
+        });
+        
+        // Trip Planner Options
+        const plannerOptions = document.querySelectorAll('.planner-option');
+        
+        plannerOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove active class from siblings
+                const siblings = option.parentElement.querySelectorAll('.planner-option');
+                siblings.forEach(sibling => sibling.classList.remove('active'));
+                // Add active class to clicked option
+                option.classList.add('active');
+                // Update summary
+                updateTripSummary();
+            });
+        });
+        
+        function updateTripSummary() {
+            const duration = document.querySelector('.planner-option[data-duration].active');
+            const interests = document.querySelector('.planner-option[data-interest].active');
+            const companions = document.querySelector('.planner-option[data-companion].active');
+            const budget = document.querySelector('.planner-option[data-budget].active');
+            
+            if (duration) {
+                document.getElementById('summary-duration').textContent = duration.textContent;
+            }
+            if (interests) {
+                document.getElementById('summary-interests').textContent = interests.textContent;
+            }
+            if (companions) {
+                document.getElementById('summary-companions').textContent = companions.textContent;
+            }
+            if (budget) {
+                document.getElementById('summary-budget').textContent = budget.textContent;
+                
+                // Calculate estimated cost based on selections
+                let baseCost = 0;
+                if (budget.getAttribute('data-budget') === 'budget') baseCost = 12000;
+                if (budget.getAttribute('data-budget') === 'mid') baseCost = 18500;
+                if (budget.getAttribute('data-budget') === 'luxury') baseCost = 28000;
+                
+                document.getElementById('summary-cost').textContent = `₹${baseCost.toLocaleString()}`;
+            }
+        }
+        
+        // Scroll animation for elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.highlight-card, .gallery-item, .cultural-content, .attraction-card, .tip-card, .festival-card, .accommodation-card, .itinerary-day, .testimonial-card, .faq-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Parallax effect for header
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.parallax-header');
+            parallax.style.backgroundPositionY = `${scrolled * 0.5}px`;
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if(window.scrollY > 50) {
+                nav.style.background = 'rgba(12, 26, 12, 0.95)';
+                nav.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.background = 'rgba(12, 26, 12, 0.95)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+        
+        // Initialize trip summary
+        updateTripSummary();
+    </script>
+</body>
+</html>

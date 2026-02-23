@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelPay - Secure Payment Gateway</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Add smooth scrolling to the html element */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --primary-light: #4cc9f0;
+            --secondary: #4895ef;
+            --accent: #f72585;
+            --light-bg: #f8f9fa;
+            --border: #e9ecef;
+            --text: #212529;
+            --text-light: #6c757d;
+            --success: #4bb543;
+            --warning: #ffcc00;
+            --danger: #ff3333;
+            --glass: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.25);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+            /* Add smooth transition for background changes */
+            transition: background 0.5s ease;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            animation: slideDown 0.5s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-family: 'Montserrat', sans-serif;
+            gap: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.03);
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+            box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .secure-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--light-bg);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .secure-badge:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .secure-icon {
+            color: var(--success);
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        
+        main {
+            padding: 40px 0 60px;
+        }
+        
+        /* Checkout Container */
+        .checkout-container {
+            display: flex;
+            gap: 30px;
+        }
+        
+        /* Checkout Form */
+        .checkout-form {
+            flex: 3;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .checkout-form::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(67, 97, 238, 0.1) 0%, rgba(67, 97, 238, 0) 70%);
+            z-index: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .checkout-form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Order Summary */
+        .order-summary {
+            flex: 2;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .order-summary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 8px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+        
+        /* Form Elements */
+        .form-section {
+            margin-bottom: 30px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .form-group {
+            flex: 1;
+            min-width: 0;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text);
+            transition: color 0.3s ease;
+        }
+        
+        .form-control, .form-select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: white;
+            transition: all 0.25s ease;
+            font-family: inherit;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+        }
+        
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236c757d' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+        
+        /* Payment Methods */
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        
+        .payment-method {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            background: white;
+            font-weight: 500;
+            user-select: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .payment-method::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .payment-method.active {
+            border-color: var(--primary);
+            background: rgba(67, 97, 238, 0.05);
+            box-shadow: 0 4px 12px rgba(67, 97, 238, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .payment-method.active::after {
+            opacity: 1;
+        }
+        
+        .payment-method:hover:not(.active) {
+            border-color: var(--primary-light);
+            background: rgba(76, 201, 240, 0.1);
+        }
+        
+        .payment-method-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .payment-method.active .payment-method-icon {
+            transform: scale(1.1);
+        }
+        
+        /* Credit Card Design */
+        .card-wrapper {
+            perspective: 1200px;
+            margin-bottom: 25px;
+        }
+        
+        .credit-card {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #4361ee 0%, #4cc9f0 100%);
+            border-radius: 12px;
+            padding: 25px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+        }
+        
+        .credit-card.flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            top: 0;
+            left: 0;
+            padding: 25px;
+        }
+        
+        .card-back {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, #3a56d4 0%, #4361ee 100%);
+        }
+        
+        .card-bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: radial-gradient(circle at 50% 50%, white 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .card-chip {
+            width: 40px;
+            height: 30px;
+            background: linear-gradient(135deg, #ffd700 0%, #c0c0c0 100%);
+            border-radius: 5px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .card-chip::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, transparent 50%, rgba(255, 255, 255, 0.3) 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .card-number {
+            font-family: 'Courier New', monospace;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .card-details {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .card-holder, .card-expiry {
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .card-holder-label, .card-expiry-label {
+            font-size: 0.7rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            margin-bottom: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        .card-brand {
+            position: absolute;
+            right: 25px;
+            bottom: 25px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        /* Card Back Elements */
+        .card-magnetic-strip {
+            position: absolute;
+            top: 25px;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: #212529;
+            transition: all 0.3s ease;
+        }
+        
+        .card-cvv-strip {
+            position: absolute;
+            top: 80px;
+            right: 30px;
+            width: 80%;
+            height: 30px;
+            background: white;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: #212529;
+            font-family: 'Courier New', monospace;
+            transition: all 0.3s ease;
+        }
+        
+        .card-cvv-label {
+            position: absolute;
+            top: 60px;
+            right: 30px;
+            font-size: 0.7rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .card-terms {
+            position: absolute;
+            bottom: 20px;
+            left: 25px;
+            font-size: 0.6rem;
+            opacity: 0.7;
+            width: 80%;
+            transition: all 0.3s ease;
+        }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(67, 97, 238, 0.2);
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(30deg);
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover::after {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary) 100%);
+            box-shadow: 0 6px 16px rgba(67, 97, 238, 0.3);
+            transform: translateY(-1px);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+        
+        /* Order Summary Styles */
+        .trip-details {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .trip-image {
+            width: 100%;
+            height: 180px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .trip-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .trip-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .trip-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+        
+        .trip-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--text);
+            transition: color 0.3s ease;
+        }
+        
+        .trip-title:hover {
+            color: var(--primary);
+        }
+        
+        .trip-location {
+            display: flex;
+            align-items: center;
+            color: var(--primary);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .trip-location svg {
+            margin-right: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .trip-date {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .trip-date svg {
+            margin-right: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .trip-people {
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        .trip-people svg {
+            margin-right: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 20px 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 1px;
+            background: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .price-row:hover {
+            background: rgba(0, 0, 0, 0.02);
+            border-radius: 4px;
+        }
+        
+        .price-label {
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+        
+        .price-value {
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            color: var(--primary);
+            padding-top: 10px;
+            border-top: 1px dashed var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .promo-form {
+            display: flex;
+            gap: 8px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .promo-form input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        .promo-form button {
+            padding: 10px 15px;
+            background: var(--light-bg);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .promo-form button:hover {
+            background: var(--primary-light);
+            color: var(--primary);
+            border-color: var(--primary-light);
+        }
+        
+        .helper-text {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-top: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .secure-payment-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 12px;
+            background: rgba(72, 149, 239, 0.1);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+        
+        .secure-payment-info svg {
+            color: var(--secondary);
+            transition: all 0.3s ease;
+        }
+        
+        /* Floating Help Button */
+        .help-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+            cursor: pointer;
+            z-index: 90;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite ease;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(67, 97, 238, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(67, 97, 238, 0); }
+        }
+        
+        .help-button:hover {
+            transform: scale(1.1);
+            background: var(--primary-dark);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: slideUp 0.4s ease;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: color 0.2s ease;
+        }
+        
+        .close-modal:hover {
+            color: var(--danger);
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .checkout-container {
+                flex-direction: column;
+            }
+            
+            .order-summary {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .payment-methods {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .help-button {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .checkout-form, .order-summary {
+                padding: 20px;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .secure-badge {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+            
+            .section-title {
+                font-size: 1.1rem;
+            }
+            
+            .credit-card {
+                height: 170px;
+                padding: 15px;
+            }
+            
+            .card-front, .card-back {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">✈️</div>
+                    TravelPay
+                </div>
+                <div class="secure-badge">
+                    <span class="secure-icon">🔒</span>
+                    Secure Payment
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="checkout-container">
+                <!-- Checkout Form -->
+                <form class="checkout-form" id="paymentForm">
+                    <div class="form-section">
+                        <div class="section-title">Contact Information</div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" placeholder="you@email.com" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="+91 9876543210" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <div class="section-title">Payment Method</div>
+                        <div class="payment-methods">
+                            <div class="payment-method active" tabindex="0" data-target="credit-card-section">
+                                <div class="payment-method-icon">💳</div>
+                                Credit/Debit Card
+                            </div>
+                            <div class="payment-method" tabindex="0" data-target="upi-section">
+                                <div class="payment-method-icon">📱</div>
+                                UPI
+                            </div>
+                            <div class="payment-method" tabindex="0" data-target="netbanking-section">
+                                <div class="payment-method-icon">🏦</div>
+                                Net Banking
+                            </div>
+                        </div>
+                        
+                        <!-- Credit Card Section -->
+                        <div id="credit-card-section" class="payment-section">
+                            <div class="card-wrapper">
+                                <div class="credit-card" id="creditCard">
+                                    <div class="card-front">
+                                        <div class="card-bg-pattern"></div>
+                                        <div class="card-chip"></div>
+                                        <div class="card-number" id="displayCardNumber">•••• •••• •••• ••••</div>
+                                        <div class="card-details">
+                                            <div>
+                                                <div class="card-holder-label">Card Holder</div>
+                                                <div class="card-holder" id="displayCardName">YOUR NAME</div>
+                                            </div>
+                                            <div>
+                                                <div class="card-expiry-label">Expires</div>
+                                                <div class="card-expiry" id="displayCardExpiry">MM/YY</div>
+                                            </div>
+                                        </div>
+                                        <div class="card-brand">VISA</div>
+                                    </div>
+                                    <div class="card-back">
+                                        <div class="card-magnetic-strip"></div>
+                                        <div class="card-cvv-label">CVV</div>
+                                        <div class="card-cvv-strip" id="displayCardCvv">•••</div>
+                                        <div class="card-terms">
+                                            This card is property of the issuer. Use is subject to terms and conditions.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number</label>
+                                    <input type="text" id="cardNumber" class="form-control" placeholder="1234 5678 9012 3456" required maxlength="19">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cardName">Name on Card</label>
+                                    <input type="text" id="cardName" class="form-control" placeholder="As on card" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="expiry">Expiry Date</label>
+                                    <input type="text" id="expiry" class="form-control" placeholder="MM/YY" required maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="password" id="cvv" class="form-control" placeholder="123" required maxlength="4">
+                                    <i class="fas fa-eye" id="toggleCvv" style="position: absolute; right: 15px; top: 38px; cursor: pointer; color: var(--text-light); transition: all 0.3s ease;"></i>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="saveCard">
+                                        <input type="checkbox" id="saveCard" style="margin-right: 8px;">
+                                        Save this card for future payments
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- UPI Section -->
+                        <div id="upi-section" class="payment-section" style="display: none;">
+                            <div class="form-group">
+                                <label for="upi-id">UPI ID</label>
+                                <input type="text" id="upi-id" class="form-control" placeholder="yourname@upi">
+                            </div>
+                            <div class="upi-apps" style="display: flex; gap: 10px; margin-top: 15px;">
+                                <div class="upi-app" style="width: 50px; height: 50px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                                    <img src="https://static.cdnlogo.com/logos/g/93/google.svg" alt="Google Pay" style="width: 45px; height: 45px; transition: all 0.3s ease;">
+                                </div>
+                                <div class="upi-app" style="width: 50px; height: 50px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXEKocPBBG-J2PMVfbjC085CqkLiWpQHtQTA&s" alt="PhonePe" style="width: 45px; height: 45px; transition: all 0.3s ease;">
+                                </div>
+                                <div class="upi-app" style="width: 50px; height: 50px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJfhO8jwoBDp-xpdpHGXqMKXmIKDClg5-jZg&s" alt="Paytm" style="width: 45px; height: 45px; transition: all 0.3s ease;">
+                                </div>
+                                <div class="upi-app" style="width: 50px; height: 50px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                                    <img src="https://getlogo.net/wp-content/uploads/2020/10/bharat-interface-for-money-bhim-logo-vector.png" alt="BHIM" style="width: 40px; height: 40px; transition: all 0.3s ease;">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Net Banking Section -->
+                        <div id="netbanking-section" class="payment-section" style="display: none;">
+                            <div class="form-group">
+                                <label for="bank">Select Bank</label>
+                                <select id="bank" class="form-control form-select">
+                                    <option value="">-- Select your bank --</option>
+                                    <option value="sbi">State Bank of India</option>
+                                    <option value="hdfc">HDFC Bank</option>
+                                    <option value="icici">ICICI Bank</option>
+                                    <option value="axis">Axis Bank</option>
+                                    <option value="pnb">Punjab National Bank</option>
+                                    <option value="kotak">Kotak Mahindra Bank</option>
+                                    <option value="yes">Yes Bank</option>
+                                    <option value="indusind">IndusInd Bank</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-block" type="submit" id="submitBtn">
+                        <span id="btnText">Pay & Complete Booking</span>
+                        <span id="btnLoader" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Processing...
+                        </span>
+                    </button>
+                    
+                    <div class="secure-payment-info">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                        </svg>
+                        Your payment is encrypted and secure. We don't store your card details.
+                    </div>
+                </form>
+                
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <div class="trip-details">
+                        <div class="trip-image">
+                            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Bali Adventure">
+                            <div class="trip-badge">Popular</div>
+                        </div>
+                        <div class="trip-title">Bali Adventure Escape</div>
+                        <div class="trip-location">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                            </svg>
+                            Ubud, Seminyak, Nusa Penida
+                        </div>
+                        <div class="trip-date">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                            </svg>
+                            15-22 June 2025 • 7 Nights
+                        </div>
+                        <div class="trip-people">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816C4.82 8.71 4 10.075 4 11.5 4 12.11 4.216 12.715 5.216 14z"/>
+                                <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                            </svg>
+                            2 Adults, 1 Child
+                        </div>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="price-row">
+                        <span class="price-label">Base Price</span>
+                        <span class="price-value">₹60,000</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-label">Taxes & Fees</span>
+                        <span class="price-value">₹4,500</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price-label">Discount</span>
+                        <span class="price-value" style="color: var(--primary)">-₹2,000</span>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="total-row">
+                        <span>Total</span>
+                        <span>₹62,500</span>
+                    </div>
+                    
+                    <form class="promo-form" id="promoForm">
+                        <input type="text" class="form-control" placeholder="Promo code" id="promoCode">
+                        <button type="button" id="applyPromo">Apply</button>
+                    </form>
+                    <div class="helper-text">Have a promo code? Apply to get additional discount</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Help Button -->
+    <div class="help-button" id="helpButton">
+        <i class="fas fa-question"></i>
+    </div>
+
+    <!-- Help Modal -->
+    <div class="modal" id="helpModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 class="modal-title">Need Help?</h3>
+            <p>Our customer support team is available 24/7 to assist you with your booking.</p>
+            <div style="margin-top: 20px;">
+                <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <i class="fas fa-phone-alt" style="margin-right: 10px; color: var(--primary);"></i>
+                    <span>+91 9876543210</span>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <i class="fas fa-envelope" style="margin-right: 10px; color: var(--primary);"></i>
+                    <span>support@travelpay.com</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <i class="fas fa-comment-alt" style="margin-right: 10px; color: var(--primary);"></i>
+                    <span>Live Chat (Click the chat icon)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const paymentMethods = document.querySelectorAll('.payment-method');
+        const paymentSections = document.querySelectorAll('.payment-section');
+        const creditCard = document.getElementById('creditCard');
+        const cardNumberInput = document.getElementById('cardNumber');
+        const cardNameInput = document.getElementById('cardName');
+        const expiryInput = document.getElementById('expiry');
+        const cvvInput = document.getElementById('cvv');
+        const toggleCvv = document.getElementById('toggleCvv');
+        const displayCardNumber = document.getElementById('displayCardNumber');
+        const displayCardName = document.getElementById('displayCardName');
+        const displayCardExpiry = document.getElementById('displayCardExpiry');
+        const displayCardCvv = document.getElementById('displayCardCvv');
+        const paymentForm = document.getElementById('paymentForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnLoader = document.getElementById('btnLoader');
+        const helpButton = document.getElementById('helpButton');
+        const helpModal = document.getElementById('helpModal');
+        const closeModal = document.querySelector('.close-modal');
+        const applyPromo = document.getElementById('applyPromo');
+        const promoCode = document.getElementById('promoCode');
+
+        // Smooth scroll to top on page load
+        window.addEventListener('load', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Payment method toggle
+        paymentMethods.forEach(method => {
+            method.addEventListener('click', () => {
+                paymentMethods.forEach(m => m.classList.remove('active'));
+                method.classList.add('active');
+                
+                const target = method.getAttribute('data-target');
+                paymentSections.forEach(section => {
+                    section.style.display = 'none';
+                });
+                document.getElementById(target).style.display = 'block';
+                
+                // Smooth scroll to the payment section
+                document.getElementById(target).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Card flip on CVV focus
+        cvvInput.addEventListener('focus', () => {
+            creditCard.classList.add('flipped');
+        });
+
+        cvvInput.addEventListener('blur', () => {
+            creditCard.classList.remove('flipped');
+        });
+
+        // Format card number input
+        cardNumberInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+            let formatted = value.match(/.{1,4}/g);
+            e.target.value = formatted ? formatted.join(' ') : value;
+            
+            // Update displayed card number
+            if(value.length > 0) {
+                let visible = value.substring(0, 12).replace(/./g, '•') + value.substring(12);
+                visible = visible.match(/.{1,4}/g).join(' ');
+                displayCardNumber.textContent = visible || '•••• •••• •••• ••••';
+            } else {
+                displayCardNumber.textContent = '•••• •••• •••• ••••';
+            }
+        });
+
+        // Update card name
+        cardNameInput.addEventListener('input', function(e) {
+            displayCardName.textContent = e.target.value.toUpperCase() || 'YOUR NAME';
+        });
+
+        // Update expiry date
+        expiryInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+            if(value.length > 2) {
+                value = value.substring(0,2) + '/' + value.substring(2,4);
+            }
+            e.target.value = value;
+            displayCardExpiry.textContent = value || 'MM/YY';
+        });
+
+        // Toggle CVV visibility
+        toggleCvv.addEventListener('click', function() {
+            if(cvvInput.type === 'password') {
+                cvvInput.type = 'text';
+                displayCardCvv.textContent = cvvInput.value || '•••';
+                this.classList.remove('fa-eye');
+                this.classList.add('fa-eye-slash');
+            } else {
+                cvvInput.type = 'password';
+                displayCardCvv.textContent = '•••';
+                this.classList.remove('fa-eye-slash');
+                this.classList.add('fa-eye');
+            }
+        });
+
+        // Update CVV display when typing
+        cvvInput.addEventListener('input', function(e) {
+            if(cvvInput.type === 'text') {
+                displayCardCvv.textContent = e.target.value || '•••';
+            }
+        });
+
+        // Form submission
+        paymentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoader.style.display = 'inline';
+            submitBtn.disabled = true;
+            
+            // Simulate payment processing
+            setTimeout(() => {
+                // In a real app, you would process payment here
+                alert('Payment successful! Your booking is confirmed.');
+                
+                // Reset button state
+                btnText.style.display = 'inline';
+                btnLoader.style.display = 'none';
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Promo code application
+        applyPromo.addEventListener('click', function() {
+            if(promoCode.value === 'DISCOUNT10') {
+                alert('Promo code applied successfully! You got 10% discount.');
+            } else {
+                alert('Invalid promo code. Please try again.');
+            }
+        });
+
+        // Help modal
+        helpButton.addEventListener('click', function() {
+            helpModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        });
+
+        closeModal.addEventListener('click', function() {
+            helpModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        });
+
+        window.addEventListener('click', function(e) {
+            if(e.target === helpModal) {
+                helpModal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+        });
+
+        // Initialize with credit card section visible
+        document.getElementById('credit-card-section').style.display = 'block';
+
+        // Smooth scroll for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

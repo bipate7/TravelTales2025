@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="TT4.png">
+    <title>Srinagar Delight Tour Package</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+    /* General Styles */
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .hero-section img {
+        width:100%;
+        height:500px;
+        object-fit: cover;
+    }
+
+    .hero-section .text-center {
+        color: white;
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Tour Details Section */
+    .container.my-5 h1 {
+        font-family: 'Montserrat', sans-serif;
+        color: #4a4a4a;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .container.my-5 h2 {
+        color: #00796b;
+        font-weight: bold;
+        font-size: 22px;
+    }
+
+    .container.my-5 p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    /* Booking Card Styling */
+.booking-card {
+    border-radius: 12px;
+    background: linear-gradient(145deg, #ffffff, #f9f9f9);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), inset 0 0 5px rgba(0, 0, 0, 0.05);
+    transition: 0.4s ease-in-out;
+    overflow: hidden;
+    position: relative;
+}
+
+.booking-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Adding a decorative border effect */
+.booking-card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fbc2eb);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.booking-card:hover:before {
+    opacity: 1;
+}
+
+/* Title Section */
+.booking-title h4 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    color: transparent;
+    -webkit-background-clip: text;
+    font-weight: bold;
+}
+
+/* Price Section */
+.price-display {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff5722;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(90deg, #ff5722, #ff9a00);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+.price-display:before {
+    content: "🔥";
+    position: absolute;
+    left: -35px;
+    top: -5px;
+    font-size: 26px;
+    animation: pulse 1.5s infinite;
+    color: #ff5722;
+}
+
+.per-person {
+    font-size: 16px;
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+/* Title Section */
+.booking-title h4 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    color: transparent;
+    -webkit-background-clip: text;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Hover Effect */
+.booking-title h4:hover {
+    color: transparent;
+    -webkit-background-clip: text;
+    background: linear-gradient(90deg, #ff5722, #fbc2eb);
+    animation: text-change 1s forwards;
+}
+
+/* Keyframe Animation for Title */
+@keyframes text-change {
+    0% {
+        content: "Booking Details";
+    }
+    100% {
+        content: "Explore With Us";
+        color: #ff5722;
+    }
+}
+
+/* Price Section */
+.price-display {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff5722;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(90deg, #ff5722, #ff9a00);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+.price-display:before {
+    content: "🔥";
+    position: absolute;
+    left: -35px;
+    top: -5px;
+    font-size: 26px;
+    animation: pulse 1.5s infinite;
+    color: #ff5722;
+}
+
+.per-person {
+    font-size: 16px;
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+
+
+/* Keyframe for Animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+/* Input Fields and Dropdown Styling */
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 10px 14px;
+    transition: 0.3s;
+    background: #fdfdfd;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 8px rgba(108, 99, 255, 0.5);
+}
+
+/* Total Section */
+.total-section {
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+    background: #f3f3f3;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styling */
+.btn-primary {
+    background: linear-gradient(120deg, #007bff, #00c6ff);
+    border: none;
+    padding: 14px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    color: #ffffff;
+    transition: 0.4s ease-in-out;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(120deg, #0056b3, #0096ff);
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.4);
+}
+
+/* Adding Ripple Effect */
+.btn-primary:active {
+    transform: scale(0.98);
+    background: linear-gradient(120deg, #0044a7, #0072e0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .price-display {
+        font-size: 28px;
+    }
+
+    .btn-primary {
+        font-size: 16px;
+        padding: 12px 18px;
+    }
+}
+
+
+/* Keyframe for Animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+/* Input Fields and Dropdown Styling */
+.form-control, .form-select {
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Total Section */
+.total-section {
+    font-size: 18px;
+    color: #333;
+}
+
+
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .price-display {
+        font-size: 28px;
+    }
+
+    .btn-primary {
+        font-size: 14px;
+    }
+}
+
+/* Help Section Styling */
+.help-section {
+    background-color: #e9ecef; /* Light grey background for the container */
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    transition: 0.3s ease;
+}
+
+.help-section:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+}
+
+/* "Get Help" Styling - Smaller Text */
+.help-section h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #6c757d; /* Muted grey */
+}
+
+/* "Need Help To Book?" Styling - Larger Text */
+.help-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #212529; /* Darker grey */
+}
+
+/* Call Icon Styling */
+.call-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* No background color */
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Call Emoji with Pulse Animation */
+.call-emoji {
+    font-size: 35px;
+    animation: pulseCall 1.2s infinite;
+}
+
+/* Keyframes for Pulse Animation */
+@keyframes pulseCall {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0.8;
+    }
+}
+
+/* Contact Info Styling */
+.contact-info {
+    font-size: 16px;
+    color: #333;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.contact-info .text-danger {
+    font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .call-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .call-emoji {
+        font-size: 24px;
+    }
+
+    .help-section h2 {
+        font-size: 30px; /* Adjust headline size for smaller screens */
+    }
+
+    .help-section h4 {
+        font-size: 14px; /* Adjust "Get Help" size for smaller screens */
+    }
+
+    .contact-info .text-danger {
+        font-size: 18px;
+    }
+}
+
+    /* Keyframes for animations */
+        @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    
+/* Basic Information Section */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensures rounded corners are visible */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow for more depth */
+    font-family: 'Arial', sans-serif; /* A clean font */
+}
+
+.table th {
+    background-color: #3f51b5; /* Indigo color */
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    padding: 15px; /* Increased padding for better spacing */
+    letter-spacing: 1px; /* Slight letter spacing for a modern look */
+    text-transform: uppercase; /* Uppercase for headers */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.table th:hover {
+    background-color: #303f9f; /* Darker indigo on hover */
+    transform: scale(1.05); /* Slightly enlarge the header on hover */
+}
+
+.table td {
+    background-color: #e8eaf6; /* Light indigo background */
+    color: #333; /* Darker text for better contrast */
+    padding: 12px; /* Increased padding */
+    position: relative; /* Positioning for pseudo-elements */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.table td:hover {
+    background-color: #c5cae9; /* Darker light indigo on hover */
+    transform: translateY(-2px); /* Slightly lift the cell on hover */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+.table tr {
+    transition: transform 0.3s; /* Smooth transition for row hover */
+}
+
+.table tr:hover {
+    transform: translateY(-4px); /* Lift effect on row hover */
+}
+
+.table tr:nth-child(even) {
+    background-color: #f3f4f6; /* Light gray for even rows */
+}
+
+.table tr:nth-child(odd) {
+    background-color: #ffffff; /* White for odd rows */
+}
+
+/* Adding icons to table cells */
+.table td::before {
+
+    position: absolute;
+    left: 10px; /* Positioning the icon */
+    font-size: 18px; /* Size of the icon */
+    color: #3f51b5; /* Match the header color */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s; /* Transition for icon */
+}
+
+.table td:hover::before {
+    opacity: 1; /* Show icon on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .table {
+        font-size: 14px; /* Smaller font size on mobile */
+    }
+}
+
+    /* Included and Not Included Section */
+    .list-unstyled li {
+        font-size: 16px;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+    }
+
+    .list-unstyled li span {
+        margin-right: 10px;
+    }
+    .icon-green {
+        color: green; /* Green color for included items */
+    }
+    .icon-red {
+        color: red; /* Red color for not included items */
+    }
+    /* Tour Plans Section */
+    .container details {
+        background-color: #f5f7fa;
+        border-radius: 12px; /* More rounded corners */
+        margin-bottom: 20px;
+        margin-top: 20px;
+        padding: 15px 35px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        transition: all 0.3s ease; /* Smooth transition effect */
+    }
+
+    .container details:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow intensifies on hover */
+        transform: translateY(-5px); /* Lift effect */
+    }
+
+    .container summary {
+        font-size: 16px; /* Reduced font size for smaller tab */
+        font-weight: bold;
+        color: #4a4a4a;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        padding-right: 30px; /* Space for the arrow */
+        padding: 10px 15px; /* Slightly reduced padding */
+    }
+
+    /* Custom creative arrow */
+    .container summary::after {
+        content: "";
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 10px solid #4a4a4a; /* Triangle pointing downwards */
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* Rotate the arrow when the details section is open */
+    .container details[open] summary::after {
+        transform: translateY(-50%) rotate(180deg); /* Rotate arrow 180deg when expanded */
+        border-top-color: #ffcc00; /* Change arrow color to gold when open */
+    }   
+
+    /* Paragraph content inside details */
+    .container details p {
+        margin-top: 15px;
+        font-size: 16px;
+        color: #555;
+        line-height: 1.6;
+        padding: 15px;
+        background-color: #e0e0e0;
+        border-radius: 8px;
+        display: none;
+    }
+
+    .container details[open] p {
+        display: block; /* Show paragraph when expanded */
+    }
+
+    /* General Styling */
+    h3.fw-bold {
+        color: #00796b;
+        font-weight: 700;
+    }
+
+    /* FAQ Section */
+    .accordion .accordion-header button {
+        background: #f8f9fa;
+        font-weight: bold;
+        color: #00796b;
+    }
+    .accordion .accordion-header button:hover {
+        background: #00796b;
+        color: #fff;
+    }
+
+    /* Media Gallery */
+    .media-gallery img {
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .media-gallery img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Reviews Section Styles */
+.rating-summary {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.rating-value {
+    font-size: 3rem;
+    color: #ffbb33;
+}
+
+.review-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.reviewer-photo {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.stars {
+    font-size: 1rem;
+    color: #ffbb33;
+}
+
+.review-text {
+    margin-top: 1rem;
+}
+
+
+    /* Individual Reviews */
+    .review {
+        border: 1px solid #ddd;
+        background: #fff;
+        border-radius: 8px;
+        padding: 15px;
+        transition: all 0.3s ease;
+    }
+    .review:hover {
+        background: #f0f8ff;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Reviews Section */
+    .review-card {
+        background-color: #fff;
+        border-radius: 10px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-align: center;
+    }
+
+    .review-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .reviewer-photo {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+    }
+
+    .review-text {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    .stars i {
+        margin-right: 2px;
+    }
+
+    /* Responsive Design */
+        @media (max-width: 768px) {
+    .review-card {
+        margin: 0 auto;
+        }
+    }
+    body {
+        background-color: #f9f9f9;
+    }
+    
+    .rating-summary {
+        background-color: #f8f9fa; /* Light background color */
+        padding: 20px;
+        border: 1px solid #dee2e6; /* Border around the rating summary */
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .rating-value {
+        font-size: 3rem;
+        color: #555;
+    }
+
+    .progress-bars .progress {
+        height: 10px;
+        border-radius: 5px;
+    }
+
+    .review-card {
+        background-color: #fff;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin-top: 20px;
+    }
+
+    .reviewer-photo {
+        width: 80px;
+        height: 80px;
+        margin: 20px auto;
+        border: 3px solid #f8f8f8;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Review Section Styling */
+    .review-section {
+        background-color: #f9f9f9; /* Light background */
+        border: 2px solid #ddd; /* Add border */
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        font-family: 'Poppins', sans-serif; /* Change to a clean and modern font */
+        font-size: 16px; /* Base font size */
+        color: #333; /* Text color */
+    }
+
+    .review-section h2 {
+        color: #4a4a4a;
+        font-size: 28px; /* Larger font for the heading */
+        font-weight: 600; /* Semi-bold for emphasis */
+        color: #222; /* Slightly darker heading color */
+        margin-bottom: 20px;
+    }
+
+    .review-section label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+        font-size: 18px; /* Larger font for labels */
+        color: #444; /* Medium dark text for labels */
+    }
+
+    .review-section input,
+    .review-section textarea {
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        padding: 10px;
+        background-color: #fff;
+        font-size: 16px; /* Adjust input and textarea font size */
+        color: #555; /* Darker input text */
+    }
+    .star-rating {
+        font-size: 45px; /* Slightly larger stars */
+    }
+
+    button[type="submit"] {
+        font-size: 18px; /* Larger text on button */
+        font-weight: 500; /* Medium weight for button text */
+        padding: 12px 24px; /* Larger button for a better click area */
+    }
+    .review-section input:focus,
+    .review-section textarea:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); 
+    }
+
+    /* Add a Review Section */
+    .star-rating {
+        display: flex; /* Align stars in a row */
+        gap: 8px; /* Spacing between stars */
+        font-size: 24px; /* Adjust star size */
+        color: #ddd; /* Default grey for unselected stars */
+        cursor: pointer;
+    }
+
+    .star-rating span {
+        transition: color 0.3s, transform 0.2s; /* Smooth hover and selection */
+    }
+
+    /* Hover effect from left to right */
+    .star-rating span:hover,
+    .star-rating span:hover ~ span {
+        color: #ffcc00; /* Yellow on hover */
+        transform: scale(1.2); /* Slight enlarge effect */
+    }
+
+    /* Make sure selected stars stay yellow */
+    .star-rating span.selected {
+        color: #ffcc00; /* Yellow when selected */
+    }
+
+    /* Submit Button */
+    button[type="submit"] {
+        background-color: #007bff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    /* Similar Tours Section */
+    .scrolling-wrapper {
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    .scrolling-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .package-card {
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        min-width: 250px;
+        max-width: 250px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .package-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .package-card .card-body {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .package-card .btn {
+        margin-top: 10px;
+    }
+
+    .package-card:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s;
+    }
+
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero-section position-relative">
+    <img src="KashirDDDDD.jpg" alt="Srinagar Landscape" class="img-fluid">
+    <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+        <h1 class="display-4 fw-bold">Srinagar Delight Tour Package</h1>
+        <p class="fs-5">Duration: 3 Nights / 4 Days</p>
+        <span class="badge bg-primary">Adventure & Leisure</span>
+    </div>
+</section>
+
+<!-- Tour Details Section -->
+<section class="container my-5">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Srinagar Delight Tour: An Unforgettable Journey Through Kashmir's Beauty</h1>
+            <h2 class="fw-bold">Tour Details</h2>
+            <p>
+                Experience the unparalleled charm of the Kashmir Valley with the Srinagar Delight Tour, a journey meticulously crafted to offer a perfect blend of relaxation, adventure, and cultural exploration. 
+                Nestled in the northern part of India, Srinagar is a picturesque paradise known for its enchanting landscapes, lush gardens, serene lakes, and rich history. 
+                This tour is your gateway to experiencing the timeless beauty and cultural richness of the Kashmir Valley, often referred to as "Paradise on Earth."
+            </p>
+            <br><!-- comment -->
+            <h2>Tour Overview</h2>
+            <p>Embark on a 5-day, 4-night adventure that takes you through the best that Srinagar has to offer. 
+                From tranquil boat rides on Dal Lake to exploring the exquisite Mughal Gardens, this tour ensures a truly magical experience. 
+                Whether you seek relaxation in the midst of natural beauty or wish to immerse yourself in the local culture, the Srinagar Delight Tour promises to be a journey you’ll remember for a lifetime.
+            </p>
+            <h2>Tour Highlights</h2>
+            <p><span style=" font-size: 25px;">&#128675;</span> <b>Houseboat Experience:</b> Stay in a traditional Kashmiri houseboat on Dal Lake for an authentic experience.</p>
+            <p><span style=" font-size: 25px;">&#128676;</span> <b>Shikara Ride:</b> Glide through the peaceful waters of Dal Lake, offering mesmerizing views.</p>
+            <p><span style=" font-size: 25px;">&#127969;</span> <b>Mughal Gardens:</b> Explore the beautifully landscaped Mughal Gardens, a testament to Kashmir’s rich history.</p>
+            <p><span style=" font-size: 25px;">&#127978;</span> <b>Cultural Immersion:</b> Learn about the local culture, shop for unique handicrafts, and taste authentic Kashmiri</p><p>    cuisine.</p>
+            <p><span style=" font-size: 25px;">&#11166;</span> <b>Adventure Options:</b> Choose from exciting excursions to Pahalgam or Gulmarg for a dose of adventure.</p>
+            <p><span style=" font-size: 25px;">&#128507;</span> <b>Scenic Beauty:</b> From snow-capped mountains to lush valleys, enjoy panoramic views of the Kashmir Valley.</p>
+        </div>
+        
+        <!-- Booking Details Dialog Box -->
+<!-- Booking Details Dialog Box -->
+<div class="col-md-4">
+    <div class="card shadow-sm booking-card">
+        <div class="card-body">
+            <!-- Title Section -->
+            <div class="booking-title">
+                <h4 class="fw-bold text-center text-primary">Booking Details</h4>
+            </div>
+
+            <hr>
+            <!-- Price Section -->
+            <div class="price-section text-center mb-4">
+                <h2 class="price-display">₹10,000 <span class="per-person">per person</span></h2>
+            </div>
+            <form>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Select Date</label>
+                    <input type="date" class="form-control" id="date">
+                </div>
+                <div class="mb-3">
+                    <label for="time" class="form-label">Select Time</label>
+                    <select class="form-select" id="time">
+                        <option selected>Select a time</option>
+                        <option>Morning</option>
+                        <option>Afternoon</option>
+                        <option>Evening</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="adults" class="form-label">Adults</label>
+                    <input type="number" class="form-control" id="adults" placeholder="Number of Adults" min="1" max="10">
+                </div>
+                <div class="mb-3">
+                    <label for="kids" class="form-label">Kids</label>
+                    <input type="number" class="form-control" id="kids" placeholder="Number of Kids (5-12 years)" min="0" max="5">
+                </div>
+                <div class="mb-3">
+                    <label for="children" class="form-label">Children</label>
+                    <input type="number" class="form-control" id="children" placeholder="Number of Children (below 5 years)" min="0" max="5">
+                </div>
+                <div class="mb-3">
+                    <label for="services" class="form-label">Additional Services</label>
+                    <select class="form-select" id="services">
+                        <option selected>Select a Service</option>
+                        <option>Photography (₹1,000)</option>
+                        <option>Tour Guide (₹2,000)</option>
+                        <option>Both Photography & Tour Guide (₹2,500)</option>
+                    </select>
+                </div>
+                <hr>
+                <!-- Total Section -->
+                <div class="total-section d-flex justify-content-between align-items-center">
+                    <p class="fw-bold mb-0">Total:</p>
+                    <h3 class="text-danger mb-0">₹10,000</h3>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mt-4">Proceed To Book</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+         
+    </div>
+</section>
+
+<!-- Highlights Section -->
+<div class="container my-5">
+    <div class="row">
+        <!-- Highlights Section (Left) -->
+        <div class="col-md-6">
+            <h3 class="fw-bold">Highlights</h3>
+            <ul>
+                <li><span style="font-size: 25px; color: dodgerblue;">&#11166;</span> Stay in a luxurious houseboat on Dal Lake.</li>
+                <li><span style="font-size: 25px; color: dodgerblue;">&#11166;</span> Enjoy Shikara rides with mesmerizing views of mountains.</li>
+                <li><span style="font-size: 25px; color: dodgerblue;">&#11166;</span> Explore Mughal Gardens: Shalimar Bagh, Nishat Bagh, and Chashme Shahi.</li>
+                <li><span style="font-size: 25px; color: dodgerblue;">&#11166;</span> Relish authentic Kashmiri cuisine: Rogan Josh, Yakhni, and Kahwa.</li>
+                <li><span style="font-size: 25px; color: dodgerblue;">&#11166;</span> Shop for Pashmina shawls and traditional handicrafts.</li>
+                <li><span style="font-size: 25px; color: dodgerblue;">&#11166;</span> Immerse yourself in the rich Kashmiri culture and heritage.</li>
+            </ul>
+        </div>
+
+        <!-- Help Section (Right) -->
+        <div class="col-md-4 offset-md-2">
+    <div class="help-section shadow-sm p-4">
+        <h4 class="fw-semibold text-muted">Get Help</h4> <!-- Smaller size for "Get Help" -->
+        <h2 class="fw-bold mb-3 display-6">Need Help To Book?</h2> <!-- Larger size for "Need Help To Book" -->
+        <p class="text-muted">
+            Our dedicated team of travel experts is here to assist you every step of the way, 
+            ensuring a seamless and unforgettable journey.
+        </p>
+        <div class="d-flex align-items-center mt-4">
+            <!-- Call Icon with Animation -->
+            <div class="call-icon">
+                <span class="call-emoji">📞</span>
+            </div>
+            <!-- Contact Info -->
+            <div class="contact-info ms-3">
+                <p class="fw-bold mb-1">Call Us</p>
+                <p class="text-danger fs-5">+968 9999 9000</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </div>
+</div>
+
+
+<!-- Basic Information -->
+<section class="container my-5">
+    <h3 class="fw-bold">Basic Information</h3>
+    <table class="table">
+        <tr>
+            <th>Destination</th>
+            <td>Srinagar</td>
+        </tr>
+        <tr>
+            <th>Departure</th>
+            <td>Indira Gandhi International Airport, Delhi</td>
+        </tr>
+        <tr>
+            <th>Cost</th>
+            <td>₹10,000 per person</td>
+        </tr>
+        <tr>
+            <th>Accommodation</th>
+            <td>Deluxe Houseboats & Hotels</td>
+        </tr>
+    </table>
+</section>
+
+<!-- Included and Not Included -->
+<section class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="fw-bold">Included</h3>
+            <ul class="list-unstyled">
+                <li><span class="icon-green">&#10004;</span> Deluxe accommodation (houseboat/hotel).</li>
+                <li><span class="icon-green">&#10004;</span> Daily breakfast and dinner.</li>
+                <li><span class="icon-green">&#10004;</span> Transportation for sightseeing.</li>
+                <li><span class="icon-green">&#10004;</span> Shikara rides on Dal Lake.</li>
+                <li><span class="icon-green">&#10004;</span> Entry fees to Mughal Gardens.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h3 class="fw-bold">Not Included</h3>
+            <ul class="list-unstyled">
+                <li><span class="icon-red">&#10008;</span> Airfare to and from Srinagar.</li>
+                <li><span class="icon-red">&#10008;</span> Lunch and snacks.</li>
+                <li><span class="icon-red">&#10008;</span> Personal expenses like shopping or additional activities.</li>
+                <li><span class="icon-red">&#10008;</span> Travel insurance.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Tour Plans -->
+<div class="container">
+        <h1 class="fw-bold">Tour Plans</h1>
+        <details>
+            <summary>Day 1: Arrival in Srinagar & Houseboat Stay</summary>
+            <p>Your journey begins as you arrive in the beautiful city of Srinagar. 
+                    Upon arrival, you will be transferred to a traditional Kashmiri houseboat on Dal Lake, where you'll check in and unwind. 
+                    Enjoy the serene atmosphere as you take in the stunning views of the lake surrounded by snow-capped mountains. 
+                    A leisurely evening awaits you, where you can savor traditional Kashmiri dishes while relaxing on the houseboat.</p>
+        </details>
+        
+        <details>
+            <summary>Day 2: Shikara Ride & Mughal Gardens</summary>
+            <p>Start your day with a <b>Shikara ride</b> on Dal Lake. 
+                    This iconic wooden boat ride will take you through the calm waters, offering stunning views of the floating gardens, lotus flowers, and the backdrop of majestic mountains. 
+                    Later, you will visit the Mughal Gardens, such as <b>Shalimar Bagh, Nishat Bagh, </b>and <b>Chashme Shahi</b>. 
+                    These gardens, built during the Mughal era, are known for their terraced lawns, cascading fountains, and vibrant flowers.</p>
+        </details>
+        
+        <details>
+            <summary>Day 3: Cultural Exploration of Srinagar</summary>
+            <p>Delve deeper into the culture of Srinagar as you explore its vibrant markets and historical landmarks. 
+                    Visit the <b>Shankaracharya Temple</b>, which offers panoramic views of the city, or take a stroll through <b>Lal Chowk</b>, Srinagar's bustling commercial center. 
+                    Explore local handicraft markets to find exquisite <b>Pashmina shawls</b> and <b>Kashmiri carpets</b>, each crafted by skilled artisans. 
+                    Don't forget to try the famous <b>Kashmiri Kahwa</b> and <b>Rogan Josh</b> during your tour.</p>
+        </details>
+        
+        <details>
+            <summary>Day 4: Excursion to Pahalgam or Gulmarg</summary>
+            <p>For those seeking adventure, an optional excursion to <b>Pahalgam</b> or <b>Gulmarg</b> can be added. 
+                    <b>Pahalgam</b>, known for its lush green valleys and flowing rivers, offers activities like horse riding, fishing, and short treks. 
+                    Alternatively, you can head to <b>Gulmarg</b>, the 'Meadow of Flowers,' where you can enjoy activities like skiing (in winter) or a gondola ride to <b>Apharwat Peak</b> for breathtaking views of the surrounding valleys and snow-capped peaks.</p>
+        </details>
+        
+        <details>
+            <summary>Day 5: Srinagar City Tour and Departure</summary>
+            <p>After breakfast, enjoy a peaceful morning by Dal Lake before being transferred to the airport for your departure. 
+                    Carry with you unforgettable memories of the Kashmir Valley, its people, and the serene landscapes that make this region truly unique.</p>
+        </details>
+    </div> 
+<br><br>
+
+<!-- FAQs -->
+<section class="container my-5">
+    <h3 class="fw-bold">Frequently Asked Questions</h3><br><br<br><br>
+    <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faq1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqContent1">
+                    Is airfare included in the package?
+                </button>
+            </h2>
+            <div id="faqContent1" class="accordion-collapse collapse show">
+                <div class="accordion-body">No, airfare is not included.</div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faq2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqContent2">
+                    What is the cancellation policy?
+                </button>
+            </h2>
+            <div id="faqContent2" class="accordion-collapse collapse">
+                <div class="accordion-body">Cancellation is free up to 7 days before departure.</div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faq3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqContent3">
+                    Are meals included in the package?
+                </button>
+            </h2>
+            <div id="faqContent3" class="accordion-collapse collapse">
+                <div class="accordion-body">Yes, breakfast and dinner are included.</div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faq4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqContent4">
+                    Is travel insurance mandatory?
+                </button>
+            </h2>
+            <div id="faqContent4" class="accordion-collapse collapse">
+                <div class="accordion-body">Travel insurance is optional but recommended.</div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faq5">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqContent5">
+                    Can we customize the tour package?
+                </button>
+            </h2>
+            <div id="faqContent5" class="accordion-collapse collapse">
+                <div class="accordion-body">Yes, customization options are available.</div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faq6">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqContent6">
+                    What is the best time to visit?
+                </button>
+            </h2>
+            <div id="faqContent6" class="accordion-collapse collapse">
+                <div class="accordion-body">The best time to visit is from October to March.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Media Gallery -->
+<section class="container my-5">
+    <h3 class="fw-bold">Media Gallery</h3><br>
+    <div class="row g-3">
+        <div class="col-md-4">
+            <img src="https://via.placeholder.com/300" alt="Hotel 1" class="img-fluid rounded">
+        </div>
+        <div class="col-md-4">
+            <img src="https://via.placeholder.com/300" alt="Hotel 2" class="img-fluid rounded">
+        </div>
+        <div class="col-md-4">
+            <img src="https://via.placeholder.com/300" alt="Hotel 3" class="img-fluid rounded">
+        </div>
+        <div class="col-md-4">
+            <img src="https://via.placeholder.com/300" alt="Hotel 4" class="img-fluid rounded">
+        </div>
+        <div class="col-md-4">
+            <img src="https://via.placeholder.com/300" alt="Hotel 5" class="img-fluid rounded">
+        </div>
+        <div class="col-md-4">
+            <img src="https://via.placeholder.com/300" alt="Hotel 6" class="img-fluid rounded">
+        </div>
+    </div>
+</section>
+
+
+    
+<section class="container my-5">
+    <h3 class="fw-bold text-center">Reviews</h3>
+    <div class="container my-5">
+    <!-- Rating Summary -->
+    <div class="row mb-4 rating-summary p-4 shadow-sm">
+        <div class="col-md-6 text-center">
+            <h1 class="rating-value display-3 fw-bold text-warning">4.9</h1>
+            <p class="text-success fw-bold fs-4"> &#128516; Excellent</p>
+            <p>Based on 2100 Reviews</p>
+        </div>
+        <div class="col-md-6">
+            <div class="progress-bars">
+                <div class="mb-2">
+                    <p class="d-flex justify-content-between mb-1"><span>Service</span><span>90%</span></p>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <p class="d-flex justify-content-between mb-1"><span>Accommodation</span><span>80%</span></p>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <p class="d-flex justify-content-between mb-1"><span>Location</span><span>98%</span></p>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 98%;" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div>
+                    <p class="d-flex justify-content-between mb-1"><span>Price</span><span>70%</span></p>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row g-4">
+        <!-- Review 1 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="review-card p-4 shadow text-center">
+                <img src="https://via.placeholder.com/60" alt="John Doe" class="reviewer-photo mb-3 rounded-circle mx-auto">
+                <h5 class="fw-bold">John Doe</h5>
+                <div class="stars d-flex justify-content-center mb-3">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star-half-alt text-warning"></i>
+                </div>
+                <p class="text-muted mb-1">Traveler</p>
+                <p class="review-text">The trip was amazing! I went for the <em>Kashmir Delight Tour</em>. The accommodations were comfortable, and the Shikara ride was unforgettable. Highly recommend!</p>
+            </div>
+        </div>
+        <!-- Review 2 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="review-card p-4 shadow text-center">
+                <img src="https://via.placeholder.com/60" alt="Jane Smith" class="reviewer-photo mb-3 rounded-circle mx-auto">
+                <h5 class="fw-bold">Jane Smith</h5>
+                <p class="text-muted mb-1">Adventure Enthusiast</p>
+                <div class="stars d-flex justify-content-center mb-3">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                </div>
+                <p class="review-text">Truly a mesmerizing experience! I took the <em>Himalayan Adventure Tour</em>. The views were stunning, and the hospitality was top-notch.</p>
+            </div>
+        </div>
+        <!-- Review 3 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="review-card p-4 shadow">
+                <img src="https://via.placeholder.com/60" alt="Emily Johnson" class="reviewer-photo mb-3">
+                <h5 class="fw-bold">Emily Johnson</h5>
+                <p class="text-muted mb-1">Solo Traveler</p>
+                <p class="review-text">A once-in-a-lifetime trip! The planning was seamless, and the locations were breathtaking.</p>
+                <div class="stars">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                </div>
+            </div>
+        </div>
+        <!-- Additional Reviews -->
+        <div class="col-md-6 col-lg-4">
+            <div class="review-card p-4 shadow">
+                <img src="https://via.placeholder.com/60" alt="Michael Brown" class="reviewer-photo mb-3">
+                <h5 class="fw-bold">Michael Brown</h5>
+                <p class="text-muted mb-1">Backpacker</p>
+                <p class="review-text">Affordable yet luxurious! This trip exceeded my expectations in every way.</p>
+                <div class="stars">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="review-card p-4 shadow">
+                <img src="https://via.placeholder.com/60" alt="Sarah Lee" class="reviewer-photo mb-3">
+                <h5 class="fw-bold">Sarah Lee</h5>
+                <p class="text-muted mb-1">Family Traveler</p>
+                <p class="review-text">Perfect for families! The activities were engaging, and the guides were very friendly.</p>
+                <div class="stars">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add a Review Section -->
+<section class="container my-5">
+    <h3 class="fw-bold">Add a Reviews</h3>
+</section>
+<section class="review-section container my-5 p-4 border rounded">
+    
+    <form>
+        <div class="row">
+            <!-- Service -->
+            <div class="col-md-6 mb-3">
+                <label for="service-rating" class="fw-bold">Service</label>
+                <div class="star-rating" id="service-rating">
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                </div>
+            </div>
+
+            <!-- Accommodation -->
+            <div class="col-md-6 mb-3">
+                <label for="accommodation-rating" class="fw-bold">Accommodation</label>
+                <div class="star-rating" id="accommodation-rating">
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Location -->
+            <div class="col-md-6 mb-3">
+                <label for="location-rating" class="fw-bold">Location</label>
+                <div class="star-rating" id="location-rating">
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                </div>
+            </div>
+
+            <!-- Price -->
+            <div class="col-md-6 mb-3">
+                <label for="price-rating" class="fw-bold">Price</label>
+                <div class="star-rating" id="price-rating">
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                    <span>&#9734;</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Name -->
+            <div class="col-md-6 mb-3">
+                <label for="name" class="fw-bold">Your Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="col-md-6 mb-3">
+                <label for="email" class="fw-bold">Your Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Review Title -->
+            <div class="col-md-12 mb-3">
+                <label for="review-title" class="fw-bold">Review Title</label>
+                <input type="text" class="form-control" id="review-title" placeholder="Enter your review title" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Review Writing -->
+            <div class="col-md-12 mb-4">
+                <label for="review-text" class="fw-bold">Your Review</label>
+                <textarea class="form-control" id="review-text" rows="4" placeholder="Write your review here..." required></textarea>
+            </div>
+        </div>
+
+        <div class="text-start">
+            <button type="submit" class="btn btn-primary px-4">Submit Review</button>
+        </div>
+    </form>
+</section>
+
+<!-- Similar Tours Section -->
+<section class="container my-5">
+    <h3 class="fw-bold">Similar Tours</h3>
+    <div class="scrolling-wrapper">
+        <!-- Package Card 1 -->
+<div class="package-card">
+    <img src="tour1.jpg" alt="Tour 1" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">Beautiful Kashmir</h5>
+        <p class="card-text">4 Days 3 Nights <br> ₹15,999 per person</p>
+        <a href="#" class="btn btn-outline-primary">View Details</a>
+    </div>
+</div>
+
+<!-- Package Card 2 -->
+<div class="package-card">
+    <img src="tour2.jpg" alt="Tour 2" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">Splendid Himachal</h5>
+        <p class="card-text">5 Days 4 Nights <br> ₹18,999 per person</p>
+        <a href="#" class="btn btn-outline-primary">View Details</a>
+    </div>
+</div>
+
+<!-- Package Card 3 -->
+<div class="package-card">
+    <img src="tour3.jpg" alt="Tour 3" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">Rajasthan Heritage</h5>
+        <p class="card-text">6 Days 5 Nights <br> ₹20,999 per person</p>
+        <a href="#" class="btn btn-outline-primary">View Details</a>
+    </div>
+</div>
+
+<!-- Package Card 4 -->
+<div class="package-card">
+    <img src="tour4.jpg" alt="Tour 4" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">Magical Leh Ladakh</h5>
+        <p class="card-text">7 Days 6 Nights <br> ₹22,999 per person</p>
+        <a href="#" class="btn btn-outline-primary">View Details</a>
+    </div>
+</div>
+
+<!-- Package Card 5 -->
+<div class="package-card">
+    <img src="tour5.jpg" alt="Tour 5" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">Mystic Northeast India</h5>
+        <p class="card-text">5 Days 4 Nights <br> ₹19,999 per person</p>
+        <a href="#" class="btn btn-outline-primary">View Details</a>
+    </div>
+</div>
+
+<!-- Package Card 6 -->
+<div class="package-card">
+    <img src="tour6.jpg" alt="Tour 6" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">Exotic Andaman</h5>
+        <p class="card-text">4 Days 3 Nights <br> ₹17,999 per person</p>
+        <a href="#" class="btn btn-outline-primary">View Details</a>
+    </div>
+</div>
+
+<!-- Package Card 7 -->
+<div class="package-card">
+    <img src="tour7.jpg" alt="Tour 7" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">Goa Beach Getaway</h5>
+        <p class="card-text">3 Days 2 Nights <br> ₹10,999 per person</p>
+        <a href="#" class="btn btn-outline-primary">View Details</a>
+    </div>
+</div>
+
+<!-- Package Card 8 -->
+<div class="package-card">
+    <img src="tour8.jpg" alt="Tour 8" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">Charming Kerala</h5>
+        <p class="card-text">6 Days 5 Nights <br> ₹21,999 per person</p>
+        <a href="#" class="btn btn-outline-primary">View Details</a>
+    </div>
+</div>
+
+<!-- Package Card 9 -->
+<div class="package-card">
+    <img src="tour9.jpg" alt="Tour 9" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">Cultural Punjab</h5>
+        <p class="card-text">4 Days 3 Nights <br> ₹16,999 per person</p>
+        <a href="#" class="btn btn-outline-primary">View Details</a>
+    </div>
+</div>
+
+<!-- Package Card 10 -->
+<div class="package-card">
+    <img src="tour10.jpg" alt="Tour 10" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">Adventurous Uttarakhand</h5>
+        <p class="card-text">5 Days 4 Nights <br> ₹18,499 per person</p>
+        <a href="#" class="btn btn-outline-primary">View Details</a>
+    </div>
+</div>
+
+        <!-- Add more package cards as needed -->
+    </div>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
+

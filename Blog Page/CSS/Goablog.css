@@ -1,0 +1,1004 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 6 Nov, 2025, 1:10:52 AM
+    Author     : VICTUS
+*/
+
+:root {
+            --tt-primary: #2A5C8B;  /* TravelTales blue */
+            --tt-secondary: #F7A325;  /* TravelTales orange */
+            --tt-accent: #4FB477;  /* TravelTales green */
+            --tt-dark: #1A2E40;
+            --tt-light: #F5F9FC;
+            --tt-text: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&family=Libre+Baskerville:ital@1&display=swap');
+        
+        body {
+            background-color: var(--tt-light);
+            color: var(--tt-text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* TravelTales Header */
+        .tt-header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            color: white;
+            position: relative;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        /* Navbar Styles */
+        .tt-navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+            z-index: 1000;
+            transition: all 0.5s ease;
+        }
+
+        .tt-navbar.scrolled {
+            background: rgba(42, 92, 139, 0.95);
+            padding: 10px 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Logo Styles */
+        .tt-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .tt-logo-img {
+            width: 80px;
+            height: 110px;
+            margin-right: 12px;
+            border-radius: 50%;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+
+        .tt-logo span {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .tt-logo span span {
+            color: var(--tt-secondary);
+        }
+
+        .tt-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .tt-logo:hover .tt-logo-img {
+            transform: rotate(15deg);
+        }
+
+        /* Navigation Links */
+        .tt-nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .tt-nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .tt-nav-links a:hover {
+            color: var(--tt-secondary);
+        }
+
+        .tt-nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--tt-secondary);
+            transition: width 0.3s ease;
+        }
+
+        .tt-nav-links a:hover:after {
+            width: 100%;
+        }
+
+        /* Mobile Menu Toggle (for responsive design) */
+        .tt-menu-toggle {
+            display: none;
+            cursor: pointer;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .tt-navbar {
+        padding: 15px 20px;
+    }
+    
+    .tt-nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(42, 92, 139, 0.98);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 30px;
+        transition: all 0.5s ease;
+    }
+    
+    .tt-nav-links.active {
+        left: 0;
+    }
+    
+    .tt-nav-links a {
+        margin: 15px 0;
+        font-size: 1.2rem;
+    }
+    
+    .tt-menu-toggle {
+        display: block;
+    }
+    
+    .tt-logo-img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .tt-logo span {
+        font-size: 1.5rem;
+    }
+}
+        /* TravelTales Blog Content */
+        .tt-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+        
+        .tt-breadcrumb {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            color: var(--tt-primary);
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .tt-breadcrumb a {
+            color: var(--tt-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .tt-breadcrumb a:hover {
+            text-decoration: underline;
+            color: var(--tt-secondary);
+        }
+        
+        .tt-blog-intro {
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 20px;
+            color: var(--tt-dark);
+            animation: slideUp 1s ease-out 0.5s both;
+        }
+        
+        .tt-blog-intro:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: var(--tt-secondary);
+            animation: slideUp 1s ease-out 0.7s both;
+        }
+        
+        .tt-section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            margin: 60px 0 30px;
+            color: var(--tt-primary);
+            position: relative;
+            padding-bottom: 15px;
+            animation: slideUp 1s ease-out;
+        }
+        
+        .tt-section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--tt-secondary), var(--tt-accent));
+            animation: slideUp 1s ease-out 0.3s both;
+        }
+        
+        /* TravelTales Post Card */
+        .tt-post {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 60px;
+            transition: all 0.4s ease;
+            border-left: 4px solid var(--tt-primary);
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .tt-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            border-left: 4px solid var(--tt-secondary);
+        }
+        
+        .tt-post-image {
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .tt-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .tt-post:hover .tt-post-image img {
+            transform: scale(1.05);
+        }
+        
+        .tt-image-caption {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(42, 92, 139, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            animation: slideUp 0.5s ease-out 0.5s both;
+        }
+        
+        .tt-post-content {
+            padding: 35px;
+        }
+        
+        .tt-post-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--tt-primary);
+        }
+        
+        .tt-post-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: var(--tt-accent);
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+        
+        .tt-post-meta span {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .tt-post-meta span:hover {
+            color: var(--tt-secondary);
+            transform: translateX(5px);
+        }
+        
+        .tt-post-meta i {
+            margin-right: 5px;
+        }
+        
+        .tt-post-excerpt {
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+        
+        .tt-read-more {
+            display: inline-block;
+            color: var(--tt-primary);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid var(--tt-secondary);
+            padding-bottom: 3px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .tt-read-more:hover {
+            color: var(--tt-accent);
+            border-bottom-color: var(--tt-accent);
+            transform: translateX(5px);
+        }
+        
+        .tt-read-more:after {
+            content: '→';
+            position: absolute;
+            right: -15px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .tt-read-more:hover:after {
+            right: -20px;
+            opacity: 1;
+        }
+        
+        /* TravelTales Pull Quote */
+        .tt-pull-quote {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: var(--tt-primary);
+            border-left: 4px solid var(--tt-secondary);
+            padding: 20px 30px;
+            margin: 30px 0;
+            background: rgba(247, 163, 37, 0.1);
+            font-style: italic;
+            animation: fadeIn 1s ease-out;
+            position: relative;
+        }
+        
+        .tt-pull-quote:before, .tt-pull-quote:after {
+            content: '"';
+            font-family: serif;
+            font-size: 3rem;
+            color: rgba(247, 163, 37, 0.2);
+            position: absolute;
+        }
+        
+        .tt-pull-quote:before {
+            top: 0;
+            left: 10px;
+        }
+        
+        .tt-pull-quote:after {
+            bottom: -20px;
+            right: 10px;
+        }
+        
+        /* TravelTales Tips Box */
+        .tt-tip {
+            background: rgba(79, 180, 119, 0.1);
+            border-left: 4px solid var(--tt-accent);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 4px 4px 0;
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        .tt-tip h4 {
+            color: var(--tt-accent);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tt-tip h4:before {
+            content: '✈';
+            margin-right: 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* TravelTales Gallery Grid */
+        .tt-photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .tt-grid-item {
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+            position: relative;
+            transition: all 0.3s ease;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .tt-grid-item:hover {
+            transform: scale(0.98);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .tt-grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .tt-grid-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* TravelTales Newsletter */
+        .tt-newsletter {
+            background: linear-gradient(135deg, var(--tt-primary), var(--tt-dark));
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 60px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2s ease-in-out infinite alternate;
+        }
+        
+        .tt-newsletter:before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .tt-newsletter h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tt-newsletter p {
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tt-newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tt-newsletter-form input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .tt-newsletter-form input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(247, 163, 37, 0.3);
+        }
+        
+        .tt-newsletter-form button {
+            background: var(--tt-secondary);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .tt-newsletter-form button:hover {
+            background: var(--tt-accent);
+            transform: scale(1.05);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--tt-secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--tt-primary);
+            transform: translateY(-5px);
+        }
+        
+        /* Footer */
+        .custom-footer {
+            background: linear-gradient(135deg, #1b1f24, #2c3e50);
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            position: relative;
+            padding-top: 0;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .wave-divider svg {
+            display: block;
+            width: 100%;
+            height: 80px;
+            margin-bottom: -5px;
+        }
+        
+        .footer-logo img {
+            height: 90px;
+            margin-bottom: 15px;
+            object-fit: contain;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 60px 10% 20px;
+            gap: 40px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .footer-brand {
+            flex: 1 1 250px;
+        }
+
+        .footer-brand h2 {
+            color: #ff8243;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            color: #ff8243;
+            margin-right: 10px;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .social-icons a:hover {
+            color: #fff;
+            transform: translateY(-5px) scale(1.2);
+        }
+
+        .footer-links,
+        .footer-contact,
+        .newsletter {
+            flex: 1 1 200px;
+        }
+
+        .footer-links h4,
+        .footer-contact h4,
+        .newsletter h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #ff8243;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h4:after,
+        .footer-contact h4:after,
+        .newsletter h4:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #ff8243;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .footer-links ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background: #ff8243;
+            transition: width 0.3s ease;
+        }
+        
+        .footer-links ul li a:hover {
+            color: #fff;
+            padding-left: 5px;
+        }
+        
+        .footer-links ul li a:hover:after {
+            width: 100%;
+        }
+
+        .footer-contact p {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            color: #ddd;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 8px;
+            color: #ff8243;
+            min-width: 20px;
+        }
+
+        .newsletter form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .newsletter input {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter input:focus {
+            box-shadow: 0 0 0 3px rgba(255, 130, 67, 0.3);
+        }
+
+        .newsletter button {
+            padding: 10px 15px;
+            background-color: #ff8243;
+            border: none;
+            color: white;
+            font-size: 0.95rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter button:hover {
+            background-color: #fff;
+            color: #ff8243;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 25px 10%;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        .footer-bottom span {
+            color: #ff8243;
+            font-weight: 600;
+        }
+        
+        .footer-bottom strong {
+            color: #ff8243;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-bottom strong:hover {
+            color: #fff;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            } 
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Parallax Effect */
+        .tt-parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 60px 0;
+        }
+        
+        .tt-parallax-content {
+            background: rgba(42, 92, 139, 0.8);
+            color: white;
+            padding: 30px;
+            max-width: 600px;
+            border-radius: 8px;
+            text-align: center;
+            animation: slideUp 1s ease-out;
+        }
+        
+        /* Floating Elements */
+        .tt-floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            color: rgba(255,255,255,0.3);
+            animation: float 5s ease-in-out infinite;
+            z-index: 1;
+        }
+        
+        .tt-floating-icon:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .tt-floating-icon:nth-child(2) {
+            top: 60%;
+            left: 15%;
+            animation-delay: 1s;
+        }
+        
+        .tt-floating-icon:nth-child(3) {
+            top: 30%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+        
+        .tt-floating-icon:nth-child(4) {
+            top: 70%;
+            right: 15%;
+            animation-delay: 3s;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .tt-nav-links a {
+                margin-left: 15px;
+            }
+            
+            .tt-blog-title {
+                font-size: 3rem;
+            }
+            
+            .tt-post-image {
+                height: 300px;
+            }
+            
+            .tt-photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .tt-parallax {
+                background-attachment: scroll;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tt-navbar {
+                padding: 15px 20px;
+                flex-direction: column;
+            }
+            
+            .tt-nav-links {
+                margin-top: 15px;
+            }
+            
+            .tt-nav-links a {
+                margin: 0 10px;
+            }
+            
+            .tt-blog-title {
+                font-size: 2.5rem;
+            }
+            
+            .tt-tagline {
+                font-size: 1.1rem;
+            }
+            
+            .tt-container {
+                padding: 40px 20px;
+            }
+            
+            .tt-post-content {
+                padding: 25px;
+            }
+            
+            .tt-newsletter {
+                padding: 30px 20px;
+            }
+            
+            .tt-newsletter-form {
+                flex-direction: column;
+            }
+            
+            .tt-newsletter-form input {
+                border-radius: 30px;
+                margin-bottom: 10px;
+            }
+            
+            .tt-newsletter-form button {
+                border-radius: 30px;
+                padding: 10px;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .footer-links ul li a:hover {
+                padding-left: 0;
+            }
+            
+            .footer-contact p {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tt-blog-title {
+                font-size: 2rem;
+            }
+            
+            .tt-byline {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .tt-author-avatar {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .tt-photo-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tt-post-image {
+                height: 250px;
+            }
+            
+            .tt-section-title {
+                font-size: 1.6rem;
+                margin: 40px 0 20px;
+            }
+            
+            .tt-post-title {
+                font-size: 1.4rem;
+            }
+            
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Pay - Complete Your Booking</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* --- Variables and Base Styles --- */
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #4338ca;
+      --secondary: #10b981;
+      --accent: #f59e0b;
+      --danger: #ef4444;
+      --light-bg: #f9fafb;
+      --border: #e5e7eb;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --card-glass: rgba(255,255,255,0.18);
+      --card-glass-border: rgba(255,255,255,0.28);
+      --card-glass-blur: blur(10px);
+      --shadow: 0 8px 32px 0 rgba(31, 41, 55, 0.18);
+    }
+    html, body {
+      min-height: 100%;
+      background: linear-gradient(135deg, #4f46e5 0%, #818cf8 100%);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      background-blend-mode: lighten;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    header {
+      background: rgba(255,255,255,0.98);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 16px rgba(31,41,55,0.07);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      animation: fadeInDown 0.7s;
+    }
+    .header-content {
+      display: flex; justify-content: space-between; align-items: center; padding: 18px 0;
+    }
+    .logo {
+      display: flex; align-items: center; font-weight: 700; font-size: 2rem;
+      color: var(--primary); font-family: 'Montserrat', sans-serif; letter-spacing: 1px; gap: 8px;
+      text-shadow: 0 2px 8px rgba(79,70,229,0.08);
+    }
+    .logo-icon { font-size: 2.2rem; filter: drop-shadow(0 2px 4px #c7d2fe);}
+    .secure-badge {
+      display: flex; align-items: center; color: var(--text-light); font-size: 1rem; font-weight: 500; gap: 6px;
+      background: var(--light-bg); padding: 6px 16px; border-radius: 18px; box-shadow: 0 2px 8px #e0e7ff44;
+      letter-spacing: 0.3px;
+    }
+    .secure-icon { color: var(--secondary); font-size: 1.2em; }
+    main { padding: 48px 0 32px 0; min-height: 90vh; }
+
+    /* --- Progress Bar --- */
+    .checkout-progress {
+      display: flex; justify-content: space-between; margin-bottom: 40px; position: relative; animation: fadeInUp 0.9s;
+    }
+    .checkout-progress::before {
+      content: ''; position: absolute; top: 20px; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--primary) 60%, var(--border) 0%);
+      z-index: 1; border-radius: 4px; transition: background 0.5s;
+    }
+    .progress-step {
+      position: relative; z-index: 2; text-align: center; flex: 1; min-width: 90px; transition: color 0.3s;
+    }
+    .step-number {
+      width: 38px; height: 38px; background: var(--light-bg); border: 2.5px solid var(--border);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1.2rem; margin: 0 auto 8px; box-shadow: 0 2px 8px #c7d2fe22;
+      transition: background 0.4s, border 0.4s, color 0.4s;
+    }
+    .progress-step.active .step-number {
+      background: var(--primary); border-color: var(--primary); color: #fff; animation: pulse 1.3s infinite alternate;
+    }
+    .progress-step.completed .step-number {
+      background: var(--secondary); border-color: var(--secondary); color: #fff;
+    }
+    .step-label { font-size: 1rem; color: var(--text-light); text-align: center; font-weight: 500; transition: color 0.3s; }
+    .progress-step.active .step-label { color: var(--primary); font-weight: 600; }
+    .progress-step.completed .step-label { color: var(--secondary); font-weight: 600; }
+
+    /* --- Layout --- */
+    .checkout-container { display: flex; gap: 36px; animation: fadeInUp 1.1s; flex-wrap: wrap;}
+    .checkout-form {
+      flex: 3; background: rgba(255,255,255,0.97); border-radius: 18px; box-shadow: var(--shadow);
+      padding: 38px 32px 32px 32px; position: relative; overflow: hidden; animation: fadeInLeft 1.2s; min-width: 320px;
+    }
+    .order-summary {
+      flex: 2; background: rgba(255,255,255,0.97); border-radius: 18px; box-shadow: var(--shadow);
+      padding: 32px 28px; height: fit-content; animation: fadeInRight 1.2s; min-width: 280px;
+    }
+    @media (max-width: 900px) {
+      .checkout-container { flex-direction: column; gap: 24px;}
+      .checkout-form, .order-summary { min-width: 0; width: 100%;}
+    }
+    .section-title {
+      font-size: 1.3rem; font-weight: 700; margin-bottom: 18px; color: var(--primary-dark);
+      font-family: 'Montserrat', sans-serif; letter-spacing: 0.5px;
+    }
+    .form-section { margin-bottom: 32px; }
+    .form-row { display: flex; gap: 18px; margin-bottom: 18px; flex-wrap: wrap; }
+    .form-group { flex: 1; margin-bottom: 0; min-width: 160px; }
+    .form-group label {
+      display: block; margin-bottom: 7px; font-size: 1rem; font-weight: 600; color: var(--primary-dark); letter-spacing: 0.2px;
+    }
+    .form-control, .form-select {
+      width: 100%; padding: 14px 16px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 1rem;
+      background: #f3f4f6; transition: border 0.25s, box-shadow 0.25s; font-family: inherit; margin-bottom: 0;
+    }
+    .form-control:focus, .form-select:focus {
+      outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px #818cf833; background: #fff;
+    }
+    .form-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236B7280' viewBox='0 0 16 16'%3E%3Cpath d='M8 10.5a.5.5 0 0 1-.354-.146l-4-4a.5.5 0 0 1 .708-.708L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4A.5.5 0 0 1 8 10.5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 16px center;
+    }
+
+    /* --- Payment Methods --- */
+    .payment-methods { display: flex; gap: 14px; margin-bottom: 26px; flex-wrap: wrap; }
+    .payment-method {
+      flex: 1; min-width: 120px; border: 1.5px solid var(--border); border-radius: 10px; padding: 16px 0 10px 0;
+      text-align: center; cursor: pointer; transition: all 0.25s; position: relative; background: #f3f4f6;
+      font-weight: 600; font-size: 1.08rem; box-shadow: 0 2px 8px #818cf81a; user-select: none;
+    }
+    .payment-method.active {
+      border-color: var(--primary); background: linear-gradient(90deg, #ede9fe 0%, #f3f4f6 100%);
+      box-shadow: 0 6px 24px #4f46e520; transform: translateY(-3px) scale(1.04);
+    }
+    .payment-method:hover:not(.active) {
+      border-color: var(--primary-dark); background: #e0e7ff; transform: translateY(-2px) scale(1.02);
+    }
+    .payment-method-icon { font-size: 2rem; margin-bottom: 8px; color: var(--text-light); transition: color 0.3s; display: block;}
+    .payment-method.active .payment-method-icon { color: var(--primary); animation: bounce 0.7s;}
+    /* Card Icons */
+    .card-icons { display: flex; gap: 10px; margin-bottom: 18px; margin-top: 2px;}
+    .card-icon {
+      width: 42px; height: 28px; border: 1.5px solid var(--border); border-radius: 5px; display: flex;
+      align-items: center; justify-content: center; font-size: 1.3rem; color: var(--text-light); background: #fff;
+      box-shadow: 0 2px 6px #818cf81a;
+    }
+
+    /* --- Button --- */
+    .btn {
+      display: inline-block; padding: 16px 32px; background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: #fff; border: none; border-radius: 10px; font-size: 1.1rem; font-weight: 700; cursor: pointer;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s; text-align: center; box-shadow: 0 4px 18px #4f46e540;
+      margin-top: 12px; letter-spacing: 0.6px; position: relative; overflow: hidden;
+    }
+    .btn:active { transform: scale(0.98);}
+    .btn:hover, .btn:focus {
+      background: linear-gradient(90deg, var(--primary-dark), var(--secondary));
+      box-shadow: 0 6px 24px #4f46e550;
+    }
+    .btn-block { display: block; width: 100%; }
+    .btn.loading { pointer-events: none; opacity: 0.7; }
+    .btn .spinner {
+      display: inline-block; width: 18px; height: 18px; border: 2.5px solid #fff; border-radius: 50%;
+      border-top-color: var(--secondary); animation: spin 0.7s linear infinite; vertical-align: middle; margin-left: 10px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* --- Credit Card Glassmorphism --- */
+    .card-wrapper { perspective: 1200px; margin-bottom: 24px; width: 100%; max-width: 390px; margin-left: auto; margin-right: auto; transition: transform 0.5s cubic-bezier(.22,1,.36,1);}
+    .credit-card {
+      width: 100%; max-width: 390px; height: 210px; background: linear-gradient(120deg, #4f46e5 0%, #818cf8 100%);
+      border-radius: 18px; padding: 30px 26px 20px 26px; color: #fff; position: relative; box-shadow: 0 10px 32px rgba(31,41,55,0.22);
+      overflow: hidden; font-family: 'Montserrat', 'Inter', sans-serif; border: 1.5px solid var(--card-glass-border);
+      backdrop-filter: var(--card-glass-blur); background-clip: padding-box; transition: transform 0.5s cubic-bezier(.22,1,.36,1), box-shadow 0.5s; animation: cardFadeIn 1.1s;
+    }
+    .card-wrapper:hover .credit-card { transform: rotateY(8deg) scale(1.025) rotateZ(-1deg); box-shadow: 0 16px 48px #4f46e555;}
+    .card-bg-shine {
+      position: absolute; top: -40px; left: -60px; width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.05) 80%, transparent 100%);
+      filter: blur(2px); z-index: 1; pointer-events: none; animation: shineMove 2.8s infinite alternate;
+    }
+    .card-chip-outer { width: 48px; height: 36px; border-radius: 8px; background: linear-gradient(120deg, #d7d2cc 0%, #304352 100%); margin-bottom: 18px; position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.12);}
+    .card-chip-inner { width: 28px; height: 22px; border-radius: 4px; background: linear-gradient(90deg, #fffbe7 0%, #cfcfcf 100%); position: absolute; left: 10px; top: 7px;}
+    .card-chip-lines {
+      position: absolute; left: 8px; top: 0; width: 32px; height: 36px;
+      background: repeating-linear-gradient(to bottom, transparent, transparent 4px, rgba(255,255,255,0.3) 4px, rgba(255,255,255,0.3) 6px);
+      border-radius: 8px;
+    }
+    .contactless-icon { position: absolute; top: 32px; right: 28px; z-index: 2; opacity: 0.8; animation: fadeIn 1.5s;}
+    .card-number {
+      font-size: 1.28rem; letter-spacing: 2.5px; margin-bottom: 24px; font-family: 'Courier New', monospace;
+      position: relative; z-index: 2; text-shadow: 0 1px 2px rgba(0,0,0,0.12); font-weight: 600; animation: flicker 1.6s;
+    }
+    .emboss { text-shadow: 1px 1px 0 #fff3, 0 2px 4px #0002; letter-spacing: 2.5px; font-weight: 700;}
+    .card-holder-label, .card-expiry-label { font-size: 10px; text-transform: uppercase; opacity: 0.85; letter-spacing: 1.2px;}
+    .card-holder, .card-expiry { font-size: 15px; font-weight: 600; letter-spacing: 1.2px; margin-bottom: 2px;}
+    .card-brand { margin-left: 10px; margin-bottom: 2px; z-index: 2;}
+
+    /* --- Order Summary --- */
+    .trip-details {
+      border: 1.5px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 30px; background: #f3f4f6;
+      position: relative; box-shadow: 0 2px 8px #818cf81a; animation: fadeInUp 1.25s;
+    }
+    .trip-image {
+      width: 100%; height: 160px; background-color: #DDD; border-radius: 10px; margin-bottom: 16px; position: relative;
+      overflow: hidden; background-size: cover; background-position: center; box-shadow: 0 4px 16px #818cf81a;
+    }
+    .trip-image::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50%;
+      background: linear-gradient(to top, rgba(0,0,0,0.2), transparent); z-index: 1;
+    }
+    .trip-title { font-weight: 700; font-size: 1.2rem; margin-bottom: 6px; color: var(--primary); font-family: 'Montserrat', sans-serif;}
+    .trip-date { color: var(--text-light); font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center;}
+    .trip-date::before { content: '🗓️'; margin-right: 5px;}
+    .trip-people { display: flex; align-items: center; color: var(--text-light); font-size: 1rem;}
+    .divider { height: 1.5px; background-color: var(--border); margin: 18px 0; border-radius: 2px;}
+    .price-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1.05rem;}
+    .price-label { color: var(--text-light);}
+    .price-value { font-weight: 600;}
+    .total-row { display: flex; justify-content: space-between; font-weight: 700; font-size: 1.2rem; margin-top: 20px; color: var(--primary);}
+    .promo-form { display: flex; gap: 8px; margin-top: 18px;}
+    .promo-form input { flex: 1; font-size: 1rem;}
+    .promo-form button {
+      padding: 12px 18px; background: var(--light-bg); color: var(--text); border: 1.5px solid var(--border);
+      border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.2s;
+    }
+    .promo-form button:hover { background: #ede9fe; color: var(--primary); border-color: var(--primary);}
+    .helper-text { color: var(--text-light); font-size: 1rem; margin-top: 8px; font-weight: 500;}
+    .secure-payment-info {
+      display: flex; align-items: center; gap: 10px; margin-top: 28px; padding: 14px; background: var(--light-bg);
+      border-radius: 8px; font-size: 1rem; color: var(--text-light); font-weight: 500; box-shadow: 0 2px 8px #818cf81a; animation: fadeIn 2s;
+    }
+
+    /* --- Animations --- */
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px);} to { opacity: 1; transform: none;} }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px);} to { opacity: 1; transform: none;} }
+    @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-40px);} to { opacity: 1; transform: none;} }
+    @keyframes fadeInRight { from { opacity: 0; transform: translateX(40px);} to { opacity: 1; transform: none;} }
+    @keyframes pulse { to { box-shadow: 0 0 0 8px #4f46e530; } }
+    @keyframes bounce { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-8px);} }
+    @keyframes cardFadeIn { from { opacity: 0; transform: scale(0.96);} to { opacity: 1; transform: none;} }
+    @keyframes shineMove { from { left: -60px;} to { left: 80px;} }
+    @keyframes flicker { 0%,100% { opacity: 1;} 50% { opacity: 0.8;} }
+    @keyframes fadeIn { from { opacity: 0;} to { opacity: 1;} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo"><span class="logo-icon">🌍</span>TravelPay</div>
+      <div class="secure-badge"><span class="secure-icon">🔒</span> Secure Checkout</div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="checkout-progress">
+        <div class="progress-step completed">
+          <div class="step-number">1</div>
+          <div class="step-label">Traveler Info</div>
+        </div>
+        <div class="progress-step active">
+          <div class="step-number">2</div>
+          <div class="step-label">Payment</div>
+        </div>
+        <div class="progress-step">
+          <div class="step-number">3</div>
+          <div class="step-label">Confirmation</div>
+        </div>
+      </div>
+      <div class="checkout-container">
+        <form class="checkout-form" id="payment-form" autocomplete="off">
+          <div class="section-title">Payment Method</div>
+          <div class="payment-methods" id="payment-methods">
+            <div class="payment-method active" data-method="card">
+              <div class="payment-method-icon">💳</div>
+              Card
+            </div>
+            <div class="payment-method" data-method="upi">
+              <div class="payment-method-icon">🏦</div>
+              UPI
+            </div>
+            <div class="payment-method" data-method="wallet">
+              <div class="payment-method-icon">📱</div>
+              Wallet
+            </div>
+          </div>
+          <div class="form-section" id="card-section">
+            <div class="card-wrapper">
+              <div class="credit-card" id="card-preview">
+                <div class="card-bg-shine"></div>
+                <div class="card-chip-outer">
+                  <div class="card-chip-inner"></div>
+                  <div class="card-chip-lines"></div>
+                </div>
+                <div class="contactless-icon">📶</div>
+                <div class="card-number emboss" id="preview-card-number">•••• •••• •••• ••••</div>
+                <div style="display:flex; justify-content:space-between;">
+                  <div>
+                    <div class="card-holder-label">Card Holder</div>
+                    <div class="card-holder" id="preview-card-holder">YOUR NAME</div>
+                  </div>
+                  <div>
+                    <div class="card-expiry-label">Expires</div>
+                    <div class="card-expiry" id="preview-card-expiry">MM/YY</div>
+                  </div>
+                </div>
+                <div class="card-brand" id="preview-card-brand"></div>
+              </div>
+            </div>
+            <div class="card-icons">
+              <div class="card-icon" style="color:#2563eb;">V</div>
+              <div class="card-icon" style="color:#f59e0b;">M</div>
+              <div class="card-icon" style="color:#10b981;">Ru</div>
+              <div class="card-icon" style="color:#ef4444;">UPI</div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" inputmode="numeric" maxlength="19" class="form-control" id="card-number" placeholder="1234 5678 9012 3456" required>
+                <div class="helper-text" id="card-number-helper"></div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="card-holder">Card Holder</label>
+                <input type="text" class="form-control" id="card-holder" placeholder="Full Name" required>
+              </div>
+              <div class="form-group">
+                <label for="card-expiry">Expiry</label>
+                <input type="text" maxlength="5" class="form-control" id="card-expiry" placeholder="MM/YY" required>
+              </div>
+              <div class="form-group">
+                <label for="card-cvv">CVV</label>
+                <input type="password" maxlength="4" class="form-control" id="card-cvv" placeholder="123" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-section" id="upi-section" style="display:none;">
+            <div class="form-group">
+              <label for="upi-id">UPI ID</label>
+              <input type="text" class="form-control" id="upi-id" placeholder="yourname@bank">
+            </div>
+          </div>
+          <div class="form-section" id="wallet-section" style="display:none;">
+            <div class="form-group">
+              <label for="wallet-select">Wallet</label>
+              <select class="form-select" id="wallet-select">
+                <option value="">Select Wallet</option>
+                <option value="paytm">Paytm</option>
+                <option value="phonepe">PhonePe</option>
+                <option value="amazonpay">Amazon Pay</option>
+                <option value="mobikwik">Mobikwik</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="wallet-mobile">Mobile Number</label>
+              <input type="tel" class="form-control" id="wallet-mobile" placeholder="10-digit mobile">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-block" id="pay-btn">
+            Pay Now <span id="pay-btn-spinner" class="spinner" style="display:none;"></span>
+          </button>
+          <div class="secure-payment-info"><span>🔒</span> Payments are 100% secure & encrypted</div>
+        </form>
+        <aside class="order-summary">
+          <div class="section-title">Order Summary</div>
+          <div class="trip-details">
+            <div class="trip-image" style="background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80');"></div>
+            <div class="trip-title">Goa Beach Escape</div>
+            <div class="trip-date">23 May - 27 May 2025</div>
+            <div class="trip-people">👤 2 Travelers</div>
+          </div>
+          <div class="price-row"><span class="price-label">Base Fare</span><span class="price-value">₹16,000</span></div>
+          <div class="price-row"><span class="price-label">Taxes & Fees</span><span class="price-value">₹1,800</span></div>
+          <div class="price-row"><span class="price-label">Discount</span><span class="price-value" style="color:var(--secondary);">-₹1,200</span></div>
+          <div class="divider"></div>
+          <div class="total-row"><span>Total</span><span>₹16,600</span></div>
+          <form class="promo-form" id="promo-form">
+            <input type="text" placeholder="Promo code" id="promo-code">
+            <button type="submit">Apply</button>
+          </form>
+          <div class="helper-text" id="promo-helper"></div>
+        </aside>
+      </div>
+    </div>
+  </main>
+    <!--<!-- comment
+  <script>
+    // Payment Method Switching
+    const paymentMethods = document.querySelectorAll('.payment-method');
+    const cardSection = document.getElementById('card-section');
+    const upiSection = document.getElementById('upi-section');
+    const walletSection = document.getElementById('wallet-section');
+    paymentMethods.forEach(el => {
+      el.addEventListener('click', () => {
+        paymentMethods.forEach(m => m.classList.remove('active'));
+        el.classList.add('active');
+        cardSection.style.display = (el.dataset.method === 'card') ? '' : 'none';
+        upiSection.style.display = (el.dataset.method === 'upi') ? '' : 'none';
+        walletSection.style.display = (el.dataset.method === 'wallet') ? '' : 'none';
+      });
+    });
+
+    // Card Preview Interactivity
+    const cardNumberInput = document.getElementById('card-number');
+    const cardHolderInput = document.getElementById('card-holder');
+    const cardExpiryInput = document.getElementById('card-expiry');
+    const cardCVVInput = document.getElementById('card-cvv');
+    const previewCardNumber = document.getElementById('preview-card-number');
+    const previewCardHolder = document.getElementById('preview-card-holder');
+    const previewCardExpiry = document.getElementById('preview-card-expiry');
+    const previewCardBrand = document.getElementById('preview-card-brand');
+    const cardNumberHelper = document.getElementById('card-number-helper');
+
+    function formatCardNumber(value) {
+      return value.replace(/\D/g, '').replace(/(.{4})/g, '$1 ').trim();
+    }
+    function detectCardBrand(number) {
+      if (/^4/.test(number)) return 'Visa';
+      if (/^5[1-5]/.test(number)) return 'MasterCard';
+      if (/^6/.test(number)) return 'RuPay';
+      if (/^3[47]/.test(number)) return 'Amex';
+      return '';
+    }
+    cardNumberInput.addEventListener('input', e => {
+      let val = formatCardNumber(e.target.value);
+      e.target.value = val;
+      previewCardNumber.textContent = val.padEnd(19, '•');
+      // Brand
+      const brand = detectCardBrand(val.replace(/\s/g,''));
+      previewCardBrand.textContent = brand;
+      // Validation
+      if (/^\d{16}$/.test(val.replace(/\s/g,''))) {
+        cardNumberInput.style.borderColor = 'var(--secondary)';
+        cardNumberHelper.textContent = 'Card number looks good!';
+        cardNumberHelper.style.color = 'var(--secondary)';
+      } else {
+        cardNumberInput.style.borderColor = 'var(--danger)';
+        cardNumberHelper.textContent = 'Enter a valid 16-digit card number';
+        cardNumberHelper.style.color = 'var(--danger)';
+      }
+    });
+    cardHolderInput.addEventListener('input', e => {
+      previewCardHolder.textContent = e.target.value.toUpperCase() || 'YOUR NAME';
+    });
+    cardExpiryInput.addEventListener('input', e => {
+      let val = e.target.value.replace(/\D/g, '');
+      if (val.length > 2) val = val.slice(0,2) + '/' + val.slice(2,4);
+      e.target.value = val.slice(0,5);
+      previewCardExpiry.textContent = val || 'MM/YY';
+    });
+
+    // Button Loading Animation
+    const payBtn = document.getElementById('pay-btn');
+    const payBtnSpinner = document.getElementById('pay-btn-spinner');
+    document.getElementById('payment-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      payBtn.classList.add('loading');
+      payBtnSpinner.style.display = 'inline-block';
+      payBtn.disabled = true;
+      setTimeout(() => {
+        payBtn.classList.remove('loading');
+        payBtnSpinner.style.display = 'none';
+        payBtn.disabled = false;
+        alert('Payment Successful! 🎉');
+      }, 1800);
+    });
+
+    // Promo Code Interactivity
+    document.getElementById('promo-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const code = document.getElementById('promo-code').value.trim().toUpperCase();
+      const helper = document.getElementById('promo-helper');
+      if (code === 'TRAVEL10') {
+        helper.textContent = 'Promo applied! ₹1000 off';
+        helper.style.color = 'var(--secondary)';
+      } else if (code) {
+        helper.textContent = 'Invalid promo code';
+        helper.style.color = 'var(--danger)';
+      } else {
+        helper.textContent = '';
+      }
+    });
+
+    // Responsive: Mobile keyboard for numbers
+    cardNumberInput.setAttribute('inputmode', 'numeric');
+    cardCVVInput.setAttribute('inputmode', 'numeric');
+    document.getElementById('wallet-mobile').setAttribute('inputmode', 'numeric');
+  </script>
+     -->
+</body>
+</html>

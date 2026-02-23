@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokokchung - Ao Naga Heartland</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #e25822;
+            --primary-light: #ff7b4d;
+            --primary-dark: #b84315;
+            --secondary: #2d5016;
+            --secondary-light: #3f7020;
+            --secondary-dark: #1f3610;
+            --accent: #f9a826;
+            --text-light: #f5f5f5;
+            --text-gray: #d1d1d1;
+            --text-dark: #333;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Header with Parallax */
+        .parallax-header {
+            height: 100vh;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            animation: fadeInUp 1.5s ease-out;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .logo-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: rotate 20s linear infinite;
+        }
+
+        .logo i {
+            color: var(--text-light);
+            font-size: 24px;
+        }
+
+        .logo-text {
+            color: var(--text-light);
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .main-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s infinite alternate;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: var(--text-light);
+            font-weight: 400;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .rating {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            animation: fadeIn 2s ease-out 1s both;
+        }
+
+        .stars {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        .rating-text {
+            font-size: 1.3rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .description {
+            max-width: 800px;
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            animation: fadeIn 2s ease-out 1.5s both;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary), var(--primary-light));
+            color: var(--text-light);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(226, 88, 34, 0.4);
+            animation: pulse 2s infinite;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .cta-button:hover:before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(226, 88, 34, 0.6);
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            animation: none;
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--primary);
+            color: var(--text-light);
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(226, 88, 34, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            left: 80%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .floating-element:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 40%;
+            left: 70%;
+            animation-delay: 6s;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(45, 80, 22, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo .logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-logo .logo-text {
+            font-size: 1.3rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            display: inline-block;
+            padding-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: var(--primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Highlights Section */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .highlight-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 88, 34, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .highlight-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(226, 88, 34, 0.5);
+        }
+
+        .highlight-card:hover:before {
+            transform: scaleX(1);
+        }
+
+        .highlight-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .highlight-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .highlight-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            height: 280px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.5s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 20px;
+            transform: translateY(100%);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Cultural Section */
+        .cultural-section {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .cultural-content {
+            max-width: 900px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cultural-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cultural-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+        }
+
+        .cultural-content p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+
+        /* Attractions Section */
+        .attractions-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .attraction-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 88, 34, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .attraction-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .attraction-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .attraction-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.5s ease;
+        }
+
+        .attraction-card:hover .attraction-image {
+            transform: scale(1.05);
+        }
+
+        .attraction-content {
+            padding: 25px;
+        }
+
+        .attraction-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .attraction-content p {
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .attraction-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Travel Tips Section */
+        .travel-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .tip-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 88, 34, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tip-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .tip-icon {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .tip-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .tip-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Festivals Section */
+        .festivals-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .festival-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 88, 34, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .festival-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .festival-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .festival-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.5s ease;
+        }
+
+        .festival-card:hover .festival-image {
+            transform: scale(1.05);
+        }
+
+        .festival-content {
+            padding: 25px;
+        }
+
+        .festival-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .festival-content p {
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .festival-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Accommodation Section */
+        .accommodation-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .accommodation-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 88, 34, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .accommodation-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .accommodation-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .accommodation-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.5s ease;
+        }
+
+        .accommodation-card:hover .accommodation-image {
+            transform: scale(1.05);
+        }
+
+        .accommodation-content {
+            padding: 25px;
+        }
+
+        .accommodation-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .accommodation-content p {
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .accommodation-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .price {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Itinerary Section */
+        .itinerary-container {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        .itinerary-day {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 88, 34, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .itinerary-day:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+        }
+
+        .itinerary-day.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .itinerary-day:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(226, 88, 34, 0.3);
+            padding-bottom: 15px;
+        }
+
+        .day-title {
+            font-size: 1.6rem;
+            color: var(--primary);
+        }
+
+        .day-activities {
+            list-style: none;
+        }
+
+        .day-activities li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--text-gray);
+        }
+
+        .day-activities li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Testimonials Section */
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 88, 34, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(226, 88, 34, 0.2);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-gray);
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--text-light);
+        }
+
+        .author-info h4 {
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 88, 34, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .faq-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .faq-question h3 {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .faq-icon {
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .contact-details h3 {
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+
+        .contact-details p {
+            color: var(--text-gray);
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 88, 34, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(226, 88, 34, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(226, 88, 34, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-dark);
+            padding: 60px 20px 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .footer-column h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            margin: 30px 0;
+        }
+
+        .social-links a {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            color: var(--text-gray);
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px rgba(226, 88, 34, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(226, 88, 34, 0.8), 0 0 30px rgba(226, 88, 34, 0.6);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(226, 88, 34, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 10px 25px rgba(226, 88, 34, 0.6);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(226, 88, 34, 0.4);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .description {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 60px 20px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo in Header -->
+    <div class="logo-container">
+        <div class="logo">
+            <i class="fas fa-mountain"></i>
+        </div>
+        <div class="logo-text">Mokokchung</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo">
+                    <i class="fas fa-mountain"></i>
+                </div>
+                <div class="logo-text">Mokokchung</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#highlights">Highlights</a></li>
+                <li><a href="#attractions">Attractions</a></li>
+                <li><a href="#festivals">Festivals</a></li>
+                <li><a href="#itinerary">Itinerary</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header with Parallax -->
+    <header class="parallax-header" id="home">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        
+        <div class="header-content">
+            <h1 class="main-title">MOKOKCHUNG</h1>
+            <h2 class="subtitle">Ao Naga Heartland</h2>
+            
+            <div class="rating">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="rating-text">4.7 Must Visit Destination</div>
+            </div>
+            
+            <p class="description">
+                Scenic town known for its natural beauty, traditional Ao Naga culture, and adventure activities. 
+                Nestled in the hills of Nagaland, Mokokchung offers a perfect blend of cultural richness and 
+                breathtaking landscapes that captivate every traveler.
+            </p>
+            
+            <div class="button-group">
+                <a href="#attractions" class="cta-button">Explore Mokokchung</a>
+                <a href="#itinerary" class="cta-button secondary">Plan Your Trip</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Highlights Section -->
+    <section class="section" id="highlights">
+        <div class="section-title">
+            <h2>Why Visit Mokokchung?</h2>
+        </div>
+        
+        <div class="highlights">
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Natural Beauty</h3>
+                <p>Experience pristine landscapes with lush green hills, vibrant flora, and picturesque valleys that change with the seasons.</p>
+            </div>
+            
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Rich Culture</h3>
+                <p>Immerse yourself in the vibrant Ao Naga culture with traditional festivals, music, dance, and unique handicrafts.</p>
+            </div>
+            
+            <div class="highlight-card">
+                <div class="highlight-icon">
+                    <i class="fas fa-hiking"></i>
+                </div>
+                <h3>Adventure Activities</h3>
+                <p>From trekking through scenic trails to exploring remote villages, Mokokchung offers thrilling adventures for all.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attractions Section -->
+    <section class="section" id="attractions">
+        <div class="section-title">
+            <h2>Top Attractions</h2>
+        </div>
+        
+        <div class="attractions-container">
+            <div class="attraction-card">
+                <div class="attraction-image" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');"></div>
+                <div class="attraction-content">
+                    <h3>Longkhum Village</h3>
+                    <p>Known as the "Cultural Hub" of the Ao tribe, this picturesque village offers stunning views and rich traditions.</p>
+                    <div class="attraction-meta">
+                        <span><i class="far fa-clock"></i> 3-4 hours</span>
+                        <span><i class="fas fa-map-marker-alt"></i> 15km from Mokokchung</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="attraction-card">
+                <div class="attraction-image" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');"></div>
+                <div class="attraction-content">
+                    <h3>Ungma Village</h3>
+                    <p>The oldest and largest Ao village, showcasing traditional architecture and cultural heritage.</p>
+                    <div class="attraction-meta">
+                        <span><i class="far fa-clock"></i> 2-3 hours</span>
+                        <span><i class="fas fa-map-marker-alt"></i> 10km from Mokokchung</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="attraction-card">
+                <div class="attraction-image" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');"></div>
+                <div class="attraction-content">
+                    <h3>Mokokchung Park</h3>
+                    <p>A beautifully maintained park in the heart of the town, perfect for leisurely walks and relaxation.</p>
+                    <div class="attraction-meta">
+                        <span><i class="far fa-clock"></i> 1-2 hours</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Central Mokokchung</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section">
+        <div class="section-title">
+            <h2>Explore Mokokchung</h2>
+        </div>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Mokokchung Landscape">
+                <div class="gallery-overlay">
+                    <h3>Mokokchung Landscape</h3>
+                    <p>Stunning views of the hills surrounding Mokokchung</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Cultural Festival">
+                <div class="gallery-overlay">
+                    <h3>Moatsu Festival</h3>
+                    <p>Vibrant Ao Naga festival celebrations</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Traditional Village">
+                <div class="gallery-overlay">
+                    <h3>Traditional Village</h3>
+                    <p>Experience the authentic Ao Naga lifestyle</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Tips Section -->
+    <section class="section">
+        <div class="section-title">
+            <h2>Travel Tips</h2>
+        </div>
+        
+        <div class="travel-tips">
+            <div class="tip-card">
+                <div class="tip-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3>Best Time to Visit</h3>
+                <p>October to May offers pleasant weather. April-May is ideal for experiencing the famous Moatsu Festival.</p>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3>Local Cuisine</h3>
+                <p>Try smoked meat with bamboo shoots, axone (fermented soybean), and traditional rice beer.</p>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <h3>Souvenirs</h3>
+                <p>Look for traditional Ao shawls, bamboo crafts, wood carvings, and tribal jewelry as memorable souvenirs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Festivals Section -->
+    <section class="section" id="festivals">
+        <div class="section-title">
+            <h2>Cultural Festivals</h2>
+        </div>
+        
+        <div class="festivals-container">
+            <div class="festival-card">
+                <div class="festival-image" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');"></div>
+                <div class="festival-content">
+                    <h3>Moatsu Festival</h3>
+                    <p>Celebrated by the Ao tribe in May after sowing crops. Features singing, dancing, feasting, and traditional sports over several days.</p>
+                    <div class="festival-meta">
+                        <span><i class="far fa-calendar"></i> May</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Ao Regions</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="festival-card">
+                <div class="festival-image" style="background-image: url('https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');"></div>
+                <div class="festival-content">
+                    <h3>Tsungremong Festival</h3>
+                    <p>Celebrated in August, this festival marks the end of the agricultural cycle with rituals, feasts, and community gatherings.</p>
+                    <div class="festival-meta">
+                        <span><i class="far fa-calendar"></i> August</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Ao Regions</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="festival-card">
+                <div class="festival-image" style="background-image: url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');"></div>
+                <div class="festival-content">
+                    <h3>Aoling Festival</h3>
+                    <p>Celebrated by the Konyak tribe in April, this festival marks the beginning of spring and new agricultural activities.</p>
+                    <div class="festival-meta">
+                        <span><i class="far fa-calendar"></i> April</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Mon District</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Section -->
+    <section class="cultural-section">
+        <div class="cultural-content">
+            <h2>Experience Ao Naga Culture</h2>
+            <p>
+                Mokokchung is the cultural heart of the Ao Naga tribe, known for their rich traditions, 
+                vibrant festivals, and unique way of life. The Ao people are famous for their intricate 
+                wood carvings, traditional textiles, and warm hospitality that welcomes every visitor.
+            </p>
+            <p>
+                Visit the local villages to witness traditional architecture, participate in community 
+                feasts, and learn about the ancient customs that have been preserved for generations. 
+                Don't miss the opportunity to experience the rhythmic beats of traditional music and 
+                the colorful dances that tell stories of the Ao heritage.
+            </p>
+            <a href="#contact" class="cta-button">Plan Your Cultural Experience</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h2>Mokokchung - The Heart of Ao Naga Land</h2>
+            
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="#attractions">Attractions</a></li>
+                        <li><a href="#festivals">Cultural Events</a></li>
+                        <li><a href="#itinerary">Adventure Activities</a></li>
+                        <li><a href="#">Local Cuisine</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Plan Your Trip</h3>
+                    <ul>
+                        <li><a href="#">Best Time to Visit</a></li>
+                        <li><a href="#">Accommodation</a></li>
+                        <li><a href="#">Travel Guidelines</a></li>
+                        <li><a href="#">Tour Packages</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="#contact">Tourism Office</a></li>
+                        <li><a href="#">Emergency Numbers</a></li>
+                        <li><a href="#">Tour Guides</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright">© 2023 Mokokchung Tourism. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animation for elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.highlight-card, .gallery-item, .cultural-content, .attraction-card, .tip-card, .festival-card, .accommodation-card, .itinerary-day, .testimonial-card, .faq-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Parallax effect for header
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.parallax-header');
+            parallax.style.backgroundPositionY = `${scrolled * 0.5}px`;
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if(window.scrollY > 50) {
+                nav.style.background = 'rgba(45, 80, 22, 0.95)';
+                nav.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.background = 'rgba(45, 80, 22, 0.95)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

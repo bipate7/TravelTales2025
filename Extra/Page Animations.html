@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading - Travel Tales</title>
+    <style>
+        body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f8ff; /* Light blue background */
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.loader-container {
+    text-align: center;
+}
+
+.logo img {
+    width: 150px; /* Adjust logo size */
+    animation: bounce 1s infinite; /* Logo bounce effect */
+}
+
+.loading-text {
+    font-size: 1.5em;
+    margin: 20px 0;
+    animation: fadeIn 1.5s; /* Fade in effect for loading text */
+}
+
+.spinner {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite; /* Spinner animation */
+    margin: 20px auto;
+}
+
+/* Bounce effect for the logo */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Fade in effect for the loading text */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <div class="logo">
+            <img src="TT4.png" alt="Travel Tales Logo" /> <!-- Replace with your logo -->
+        </div>
+        <div class="loading-text">Travel Tales is Loading...</div>
+        <div class="spinner"></div>
+    </div>
+
+    <script>
+        // Simulate loading and redirect to main page after 3 seconds
+        setTimeout(() => {
+            window.location.href = "W1.html"; // Replace with your main page URL
+            window.location.href = "Destinations.html";
+        }, 3000);
+    </script>
+</body>
+</html>

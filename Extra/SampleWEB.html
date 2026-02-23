@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelTales Travels</title>
+    <link rel="icon" href="../Logos/TT4.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            text-decoration: none;
+            list-style: none;
+            scroll-behavior: smooth;
+        }
+
+        /* Header Styles */
+        nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            position: relative;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            width: 150px;
+        }
+
+        nav ul {
+            display: flex;
+            margin-right: 4vh;
+            transition: max-height 0.3s ease;
+        }
+
+        nav ul li {
+            margin-left: 40px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 18px;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background: white;
+            color: black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: rgba(0, 0, 0, 0.9);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            nav ul.show {
+                display: flex;
+                max-height: 300px; /* Adjust based on the number of items */
+            }
+
+            nav ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Video & Header -->
+    <div class="banner">
+        <video src="V3.mp4" type="video/mp4" autoplay muted loop></video>
+        <div class="content" id="home"> 
+            <nav>
+                <img src="TravelTales3.png" class="logo" alt="Logo" title="TravelTales Travels">
+                <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <ul id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="Tour.html">Tours</a></li>
+                    <li><a href="Destinations.html">Destinations</a></li>
+                    <li><a href="Tour Packages.html">Packages</a></li>
+                    <li><a href="About Us.html">About Us</a></li>
+                    <li><a href="Contact Us.html">Contact Us</a></li>
+                    <li><a href="Login up Page.html">Login/Signup</a></li>
+                </ul>
+            </nav>
+            <div class="title">
+                <h1>TRAVELTales</h1>
+                <p>"Discover the World, One Tale at a Time"</p>
+                <a href="Sign up Page.html" class="button">Register Now!</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="TT4.png">
+    <title>Maharashtra Travel Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f8f9fa;
+            padding: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .locations {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .location {
+            width: 30%;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .location:hover {
+            transform: scale(1.05);
+        }
+
+        .location img {
+            width: 100%;
+            height: auto;
+        }
+
+        .location-details {
+            padding: 15px;
+            text-align: center;
+        }
+    .packages-container {
+            display: flex;
+            overflow-x: scroll;
+            gap: 20px;
+            padding: 20px 0;
+            scroll-behavior: smooth;
+            scrollbar-width: none; /* For Firefox */
+        }
+        container h1 h2{
+            text-align: center;
+        }
+        .packages-container::-webkit-scrollbar {
+            display: none; /* For Chrome, Safari, and Opera */
+        }
+        .package {
+            min-width: 300px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .package:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+        }
+        .package img {
+            width: 100%;
+            height: auto;
+        }
+        .package-info {
+            padding: 15px;
+        }
+        .package h2 {
+            font-size: 22px;
+            color: #333;
+        }
+        .package p {
+            font-size: 16px;
+            color: #666;
+        }
+        .price, .duration, .per-person-cost, .total-cost {
+            font-weight: bold;
+            color: #333;
+        }
+        .rating {
+            color: #FFD700;
+            margin: 10px 0;
+        }
+        .book-now {
+            display: block;
+            text-align: center;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #ffeb3b;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            transform: scale(1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .book-now:hover {
+            background-color: #ffc107;
+            transform: scale(1.1);
+        }
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-section {
+            width: 30%;
+        }
+
+        .footer-section h2 {
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 10px 0;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            background-color: #222;
+            padding: 10px 0;
+            font-size: 0.9em;
+        }
+
+        .socials a {
+            margin: 0 10px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Explore Maharashtra</h1>
+    </header>
+
+    <div class="container">
+        <h2>Popular Locations</h2>
+        <div class="locations">
+            <div class="location">
+                <img src="Gateway of IndiaM.avif" alt="Gateway of India">
+                <div class="location-details">
+                    <h3>Gateway of India</h3>
+                    <p>Visit this iconic monument in Mumbai.</p>
+                </div>
+            </div>
+            <div class="location">
+                <img src="Ajanta Caves1.jpg" alt="Ajanta Caves">
+                <div class="location-details">
+                    <h3>Ajanta Caves</h3>
+                    <p>A UNESCO World Heritage site with ancient rock-cut caves.</p>
+                </div>
+            </div>
+            <div class="location">
+                <img src="Shivaji Park.jpg" alt="Shivaji Park">
+                <div class="location-details">
+                    <h3>Shivaji Park</h3>
+                    <p>A popular park in Dadar, Mumbai.</p>
+                </div>
+            </div>
+            <div class="location">
+                <img src="Mahabaleshwar.jpg" alt="Mahabaleshwar">
+                <div class="location-details">
+                    <h3>Mahabaleshwar</h3>
+                    <p>Enjoy breathtaking views in this hill station.</p>
+                </div>
+            </div>
+            <div class="location">
+                <img src="Lonavala.jpg" alt="Lonavala">
+                <div class="location-details">
+                    <h3>Lonavala</h3>
+                    <p>A scenic hill station famous for its lakes.</p>
+                </div>
+            </div>
+            <div class="location">
+                <img src="Kolhapur.jpg" alt="Kolhapur">
+                <div class="location-details">
+                    <h3>Kolhapur</h3>
+                    <p>Famous for its historical significance and cuisine.</p>
+                </div>
+            </div>
+            <div class="location">
+                <img src="Nasik.jpg" alt="Nasik">
+                <div class="location-details">
+                    <h3>Nashik</h3>
+                    <p>Visit vineyards and enjoy wine tasting.</p>
+                </div>
+            </div>
+            <div class="location">
+                <img src="Alibaug.webp" alt="Alibaug">
+                <div class="location-details">
+                    <h3>Alibaug</h3>
+                    <p>A beautiful beach destination near Mumbai.</p>
+                </div>
+            </div>
+            <div class="location">
+                <img src="Ratnagiri.jpg" alt="Ratnagiri">
+                <div class="location-details">
+                    <h3>Ratnagiri</h3>
+                    <p>Known for its beaches and Alphonso mangoes.</p>
+                </div>
+            </div>
+            <div class="location">
+                <img src="Panchgani.jpg" alt="Panchgani">
+                <div class="location-details">
+                    <h3>Panchgani</h3>
+                    <p>A hill station known for its cool climate and scenic views.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+        <h1>Maharashtra Travel Packages</h1>
+        <h2>Explore the beauty of Maharashtra</h2>
+        <div class="packages-container">
+            <div class="package">
+                <img src="Gateway of India.jpg" alt="Mumbai">
+                <div class="package-info">
+                    <h2>Mumbai City Tour</h2>
+                    <p class="duration">Duration: 2 Nights / 3 Days</p>
+                    <p class="per-person-cost">Per Person Cost: ₹8,000</p>
+                    <p class="total-cost">Total Cost: ₹16,000</p>
+                    <p>Includes: Accommodation, Breakfast, Sightseeing</p>
+                    <div class="rating">&#9733; &#9733; &#9733; &#9733; &#9733; (5/5)</div>
+                    <a href="mumbai-details.html" class="book-now">Book Now</a>
+                </div>
+            </div>
+            <div class="package">
+                <img src="lonavala_package.jpg" alt="Lonavala">
+                <div class="package-info">
+                    <h2>Lonavala Getaway</h2>
+                    <p class="duration">Duration: 1 Night / 2 Days</p>
+                    <p class="per-person-cost">Per Person Cost: ₹5,000</p>
+                    <p class="total-cost">Total Cost: ₹10,000</p>
+                    <div class="rating">&#9733; &#9733; &#9733; &#9733; &#9733; (5/5)</div>
+                    <a href="lonavala-details.html" class="book-now">Book Now</a>
+                </div>
+            </div>
+            <div class="package">
+                <img src="pune_package.jpg" alt="Pune">
+                <div class="package-info">
+                    <h2>Pune Heritage Tour</h2>
+                    <p class="duration">Duration: 3 Nights / 4 Days</p>
+                    <p class="per-person-cost">Per Person Cost: ₹9,500</p>
+                    <p class="total-cost">Total Cost: ₹19,000</p>
+                    <div class="rating">&#9733; &#9733; &#9733; &#9733; &#9734; (4.5/5)</div>
+                    <a href="pune-details.html" class="book-now">Book Now</a>
+                </div>
+            </div>
+            <div class="package">
+                <img src="mahabaleshwar_package.jpg" alt="Mahabaleshwar">
+                <div class="package-info">
+                    <h2>Mahabaleshwar Hills</h2>
+                    <p class="duration">Duration: 2 Nights / 3 Days</p>
+                    <p class="per-person-cost">Per Person Cost: ₹7,500</p>
+                    <p class="total-cost">Total Cost: ₹15,000</p>
+                    <div class="rating">&#9733; &#9733; &#9733; &#9733; &#9733; (5/5)</div>
+                    <a href="mahabaleshwar-details.html" class="book-now">Book Now</a>
+                </div>
+            </div>
+            <div class="package">
+                <img src="aurangabad_package.jpg" alt="Aurangabad">
+                <div class="package-info">
+                    <h2>Aurangabad Historical Tour</h2>
+                    <p class="duration">Duration: 3 Nights / 4 Days</p>
+                    <p class="per-person-cost">Per Person Cost: ₹11,000</p>
+                    <p class="total-cost">Total Cost: ₹22,000</p>
+                    <div class="rating">&#9733; &#9733; &#9733; &#9733; &#9734; (4.5/5)</div>
+                    <a href="aurangabad-details.html" class="book-now">Book Now</a>
+                </div>
+            </div>
+            <div class="package">
+                <img src="alibaug_package.jpg" alt="Alibaug">
+                <div class="package-info">
+                    <h2>Alibaug Beach Retreat</h2>
+                    <p class="duration">Duration: 1 Night / 2 Days</p>
+                    <p class="per-person-cost">Per Person Cost: ₹6,000</p>
+                    <p class="total-cost">Total Cost: ₹12,000</p>
+                    <div class="rating">&#9733; &#9733; &#9733; &#9733; &#9733; (5/5)</div>
+                    <a href="alibaug-details.html" class="book-now">Book Now</a>
+                </div>
+            </div>
+            <div class="package">
+                <img src="nasik_package.jpg" alt="Nashik">
+                <div class="package-info">
+                    <h2>Nashik Wine Tour</h2>
+                    <p class="duration">Duration: 2 Nights / 3 Days</p>
+                    <p class="per-person-cost">Per Person Cost: ₹9,000</p>
+                    <p class="total-cost">Total Cost: ₹18,000</p>
+                    <div class="rating">&#9733; &#9733; &#9733; &#9733; &#9734; (4.5/5)</div>
+                    <a href="nasik-details.html" class="book-now">Book Now</a>
+                </div>
+            </div>
+            <div class="package">
+                <img src="kolhapur_package.jpg" alt="Kolhapur">
+                <div class="package-info">
+                    <h2>Kolhapur Temple Tour</h2>
+                    <p class="duration">Duration: 1 Night / 2 Days</p>
+                    <p class="per-person-cost">Per Person Cost: ₹6,500</p>
+                    <p class="total-cost">Total Cost: ₹13,000</p>
+                    <div class="rating">&#9733; &#9733; &#9733; &#9733; &#9734; (4.5/5)</div>
+                    <a href="kolhapur-details.html" class="book-now">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+

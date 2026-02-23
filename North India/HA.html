@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himalayan Adventure Tour | Thrilling Mountain Expedition</title>
+    <link rel="icon" href="images/himalayan-favicon.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3a86ff;
+            --secondary: #1a3a6a;
+            --accent: #ffbe0b;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #28a745;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        /* Background Patterns */
+        .bg-mountain-pattern {
+            background-image: url('https://www.transparenttextures.com/patterns/snow.png');
+        }
+        
+        .hero-section {
+            position: relative;
+            height: 90vh;
+            overflow: hidden;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            z-index: -1;
+            animation: zoomInOut 20s infinite alternate;
+        }
+        
+        @keyframes zoomInOut {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -40%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+        
+        .adventure-card {
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            border: none;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .adventure-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .adventure-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .booking-card {
+            border-radius: 12px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            background-color: white;
+        }
+        
+        .price-display {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2a75e6;
+            border-color: #2a75e6;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .text-center .section-title:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .itinerary-day {
+            margin-bottom: 2rem;
+            border-left: 3px solid var(--primary);
+            padding-left: 25px;
+            position: relative;
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .itinerary-day:before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 25px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+        }
+        
+        .review-card {
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.1);
+            background-color: white;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .star-rating span {
+            font-size: 1.5rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .star-rating span:hover,
+        .star-rating span.active {
+            color: var(--accent);
+        }
+        
+        .similar-tour-card {
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-right: 20px;
+            flex: 0 0 300px;
+            border: none;
+            background-color: white;
+        }
+        
+        .similar-tour-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .scrolling-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .scrolling-wrapper::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .scrolling-wrapper::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .scrolling-wrapper::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+        
+        .included-item, .excluded-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+        }
+        
+        .included-item:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--success);
+        }
+        
+        .excluded-item:before {
+            content: '\f00d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #dc3545;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .location-highlight {
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            padding: 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+            height: 300px;
+            display: flex;
+            align-items: flex-end;
+        }
+        
+        .location-highlight:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+            z-index: 1;
+        }
+        
+        .location-highlight-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .activity-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+            margin: 40px 0;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -50px;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            margin: 20px 0;
+        }
+        
+        .testimonial-card:before {
+            content: '\201C';
+            font-family: Georgia, serif;
+            font-size: 60px;
+            color: rgba(58, 134, 255, 0.1);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        
+        .testimonial-card:after {
+            content: '\201D';
+            font-family: Georgia, serif;
+            font-size: 60px;
+            color: rgba(58, 134, 255, 0.1);
+            position: absolute;
+            bottom: -30px;
+            right: 10px;
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .fact-box {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .fact-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .fact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .weather-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        .weather-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+        
+        .difficulty-level {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .difficulty-dots {
+            display: flex;
+            margin-left: 10px;
+        }
+        
+        .difficulty-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 5px;
+            background-color: #ddd;
+        }
+        
+        .difficulty-dot.filled {
+            background-color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .location-highlight {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-mountain-pattern">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Himalayan Adventure Tour" class="hero-image">
+        <div class="hero-content">
+            <h1 class="hero-title">Himalayan Adventure</h1>
+            <p class="hero-subtitle">Conquer the Peaks - Rishikesh, Auli & Joshimath</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <span class="badge bg-light text-dark fs-6 p-2"><i class="fas fa-clock me-2"></i>7 Days / 6 Nights</span>
+                <span class="badge bg-light text-dark fs-6 p-2"><i class="fas fa-map-marker-alt me-2"></i>Uttarakhand, India</span>
+                <span class="badge bg-light text-dark fs-6 p-2"><i class="fas fa-star me-2"></i>4.9/5 (187 Reviews)</span>
+            </div>
+            <a href="#booking" class="btn btn-primary btn-lg mt-4 px-4 py-3">Book Now <i class="fas fa-arrow-right ms-2"></i></a>
+            <a href="#itinerary" class="btn btn-outline-light btn-lg mt-4 px-4 py-3 ms-3">Explore Itinerary</a>
+        </div>
+    </section>
+
+    <!-- Adventure Highlights -->
+    <section class="container py-5">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title d-inline-block">Why Choose This Adventure?</h2>
+                <p class="lead">Experience the perfect blend of adrenaline, nature, and cultural immersion</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="adventure-card card h-100 p-4 text-center">
+                    <div class="adventure-icon">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <h4>Challenging Treks</h4>
+                    <p>Conquer scenic Himalayan trails with breathtaking views of Nanda Devi, Trishul, and other majestic peaks</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="adventure-card card h-100 p-4 text-center">
+                    <div class="adventure-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h4>White Water Rafting</h4>
+                    <p>Navigate thrilling Grade III-IV rapids on the Ganges with expert river guides</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="adventure-card card h-100 p-4 text-center">
+                    <div class="adventure-icon">
+                        <i class="fas fa-campground"></i>
+                    </div>
+                    <h4>Luxury Camping</h4>
+                    <p>Stay in premium alpine tents with modern amenities amidst stunning mountain scenery</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="adventure-card card h-100 p-4 text-center">
+                    <div class="adventure-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h4>Cable Car Experience</h4>
+                    <p>Soar above the clouds on Asia's longest cable car ride with panoramic Himalayan views</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Highlights -->
+    <section class="container py-5 bg-mountain-pattern">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title d-inline-block">Discover the Himalayan Wonders</h2>
+                <p class="lead">Each destination offers unique adventures and breathtaking landscapes</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="location-highlight" style="background-image: url('https://images.unsplash.com/photo-1580654712603-eb43273aff33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+                    <div class="location-highlight-content">
+                        <h3>Rishikesh</h3>
+                        <p>The Yoga Capital and Gateway to the Himalayas. Experience thrilling rapids and spiritual serenity.</p>
+                        <div class="d-flex flex-wrap gap-2 mt-2">
+                            <span class="badge bg-light text-dark">River Rafting</span>
+                            <span class="badge bg-light text-dark">Yoga</span>
+                            <span class="badge bg-light text-dark">Ganga Aarti</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="location-highlight" style="background-image: url('https://images.unsplash.com/photo-1632742627410-1f8e0f809ab4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+                    <div class="location-highlight-content">
+                        <h3>Auli</h3>
+                        <p>India's premier skiing destination with stunning views of Nanda Devi and surrounding peaks.</p>
+                        <div class="d-flex flex-wrap gap-2 mt-2">
+                            <span class="badge bg-light text-dark">Trekking</span>
+                            <span class="badge bg-light text-dark">Skiing</span>
+                            <span class="badge bg-light text-dark">Cable Car</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="location-highlight" style="background-image: url('https://images.unsplash.com/photo-1605540436563-5bca919ae766?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80')">
+                    <div class="location-highlight-content">
+                        <h3>Joshimath</h3>
+                        <p>Ancient pilgrimage town serving as the base for Himalayan expeditions and spiritual journeys.</p>
+                        <div class="d-flex flex-wrap gap-2 mt-2">
+                            <span class="badge bg-light text-dark">Temples</span>
+                            <span class="badge bg-light text-dark">Hiking</span>
+                            <span class="badge bg-light text-dark">Culture</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Details & Booking -->
+    <section class="container py-5" id="booking">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <h2 class="section-title">Adventure Overview</h2>
+                <p class="lead">The Himalayan Adventure tour takes you through the stunning landscapes of Uttarakhand, combining adrenaline-pumping activities with cultural immersion. This journey through the Garhwal Himalayas offers the perfect introduction to India's adventure capital, with professional guides ensuring your safety while maximizing the thrill.</p>
+                
+                <div class="video-container mt-4">
+                    <iframe src="https://www.youtube.com/embed/ixIzimI35SE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <h3 class="mt-5 mb-4">Detailed Itinerary</h3>
+                
+                <div class="timeline" id="itinerary">
+                    <div class="timeline-item">
+                        <div class="timeline-dot">1</div>
+                        <div class="timeline-content">
+                            <h4><strong>Day 1: Arrival in Delhi - Transfer to Rishikesh</strong></h4>
+                            <p>Your Himalayan adventure begins in Delhi, where our representative will greet you at the airport. After a brief orientation, we'll drive to Rishikesh (6-7 hours) through the scenic foothills of the Himalayas.</p>
+                            <p><strong>Highlights:</strong></p>
+                            <ul>
+                                <li>Evening Ganga Aarti ceremony at Triveni Ghat</li>
+                                <li>Welcome dinner with local Garhwali cuisine</li>
+                                <li>Briefing about the upcoming adventures</li>
+                            </ul>
+                            <p><strong>Overnight:</strong> Luxury riverside camp in Rishikesh</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot">2</div>
+                        <div class="timeline-content">
+                            <h4><strong>Day 2: Rishikesh - White Water Rafting & Yoga</strong></h4>
+                            <p>Start your day with an exhilarating 16km rafting expedition on the Ganges (Grade III-IV rapids). After lunch, participate in a yoga session overlooking the river, followed by exploration of local temples and the iconic Laxman Jhula.</p>
+                            <p><strong>Activities:</strong></p>
+                            <ul>
+                                <li>Full-day rafting with professional guides</li>
+                                <li>Hatha yoga session with certified instructor</li>
+                                <li>Visit to Beatles Ashram and local markets</li>
+                            </ul>
+                            <p><strong>Overnight:</strong> Luxury riverside camp in Rishikesh</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot">3</div>
+                        <div class="timeline-content">
+                            <h4><strong>Day 3: Rishikesh to Auli - Journey to the Peaks</strong></h4>
+                            <p>Scenic drive to Auli (8-9 hours) through picturesque mountain roads. Stop at Devprayag to witness the confluence of Alaknanda and Bhagirathi rivers forming the Ganges. Arrive in Auli to breathtaking views of Nanda Devi peak.</p>
+                            <p><strong>Highlights:</strong></p>
+                            <ul>
+                                <li>Visit to Devprayag sangam (river confluence)</li>
+                                <li>Photo stops at scenic viewpoints</li>
+                                <li>Evening acclimatization walk</li>
+                            </ul>
+                            <p><strong>Overnight:</strong> 4-star hotel in Auli with mountain views</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot">4</div>
+                        <div class="timeline-content">
+                            <h4><strong>Day 4: Auli - Trekking Expedition</strong></h4>
+                            <p>Full-day guided trek through the alpine meadows of Auli with stunning Himalayan vistas. Choose between moderate (8km) or challenging (12km) routes based on your fitness level. Picnic lunch amidst nature with panoramic mountain views.</p>
+                            <p><strong>Activities:</strong></p>
+                            <ul>
+                                <li>Guided Himalayan trek with naturalist</li>
+                                <li>Photography sessions at scenic viewpoints</li>
+                                <li>Optional skiing lessons (seasonal)</li>
+                            </ul>
+                            <p><strong>Overnight:</strong> 4-star hotel in Auli</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot">5</div>
+                        <div class="timeline-content">
+                            <h4><strong>Day 5: Auli to Joshimath - Cable Car Experience</strong></h4>
+                            <p>Morning cable car ride on Asia's longest (4km) and highest gondola, offering 360° views of Himalayan peaks. Explore Joshimath's ancient temples and vibrant markets. Evening cultural performance showcasing local Garhwali traditions.</p>
+                            <p><strong>Highlights:</strong></p>
+                            <ul>
+                                <li>Auli-Joshimath cable car ride</li>
+                                <li>Visit to Narsingh Temple and Kalpavriksha</li>
+                                <li>Local handicraft shopping</li>
+                            </ul>
+                            <p><strong>Overnight:</strong> Heritage property in Joshimath</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot">6</div>
+                        <div class="timeline-content">
+                            <h4><strong>Day 6: Joshimath - Optional Activities & Return to Rishikesh</strong></h4>
+                            <p>Choose your adventure: Relax with yoga and meditation, or opt for an optional short trek to nearby viewpoints. After lunch, begin the return journey to Rishikesh with stops at Devprayag and other scenic spots.</p>
+                            <p><strong>Options:</strong></p>
+                            <ul>
+                                <li>Morning yoga session</li>
+                                <li>Short trek to nearby viewpoints</li>
+                                <li>Visit to local villages</li>
+                            </ul>
+                            <p><strong>Overnight:</strong> Riverside camp in Rishikesh</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot">7</div>
+                        <div class="timeline-content">
+                            <h4><strong>Day 7: Rishikesh to Delhi - Departure</strong></h4>
+                            <p>After breakfast, drive back to Delhi (6-7 hours) with memories of your Himalayan adventure. Drop at airport or hotel for your onward journey.</p>
+                            <p><strong>Note:</strong> Flight bookings should be made for late evening or next day to account for possible road delays.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="mt-5 mb-4">Photo Gallery</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1580654712603-eb43273aff33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Rafting in Rishikesh" class="img-fluid rounded">
+                            <div class="p-3">
+                                <h5>White Water Rafting</h5>
+                                <p class="small text-muted">Conquer the rapids of the Ganges</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1632742627410-1f8e0f809ab4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Auli Skiing" class="img-fluid rounded">
+                            <div class="p-3">
+                                <h5>Auli Ski Slopes</h5>
+                                <p class="small text-muted">India's premier skiing destination</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Himalayan Trek" class="img-fluid rounded">
+                            <div class="p-3">
+                                <h5>Himalayan Trekking</h5>
+                                <p class="small text-muted">Breathtaking trails with mountain views</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0be19a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" alt="Cable Car Ride" class="img-fluid rounded">
+                            <div class="p-3">
+                                <h5>Cable Car Experience</h5>
+                                <p class="small text-muted">Panoramic views of the Himalayas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0be19a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" alt="Luxury Camping" class="img-fluid rounded">
+                            <div class="p-3">
+                                <h5>Luxury Camping</h5>
+                                <p class="small text-muted">Comfort under the stars</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0be19a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" alt="Yoga in Himalayas" class="img-fluid rounded">
+                            <div class="p-3">
+                                <h5>Mountain Yoga</h5>
+                                <p class="small text-muted">Serenity amidst the peaks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <h3 class="mb-3">Included</h3>
+                        <ul class="list-unstyled">
+                            <li class="included-item">6 nights accommodation (luxury camps, 4-star hotels, heritage property)</li>
+                            <li class="included-item">Daily breakfast and 5 dinners (specialty local cuisine)</li>
+                            <li class="included-item">All transfers in private AC vehicles with experienced drivers</li>
+                            <li class="included-item">16km white water rafting in Rishikesh with safety gear</li>
+                            <li class="included-item">Guided trekking in Auli with naturalist</li>
+                            <li class="included-item">Auli-Joshimath cable car tickets</li>
+                            <li class="included-item">Yoga sessions with certified instructors</li>
+                            <li class="included-item">Entrance fees to all sites mentioned in itinerary</li>
+                            <li class="included-item">Services of professional adventure guides</li>
+                            <li class="included-item">All currently applicable taxes</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="mb-3">Not Included</h3>
+                        <ul class="list-unstyled">
+                            <li class="excluded-item">International/Domestic flights and airport taxes</li>
+                            <li class="excluded-item">Travel insurance (mandatory for this tour)</li>
+                            <li class="excluded-item">Lunches and beverages (except where specified)</li>
+                            <li class="excluded-item">Personal expenses (laundry, phone calls, etc.)</li>
+                            <li class="excluded-item">Optional activities (skiing, additional treks)</li>
+                            <li class="excluded-item">Camera/video fees at monuments (where applicable)</li>
+                            <li class="excluded-item">Tips for guides and drivers (suggested ₹500/day for guide, ₹300/day for driver)</li>
+                            <li class="excluded-item">Any services not mentioned in inclusions</li>
+                            <li class="excluded-item">Visa fees for India</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Adventure Activities -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3 class="mb-4">Adventure Activities</h3>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="activity-card card">
+                                    <img src="https://images.unsplash.com/photo-1580654712603-eb43273aff33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="White Water Rafting">
+                                    <div class="card-body">
+                                        <h5 class="card-title">White Water Rafting</h5>
+                                        <div class="difficulty-level">
+                                            <span>Difficulty:</span>
+                                            <div class="difficulty-dots">
+                                                <div class="difficulty-dot filled"></div>
+                                                <div class="difficulty-dot filled"></div>
+                                                <div class="difficulty-dot filled"></div>
+                                                <div class="difficulty-dot"></div>
+                                            </div>
+                                        </div>
+                                        <p class="card-text">16km rafting expedition on the Ganges with Grade III-IV rapids. All safety equipment provided.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="activity-card card">
+                                    <img src="https://images.unsplash.com/photo-1632742627410-1f8e0f809ab4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Himalayan Trekking">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Himalayan Trekking</h5>
+                                        <div class="difficulty-level">
+                                            <span>Difficulty:</span>
+                                            <div class="difficulty-dots">
+                                                <div class="difficulty-dot filled"></div>
+                                                <div class="difficulty-dot filled"></div>
+                                                <div class="difficulty-dot"></div>
+                                                <div class="difficulty-dot"></div>
+                                            </div>
+                                        </div>
+                                        <p class="card-text">Choose between moderate (8km) or challenging (12km) routes through alpine meadows with stunning views.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="activity-card card">
+                                    <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0be19a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" class="card-img-top" alt="Cable Car Ride">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Cable Car Experience</h5>
+                                        <div class="difficulty-level">
+                                            <span>Difficulty:</span>
+                                            <div class="difficulty-dots">
+                                                <div class="difficulty-dot filled"></div>
+                                                <div class="difficulty-dot"></div>
+                                                <div class="difficulty-dot"></div>
+                                                <div class="difficulty-dot"></div>
+                                            </div>
+                                        </div>
+                                        <p class="card-text">Asia's longest (4km) cable car ride offering 360° views of Himalayan peaks including Nanda Devi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Route Map -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3 class="mb-4">Adventure Route Map</h3>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m46!1m12!1m3!1d2213459.393316665!2d78.8139726!3d30.5277584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m31!3e0!4m5!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!3m2!1d28.6139391!2d77.2090212!4m5!1s0x3908739164a5e9c7%3A0x7c5b360d2c4a3f2e!2sRishikesh%2C%20Uttarakhand!3m2!1d30.0869279!2d78.2676116!4m5!1s0x3909b9c5c2c5e5a5%3A0x5a5a5a5a5a5a5a5a!2sAuli%2C%20Uttarakhand!3m2!1d30.5147222!2d79.5669444!4m5!1s0x3909b9c5c2c5e5a5%3A0x5a5a5a5a5a5a5a5a!2sJoshimath%2C%20Uttarakhand!3m2!1d30.5555556!2d79.5666667!5e0!3m2!1sen!2sin!4v1687422593848!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Adventure Facts -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3 class="mb-4">Adventure Facts</h3>
+                        <div class="row g-4">
+                            <div class="col-md-3">
+                                <div class="fact-box">
+                                    <div class="fact-number">1200 km</div>
+                                    <p>Total distance covered</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="fact-box">
+                                    <div class="fact-number">3000m</div>
+                                    <p>Maximum altitude reached</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="fact-box">
+                                    <div class="fact-number">5+</div>
+                                    <p>Adventure activities included</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="fact-box">
+                                    <div class="fact-number">12</div>
+                                    <p>Himalayan peaks visible</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Weather Guide -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3 class="mb-4">Seasonal Weather Guide</h3>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="weather-card">
+                                    <div class="weather-icon">
+                                        <i class="fas fa-snowflake"></i>
+                                    </div>
+                                    <h5>Winter (Dec-Feb)</h5>
+                                    <p>Chilly -5 to 10°C<br>Perfect for skiing<br>Pack heavy woolens</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="weather-card">
+                                    <div class="weather-icon">
+                                        <i class="fas fa-sun"></i>
+                                    </div>
+                                    <h5>Spring (Mar-May)</h5>
+                                    <p>Pleasant 10-25°C<br>Ideal for trekking<br>Wildflowers in bloom</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="weather-card">
+                                    <div class="weather-icon">
+                                        <i class="fas fa-cloud-sun"></i>
+                                    </div>
+                                    <h5>Monsoon (Jun-Sep)</h5>
+                                    <p>Rainy 15-30°C<br>Lush green landscapes<br>Fewer crowds</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonials -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3 class="mb-4">Adventurer Testimonials</h3>
+                        <div class="testimonial-card">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Thompson" class="rounded-circle me-3" width="60">
+                                <div>
+                                    <h5 class="mb-0">Sarah Thompson</h5>
+                                    <div class="text-warning small">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <small class="text-muted">London, UK • March 2023</small>
+                                </div>
+                            </div>
+                            <p>"This Himalayan adventure exceeded all our expectations. The rafting was exhilarating with perfect safety measures, and the Auli trek offered views I'll never forget. Our guide, Raj, was incredibly knowledgeable about the mountains and local culture. The luxury camps in Rishikesh were surprisingly comfortable - falling asleep to the sound of the Ganges was magical!"</p>
+                        </div>
+                        
+                        <div class="testimonial-card mt-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael Chen" class="rounded-circle me-3" width="60">
+                                <div>
+                                    <h5 class="mb-0">Michael Chen</h5>
+                                    <div class="text-warning small">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <small class="text-muted">Sydney, Australia • February 2023</small>
+                                </div>
+                            </div>
+                            <p>"As an experienced adventurer, I was impressed by the professionalism of this tour. The equipment was top-notch, especially the rafting gear. The Auli-Joshimath cable car ride was a highlight - the views of Nanda Devi were breathtaking. The only suggestion would be to include one more challenging trek option for experienced hikers. Overall, an unforgettable Himalayan experience!"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Essential Information -->
+                <div class="mt-5">
+                    <h3 class="mb-4">Essential Information</h3>
+                    <div class="accordion" id="infoAccordion">
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="fas fa-calendar me-2"></i> Best Time to Visit
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#infoAccordion">
+                                <div class="accordion-body">
+                                    <p>The Himalayan Adventure tour operates year-round, with different highlights each season:</p>
+                                    <p><strong>Winter (Dec-Feb):</strong> Ideal for skiing in Auli with snow-covered landscapes. Day temperatures range from -5°C to 10°C. Pack heavy woolens and proper snow gear.</p>
+                                    <p><strong>Spring (Mar-May):</strong> Perfect for trekking with pleasant 10-25°C temperatures and wildflowers in bloom. Clear mountain views.</p>
+                                    <p><strong>Summer/Monsoon (Jun-Sep):</strong> Lush green landscapes with 15-30°C temperatures. Some rain but fewer crowds. Best for rafting with higher water levels.</p>
+                                    <p><strong>Autumn (Oct-Nov):</strong> Crystal clear views of peaks with 5-20°C temperatures. Ideal for photography.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <i class="fas fa-hiking me-2"></i> Fitness Requirements
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#infoAccordion">
+                                <div class="accordion-body">
+                                    <p>This adventure requires moderate to good physical fitness:</p>
+                                    <ul>
+                                        <li>Comfortable walking 5-8 miles per day on uneven terrain</li>
+                                        <li>Ability to handle altitude up to 3000m</li>
+                                        <li>Basic swimming skills recommended for rafting</li>
+                                        <li>No prior trekking experience needed but helpful</li>
+                                    </ul>
+                                    <p>We offer multiple difficulty levels for activities:</p>
+                                    <ul>
+                                        <li><strong>Rafting:</strong> Grade III-IV rapids (can opt for calmer sections)</li>
+                                        <li><strong>Trekking:</strong> Choose between moderate (8km) or challenging (12km) routes</li>
+                                        <li><strong>Altitude:</strong> Gradual ascent with acclimatization days</li>
+                                    </ul>
+                                    <p>If you have health concerns, consult your doctor before booking. We can adjust itineraries for mobility limitations.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <i class="fas fa-tshirt me-2"></i> Packing List
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#infoAccordion">
+                                <div class="accordion-body">
+                                    <p><strong>Essential Gear:</strong></p>
+                                    <ul>
+                                        <li>Sturdy hiking boots with ankle support</li>
+                                        <li>Waterproof jacket and pants</li>
+                                        <li>Layered clothing for variable temperatures</li>
+                                        <li>Warm hat and gloves (even in summer)</li>
+                                        <li>Swimwear for rafting</li>
+                                    </ul>
+                                    <p><strong>Equipment Provided:</strong></p>
+                                    <ul>
+                                        <li>Rafting gear (helmet, life jacket, paddle)</li>
+                                        <li>Trekking poles (on request)</li>
+                                        <li>Sleeping bags for camping (if needed)</li>
+                                    </ul>
+                                    <p><strong>Recommended Extras:</strong></p>
+                                    <ul>
+                                        <li>High SPF sunscreen and lip balm</li>
+                                        <li>Reusable water bottle (we provide filtered water)</li>
+                                        <li>Headlamp or flashlight</li>
+                                        <li>Basic first aid kit</li>
+                                        <li>Camera with extra batteries</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <i class="fas fa-child me-2"></i> Family-Friendly Options
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#infoAccordion">
+                                <div class="accordion-body">
+                                    <p>This adventure can be enjoyed by families with children aged 12+ (younger children considered on case-by-case basis):</p>
+                                    <ul>
+                                        <li>Special family rafting trips with calmer sections</li>
+                                        <li>Shorter, easier trekking options</li>
+                                        <li>Family rooms available at all accommodations</li>
+                                        <li>Child discounts available (12-18 years)</li>
+                                    </ul>
+                                    <p>For younger adventurers (5-11 years), we recommend:</p>
+                                    <ul>
+                                        <li>Modified rafting experiences</li>
+                                        <li>Gentle nature walks instead of treks</li>
+                                        <li>Cultural activities in Rishikesh and Joshimath</li>
+                                    </ul>
+                                    <p>We can arrange babysitting services at hotels if parents want to participate in more challenging activities.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <i class="fas fa-exchange-alt me-2"></i> Cancellation Policy
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#infoAccordion">
+                                <div class="accordion-body">
+                                    <p>We offer flexible cancellation policies for this adventure:</p>
+                                    <ul>
+                                        <li><strong>Free cancellation</strong> up to 60 days before departure (full refund)</li>
+                                        <li><strong>30-59 days</strong> before departure: 75% refund</li>
+                                        <li><strong>15-29 days</strong> before departure: 50% refund</li>
+                                        <li><strong>Less than 15 days</strong>: no refund, but we can reschedule (fees may apply)</li>
+                                    </ul>
+                                    <p>For cancellations due to weather or safety concerns:</p>
+                                    <ul>
+                                        <li>Full credit for future travel valid for 2 years</li>
+                                        <li>Alternative activities arranged when possible</li>
+                                    </ul>
+                                    <p><strong>Note:</strong> Travel insurance with adventure sports coverage is mandatory for this tour.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Booking Card -->
+            <div class="col-lg-4">
+                <div class="booking-card card">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h4 class="mb-0 text-center"><i class="fas fa-calendar-alt me-2"></i>Book Your Adventure</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center mb-4">
+                            <h3 class="price-display">₹30,000</h3>
+                            <p class="text-muted">per person (double occupancy)</p>
+                            <div class="d-flex justify-content-center gap-2 mb-3">
+                                <span class="badge bg-success"><i class="fas fa-star me-1"></i>4.9</span>
+                                <span class="badge bg-info text-dark"><i class="fas fa-users me-1"></i>Small Groups</span>
+                                <span class="badge bg-warning text-dark"><i class="fas fa-bolt me-1"></i>Instant Confirmation</span>
+                            </div>
+                        </div>
+                        
+                        <form>
+                            <div class="mb-3">
+                                <label for="tourDate" class="form-label">Select Tour Date</label>
+                                <input type="date" class="form-control" id="tourDate" required>
+                                <small class="text-muted">Tours depart every Saturday</small>
+                            </div>
+                            
+                            <div class="row g-2 mb-3">
+                                <div class="col-md-6">
+                                    <label for="adults" class="form-label">Adults (16+)</label>
+                                    <select class="form-select" id="adults">
+                                        <option value="1">1</option>
+                                        <option value="2" selected>2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="children" class="form-label">Youth (12-15)</label>
+                                    <select class="form-select" id="children">
+                                        <option value="0" selected>0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Room Preference</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="roomType" id="doubleRoom" checked>
+                                    <label class="form-check-label" for="doubleRoom">
+                                        Double Room (1 bed)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="roomType" id="twinRoom">
+                                    <label class="form-check-label" for="twinRoom">
+                                        Twin Room (2 beds)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="roomType" id="singleRoom">
+                                    <label class="form-check-label" for="singleRoom">
+                                        Single Room (+₹10,000)
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="addons" class="form-label">Add-on Experiences</label>
+                                <select class="form-select" id="addons" multiple>
+                                    <option value="skiing">Skiing Lessons in Auli (+₹3,500)</option>
+                                    <option value="photoshoot">Adventure Photo Shoot (+₹4,000)</option>
+                                    <option value="spa">Post-Trek Spa Package (+₹2,500)</option>
+                                    <option value="paragliding">Paragliding in Joshimath (+₹5,000)</option>
+                                </select>
+                                <small class="text-muted">Hold Ctrl to select multiple options</small>
+                            </div>
+                            
+                            <div class="d-grid gap-2 mb-3">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-lock me-2"></i>Book Now - ₹60,000
+                                </button>
+                                <button type="button" class="btn btn-outline-primary">
+                                    <i class="fas fa-heart me-2"></i>Save to Wishlist
+                                </button>
+                            </div>
+                            
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle me-2"></i> <strong>Flexible Booking:</strong> Free cancellation up to 60 days before departure
+                            </div>
+                            
+                            <div class="alert alert-warning">
+                                <i class="fas fa-exclamation-triangle me-2"></i> <strong>Travel Insurance:</strong> Mandatory for this adventure tour
+                            </div>
+                            
+                            <hr>
+                            
+                            <h5 class="mb-3">Need Help?</h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-phone-alt me-3 text-primary"></i>
+                                <div>
+                                    <small class="text-muted d-block">Call us 24/7</small>
+                                    <strong>+91 98765 43210</strong>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-envelope me-3 text-primary"></i>
+                                <div>
+                                    <small class="text-muted d-block">Email us</small>
+                                    <strong>adventures@himalayantours.com</strong>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="card mt-4">
+                    <div class="card-header bg-light py-3">
+                        <h5 class="mb-0"><i class="fas fa-percentage me-2"></i>Special Offers</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-success">
+                            <h6><i class="fas fa-gift me-2"></i> Early Bird Discount</h6>
+                            <p class="small mb-1">Book 90+ days in advance and save 15%</p>
+                            <a href="#" class="small">Use Code: <strong>EARLY15</strong></a>
+                        </div>
+                        <div class="alert alert-warning">
+                            <h6><i class="fas fa-users me-2"></i> Group Savings</h6>
+                            <p class="small mb-1">Groups of 4+ save 10% on total booking</p>
+                            <a href="#" class="small">Use Code: <strong>GROUP10</strong></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mt-4">
+                    <div class="card-header bg-light py-3">
+                        <h5 class="mb-0"><i class="fas fa-clock me-2"></i>Quick Facts</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex mb-3">
+                            <i class="fas fa-road me-3 text-primary mt-1"></i>
+                            <div>
+                                <h6 class="mb-0">Total Distance</h6>
+                                <p class="small mb-0">Approx. 1200km by road</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <i class="fas fa-bus me-3 text-primary mt-1"></i>
+                            <div>
+                                <h6 class="mb-0">Transport</h6>
+                                <p class="small mb-0">Private AC SUV/Tempo Traveler</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <i class="fas fa-hotel me-3 text-primary mt-1"></i>
+                            <div>
+                                <h6 class="mb-0">Accommodation</h6>
+                                <p class="small mb-0">Luxury camps & 4-star hotels</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <i class="fas fa-utensils me-3 text-primary mt-1"></i>
+                            <div>
+                                <h6 class="mb-0">Meals</h6>
+                                <p class="small mb-0">6 breakfasts, 5 dinners</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="container py-5 bg-light">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="section-title d-inline-block">What Adventurers Say</h2>
+                <p class="lead">Rated 4.9/5 from 187 verified reviews</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="review-card card h-100 p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson" class="rounded-circle me-3" width="60">
+                        <div>
+                            <h5 class="mb-0">Sarah Johnson</h5>
+                            <div class="text-warning small">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <small class="text-muted">USA • March 2023</small>
+                        </div>
+                    </div>
+                    <h5>"Best adventure of my life!"</h5>
+                    <p>The Himalayan Adventure was perfectly organized. The rafting was exhilarating with perfect safety measures, and the Auli trek offered views I'll never forget. Our guide was incredibly knowledgeable.</p>
+                    <div class="mt-auto pt-3">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <small class="text-muted">Verified booking</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="review-card card h-100 p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="rounded-circle me-3" width="60">
+                        <div>
+                            <h5 class="mb-0">Michael Chen</h5>
+                            <div class="text-warning small">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <small class="text-muted">Australia • January 2023</small>
+                        </div>
+                    </div>
+                    <h5>"Professional and thrilling"</h5>
+                    <p>As an experienced adventurer, I was impressed by the professionalism. The equipment was top-notch. The Auli-Joshimath cable car was breathtaking. Only suggestion: add more challenging trek options.</p>
+                    <div class="mt-auto pt-3">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <small class="text-muted">Verified booking</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="review-card card h-100 p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Elena Rodriguez" class="rounded-circle me-3" width="60">
+                        <div>
+                            <h5 class="mb-0">Elena Rodriguez</h5>
+                            <div class="text-warning small">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <small class="text-muted">Spain • November 2022</small>
+                        </div>
+                    </div>
+                    <h5>"Unforgettable experience"</h5>
+                    <p>Every detail was perfectly arranged. The luxury camps were surprisingly comfortable - falling asleep to the sound of the Ganges was magical. The trek guides were patient and encouraging.</p>
+                    <div class="mt-auto pt-3">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <small class="text-muted">Verified booking</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <button class="btn btn-outline-primary px-4 me-3">See All Reviews</button>
+            <button class="btn btn-primary px-4" data-bs-toggle="modal" data-bs-target="#reviewModal">Write a Review</button>
+        </div>
+    </section>
+
+    <!-- Similar Tours -->
+    <section class="container py-5">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="section-title d-inline-block">More Himalayan Adventures</h2>
+                <p class="lead">Explore other thrilling mountain experiences</p>
+            </div>
+        </div>
+        
+        <div class="scrolling-wrapper pb-4">
+            <div class="similar-tour-card card">
+                <img src="https://images.unsplash.com/photo-1580654712603-eb43273aff33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Himalayan Trek">
+                <div class="card-body">
+                    <h5 class="card-title">Himalayan Base Camp Trek</h5>
+                    <p class="text-muted small"><i class="fas fa-clock me-1"></i> 10 Days</p>
+                    <div class="text-warning mb-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="text-dark ms-1">4.7</span>
+                    </div>
+                    <p class="card-text small">Challenging trek to the base of India's highest peaks with expert guides and mountain lodges.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price-display">₹45,000</span>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="similar-tour-card card">
+                <img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" class="card-img-top" alt="Yoga Retreat">
+                <div class="card-body">
+                    <h5 class="card-title">Himalayan Yoga Retreat</h5>
+                    <p class="text-muted small"><i class="fas fa-clock me-1"></i> 7 Days</p>
+                    <div class="text-warning mb-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="text-dark ms-1">4.9</span>
+                    </div>
+                    <p class="card-text small">Rejuvenating yoga and meditation retreat in Rishikesh with expert instructors and Ayurvedic treatments.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price-display">₹28,000</span>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="similar-tour-card card">
+                <img src="https://images.unsplash.com/photo-1632742627410-1f8e0f809ab4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Skiing Tour">
+                <div class="card-body">
+                    <h5 class="card-title">Auli Ski Expedition</h5>
+                    <p class="text-muted small"><i class="fas fa-clock me-1"></i> 5 Days</p>
+                    <div class="text-warning mb-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="text-dark ms-1">5.0</span>
+                    </div>
+                    <p class="card-text small">Winter skiing adventure in Auli with professional instructors and premium equipment.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price-display">₹32,000</span>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="similar-tour-card card">
+                <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0be19a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" class="card-img-top" alt="Family Tour">
+                <div class="card-body">
+                    <h5 class="card-title">Family Himalayan Explorer</h5>
+                    <p class="text-muted small"><i class="fas fa-clock me-1"></i> 8 Days</p>
+                    <div class="text-warning mb-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="text-dark ms-1">4.6</span>
+                    </div>
+                    <p class="card-text small">Kid-friendly adventure with gentle treks, wildlife spotting, and cultural experiences.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="price-display">₹38,000</span>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container py-5 bg-light">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="section-title d-inline-block">Frequently Asked Questions</h2>
+                <p class="lead">Everything you need to know before your adventure</p>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h2 class="accordion-header" id="faqHeadingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+                                What's the best time of year for this tour?
+                            </button>
+                        </h2>
+                        <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>The Himalayan Adventure tour operates year-round with different highlights each season:</p>
+                                <ul>
+                                    <li><strong>Spring (March-May):</strong> Ideal for trekking with pleasant temperatures and clear mountain views.</li>
+                                    <li><strong>Summer/Monsoon (June-September):</strong> Lush landscapes and great for rafting, though some rain.</li>
+                                    <li><strong>Autumn (October-November):</strong> Crystal clear views and comfortable temperatures.</li>
+                                    <li><strong>Winter (December-February):</strong> Snow-covered landscapes perfect for skiing in Auli.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h2 class="accordion-header" id="faqHeadingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                                What fitness level is required?
+                            </button>
+                        </h2>
+                        <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>This adventure requires moderate to good physical fitness:</p>
+                                <ul>
+                                    <li>Comfortable walking 5-8 miles per day on uneven terrain</li>
+                                    <li>Ability to handle altitude up to 3000m</li>
+                                    <li>Basic swimming skills recommended for rafting</li>
+                                    <li>No prior trekking experience needed but helpful</li>
+                                </ul>
+                                <p>We offer multiple difficulty levels for activities and can adjust itineraries based on group fitness levels.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h2 class="accordion-header" id="faqHeadingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+                                What should I pack for this adventure?
+                            </button>
+                        </h2>
+                        <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p><strong>Essential Items:</strong></p>
+                                <ul>
+                                    <li>Sturdy hiking boots with ankle support</li>
+                                    <li>Layered clothing for variable mountain weather</li>
+                                    <li>Waterproof jacket and pants</li>
+                                    <li>Warm hat and gloves (even in summer)</li>
+                                    <li>High SPF sunscreen and lip balm</li>
+                                    <li>Reusable water bottle</li>
+                                    <li>Headlamp or flashlight</li>
+                                </ul>
+                                <p>We provide all specialized equipment for rafting and trekking. A detailed packing list will be sent after booking.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h2 class="accordion-header" id="faqHeadingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+                                Is this tour suitable for families with children?
+                            </button>
+                        </h2>
+                        <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqHeadingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Yes! This adventure can be enjoyed by families with children aged 12+ (younger children considered on case-by-case basis). We offer:</p>
+                                <ul>
+                                    <li>Special family rafting trips with calmer sections</li>
+                                    <li>Shorter, easier trekking options</li>
+                                    <li>Family rooms at all accommodations</li>
+                                    <li>Child discounts (12-18 years)</li>
+                                </ul>
+                                <p>For younger adventurers (5-11 years), we recommend modified activities and can arrange babysitting services if needed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h2 class="accordion-header" id="faqHeadingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
+                                What safety measures are in place?
+                            </button>
+                        </h2>
+                        <div id="faqCollapseFive" class="accordion-collapse collapse" aria-labelledby="faqHeadingFive" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Safety is our top priority. We implement multiple measures:</p>
+                                <ul>
+                                    <li>All adventure guides are certified in first aid and rescue procedures</li>
+                                    <li>Regular equipment checks and maintenance</li>
+                                    <li>Small group sizes for personalized attention</li>
+                                    <li>24/7 emergency support during the tour</li>
+                                    <li>Comprehensive risk assessments for all activities</li>
+                                    <li>Mandatory travel insurance requirement</li>
+                                    <li>Weather monitoring and alternative plans</li>
+                                </ul>
+                                <p>All participants receive thorough safety briefings before each activity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <button class="btn btn-primary px-4" data-bs-toggle="modal" data-bs-target="#contactModal">More Questions? Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-4">Join Our Adventure Community</h2>
+                <p class="lead mb-4">Subscribe for exclusive deals, travel tips, and Himalayan inspiration</p>
+                <form class="row g-2 justify-content-center">
+                    <div class="col-md-8">
+                        <input type="email" class="form-control form-control-lg" placeholder="Your email address">
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-primary btn-lg w-100">Subscribe</button>
+                    </div>
+                    <div class="col-12">
+                        <small class="text-muted">We respect your privacy. Unsubscribe at any time.</small>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4>Himalayan Adventure Tours</h4>
+                    <p class="text-muted">Creating unforgettable mountain experiences since 2005. Our expert guides will take you beyond the ordinary.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5>Explore</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">All Tours</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Destinations</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Adventure Activities</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Special Offers</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Our Team</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Sustainability</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">FAQs</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Booking Terms</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Safety</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Travel Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Dehradun, India</li>
+                        <li class="mb-2"><i class="fas fa-phone-alt me-2"></i> +91 98765 43210</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> adventure@himalayantours.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small text-muted mb-0">© 2023 Himalayan Adventure Tours. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small text-muted mb-0">Proud member of <a href="#" class="text-decoration-none">Adventure Travel Trade Association</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Review Modal -->
+    <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reviewModalLabel">Share Your Experience</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Overall Rating</label>
+                            <div class="star-rating">
+                                <span class="star" data-rating="1"><i class="far fa-star"></i></span>
+                                <span class="star" data-rating="2"><i class="far fa-star"></i></span>
+                                <span class="star" data-rating="3"><i class="far fa-star"></i></span>
+                                <span class="star" data-rating="4"><i class="far fa-star"></i></span>
+                                <span class="star" data-rating="5"><i class="far fa-star"></i></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reviewTitle" class="form-label">Review Title</label>
+                            <input type="text" class="form-control" id="reviewTitle" placeholder="Summarize your experience">
+                        </div>
+                        <div class="mb-3">
+                            <label for="reviewText" class="form-label">Your Review</label>
+                            <textarea class="form-control" id="reviewText" rows="5" placeholder="Tell us about your adventure..."></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reviewPhotos" class="form-label">Upload Photos</label>
+                            <input type="file" class="form-control" id="reviewPhotos" multiple>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reviewerName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="reviewerName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="reviewerEmail" class="form-label">Email (for verification)</label>
+                            <input type="email" class="form-control" id="reviewerEmail">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Submit Review</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Contact Our Adventure Experts</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="contactName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="contactEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactPhone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="contactPhone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactTour" class="form-label">Tour Interested In</label>
+                            <select class="form-select" id="contactTour">
+                                <option selected>Himalayan Adventure Tour</option>
+                                <option>Himalayan Base Camp Trek</option>
+                                <option>Himalayan Yoga Retreat</option>
+                                <option>Auli Ski Expedition</option>
+                                <option>Family Himalayan Explorer</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactMessage" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="contactMessage" rows="4" required></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="contactNewsletter">
+                            <label class="form-check-label" for="contactNewsletter">Subscribe to our newsletter</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Star rating functionality
+        document.querySelectorAll('.star-rating .star').forEach(star => {
+            star.addEventListener('click', function() {
+                const rating = this.getAttribute('data-rating');
+                const stars = this.parentElement.querySelectorAll('.star');
+                
+                stars.forEach((s, index) => {
+                    if (index < rating) {
+                        s.innerHTML = '<i class="fas fa-star"></i>';
+                        s.classList.add('active');
+                    } else {
+                        s.innerHTML = '<i class="far fa-star"></i>';
+                        s.classList.remove('active');
+                    }
+                });
+            });
+            
+            star.addEventListener('mouseover', function() {
+                const rating = this.getAttribute('data-rating');
+                const stars = this.parentElement.querySelectorAll('.star');
+                
+                stars.forEach((s, index) => {
+                    if (index < rating) {
+                        s.innerHTML = '<i class="fas fa-star"></i>';
+                    } else {
+                        s.innerHTML = '<i class="far fa-star"></i>';
+                    }
+                });
+            });
+            
+            star.addEventListener('mouseout', function() {
+                const stars = this.parentElement.querySelectorAll('.star');
+                const activeStars = this.parentElement.querySelectorAll('.star.active');
+                
+                stars.forEach((s, index) => {
+                    if (activeStars.length > 0) {
+                        if (index < activeStars.length) {
+                            s.innerHTML = '<i class="fas fa-star"></i>';
+                        } else {
+                            s.innerHTML = '<i class="far fa-star"></i>';
+                        }
+                    } else {
+                        s.innerHTML = '<i class="far fa-star"></i>';
+                    }
+                });
+            });
+        });
+        
+        // Price calculation for booking form
+        document.querySelectorAll('#adults, #children, input[name="roomType"], #addons').forEach(element => {
+            element.addEventListener('change', calculatePrice);
+        });
+        
+        function calculatePrice() {
+            const basePrice = 30000;
+            const adults = parseInt(document.getElementById('adults').value) || 0;
+            const children = parseInt(document.getElementById('children').value) || 0;
+            const roomType = document.querySelector('input[name="roomType"]:checked').value;
+            const addons = Array.from(document.getElementById('addons').selectedOptions).map(option => option.value);
+            
+            let total = 0;
+            
+            // Calculate base price
+            total += adults * basePrice;
+            total += children * (basePrice * 0.7); // 30% discount for children
+            
+            // Add single supplement if needed
+            if (roomType === 'singleRoom') {
+                total += 10000;
+            }
+            
+            // Add add-ons
+            addons.forEach(addon => {
+                if (addon === 'skiing') total += 3500;
+                if (addon === 'photoshoot') total += 4000;
+                if (addon === 'spa') total += 2500;
+                if (addon === 'paragliding') total += 5000;
+            });
+            
+            // Update display
+            document.querySelector('.booking-card .btn-primary').innerHTML = `<i class="fas fa-lock me-2"></i>Book Now - ₹${total.toLocaleString('en-IN')}`;
+        }
+        
+        // Initialize price calculation
+        calculatePrice();
+    </script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 6 Oct, 2025, 12:32:51 AM
+    Author     : VICTUS
+*/
+
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .video-container video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: cover;
+            opacity: 10;
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 0;
+        }
+        
+        .container {
+            display: flex;
+            min-height: 50vh;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 1%;
+            position: relative;
+        }
+        
+        .contact-form-container {
+            width: 100%;
+            max-width: 450px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            position: relative;
+            z-index: 1;
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+            transition: all 0.5s ease;
+        }
+        
+        .contact-form-container:hover {
+            transform: perspective(1000px) translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .logo p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .contact-form h2 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #fff;
+            font-weight: 600;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        /* Proper dropdown menu styling */
+.form-group select {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown list options */
+.form-group select option {
+    background: #1e1e1e;   /* Dark background */
+    color: #fff;           /* White text */
+    padding: 12px;
+}
+
+/* On hover inside dropdown */
+.form-group select option:hover {
+    background: #333;
+}
+
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(254, 180, 123, 0.3);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(254, 180, 123, 0.4);
+        }
+        
+        .social-links {
+            margin-top: 30px;
+            text-align: center;
+            text-decoration: none;
+        }
+        
+        .social-links p {
+            margin-bottom: 15px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            text-decoration: none;
+            text-decoration: none;
+        }
+        
+        .social-icons a {
+            color: #fff;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+            text-decoration: none;
+        }
+        
+        .social-icons a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px) scale(1.1);
+            text-decoration: none;
+        }
+        
+        .travel-decoration {
+            position: absolute;
+            z-index: 0;
+        }
+        
+        .decoration-1 {
+            top: 15%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            filter: blur(10px);
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .decoration-2 {
+            bottom: 20%;
+            left: 15%;
+            width: 150px;
+            height: 150px;
+            background: rgba(255,126,95,0.1);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            filter: blur(15px);
+            animation: float 10s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                justify-content: center;
+            }
+            
+            .contact-form-container {
+                padding: 30px;
+                max-width: 100%;
+            }
+            
+            .logo h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-form h2 {
+                font-size: 1.5rem;
+            }
+            
+            .travel-decoration {
+                display: none;
+            }
+        }
+        .brand-logo {
+    width: 90px;
+    height: 95px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}

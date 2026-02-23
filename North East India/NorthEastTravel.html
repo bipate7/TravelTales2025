@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="Images/TT4.png" />
+    <title>
+      Secrets of the Seven Sisters: Unveiling the Mystique of Northeast India
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/Northeast.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <img src="Images/TT4.png" alt="Seven Sisters Logo" />
+          </div>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#states">States</a></li>
+            <li><a href="#places">Places</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="video-container">
+        <video id="background-video" autoplay loop playsinline>
+          <source src="Video/NorthEastIndia.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <script>
+        document.addEventListener("click", function () {
+          const video = document.getElementById("background-video");
+          video.muted = false;
+          video.play();
+        });
+      </script>
+      <!-- Hidden audio -->
+      <audio id="bg-audio" autoplay muted loop>
+        <source src="Mainvideo.mp3" type="audio/mp3" />
+      </audio>
+
+      <script>
+        window.addEventListener("load", function () {
+          const video = document.getElementById("background-video");
+          const audio = document.getElementById("bg-audio");
+
+          // Start video
+          video.play().catch(() => {});
+
+          // Start audio muted first
+          audio.play().catch(() => {});
+
+          // Unmute audio after 1 second
+          setTimeout(() => {
+            audio.muted = false;
+          }, 1000);
+        });
+      </script>
+
+      <div class="hero-content">
+        <h1>Secrets of the Seven Sisters</h1>
+        <p>Unveiling the Mystique of Northeast India's Hidden Treasures</p>
+        <div class="hero-btns">
+          <a href="#packages" class="btn">Explore Tours</a>
+          <a href="#contact" class="btn btn-outline">Contact Us</a>
+        </div>
+      </div>
+
+      <div
+        class="scroll-down"
+        onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})"
+      >
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>About Northeast India</h2>
+          <p>
+            Discover the enchanting beauty and rich cultural heritage of the
+            Seven Sister States — a mosaic of biodiversity, indigenous
+            traditions, and unspoiled landscapes.
+          </p>
+        </div>
+        <div class="about-container">
+          <div class="about-img">
+            <img
+              src="https://i0.wp.com/www.traveldiaryparnashree.com/wp-content/uploads/2019/08/Meluri-A-remote-village-in-Nagaland.jpg?resize=800%2C599&ssl=1"
+              alt="Northeast India landscape"
+            />
+          </div>
+          <div class="about-content">
+            <h2>The Crown of India</h2>
+            <p>
+              Nestled between the eastern Himalayas and Southeast Asia,
+              Northeast India comprises seven states: Arunachal Pradesh, Assam,
+              Manipur, Meghalaya, Mizoram, Nagaland, and Tripura. Often called
+              the "Paradise Unexplored," this region is home to over 200 ethnic
+              tribes, 220 languages, and unparalleled natural beauty.
+            </p>
+            <p>
+              From the cloud-kissed peaks of Sikkim-bordering Arunachal to the
+              world’s wettest place in Cherrapunji, and from the mighty
+              Brahmaputra to the living root bridges of Meghalaya — the
+              Northeast is a symphony of nature and culture.
+            </p>
+
+            <div class="about-features">
+              <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-mountain"></i></div>
+                <div class="feature-text">
+                  <h4>Unmatched Biodiversity</h4>
+                  <p>
+                    60% of India’s flora & fauna, including rare species like
+                    the Hoolock Gibbon and Golden Langur.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-drum"></i></div>
+                <div class="feature-text">
+                  <h4>Vibrant Cultures</h4>
+                  <p>
+                    Each state celebrates 10+ indigenous festivals — from
+                    Hornbill to Bihu, Sangai to Wangala.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-utensils"></i></div>
+                <div class="feature-text">
+                  <h4>Unique Cuisine</h4>
+                  <p>
+                    Zero oil, fermented delicacies, bamboo shoots, and fiery
+                    bhut jolokia — food that tells a story.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                <div class="feature-text">
+                  <h4>Sustainable Living</h4>
+                  <p>
+                    Ancient eco-practices like Jhum cultivation and sacred
+                    groves reflect deep ecological wisdom.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- States Section -->
+    <section class="section states" id="states">
+      <div class="container">
+        <div class="section-title">
+          <h2>The Seven Sisters</h2>
+          <p>
+            Each state is a world unto itself — vibrant, diverse, and
+            breathtakingly beautiful.
+          </p>
+        </div>
+        <div class="states-container">
+          <div class="state-card">
+            <div class="state-img">
+              <img
+                src="https://media.istockphoto.com/id/458127421/photo/sela-pass-district-of-tawang-arunachal-pradesh-india.jpg?s=612x612&w=0&k=20&c=yBg1BRI6_QzIUIDukD6NS_EMfIDG7773UD0pWG8eEOQ="
+                alt="Arunachal Pradesh"
+              />
+            </div>
+            <div class="state-content">
+              <h3>Arunachal Pradesh</h3>
+              <p>
+                "Land of the Dawn-Lit Mountains" — home to Tawang Monastery,
+                Sela Pass, and 26 major tribes like the Apatani and Monpa.
+              </p>
+              <a
+                href="../North East India/Arunachal Pradesh/ArunachalPradesh.html"
+                class="state-btn"
+                >Explore <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="state-card">
+            <div class="state-img">
+              <img
+                src="https://media.istockphoto.com/id/458308055/photo/women-harvest-tea-leaves-jorhat-assam-india.jpg?s=612x612&w=0&k=20&c=bm2zaYwpMWAk5Fg3E1bnUBeUZJ85ZMDyuLU7eYUR_qI="
+                alt="Assam"
+              />
+            </div>
+            <div class="state-content">
+              <h3>Assam</h3>
+              <p>
+                The heart of the Northeast — famous for tea gardens, Kaziranga
+                (one-horned rhino), Majuli Island, and Bihu dance.
+              </p>
+              <a href="../North East India/Assam/Assam.html" class="state-btn"
+                ><br />Explore <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="state-card">
+            <div class="state-img">
+              <img
+                src="https://assets.zeezest.com/blogs/PROD_ZZ%20SEO%20Image%20Resizing%204%20%2844%29_1684308697228.png"
+                alt="Manipur"
+              />
+            </div>
+            <div class="state-content">
+              <h3>Manipur</h3>
+              <p>
+                "Jewel of India" — birthplace of polo, Loktak Lake with its
+                floating phumdis, and the graceful Ras Lila dance.
+              </p>
+              <a
+                href="../North East India/Manipur/Manipur.html"
+                class="state-btn"
+                ><br />Explore <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="state-card">
+            <div class="state-img">
+              <img
+                src="https://t3.ftcdn.net/jpg/02/02/20/34/360_F_202203468_D8WqSExW5TiF1SqgbxXCagxQVJtotzfx.jpg"
+                alt="Meghalaya"
+              />
+            </div>
+            <div class="state-content">
+              <h3>Meghalaya</h3>
+              <p>
+                "Abode of Clouds" — Cherrapunji, Mawsynram (wettest place on
+                Earth), Nohkalikai Falls, and living root bridges.
+              </p>
+              <a
+                href="../North East India/Meghalaya/Meghalaya.html"
+                class="state-btn"
+                >Explore <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="state-card">
+            <div class="state-img">
+              <img
+                src="https://media.tripinvites.com/india/mizoram/unbelievable-mizoram-featured.jpg"
+                alt="Mizoram"
+              />
+            </div>
+            <div class="state-content">
+              <h3>Mizoram</h3>
+              <p>
+                "Land of the Hill People" — serene Reiek Hill, Dampa Tiger
+                Reserve, and vibrant Chapchar Kut festival.
+              </p>
+              <a
+                href="../North East India/Mizoram/Mizoram.html"
+                class="state-btn"
+                >Explore <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="state-card">
+            <div class="state-img">
+              <img
+                src="https://t3.ftcdn.net/jpg/01/99/41/20/360_F_199412053_sFH5JcqAKZ4UydrF6Ic6GVro8sprddCL.jpg"
+                alt="Nagaland"
+              />
+            </div>
+            <div class="state-content">
+              <h3>Nagaland</h3>
+              <p>
+                The land of festivals — Hornbill Festival, Dzükou Valley, and
+                warrior tribes like Angami and Ao.
+              </p>
+              <a
+                href="../North East India/Nagaland/Nagaland.html"
+                class="state-btn"
+                >Explore <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="state-card">
+            <div class="state-img">
+              <img
+                src="https://hillstarholidays.co.in/wp-content/uploads/2025/09/Assam-5.jpg"
+                alt="Tripura"
+              />
+            </div>
+            <div class="state-content">
+              <h3>Tripura</h3>
+              <p>
+                A blend of Bengali and tribal cultures — Ujjayanta Palace,
+                Neermahal (Water Palace), and Unakoti rock carvings.
+              </p>
+              <a
+                href="../North East India/Tripura/Tripura.html"
+                class="state-btn"
+                >Explore <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="state-card">
+            <div class="state-img">
+              <img
+                src="https://www.kiomoi.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fkmadmin%2Fimage%2Fupload%2Fc_scale%2Cw_1248%2Ff_auto%2Fv1752218547%2Fkiomoi%2Fsikkim1_8046.webp&w=3840&q=75"
+                alt="Sikkim"
+              />
+            </div>
+            <div class="state-content">
+              <h3>Sikkim</h3>
+              <p>
+                The "Hidden Kingdom" — Kanchenjunga views, Rumtek Monastery,
+                Yumthang Valley, and Nathu La.
+              </p>
+              <a href="../North East India/Sikkim/Sikkim.html" class="state-btn"
+                >Explore <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="map-section" id="map">
+      <div class="container">
+        <div class="section-title">
+          <h2>Explore the Region</h2>
+          <p>Click on any state to learn more about its unique identity.</p>
+        </div>
+        <div class="map-container">
+          <div class="map-placeholder">
+            <h3>Interactive Northeast India Map</h3>
+            <p>
+              Due to browser security restrictions, the interactive SVG map is
+              simplified here. In production, we integrate a lightweight JS
+              library like <strong>Leaflet</strong> with custom GeoJSON.
+            </p>
+            <a href="#map" class="btn btn-outline">View Full Map</a>
+          </div>
+          <div id="leaflet-map" class="leaflet-map"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Places Section -->
+    <section class="section places" id="places">
+      <div class="container">
+        <div class="section-title">
+          <h2>Must-Visit Destinations</h2>
+          <p>
+            From misty highlands to emerald valleys — nature at its most
+            magical.
+          </p>
+        </div>
+        <div class="places-container">
+          <div class="place-card">
+            <div class="place-img">
+              <img
+                src="https://media.istockphoto.com/id/458127421/photo/sela-pass-district-of-tawang-arunachal-pradesh-india.jpg?s=612x612&w=0&k=20&c=yBg1BRI6_QzIUIDukD6NS_EMfIDG7773UD0pWG8eEOQ="
+                alt="Tawang Monastery"
+              />
+              <div class="place-tag">Arunachal</div>
+            </div>
+            <div class="place-content">
+              <h3>Tawang Monastery</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Tawang</span>
+                <span class="place-rating"
+                  ><i class="fas fa-star"></i> 4.8</span
+                >
+              </div>
+              <p>
+                The largest Buddhist monastery in India and second-largest in
+                the world. Perched at 10,000 ft, it offers spiritual serenity
+                and Himalayan vistas.
+              </p>
+            </div>
+          </div>
+          <div class="place-card">
+            <div class="place-img">
+              <img
+                src="https://media.istockphoto.com/id/538374335/photo/one-horned-rhinoceros.jpg?s=612x612&w=0&k=20&c=ze4cJvIp31KWS78Wo32040hwTEADwqvs9WxGG2-jaAc="
+                alt="Kaziranga National Park"
+              />
+              <div class="place-tag">Assam</div>
+            </div>
+            <div class="place-content">
+              <h3>Kaziranga National Park</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Golaghat</span>
+                <span class="place-rating"
+                  ><i class="fas fa-star"></i> 4.9</span
+                >
+              </div>
+              <p>
+                UNESCO World Heritage Site & home to 2/3 of the world’s
+                one-horned rhinoceros. Jeep safaris reveal tigers, elephants,
+                and rare birds.
+              </p>
+            </div>
+          </div>
+          <div class="place-card">
+            <div class="place-img">
+              <img
+                src="https://www.trawell.in/admin/images/upload/64576125Mawlynnong_Living_Root_Bridge_%20Main.jpg"
+                alt="Living Root Bridges"
+              />
+              <div class="place-tag">Meghalaya</div>
+            </div>
+            <div class="place-content">
+              <h3>Living Root Bridges</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Cherrapunji</span>
+                <span class="place-rating"
+                  ><i class="fas fa-star"></i> 4.7</span
+                >
+              </div>
+              <p>
+                Natural wonders grown by the Khasi people — Ficus elastica roots
+                trained over centuries into functional, living bridges.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="section packages" id="packages">
+      <div class="container">
+        <div class="section-title">
+          <h2>Curated Tour Packages</h2>
+          <p>
+            Thoughtfully designed journeys to immerse you in the soul of the
+            Northeast.
+          </p>
+        </div>
+        <div class="packages-container">
+          <div class="package-card">
+            <div class="package-img">
+              <img
+                src="https://cdn.forevervacation.com/uploads/blog/what-a-trip-trekking-the-himalayas-actually-looks-like-the-vacationer-by-forevervacation-3451.jpeg"
+                alt="Himalayan Trails"
+              />
+              <div class="package-price">₹24,999</div>
+            </div>
+            <div class="package-content">
+              <h3>Himalayan Trails</h3>
+              <div class="package-meta">
+                <span class="package-duration"
+                  ><i class="far fa-clock"></i> 7 Days</span
+                >
+                <span class="package-rating"
+                  ><i class="fas fa-star"></i> 4.8 (128)</span
+                >
+              </div>
+              <p>
+                Arunachal & Sikkim: Tawang Monastery, Sela Pass, Bum La, Nathu
+                La, Gangtok, and Tsomgo Lake.
+              </p>
+              <div class="package-footer">
+                <a href="#" class="btn btn-outline">View Details</a>
+              </div>
+            </div>
+          </div>
+          <div class="package-card">
+            <div class="package-img">
+              <img
+                src="https://www.shutterstock.com/image-photo/adult-indian-rhinoceros-crossing-safari-600nw-2112235640.jpg"
+                alt="Assam Wildlife Expedition"
+              />
+              <div class="package-price">₹18,499</div>
+            </div>
+            <div class="package-content">
+              <h3>Assam Wildlife Expedition</h3>
+              <div class="package-meta">
+                <span class="package-duration"
+                  ><i class="far fa-clock"></i> 5 Days</span
+                >
+                <span class="package-rating"
+                  ><i class="fas fa-star"></i> 4.9 (92)</span
+                >
+              </div>
+              <p>
+                Kaziranga (rhino safari), Majuli Island boat ride, tea estate
+                stay, and Sivasagar heritage tour.
+              </p>
+              <div class="package-footer">
+                <a href="#" class="btn btn-outline">View Details</a>
+              </div>
+            </div>
+          </div>
+          <div class="package-card">
+            <div class="package-img">
+              <img
+                src="https://magikindia.com/wp-content/uploads/2019/05/Nohkalikai_Falls-1024x768.jpg"
+                alt="Meghalaya Adventure"
+              />
+              <div class="package-price">₹21,999</div>
+            </div>
+            <div class="package-content">
+              <h3>Meghalaya Adventure</h3>
+              <div class="package-meta">
+                <span class="package-duration"
+                  ><i class="far fa-clock"></i> 6 Days</span
+                >
+                <span class="package-rating"
+                  ><i class="fas fa-star"></i> 4.7 (76)</span
+                >
+              </div>
+              <p>
+                Cherrapunji waterfalls, Mawsmai Caves, living root bridges trek,
+                Shillong music scene, and Umiam Lake kayaking.
+              </p>
+              <div class="package-footer">
+                <a href="#" class="btn btn-outline">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery">
+      <div class="container">
+        <div class="section-title">
+          <h2>Visual Journey</h2>
+          <p>A glimpse into the soul-stirring beauty of the region.</p>
+        </div>
+        <div class="gallery-container">
+          <div class="gallery-item">
+            <img
+              src="https://t3.ftcdn.net/jpg/00/54/04/30/360_F_54043068_Jv1e6QuYbH7R4aX1rTJllIn5TrJU4PLD.jpg"
+              alt="Himalayan peaks"
+            />
+            <div class="gallery-overlay"><h4>Himalayan Peaks</h4></div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://t4.ftcdn.net/jpg/01/99/16/47/360_F_199164728_djFC9mgXZO9HJ1WMWrMYdiNx74etyCqS.jpg"
+              alt="One-horned rhino"
+            />
+            <div class="gallery-overlay"><h4>Kaziranga Rhino</h4></div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://assets.telegraphindia.com/telegraph/3dcd10a8-a311-4c14-a70c-aa4ce601e46f.jpg"
+              alt="Living root bridge"
+            />
+            <div class="gallery-overlay"><h4>Root Bridge, Nongriat</h4></div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://www.indianholiday.com/wordpress/wp-content/uploads/2025/06/Majuli-Assam.jpg"
+              alt="Majuli Island"
+            />
+            <div class="gallery-overlay">
+              <h4>Majuli, World's Largest River Island</h4>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/5/58/Hornbill_Festival%2C_Pix_by_Vikramjit_Kakati.jpg"
+              alt="Hornbill Festival"
+            />
+            <div class="gallery-overlay">
+              <h4>Hornbill Festival, Nagaland</h4>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://curlytales.com/wp-content/uploads/2019/04/mizo.jpg"
+              alt="Reiek Hill"
+            />
+            <div class="gallery-overlay"><h4>Reiek Hill, Mizoram</h4></div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://english.news.cn/20220413/d85a60d2b66b45fcac5525d57e3bd6c2/20220413d85a60d2b66b45fcac5525d57e3bd6c2_2150b1c856-94eb-4f29-81dc-25c430b30de6.jpg.jpg"
+              alt="Tea gardens"
+            />
+            <div class="gallery-overlay"><h4>Assam Tea Gardens</h4></div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://s7ap1.scene7.com/is/image/incredibleindia/tawang-monastery-tawang-arunachal-pradesh-1-attr-hero?qlt=82&ts=1742169936069"
+              alt="Tawang Monastery"
+            />
+            <div class="gallery-overlay"><h4>Tawang Monastery at Dawn</h4></div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="https://png.pngtree.com/thumb_back/fh260/background/20240814/pngtree-view-of-zuluk-village-from-skyline-with-mountain-range-at-silk-image_16132396.jpg"
+              alt="Sikkim Landscape"
+            />
+            <div class="gallery-overlay"><h4>Sikkim Landscape</h4></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cuisine Section -->
+    <section class="section cuisine">
+      <div class="container">
+        <div class="section-title">
+          <h2>Flavors of the Northeast</h2>
+          <p>
+            A culinary tradition rooted in fermentation, minimal oil, and bold
+            indigenous ingredients.
+          </p>
+        </div>
+        <div class="cuisine-container">
+          <div class="cuisine-card">
+            <div class="cuisine-img">
+              <img
+                src="https://junifoods.com/wp-content/uploads/2024/05/Chicken-Thukpa-Tibetan-Noodle-Soup.jpg"
+                alt="Momos"
+              />
+            </div>
+            <div class="cuisine-content">
+              <h3>Momos & Thukpa</h3>
+              <p>
+                Tibetan influence shines in steamed dumplings and noodle soups —
+                spicy, hearty, and deeply comforting.
+              </p>
+              <span class="cuisine-tag">Tibetan-Naga</span>
+            </div>
+          </div>
+          <div class="cuisine-card">
+            <div class="cuisine-img">
+              <img
+                src="https://www.shutterstock.com/image-photo/assamese-platter-ethnic-cuisines-assam-600nw-1498972295.jpg"
+                alt="Assamese thali"
+              />
+            </div>
+            <div class="cuisine-content">
+              <h3>Assamese Thali</h3>
+              <p>
+                Steamed rice, masor tenga (sour fish curry), khar, tenga dal,
+                and fresh greens — clean & balanced.
+              </p>
+              <span class="cuisine-tag">Assamese</span>
+            </div>
+          </div>
+          <div class="cuisine-card">
+            <div class="cuisine-img">
+              <img
+                src="https://www.shutterstock.com/shutterstock/videos/3659177543/thumb/7.jpg?ip=x480"
+                alt="Eromba"
+              />
+            </div>
+            <div class="cuisine-content">
+              <h3>Eromba</h3>
+              <p>
+                Manipur’s fiery chutney of boiled veggies, fermented fish, and
+                bhut jolokia — served with steamed rice.
+              </p>
+              <span class="cuisine-tag">Manipuri</span>
+            </div>
+          </div>
+          <div class="cuisine-card">
+            <div class="cuisine-img">
+              <img
+                src="https://untolddelicacy.com/wp-content/uploads/2021/09/Jadoh-or-Khasi-from-Meghalaya.jpg"
+                alt="Jadoh"
+              />
+            </div>
+            <div class="cuisine-content">
+              <h3>Jadoh</h3>
+              <p>
+                Meghalaya’s Khasi delicacy — red rice cooked with pork,
+                turmeric, and local spices.
+              </p>
+              <br />
+              <span class="cuisine-tag">Khasi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Festivals Section -->
+    <section class="section festivals">
+      <div class="container">
+        <div class="section-title">
+          <h2>Celebrations of Life</h2>
+          <p>
+            Festivals here are not just events — they are sacred expressions of
+            identity, harvest, and community.
+          </p>
+        </div>
+        <div class="festivals-container">
+          <div class="festival-card">
+            <div class="festival-img">
+              <img
+                src="https://www.vacationindia.com/wp-content/uploads/2020/11/members-of-the-konyak-naga-pose-for-a-portrait.jpg"
+                alt="Hornbill Festival"
+              />
+            </div>
+            <div class="festival-content">
+              <h3>Hornbill Festival</h3>
+              <div class="festival-date">Dec 1–10</div>
+              <p>
+                Nagaland’s grand cultural fiesta — all 17 tribes showcase dance,
+                music, crafts, and cuisine in Kisama.
+              </p>
+            </div>
+          </div>
+          <div class="festival-card">
+            <div class="festival-img">
+              <img
+                src="https://media.istockphoto.com/id/1204129776/photo/bihu-dance-of-assam.jpg?s=612x612&w=0&k=20&c=AJbomV__4kVUvoiBdpMzgpm8t3PJjoy3Lu9nk0epAiw="
+                alt="Bihu"
+              />
+            </div>
+            <div class="festival-content">
+              <h3>Bihu</h3>
+              <div class="festival-date">Apr 14–15 (Rongali)</div>
+              <p>
+                Assam’s harvest festival — energetic Bihu dance, dhol, pepa
+                (buffalo horn), and feasting with pitha.
+              </p>
+            </div>
+          </div>
+          <div class="festival-card">
+            <div class="festival-img">
+              <img
+                src="https://admin.shomish.com/newsimage/9a5a67ce96.png"
+                alt="Chapchar Kut"
+              />
+            </div>
+            <div class="festival-content">
+              <h3>Chapchar Kut</h3>
+              <div class="festival-date">Mar 4–6</div>
+              <p>
+                Mizoram’s spring festival — bamboo dance (Cheraw), traditional
+                songs, and community feasts after Jhum clearing.
+              </p>
+            </div>
+          </div>
+          <div class="festival-card">
+            <div class="festival-img">
+              <img
+                src="https://i.pinimg.com/736x/5c/46/80/5c4680cd8a540eb0bb87d2264f2f6bbd.jpg"
+                alt="Sangai Festival"
+              />
+            </div>
+            <div class="festival-content">
+              <h3>Sangai Festival</h3>
+              <div class="festival-date">Nov 21–30</div>
+              <p>
+                Manipur’s state festival — celebrates the endangered
+                brow-antlered deer, with classical Ras Lila and boat races.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+      <div class="container">
+        <div class="section-titles">
+          <h2>Traveler Stories</h2>
+          <p>
+            Hear from those who’ve journeyed through the soul of the Northeast.
+          </p>
+        </div>
+        <div class="testimonials-container">
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              <p>
+                “The Hornbill Festival was a revelation — raw, joyful, and
+                deeply authentic. Our guide from Seven Sisters made every
+                tribe’s story come alive.”
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-img">
+                <img src="https://i.pravatar.cc/150?img=32" alt="Anjali M." />
+              </div>
+              <div class="author-info">
+                <h4>Anjali M.</h4>
+                <p>Mumbai, Photographer</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              <p>
+                “Watching rhinos cross the Brahmaputra at sunset in Kaziranga…
+                words fail. The eco-lodge, the local cuisine — perfection.”
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-img">
+                <img src="https://i.pravatar.cc/150?img=54" alt="Rahul S." />
+              </div>
+              <div class="author-info">
+                <h4>Rahul S.</h4>
+                <p>Bengaluru, Wildlife Enthusiast</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              <p>
+                “Trekking to the Double Decker Root Bridge with our Khasi guide
+                — a once-in-a-lifetime experience. Sustainability is woven into
+                every step here.”
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-img">
+                <img src="https://i.pravatar.cc/150?img=68" alt="Priya T." />
+              </div>
+              <div class="author-info">
+                <h4>Priya T.</h4>
+                <p>Delhi, Eco-travel Blogger</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Eco-Tourism Pledge Section -->
+    <section class="section eco-pledge">
+      <div class="container">
+        <div class="pledge-content">
+          <h2>Our Responsible Travel Pledge</h2>
+          <p>
+            We believe travel should leave places better than we found them.
+          </p>
+
+          <div class="pledge-list">
+            <div class="pledge-item">
+              <div class="pledge-icon"><i class="fas fa-leaf"></i></div>
+              <div>
+                <strong>Zero Single-Use Plastic</strong> — Reusable kits for all
+                travelers.
+              </div>
+            </div>
+            <div class="pledge-item">
+              <div class="pledge-icon">
+                <i class="fas fa-hand-holding-usd"></i>
+              </div>
+              <div>
+                <strong>70% Revenue to Local Communities</strong> — Homestays,
+                guides, artisans.
+              </div>
+            </div>
+            <div class="pledge-item">
+              <div class="pledge-icon"><i class="fas fa-book"></i></div>
+              <div>
+                <strong>Cultural Sensitivity Training</strong> — For guests &
+                staff.
+              </div>
+            </div>
+            <div class="pledge-item">
+              <div class="pledge-icon"><i class="fas fa-recycle"></i></div>
+              <div>
+                <strong>Carbon-Offset Trips</strong> — Tree planting in degraded
+                forest areas.
+              </div>
+            </div>
+          </div>
+          <a href="#" class="btn">Read Full Sustainability Policy</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instagram Feed Section -->
+    <section class="section instagram-feed">
+      <div class="container">
+        <div class="section-title">
+          <h2>#SevenSistersMoments</h2>
+          <p>Real journeys, real joy — shared by our travelers.</p>
+        </div>
+        <div class="insta-grid">
+          <div class="insta-item">
+            <img
+              src="https://images.unsplash.com/photo-1584395631446-e41b0fc3f68d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGltYWxheWFzfGVufDB8fDB8fHww&fm=jpg&q=60&w=3000"
+              alt="Himalayas"
+            />
+            <div class="insta-overlay">
+              <i class="fab fa-instagram insta-icon"></i>
+            </div>
+          </div>
+          <div class="insta-item">
+            <img
+              src="https://media.istockphoto.com/id/1448802309/photo/rhinoceros.jpg?s=612x612&w=0&k=20&c=2jGLDKbneW7-VUq-8vqirfXfKgb0BLNHpzvB02MakH0="
+              alt="Rhino"
+            />
+            <div class="insta-overlay">
+              <i class="fab fa-instagram insta-icon"></i>
+            </div>
+          </div>
+          <div class="insta-item">
+            <img
+              src="https://adventuresome.in/wp-content/uploads/2019/06/Sikkim.jpg"
+              alt="Sikkim"
+            />
+            <div class="insta-overlay">
+              <i class="fab fa-instagram insta-icon"></i>
+            </div>
+          </div>
+          <div class="insta-item">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Living_root_bridges%2C_Nongriat_village%2C_Meghalaya2.jpg/960px-Living_root_bridges%2C_Nongriat_village%2C_Meghalaya2.jpg"
+              alt="Root Bridge"
+            />
+            <div class="insta-overlay">
+              <i class="fab fa-instagram insta-icon"></i>
+            </div>
+          </div>
+          <div class="insta-item">
+            <img
+              src="https://t4.ftcdn.net/jpg/03/36/69/87/360_F_336698712_qvyRTFtuQfa0YsnDMxXOtSUviPu08gGo.jpg"
+              alt="Hornbill"
+            />
+            <div class="insta-overlay">
+              <i class="fab fa-instagram insta-icon"></i>
+            </div>
+          </div>
+          <div class="insta-item">
+            <img
+              src="https://www.alightindia.com/cdn/uploads/postimages/ORIGINAL/mz2--9629c3.png"
+              alt="Mizoram"
+            />
+            <div class="insta-overlay">
+              <i class="fab fa-instagram insta-icon"></i>
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px">
+          <a
+            href="https://instagram.com/sevensisterstravel"
+            class="btn btn-outline"
+            target="_blank"
+          >
+            <i class="fab fa-instagram"></i> Follow Us on Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Plan Your Journey</h2>
+          <p>
+            Let us craft a bespoke experience — respectful, immersive, and
+            unforgettable.
+          </p>
+        </div>
+        <div class="contact-container">
+          <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>
+              We’re based in Nagpur, Maharashtra — ready to help you explore
+              responsibly.
+            </p>
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Address</h4>
+                  <p>Traveltales , Nagpur, Maharashtra 440036</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                <div class="contact-text">
+                  <h4>Phone</h4>
+                  <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <div class="contact-text">
+                  <h4>Email</h4>
+                  <p>
+                    <a href="mailto:explore@sevensisters.in"
+                      >TravelTalesngp@gmail.com</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="https://www.facebook.com/"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/accounts/login/?hl=en"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.youtube.com/account"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" class="form-control" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" required />
+              </div>
+              <div class="form-group">
+                <label for="trip">Preferred Destination</label>
+                <select id="trip" class="form-control">
+                  <option value="">Select...</option>
+                  <option value="arunachal">Arunachal Pradesh</option>
+                  <option value="assam">Assam</option>
+                  <option value="manipur">Manipur</option>
+                  <option value="meghalaya">Meghalaya</option>
+                  <option value="mizoram">Mizoram</option>
+                  <option value="nagaland">Nagaland</option>
+                  <option value="tripura">Tripura</option>
+                  <option value="multi">Multi-State Tour</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Tell Us Your Dream</label>
+                <textarea
+                  id="message"
+                  class="form-control"
+                  placeholder="E.g., 'Wildlife focus', 'Cultural immersion', 'Adventure trek'..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn submit-btn">Send Inquiry</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-col">
+            <h3>Seven Sisters</h3>
+            <p>
+              Curating transformative journeys across Northeast India since 2015
+              — with respect for people, culture, and planet.
+            </p>
+            <div class="social-links">
+              <a href="https://www.facebook.com/"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/accounts/login/?hl=en"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://x.com/login"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.youtube.com/account"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="../index.html"
+                  ><i class="fas fa-chevron-right"></i> Home</a
+                >
+              </li>
+              <li>
+                <a href="../Travel Tales/About Us.html"
+                  ><i class="fas fa-chevron-right"></i> About Us</a
+                >
+              </li>
+              <li>
+                <a href="#states"
+                  ><i class="fas fa-chevron-right"></i> The Seven States</a
+                >
+              </li>
+              <li>
+                <a href="#places"
+                  ><i class="fas fa-chevron-right"></i> Top Destinations</a
+                >
+              </li>
+              <li>
+                <a href="#packages"
+                  ><i class="fas fa-chevron-right"></i> Tour Packages</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Travel Resources</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Permits Guide (ILP/Inner
+                  Line)</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Best Time to Visit</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Responsible Travel
+                  Tips</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-chevron-right"></i> Packing Checklist</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-chevron-right"></i> FAQs</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Subscribe</h3>
+            <p>
+              Get travel stories, offers, and cultural insights from the
+              Northeast.
+            </p>
+            <form>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your email"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-outline">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 TravelTales. All rights reserved. | Designed with ❤️ for
+            Northeast India
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="Map/map.js"></script>
+    <script>
+      // Mobile menu toggle
+      document
+        .querySelector(".menu-toggle")
+        .addEventListener("click", function () {
+          document.querySelector(".nav-links").classList.toggle("active");
+        });
+
+      // Header scroll effect
+      window.addEventListener("scroll", function () {
+        const header = document.getElementById("header");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+          // Close mobile menu if open
+          document.querySelector(".nav-links").classList.remove("active");
+        });
+      });
+
+      // Form submission (prevent default for demo)
+      document
+        .getElementById("contactForm")
+        ?.addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Thank you! We’ll get back to you within 24 hours.");
+          this.reset();
+        });
+    </script>
+  </body>
+</html>

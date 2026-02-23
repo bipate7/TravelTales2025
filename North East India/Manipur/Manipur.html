@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipur: The Jewel of India | Premium Travel Guide</title>
+    <link rel="icon" href="Images/TT4.png">
+    <link rel="icon" href="https://via.placeholder.com/32/1a237e/FFFFFF?text=ME" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/Manipur.css">
+</head>
+<body>
+    <!-- Preloader 
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>-->
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="../index.html" class="logo">
+                <img src="Images/TT5.png" alt="Travel Tales Logo">
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#places">Destinations</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#culture">Culture</a></li>
+                <li><a href="#map">Map</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/04/d9/c5/one-of-the-famous-rings.jpg?w=1200&h=700&s=1" alt="Manipur Landscape" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Discover Manipur: The Jewel of India</h1>
+            <p>Explore the untouched beauty, rich culture, and vibrant traditions of Northeast India's hidden gem</p>
+            <a href="#packages" class="cta-btn">Explore Packages</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-number" id="stat1">500+</div>
+                    <div class="stat-text">Happy Travelers</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number" id="stat2">12</div>
+                    <div class="stat-text">Unique Packages</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number" id="stat3">8</div>
+                    <div class="stat-text">Tribal Cultures</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number" id="stat4">99%</div>
+                    <div class="stat-text">Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    const statItems = document.querySelectorAll(".stat-item");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, { threshold: 0.3 });
+
+    statItems.forEach(item => observer.observe(item));
+</script>
+
+
+    <!-- Places Section -->
+    <section class="section" id="places">
+        <div class="container">
+            <div class="section-title">
+                <h2>Must-Visit Destinations</h2>
+                <p>From serene lakes to historic sites, Manipur offers breathtaking experiences for every traveler</p>
+            </div>
+            <div class="places-grid">
+                <div class="place-card fade-in">
+                    <div class="place-img">
+                        <img src="https://i.ytimg.com/vi/aTnTUK0PeEM/maxresdefault.jpg" alt="Imphal">
+                        <span class="place-badge">Cultural Hub</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Imphal</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct-Feb</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Central Manipur</span>
+                        </div>
+                        <p>The capital city rich in history and culture, home to Kangla Fort, Ima Keithel (Mother's Market), and Manipur State Museum.</p>
+                        <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="place-card fade-in">
+                    <div class="place-img">
+                        <img src="https://i0.wp.com/eastmojo.com/wp-content/uploads/2019/12/IMG_8308-scaled.jpg?fit=2560%2C1707&ssl=1" alt="Loktak Lake">
+                        <span class="place-badge">Natural Wonder</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Loktak Lake</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct-Feb</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Bishnupur District</span>
+                        </div>
+                        <p>The largest freshwater lake in Northeast India, famous for its floating phumdis and the Keibul Lamjao National Park.</p>
+                        <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="place-card fade-in">
+                    <div class="place-img">
+                        <img src="https://thenewsmill.com/wp-content/uploads/2024/07/Ukhrul-town.jpg" alt="Ukhrul">
+                        <span class="place-badge">Hill Station</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Ukhrul</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Mar-Oct</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Eastern Manipur</span>
+                        </div>
+                        <p>Scenic hill town known for Shirui Lily, Khangkhui Cave, and vibrant Tangkhul Naga culture and traditions.</p>
+                        <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Heritage Section -->
+    <section class="section culture-section" id="culture">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cultural Heritage of Manipur</h2>
+                <p>The land of dance, music, and ancient traditions</p>
+            </div>
+            <div class="culture-grid">
+                <div class="culture-img">
+                    <img src="https://nateshwardanceacademy.com/wp-content/uploads/2015/10/chandigarh_fest_20130216_6_19.jpg" alt="Manipuri Dance">
+                </div>
+                <div class="culture-content">
+                    <h3>Land of Classical Arts</h3>
+                    <p>Manipur is the birthplace of <strong>Ras Lila</strong> — the celestial dance of Krishna, and <strong>Thang-Ta</strong>, the ancient martial art form.</p>
+                    <p>With over 30 indigenous tribes, each community preserves unique festivals, textiles, and oral traditions passed down for centuries.</p>
+                    
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                Sangai Festival <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Annual cultural extravaganza (Nov) showcasing Manipuri dance, music, crafts, and cuisine. Named after the endangered brow-antlered deer.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                Yaoshang (Holi) <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>5-day spring festival with street football, folk dances, and community feasts. Unique to Manipur!</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                Ningol Chakouba <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Brother-sister reunion day where married women are invited home for a feast — a beautiful tradition of familial love.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Cuisine Section -->
+    <section class="section cuisine-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Taste of Manipur</h2>
+                <p>Fresh, fermented, and fiercely flavorful — a cuisine unlike any other</p>
+            </div>
+            <div class="cuisine-grid">
+                <div class="cuisine-card fade-in">
+                    <div class="cuisine-img">
+                        <img src="https://thetraditionalbawarchi.wordpress.com/wp-content/uploads/2021/04/iromba.jpeg?w=1024" alt="Eromba">
+                    </div>
+                    <div class="cuisine-content">
+                        <span class="cuisine-tag">Spicy</span>
+                        <h3>Eromba</h3>
+                        <p>Fiery chutney of boiled vegetables, fermented fish, and bhut jolokia (ghost pepper). Served with steamed rice.</p>
+                    </div>
+                </div>
+                <div class="cuisine-card fade-in">
+                    <div class="cuisine-img">
+                        <img src="https://img.freepik.com/free-photo/arroz-con-leche-rice-pudding-with-cinnamon-clay-bowl-wooden-table_123827-26722.jpg?semt=ais_hybrid&w=740&q=80" alt="Chak-Hao Kheer">
+                    </div>
+                    <div class="cuisine-content">
+                        <span class="cuisine-tag">Sweet</span>
+                        <h3>Chak-Hao Kheer</h3>
+                        <p>Black rice pudding infused with cardamom and jaggery — a royal dessert with antioxidant-rich indigenous rice.</p>
+                    </div>
+                </div>
+                <div class="cuisine-card fade-in">
+                    <div class="cuisine-img">
+                        <img src="https://images.squarespace-cdn.com/content/v1/578753d7d482e9c3a909de40/1654684311657-2WDEKFT6P6QPT31BKUVA/Goya_A+variety+of+dried+fish+on+display.jpg?format=2500w" alt="Ngari">
+                    </div>
+                    <div class="cuisine-content">
+                        <span class="cuisine-tag">Fermented</span>
+                        <h3>Ngari (Fermented Fish)</h3>
+                        <p>The soul of Manipuri cooking — sun-dried fish fermented in earthen pots. Adds umami depth to curries and chutneys.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="section gallery-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>In Pictures: Manipur Unfiltered</h2>
+                <p>Real moments, real beauty</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/02/Langol-Hill-Peak-Manipur.jpg?resize=1200%2C900&ssl=1" alt="Hills">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://img-cdn.publive.online/fit-in/1200x675/filters:format(webp)/bw-travel/media/media_files/2025/05/15/Ixn6qd9m52TpTViMKO5N.png" alt="Loktak">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.manipuridancer.com/gallery/bhakti3.jpg" alt="Dance">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.incredibleindia.gov.in/content/dam/incredible-india/images/festivals-and-events/regional-festivals/kut-festival/kut-festival-lunglei-mizoram-2-regional-fes-body.jpg" alt="Festival">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="section packages-section" id="packages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Tour Packages</h2>
+                <p>Carefully curated experiences to help you discover the best of Manipur</p>
+            </div>
+            <div class="packages-container">
+                <div class="packages-carousel" id="packagesCarousel">
+                    <div class="package-card fade-in">
+                        <div class="package-img">
+                            <img src="https://img-cdn.publive.online/fit-in/1200x675/filters:format(webp)/bw-travel/media/media_files/2025/05/15/Ixn6qd9m52TpTViMKO5N.png" alt="Loktak Lake Adventure">
+                            <span class="package-badge">Top Rated</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Loktak Lake Adventure</h3>
+                            <div class="package-details">
+                                <div class="package-duration"><i class="fas fa-clock"></i> 3 Days</div>
+                                <div class="package-rating"><i class="fas fa-star"></i> 5.0</div>
+                            </div>
+                            <div class="package-price">₹15,000 <span>per person</span></div>
+                            <p>Experience the stunning beauty of Loktak Lake with boat rides and local culture.</p>
+                            <a href="#" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-card fade-in">
+                        <div class="package-img">
+                            <img src="https://tripindia.co.in//uploads/Ukhrul1.jpg" alt="Ukhrul Nature Retreat">
+                            <span class="package-badge">New</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Ukhrul Nature Retreat</h3>
+                            <div class="package-details">
+                                <div class="package-duration"><i class="fas fa-clock"></i> 4 Days</div>
+                                <div class="package-rating"><i class="fas fa-star"></i> 4.8</div>
+                            </div>
+                            <div class="package-price">₹22,000 <span>per person</span></div>
+                            <p>Explore the breathtaking landscapes and unique culture of Ukhrul district.</p>
+                            <a href="#" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-card fade-in">
+                        <div class="package-img">
+                            <img src="https://www.e-pao.org/galleries/images/Landscape/2016/Bioy_Govinda_0121/Govinda_Temple_20160121_7.jpg" alt="Cultural Heritage Tour">
+                            <span class="package-badge">Limited Time</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Cultural Heritage Tour</h3>
+                            <div class="package-details">
+                                <div class="package-duration"><i class="fas fa-clock"></i> 5 Days</div>
+                                <div class="package-rating"><i class="fas fa-star"></i> 5.0</div>
+                            </div>
+                            <div class="package-price">₹25,000 <span>per person</span></div>
+                            <p>Comprehensive tour covering Manipur's rich cultural heritage and traditional arts.</p>
+                            <a href="#" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Imphal City Exploration -->
+                <div class="package-card fade-in">
+                    <div class="package-img">
+                        <img src="https://wanderon-images.gumlet.io/blogs/new/2024/06/imphal-one-day.jpg" alt="Imphal City Exploration">
+                        <span class="package-badge">New</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Imphal City Exploration</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 2 Days</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.8</div>
+                        </div>
+                        <div class="package-price">₹12,000 <span>per person</span></div>
+                        <p>Discover the charm of Imphal through its local markets, history, and warm people.</p>
+                        <a href="#" class="book-btn">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Kangla Fort Experience -->
+                <div class="package-card fade-in">
+                    <div class="package-img">
+                        <img src="https://oddessemania.in/wp-content/uploads/2024/05/Kangla-fort-featured.jpg" alt="Kangla Fort Experience">
+                        <span class="package-badge">Limited Time</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Kangla Fort Experience</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 1 Day</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.9</div>
+                        </div>
+                        <div class="package-price">₹8,000 <span>per person</span></div>
+                        <p>Explore the historic Kangla Fort, a symbol of Manipur’s royal legacy and pride.</p>
+                        <a href="#" class="book-btn">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Andro Village Tour -->
+                <div class="package-card fade-in">
+                    <div class="package-img">
+                        <img src="https://i0.wp.com/thefloatingpebbles.com/wp-content/uploads/2025/02/21-04-04-MANIPUR-2618.jpg?resize=800%2C533&ssl=1" alt="Andro Village Tour">
+                        <span class="package-badge">Cultural</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Andro Village Heritage Tour</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 2 Days</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.7</div>
+                        </div>
+                        <div class="package-price">₹14,000 <span>per person</span></div>
+                        <p>Visit Andro Village to experience traditional pottery, culture, and local life.</p>
+                        <a href="#" class="book-btn">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Khonghampat Getaway -->
+                <div class="package-card fade-in">
+                    <div class="package-img">
+                        <img src="https://www.incredible-northeastindia.com/images/manipur-head.jpg" alt="Khonghampat Getaway">
+                        <span class="package-badge">Nature</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Khonghampat Orchid Getaway</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 1 Day</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.6</div>
+                        </div>
+                        <div class="package-price">₹9,500 <span>per person</span></div>
+                        <p>Escape to Khonghampat Orchidarium, home to over 100 rare orchid species.</p>
+                        <a href="#" class="book-btn">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Sangai Festival Delight -->
+                <div class="package-card fade-in">
+                    <div class="package-img">
+                        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/Hampi-Utsava-fes-state-city?qlt=82&ts=1726639365671" alt="Sangai Festival Delight">
+                        <span class="package-badge">Festive</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Sangai Festival Delight</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 3 Days</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 5.0</div>
+                        </div>
+                        <div class="package-price">₹18,000 <span>per person</span></div>
+                        <p>Celebrate Manipur’s grandest cultural event with music, dance, and local crafts.</p>
+                        <a href="#" class="book-btn">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Shree Govindajee Temple -->
+                <div class="package-card fade-in">
+                    <div class="package-img">
+                        <img src="https://superbcollections.com/wp-content/uploads/2023/09/1654674959images-10.jpeg" alt="Shree Govindajee Temple Visit">
+                        <span class="package-badge">Spiritual</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Shree Govindajee Temple Visit</h3>
+                        <div class="package-details">
+                            <div class="package-duration"><i class="fas fa-clock"></i> 1 Day</div>
+                            <div class="package-rating"><i class="fas fa-star"></i> 4.9</div>
+                        </div>
+                        <div class="package-price">₹10,000 <span>per person</span></div>
+                        <p>Visit the historic Shree Govindajee Temple — a serene symbol of devotion and peace.</p>
+                        <a href="#" class="book-btn">Book Now</a>
+                    </div>
+                </div>
+                </div>
+                <div class="carousel-nav">
+                    <div class="carousel-dot active"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section" id="map">
+        <div class="container">
+            <div class="section-title">
+                <h2>Explore Manipur</h2>
+                <p>Discover the geographical diversity and key attractions across the state</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/d/u/8/embed?mid=1eH_69Md14SH3h2y3Pzn8upHfEvgpOVw&ehbc=2E312F" width="640" height="480"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Traveler Experiences</h2>
+                <p>What our visitors say about their journey through Manipur</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-content">
+                        <p>Manipur exceeded all my expectations! The landscapes are breathtaking, the people are warm and welcoming, and the culture is so rich and vibrant. Loktak Lake was the highlight of my trip - unlike anything I've ever seen before.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://i.pravatar.cc/150?img=45" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Travel Blogger, UK</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-content">
+                        <p>As a nature photographer, Manipur offered me endless opportunities. From the floating islands of Loktak to the Shirui Lily in Ukhrul, every frame was a masterpiece. The guides arranged by ManipurExplorer were incredibly knowledgeable.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://i.pravatar.cc/150?img=32" alt="Rajiv Mehta">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rajiv Mehta</h4>
+                            <p>Wildlife Photographer, India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-content">
+                        <p>Our family trip to Manipur was unforgettable. The kids loved learning about the different tribes, and we all enjoyed the delicious local cuisine. The cultural show in Imphal was spectacular. Highly recommend the Heritage Tour package!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://i.pravatar.cc/150?img=68" alt="Priya Sharma">
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Family Traveler, Delhi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section newsletter-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for travel tips, special offers, and Manipur updates</p>
+            </div>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>About Us</h3>
+                    <p>ManipurExplorer is dedicated to showcasing the beauty and culture of Manipur through authentic, sustainable travel experiences.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/login"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/?hl=en"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/account"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#places">Destinations</a></li>
+                        <li><a href="#packages">Tour Packages</a></li>
+                        <li><a href="#culture">Culture</a></li>
+                        <li><a href="#map">Travel Map</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Yashoda Nagar, Nagpur, Maharahstra</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> traveltalesngp@gmail.com</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Helpful Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Travel Guide</a></li>
+                        <li><a href="#">Best Time to Visit</a></li>
+                        <li><a href="#">Local Cuisine</a></li>
+                        <li><a href="#">Cultural Etiquette</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 TravelTales. All Rights Reserved. | Designed with <i class="fas fa-heart"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="Js/Manipur.js"></script>
+</body>
+</html>

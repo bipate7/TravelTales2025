@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now - Travel Tales</title>
+    <link rel="icon" href="Images/TT4.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .booking-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .booking-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .booking-header h2 {
+            color: #dc3545;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="booking-container">
+            <div class="booking-header">
+                <h2>Book Your Trip</h2>
+                <p>Fill out the form below to start your adventure!</p>
+            </div>
+            
+            <form action="mailto:TravelTales@gmail.com" method="post" enctype="text/plain">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="destination">Destination</label>
+                        <select id="destination" class="form-control" name="destination">
+                            <option selected>Choose...</option>
+                            <option>Agra - Taj Mahal</option>
+                            <option>Goa - Beach Getaway</option>
+                            <option>Jaipur - Pink City</option>
+                            <option>Kerala - Backwaters</option>
+                            <option>Leh Ladakh - Adventure</option>
+                            <option>Kashmir - Heaven on Earth</option>
+                            <option>Mumbai - City of Dreams</option>
+                            <option>Udaipur - City of Lakes</option>
+                            <option>Shimla - Hill Station</option>
+                            <option>Amritsar - Golden Temple</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="guests">Number of Guests</label>
+                        <input type="number" class="form-control" id="guests" name="guests" min="1" value="1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="travelDate">Travel Date</label>
+                    <input type="date" class="form-control" id="travelDate" name="travelDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Special Requests</label>
+                    <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-danger btn-block btn-lg">Submit Booking Request</button>
+            </form>
+            <div class="text-center mt-3">
+                <a href="Tours Packages.html" class="text-secondary">Back to Packages</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
