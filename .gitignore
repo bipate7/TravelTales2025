@@ -19,14 +19,14 @@ broken_local_refs.csv
 *.svg
 # Videos/  # Commenting out to allow Videos folder
 Pictures/
-Logos/
+# Logos/  # Commenting out to allow Logos folder
 # Large image files
 # **/*.avif  # Commenting out to allow Main Page images
 **/*.svg
 # Media directories
 # Videos/  # Commenting out to allow Videos folder
 Pictures/
-Logos/
+# Logos/  # Commenting out to allow Logos folder
 # Large files over 1MB
 **/*.pdf
 **/*.docx
