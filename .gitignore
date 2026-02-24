@@ -4,24 +4,24 @@
 *.mov
 *.avi
 *.wmv
-*.jpg
-*.jpeg
-*.png
+# *.jpg  # Commenting out to allow Main Page images
+# *.jpeg  # Commenting out to allow Main Page images
+# *.png  # Commenting out to allow Main Page images
 *.gif
-*.webp
+# *.webp  # Commenting out to allow Main Page images
 *.zip
 *.rar
 *.exe
 .vscode/
 size-report.csv
 broken_local_refs.csv
-*.avif
+# *.avif  # Commenting out to allow Main Page images
 *.svg
 # Videos/  # Commenting out to allow Videos folder
 Pictures/
 Logos/
 # Large image files
-**/*.avif
+# **/*.avif  # Commenting out to allow Main Page images
 **/*.svg
 # Media directories
 # Videos/  # Commenting out to allow Videos folder
