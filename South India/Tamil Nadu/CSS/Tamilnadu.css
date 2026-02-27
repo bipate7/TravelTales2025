@@ -147,9 +147,9 @@
         }
 
 
-        /* Background video */
-        /* Background Video - Smooth Playback */
-        .hero-video {
+        /* Background Image */
+        /* Background Image - Tamil Nadu Heritage */
+        .hero-image {
             position: absolute;
             top: 0;
             left: 0;
@@ -158,15 +158,14 @@
             object-fit: cover;
             z-index: 0;
 
-        /* Improve smoothness */
-            filter: brightness(60%);
-            will-change: transform !important;
-            backface-visibility: hidden;
-            transform: translateZ(0);
+        /* Optimize image display */
+            filter: brightness(0.7);
             pointer-events: none;
 
-        /* Prevent flicker on some browsers */
-            image-rendering: optimizeQuality;
+        /* Ensure smooth loading */
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            image-rendering: pixelated;
         }
 
         .hero::after {
