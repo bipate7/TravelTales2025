@@ -14,28 +14,21 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <link rel="stylesheet" href="CSS/Design.css">
 </head>
 <body>
-    <!-- Video Background -->
-    <div class="video-background">
-    <video id="bgVideo" autoplay muted loop playsinline>
-        <source src="India.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <!-- Image Slideshow Background -->
+    <div class="slideshow-background">
+        <div class="slideshow-container">
+            <img src="../Extra/view1.jpg" alt="Travel Scene 1" class="slide active">
+            <img src="../Extra/view2.jpg" alt="Travel Scene 2" class="slide">
+            <img src="../Extra/view3.jpg" alt="Travel Scene 3" class="slide">
+            <img src="../Extra/view4.jpg" alt="Travel Scene 4" class="slide">
+            <img src="../Extra/view5.jpg" alt="Travel Scene 5" class="slide">
+            <img src="../Extra/view6.jpg" alt="Travel Scene 6" class="slide">
+            <img src="../Extra/view7.jpg" alt="Travel Scene 7" class="slide">
+            <img src="../Extra/view8.jpg" alt="Travel Scene 8" class="slide">
+            <img src="../Extra/view9.jpg" alt="Travel Scene 9" class="slide">
+        </div>
+    </div>
 
-    <audio id="bgAudio" loop>
-        <source src="India.mp3" type="audio/mpeg">
-    </audio>
-</div>
-
-<script>
-    // Browser requires a user interaction for audio
-    document.addEventListener("click", function () {
-        const audio = document.getElementById("bgAudio");
-        audio.play();      // Start audio
-    });
-</script>
-
-
-    
     <!-- Sign Up Container -->
     <div class="signup-container">
         <div class="passport-stamp">TRAVEL TALES<br>MEMBER</div>
@@ -148,6 +141,23 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Automatic Image Slideshow
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+            
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                slides[index].classList.add('active');
+            }
+            
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+            
+            // Change slide every 4 seconds
+            setInterval(nextSlide, 4000);
+            
             // Create animated clouds
             const travelScene = document.getElementById('travelScene');
             for (let i = 0; i < 5; i++) {
